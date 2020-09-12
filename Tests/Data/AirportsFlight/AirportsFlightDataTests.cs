@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tests.Data.AirportsFlight
+namespace Airport.Tests.Data.AirportsFlight
 {
     class AirportsFlightDataTests
     {

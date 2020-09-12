@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tests.Data
+namespace Airport.Tests.Data
 {
     class IsDataTested
     {

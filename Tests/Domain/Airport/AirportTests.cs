@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tests.Domain.Airport
+namespace Airport.Tests.Domain.Airport
 {
     class AirportTests
     {

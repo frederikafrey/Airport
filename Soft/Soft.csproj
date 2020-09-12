@@ -6,7 +6,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\AirlineCompany\Pages\AirlineCompanies\" />
+    <Folder Include="Areas\AirlinesCompany\Pages\AirlinesCompanies\" />
     <Folder Include="Areas\AirportsFlight\Pages\AirportsFlights\" />
     <Folder Include="Areas\AirportsFlight\Pages\" />
     <Folder Include="Areas\Airport\Pages\Airports\" />

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tests.Domain.AirlineCompany
+namespace Tests.Infra
 {
-    class AirlineCompanyTests
+    class SortedRepositoryTests
     {
     }
 }
