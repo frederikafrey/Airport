@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.FlightPassenger
+namespace Data.AirportFlight
 {
-    class FlightPassengerData
+    class AirportsFlightData
     {
     }
 }
