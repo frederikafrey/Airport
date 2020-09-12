@@ -2,7 +2,7 @@
 
 namespace Airport
 {
-    public class Class1
+    public class PassengerFlightData
     {
         private int x = 5;
         // testing testing 123
