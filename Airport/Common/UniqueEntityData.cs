@@ -1,4 +1,4 @@
-﻿namespace Data.Common
+﻿namespace Airport.Data.Common
 {
     public abstract class UniqueEntityData
     {

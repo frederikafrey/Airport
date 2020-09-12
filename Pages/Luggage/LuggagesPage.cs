@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pages.Luggage
+namespace Airport.Pages.Luggage
 {
     public abstract class LuggagesPage
     {

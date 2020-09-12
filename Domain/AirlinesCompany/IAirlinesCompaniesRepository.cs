@@ -1,9 +1,6 @@
-﻿using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Domain.Common;
 
-namespace Domain.AirlineCompany
+namespace Airport.Domain.AirlinesCompany
 {
-    public interface IAirlinesCompaniesRepository : IRepository<AirlinesCompany> { }   
+    public interface IAirlinesCompaniesRepository : IRepository<AirlinesCompany> { }
 }

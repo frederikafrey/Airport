@@ -1,10 +1,7 @@
-﻿using Data.Passenger;
-using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Domain.Common;
+using Airport.Data.Passenger;
 
-namespace Domain.Passenger
+namespace Airport.Domain.Passenger
 {
     public sealed class Passenger : Entity<PassengerData>
     {

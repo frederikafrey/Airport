@@ -1,8 +1,8 @@
-﻿using Data.AirlinesCompany;
-using Domain.Common;
+﻿using Airport.Data.AirlinesCompany;
+using Airport.Domain.Common;
 
 
-namespace Domain.AirlineCompany
+namespace Airport.Domain.AirlinesCompany
 {
     public sealed class AirlinesCompany : Entity<AirlinesCompanyData>
     {

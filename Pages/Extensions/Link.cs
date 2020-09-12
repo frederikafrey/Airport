@@ -1,4 +1,4 @@
-﻿namespace SportClub.Pages.Extensions
+﻿namespace Airport.Pages.Extensions
 {
     public class Link
     {

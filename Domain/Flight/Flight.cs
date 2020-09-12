@@ -1,14 +1,13 @@
-﻿using Data.Flight;
-using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Data.Flight;
+using Airport.Domain.Common;
+using Data.Flight;
 
-namespace Domain.Flight
-{    
-    //public sealed class Flight : Entity<FlightData>
-    //{
-    //    public Flight() : this(null) { }
-    //    public Flight(FlightData data) : base(data) { }
-    //}
+
+namespace Airport.Domain.Flight
+{
+    public sealed class Flight : Entity<FlightData>
+    {
+        public Flight() : this(null) { }
+        public Flight(FlightData data) : base(data) { }
+    }
 }

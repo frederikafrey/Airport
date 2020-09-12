@@ -1,10 +1,7 @@
 ﻿using Data.Luggage;
-using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Airport.Domain.Common;
 
-namespace Domain.Luggage
+namespace Airport.Domain.Luggage
 {
     public sealed class Luggage : Entity<LuggageData>
     {

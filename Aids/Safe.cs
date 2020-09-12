@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
     public static class Safe {
         private static readonly object key = new object();
         public static T Run<T>(Func<T> function, T valueOnException,

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SportClub.Pages.Extensions {
+namespace Airport.Pages.Extensions {
     public static class TableRowForHtmlExtension {
         public static IHtmlContent TableRowFor(
             this IHtmlHelper htmlHelper, string page, object index,

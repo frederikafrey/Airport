@@ -1,4 +1,4 @@
-﻿namespace SportClub.Aids {
+﻿namespace Airport.Aids {
     public enum IsoGender {
 
         NotKnown = 0,
