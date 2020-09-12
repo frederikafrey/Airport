@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.AirportFlight
+namespace Domain.Flight
 {
-    class AirportFlightData
+    class IFlightsRepository
     {
     }
 }

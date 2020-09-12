@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Data.Passenger
 {
-    class PassengerData
+    public sealed class PassengerData
     {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Address { get; set; }
     }
 }
