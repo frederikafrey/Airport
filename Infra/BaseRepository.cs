@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Airport.Data.Common;
-using Domain.Common;
+using Airport.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra
