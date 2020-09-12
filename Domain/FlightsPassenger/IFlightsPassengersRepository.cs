@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.FlightsPassanger
+namespace Domain.FlightsPassenger
 {    
-    //public interface IFlightsPassengersRepository : IRepository<FlightsPassenger> { }
+    public interface IFlightsPassengersRepository : IRepository<FlightsPassenger> { }
 }
