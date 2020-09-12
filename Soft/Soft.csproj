@@ -6,6 +6,16 @@
 
 
   <ItemGroup>
+    <Folder Include="Areas\AirlineCompany\Pages\AirlineCompanies\" />
+    <Folder Include="Areas\AirportsFlight\Pages\AirportsFlights\" />
+    <Folder Include="Areas\AirportsFlight\Pages\" />
+    <Folder Include="Areas\Airport\Pages\Airports\" />
+    <Folder Include="Areas\FlightsPassenger\Pages\FlightsPassengers\" />
+    <Folder Include="Areas\Flight\Pages\Flights\" />
+    <Folder Include="Areas\Luggage\Pages\Luggages\" />
+    <Folder Include="Areas\PassengersFlight\Pages\PassengersFlights\" />
+    <Folder Include="Areas\Passenger\Pages\Passengers\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
