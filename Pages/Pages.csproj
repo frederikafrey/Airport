@@ -4,4 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Airport\" />
+    <Folder Include="AirportsFlight\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Flight\" />
+    <Folder Include="FlightsPassenger\" />
+    <Folder Include="Luggage\" />
+    <Folder Include="PassengersFlight\" />
+    <Folder Include="Passenger\" />
+  </ItemGroup>
+
 </Project>
