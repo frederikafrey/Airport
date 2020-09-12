@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Data.Common;
-using Domain.Common;
+using Airport.Data.Common;
+using Airport.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra

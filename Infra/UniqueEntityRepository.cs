@@ -1,6 +1,6 @@
 ﻿namespace Infra
 {
-    class UniqueEntityRepository
+    public class UniqueEntityRepository
     {
     }
 }
