@@ -1,9 +1,6 @@
 ﻿using Data.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Data.FlightPassenger
+namespace Data.FlightsPassenger
 {
     public abstract class FlightsPassengerData: UniqueEntityData
     {

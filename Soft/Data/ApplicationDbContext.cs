@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Soft.Data
+﻿namespace Soft.Data
 {
     public class ApplicationDbContext
     {

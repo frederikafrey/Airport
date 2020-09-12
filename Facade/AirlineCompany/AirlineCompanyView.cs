@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Facade.AirlineCompany
+﻿namespace Facade.AirlineCompany
 {
     public class AirlineCompanyView
     {

@@ -1,9 +1,6 @@
 ﻿using Data.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Data.AirportFlight
+namespace Data.AirportsFlight
 {
     public abstract class AirportsFlightData:UniqueEntityData
     {

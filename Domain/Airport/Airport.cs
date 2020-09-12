@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Airport
+﻿namespace Domain.Airport
 {   
     //public sealed class Airport : Entity<AirportData>
     //{

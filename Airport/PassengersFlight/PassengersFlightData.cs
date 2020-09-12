@@ -1,7 +1,6 @@
 ﻿using Data.Common;
-using System;
 
-namespace Airport
+namespace Data.PassengersFlight
 {
     public class PassengersFlightData:UniqueEntityData
     {

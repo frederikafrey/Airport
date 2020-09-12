@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.PassengerFlight
+﻿namespace Domain.PassengersFlight
 {
     class PassengersFlight
     {
