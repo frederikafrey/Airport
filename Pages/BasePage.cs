@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using Airport.Aids;
 using System.Linq.Expressions;
-using iRely.Common;
+using Airport.Domain.Common;
 
 namespace Airport.Pages
 {
