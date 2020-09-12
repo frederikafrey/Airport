@@ -1,4 +1,4 @@
-﻿namespace Infra.Luggage
+﻿namespace Airport.Infra.Luggage
 {
     public class LuggagesRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace Infra.Passenger
+﻿namespace Airport.Infra.Passenger
 {
     public class PassengersRepository
     {

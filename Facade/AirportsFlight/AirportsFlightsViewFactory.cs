@@ -1,4 +1,4 @@
-﻿namespace Facade.AirportsFlight
+﻿namespace Airport.Facade.AirportsFlight
 {
     public class AirportsFlightsViewFactory
     {
