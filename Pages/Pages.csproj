@@ -1,13 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aids\Aids.csproj" />
-    <ProjectReference Include="..\Facade\Facade.csproj" />
-    <ProjectReference Include="..\Infra\Infra.csproj" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>
