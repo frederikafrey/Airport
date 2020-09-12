@@ -4,8 +4,8 @@ namespace Data.Flight
 {
     public abstract class FlightData:UniqueEntityData
     {
-        public string StartingPoint { get; set; }
-        public string FinalPoint { get; set; }
+        public string StartingPointId { get; set; }
+        public string FinalPointId { get; set; }
         public int StartTime { get; set; }
         public int ArrivingTime { get; set; }
         public int Occupancy { get; set; }

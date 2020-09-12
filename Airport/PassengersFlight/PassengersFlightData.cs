@@ -6,7 +6,7 @@ namespace Data.PassengersFlight
     {
         public string PassengerId { get; set; }
         public string FlightsPassengerId { get; set; }
-        public string StartDestination { get; set; }
-        public string FinalDestination { get; set; }
+        public string StartDestinationId { get; set; }
+        public string FinalDestinationId { get; set; }
     }
 }
