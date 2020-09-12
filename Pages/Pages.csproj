@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Pages</RootNamespace>
+    <RootNamespace>Airport.Pages</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
