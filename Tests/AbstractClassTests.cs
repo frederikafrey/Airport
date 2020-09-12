@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace Airport.Tests
 {
     public abstract class AbstractClassTests<TClass, TBaseClass>: BaseClassTests<TClass,TBaseClass>
     {

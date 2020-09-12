@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tests.Facade.Common
+﻿namespace Airport.Tests.Facade.Common
 {
     class UniqueEntityViewTests
     {

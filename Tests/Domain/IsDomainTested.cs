@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tests.Domain
+﻿namespace Airport.Tests.Domain
 {
     class IsDomainTested
     {

@@ -1,7 +1,8 @@
-﻿//using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿//using Airport.Infra;
+//using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 //using Microsoft.EntityFrameworkCore;
 
-//namespace Soft.Data
+//namespace Airport.Soft.Data
 //{
 //    public class ApplicationDbContext : IdentityDbContext
 //    {

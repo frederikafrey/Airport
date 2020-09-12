@@ -6,7 +6,7 @@ using Airport.Data.Common;
 using Airport.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra
+namespace Airport.Infra
 {
     public abstract class SortedRepository<TDomain, TData> : BaseRepository<TDomain, TData>, ISorting
         where TData : UniqueEntityData, new()

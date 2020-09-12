@@ -2,10 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Airport.Data.Common;
-using Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra
+namespace Airport.Infra
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>
         where TData : UniqueEntityData, new()

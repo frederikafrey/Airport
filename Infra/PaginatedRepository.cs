@@ -4,7 +4,7 @@ using Airport.Data.Common;
 using Airport.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra
+namespace Airport.Infra
 {
     public abstract class PaginatedRepository<TDomain, TData> : FilteredRepository<TDomain, TData>, IPaging
         where TData : UniqueEntityData, new()

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tests.Infra
+﻿namespace Airport.Tests.Infra
 {
     class SortedRepositoryTests
     {
