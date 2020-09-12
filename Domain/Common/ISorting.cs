@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Common
+﻿namespace Domain.Common
 {
-    class ISorting
+    public interface ISorting
     {
+        string SortOrder { get; set; }
     }
 }

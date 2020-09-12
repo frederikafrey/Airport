@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pages.Flight
 {
-    class FlightsPage
+    public abstract class FlightsPage
     {
     }
 }

@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Domain.Flight
-{
-    class IFlightsRepository
-    {
-    }
+{   
+    public interface IFlightsRepository : IRepository<Flight> { }
 }

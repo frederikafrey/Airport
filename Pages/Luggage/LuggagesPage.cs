@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pages.Luggage
 {
-    class LuggagesPage
+    public abstract class LuggagesPage
     {
     }
 }
