@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj" />
+    <ProjectReference Include="..\Airport\Data.csproj" />
+  </ItemGroup>
+
 </Project>
