@@ -5,5 +5,5 @@ using System.Text;
 
 namespace Domain.Flight
 {   
-    //public interface IFlightsRepository : IRepository<Flight> { }
+    public interface IFlightsRepository : IRepository<Flight> { }
 }

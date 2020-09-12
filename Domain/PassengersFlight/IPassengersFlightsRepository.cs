@@ -5,5 +5,5 @@ using System.Text;
 
 namespace Domain.PassengersFlight
 {    
-    //public interface IPassengersFlightsRepository : IRepository<PassengersFlight> { }
+    public interface IPassengersFlightsRepository : IRepository<PassengersFlight> { }
 }
