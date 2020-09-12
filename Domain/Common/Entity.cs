@@ -1,9 +1,6 @@
-﻿using Data.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Data.Common;
 
-namespace Domain.Common
+namespace Airport.Domain.Common
 {
     public abstract class Entity<TData> where TData : UniqueEntityData, new()
     {

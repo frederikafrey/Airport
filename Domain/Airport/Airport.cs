@@ -1,7 +1,7 @@
 ﻿using Data.Airport;
-using Domain.Common;
+using Airport.Domain.Common;
 
-namespace Domain.Airport
+namespace Airport.Domain.Airport
 {
     public sealed class Airport : Entity<AirportData>
     {

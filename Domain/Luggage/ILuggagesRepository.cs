@@ -1,9 +1,6 @@
-﻿using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Domain.Common;
 
-namespace Domain.Luggage
-{   
-   public interface ILuggagesRepository : IRepository<Luggage> { }
+namespace Airport.Domain.Luggage
+{
+    public interface ILuggagesRepository : IRepository<Luggage> { }
 }
