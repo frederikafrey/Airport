@@ -1,6 +1,6 @@
 ﻿namespace Infra
 {
-    class AirportDbContext
+    public class AirportDbContext
     {
     }
 }

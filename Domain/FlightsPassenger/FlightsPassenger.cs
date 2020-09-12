@@ -1,8 +1,9 @@
-﻿using Data.FlightPassenger;
+﻿using Data.FlightsPassenger;
 using Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Data.FlightsPassenger;
 
 namespace Domain.FlightsPassanger
 {
