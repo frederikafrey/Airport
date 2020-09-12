@@ -1,6 +1,6 @@
 ﻿namespace Infra
 {
-    class PaginatedRepository
+    public class PaginatedRepository
     {
     }
 }
