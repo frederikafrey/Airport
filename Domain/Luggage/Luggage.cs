@@ -1,7 +1,7 @@
-﻿using Data.Luggage;
-using Domain.Common;
+﻿using Airport.Data.Luggage;
+using Airport.Domain.Common;
 
-namespace Domain.Luggage
+namespace Airport.Domain.Luggage
 {
     public sealed class Luggage : Entity<LuggageData>
     {

@@ -1,6 +1,6 @@
-﻿using Domain.Common;
+﻿using Airport.Domain.Common;
 
-namespace Domain.PassengersFlight
+namespace Airport.Domain.PassengersFlight
 {
     public interface IPassengersFlightsRepository : IRepository<PassengersFlight> { }
 }

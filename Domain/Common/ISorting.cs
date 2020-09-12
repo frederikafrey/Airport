@@ -1,4 +1,4 @@
-﻿namespace Domain.Common
+﻿namespace Airport.Domain.Common
 {
     public interface ISorting
     {

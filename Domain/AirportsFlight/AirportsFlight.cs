@@ -1,10 +1,7 @@
-﻿using Data.AirportFlight;
-using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Data.AirportsFlight;
+using Airport.Domain.Common;
 
-namespace Domain.AirportsFlight
+namespace Airport.Domain.AirportsFlight
 {
     public sealed class AirportsFlight : Entity<AirportsFlightData>
     {

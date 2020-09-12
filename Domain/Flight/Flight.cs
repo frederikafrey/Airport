@@ -1,7 +1,7 @@
-﻿using Data.Flight;
-using Domain.Common;
+﻿using Airport.Data.Flight;
+using Airport.Domain.Common;
 
-namespace Domain.Flight
+namespace Airport.Domain.Flight
 {
     public sealed class Flight : Entity<FlightData>
     {
