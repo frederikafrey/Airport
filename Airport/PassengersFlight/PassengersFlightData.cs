@@ -2,7 +2,7 @@
 
 namespace Airport.Data.PassengersFlight
 {
-    public class PassengersFlightData : UniqueEntityData
+    public sealed class PassengersFlightData : UniqueEntityData
     {
         public string PassengerId { get; set; }
         public string FlightsPassengerId { get; set; }

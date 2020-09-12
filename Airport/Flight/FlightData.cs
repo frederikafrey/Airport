@@ -2,7 +2,7 @@
 
 namespace Airport.Data.Flight
 {
-    public abstract class FlightData : UniqueEntityData
+    public sealed class FlightData : UniqueEntityData
     {
         public string StartingPointId { get; set; }
         public string FinalPointId { get; set; }
