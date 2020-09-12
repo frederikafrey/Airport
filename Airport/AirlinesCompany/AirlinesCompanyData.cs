@@ -1,11 +1,10 @@
 ﻿using Data.Common;
 
-namespace Data.Passenger
+namespace Data.AirlinesCompany
 {
-    public sealed class PassengerData: UniqueEntityData
+    public abstract class AirlinesCompanyData:UniqueEntityData
     {
         public string Name { get; set; }
-        public int Age { get; set; }
         public string Address { get; set; }
     }
 }

@@ -1,0 +1,6 @@
+﻿namespace Infra
+{
+    class FilteredRepository
+    {
+    }
+}

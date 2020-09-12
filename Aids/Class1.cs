@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Infra
+﻿namespace Aids
 {
     public class Class1
     {
