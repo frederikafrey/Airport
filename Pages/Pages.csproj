@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>Airport.Pages</RootNamespace>
+    <AssemblyName>Airport.Pages</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
