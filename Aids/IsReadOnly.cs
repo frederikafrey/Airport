@@ -1,4 +1,4 @@
-﻿namespace SportClub.Aids {
+﻿namespace Airport.Aids {
     public static class IsReadOnly {
         public static bool Field<T>(string name) 
             => typeof(T).GetField(name)?.IsInitOnly ?? false;

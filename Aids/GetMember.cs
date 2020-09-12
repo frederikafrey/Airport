@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
     public class GetMember {
         public static string Name<T>(Expression<Func<T, object>> ex) 
             => Safe.Run(()=>Name(ex.Body), string.Empty);

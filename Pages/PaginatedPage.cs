@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pages
+namespace Airport.Pages
 {
     //public abstract class PaginatedPage<TRepository, TDomain, TView, TData> :
     //    CrudPage<TRepository, TDomain, TView, TData>

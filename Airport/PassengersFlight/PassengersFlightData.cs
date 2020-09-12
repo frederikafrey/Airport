@@ -1,8 +1,8 @@
-﻿using Data.Common;
+﻿using Airport.Data.Common;
 
-namespace Data.PassengersFlight
+namespace Airport.Data.PassengersFlight
 {
-    public class PassengersFlightData:UniqueEntityData
+    public class PassengersFlightData : UniqueEntityData
     {
         public string PassengerId { get; set; }
         public string FlightsPassengerId { get; set; }

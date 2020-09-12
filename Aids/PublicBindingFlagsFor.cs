@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
     public static class PublicBindingFlagsFor {
         private const BindingFlags p = BindingFlags.Public;
         private const BindingFlags i = BindingFlags.Instance;

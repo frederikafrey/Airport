@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SportClub.Pages.Extensions
+namespace Airport.Pages.Extensions
 {
     public static class DisplayControlsForHtmlExtension
     {

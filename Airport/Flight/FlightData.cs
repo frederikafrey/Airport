@@ -1,8 +1,8 @@
-﻿using Data.Common;
+﻿using Airport.Data.Common;
 
-namespace Data.Flight
+namespace Airport.Data.Flight
 {
-    public abstract class FlightData:UniqueEntityData
+    public abstract class FlightData : UniqueEntityData
     {
         public string StartingPointId { get; set; }
         public string FinalPointId { get; set; }
