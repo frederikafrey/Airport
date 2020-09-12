@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Data.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Data.FlightPassenger
 {
-    class FlightsPassengerData
+    public abstract class FlightsPassengerData: UniqueEntityData
     {
+        public string FlightId { get; set; }
+        public string PassengersFlightId { get; set; }
     }
 }

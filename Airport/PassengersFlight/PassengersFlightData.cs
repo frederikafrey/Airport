@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Data.Common;
+using System;
 
 namespace Airport
 {
-    public class PassengersFlightData
+    public class PassengersFlightData:UniqueEntityData
     {
-        private int x = 5;
-        // testing testing 123
-        private int y = 3;
-        //testM
+        public string PassengerId { get; set; }
+        public string FlightsPassengerId { get; set; }
+        public string StartDestination { get; set; }
+        public string FinalDestination { get; set; }
     }
-    //comment
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data.Common
 {
-    public abstract class UniqueEntity
+    public abstract class UniqueEntityData
     {
         public string Id { get; set; }
     }
