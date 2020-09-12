@@ -1,6 +1,16 @@
-﻿namespace Domain.Common
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.Common
 {
-    class ICrudMethods
+    public interface ICrudMethods<T>
     {
+        Task<List<T>> Get();
+        Task<T> Get(string id);
+        Task Delete(string id);
+        Task Add(T obj);
+        Task Update(T obj);
     }
 }

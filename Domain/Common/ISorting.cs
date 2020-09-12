@@ -1,6 +1,7 @@
 ﻿namespace Domain.Common
 {
-    class ISorting
+    public interface ISorting
     {
+        string SortOrder { get; set; }
     }
 }

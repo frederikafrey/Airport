@@ -1,6 +1,4 @@
 ﻿namespace Domain.Common
 {
-    class IRepository
-    {
-    }
+    public interface IRepository<T> : ICrudMethods<T>, ISorting, IFiltering, IPaging { }
 }
