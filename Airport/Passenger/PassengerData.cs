@@ -1,8 +1,8 @@
-﻿using Data.Common;
+﻿using Airport.Data.Common;
 
-namespace Data.Passenger
+namespace Airport.Data.Passenger
 {
-    public sealed class PassengerData: UniqueEntityData
+    public sealed class PassengerData : UniqueEntityData
     {
         public string Name { get; set; }
         public int Age { get; set; }

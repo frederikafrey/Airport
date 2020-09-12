@@ -1,8 +1,8 @@
-﻿using Data.Common;
+﻿using Airport.Data.Common;
 
-namespace Data.Luggage
+namespace Airport.Data.Luggage
 {
-    public abstract class LuggageData:UniqueEntityData
+    public sealed class LuggageData : UniqueEntityData
     {
         public string PassengerId { get; set; }
         public int Dimensions { get; set; }

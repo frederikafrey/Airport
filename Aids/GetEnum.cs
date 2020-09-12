@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
 
     public static class GetEnum {
         public static int Count<T>() => Count(typeof(T));

@@ -1,6 +1,6 @@
 ﻿namespace Facade.AirlineCompany
 {
-    public class AirlineCompanyViewFactory
+    public class AirlinesCompaniesViewFactory
     {
     }
 }

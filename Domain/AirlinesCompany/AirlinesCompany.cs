@@ -2,7 +2,7 @@
 using Domain.Common;
 
 
-namespace Domain.AirlineCompany
+namespace Domain.AirlinesCompany
 {
     public sealed class AirlinesCompany : Entity<AirlinesCompanyData>
     {

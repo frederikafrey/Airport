@@ -1,6 +1,11 @@
-﻿namespace Infra
+﻿using Data.Airport;
+using Domain.Common;
+
+namespace Infra
 {
-    class BaseRepository
-    {
-    }
+    //public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>
+    //    where TData : AirportData, new()
+    //    where TDomain : Entity<TData>, new()
+    //{
+    //}
 }

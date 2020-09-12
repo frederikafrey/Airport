@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.FlightsPassanger
+namespace Domain.FlightsPassenger
 {
     public sealed class FlightsPassenger : Entity<FlightsPassengerData>
     {

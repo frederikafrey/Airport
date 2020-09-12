@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SportClub.Pages.Extensions {
+namespace Airport.Pages.Extensions {
     public static class WebPageTitleForHtmlExtension {
 
         public static IHtmlContent WebPageTitleFor(

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pages
+namespace Airport.Pages
 {
     //public abstract class CrudPage<TRepository, TDomain, TView, TData> :
     // BasePage<TRepository, TDomain, TView, TData>

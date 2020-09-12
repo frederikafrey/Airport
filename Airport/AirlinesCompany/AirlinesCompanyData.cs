@@ -1,8 +1,8 @@
-﻿using Data.Common;
+﻿using Airport.Data.Common;
 
-namespace Data.AirlinesCompany
+namespace Airport.Data.AirlinesCompany
 {
-    public abstract class AirlinesCompanyData:UniqueEntityData
+    public sealed class AirlinesCompanyData : UniqueEntityData
     {
         public string Name { get; set; }
         public string Address { get; set; }

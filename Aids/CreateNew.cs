@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
     public static class CreateNew {
         public static T Instance<T>() {
             T function() {

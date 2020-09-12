@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SportClub.Aids {
+namespace Airport.Aids {
 
     public static class Log {
         internal static ILogBook logBook;

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SportClub.Pages.Extensions {
+namespace Airport.Pages.Extensions {
     public static class SearchControlsForHtmlExtension {
         internal const string backToFullList = "Back to full list";
 

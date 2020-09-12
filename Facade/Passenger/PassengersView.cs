@@ -1,6 +1,6 @@
 ﻿namespace Facade.Passenger
 {
-    public class PassengerViewFactory
+    public class PassengersView
     {
     }
 }

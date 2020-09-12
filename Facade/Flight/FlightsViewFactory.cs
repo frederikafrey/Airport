@@ -1,6 +1,6 @@
 ﻿namespace Facade.Flight
 {
-    public class FlightViewFactory
+    public class FlightsViewFactory
     {
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Facade.Airport
 {
-    public class AirportView
+    public class AirportsViewFactory
     {
     }
 }

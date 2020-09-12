@@ -1,6 +1,6 @@
 ﻿namespace Facade.Luggage
 {
-    public class LuggageView
+    public class LuggagesView
     {
     }
 }
