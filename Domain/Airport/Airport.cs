@@ -1,5 +1,5 @@
-﻿using Data.Airport;
-using Airport.Domain.Common;
+﻿using Airport.Domain.Common;
+using Airport.Data.Airport;
 
 namespace Airport.Domain.Airport
 {

@@ -1,4 +1,4 @@
-﻿using Data.Luggage;
+﻿using Airport.Data.Luggage;
 using Airport.Domain.Common;
 
 namespace Airport.Domain.Luggage
