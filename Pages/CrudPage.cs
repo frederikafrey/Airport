@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Domain.Common;
 using Airport.Domain.Common;
 
 namespace Airport.Pages

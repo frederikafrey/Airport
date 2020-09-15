@@ -1,5 +1,4 @@
-﻿using Domain.Common;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using Airport.Aids;
 using System.Linq.Expressions;
