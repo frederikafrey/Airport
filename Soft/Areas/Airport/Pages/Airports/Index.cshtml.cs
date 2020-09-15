@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.Airport;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.Airport.Pages.Airports
 {
     public class IndexModel : PageModel
     {
@@ -19,11 +19,11 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             _context = context;
         }
 
-        public IList<AirlinesCompanyData> AirlinesCompanyData { get;set; }
+        public IList<AirportData> AirportData { get;set; }
 
         public async Task OnGetAsync()
         {
-            AirlinesCompanyData = await _context.AirlinesCompanies.ToListAsync();
+            AirportData = await _context.Airports.ToListAsync();
         }
     }
 }

@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.FlightsPassenger;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
         }
 
         [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
+        public FlightsPassengerData FlightsPassengerData { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -30,9 +30,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return NotFound();
             }
 
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
+            FlightsPassengerData = await _context.FlightsPassengers.FirstOrDefaultAsync(m => m.PassengersFlightId == id);
 
-            if (AirlinesCompanyData == null)
+            if (FlightsPassengerData == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return Page();
             }
 
-            _context.Attach(AirlinesCompanyData).State = EntityState.Modified;
+            _context.Attach(FlightsPassengerData).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AirlinesCompanyDataExists(AirlinesCompanyData.Id))
+                if (!FlightsPassengerDataExists(FlightsPassengerData.PassengersFlightId))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             return RedirectToPage("./Index");
         }
 
-        private bool AirlinesCompanyDataExists(string id)
+        private bool FlightsPassengerDataExists(string id)
         {
-            return _context.AirlinesCompanies.Any(e => e.Id == id);
+            return _context.FlightsPassengers.Any(e => e.PassengersFlightId == id);
         }
     }
 }

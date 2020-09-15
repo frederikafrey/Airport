@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.AirportsFlight;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.AirportsFlight.Pages.AirportsFlights
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             _context = context;
         }
 
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
+        public AirportsFlightData AirportsFlightData { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -28,9 +28,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return NotFound();
             }
 
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
+            AirportsFlightData = await _context.AirportsFlights.FirstOrDefaultAsync(m => m.FlightId == id);
 
-            if (AirlinesCompanyData == null)
+            if (AirportsFlightData == null)
             {
                 return NotFound();
             }

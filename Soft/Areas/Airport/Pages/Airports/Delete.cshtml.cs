@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.Airport;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.Airport.Pages.Airports
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
         }
 
         [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
+        public AirportData AirportData { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -29,9 +29,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return NotFound();
             }
 
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
+            AirportData = await _context.Airports.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (AirlinesCompanyData == null)
+            if (AirportData == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return NotFound();
             }
 
-            AirlinesCompanyData = await _context.AirlinesCompanies.FindAsync(id);
+            AirportData = await _context.Airports.FindAsync(id);
 
-            if (AirlinesCompanyData != null)
+            if (AirportData != null)
             {
-                _context.AirlinesCompanies.Remove(AirlinesCompanyData);
+                _context.Airports.Remove(AirportData);
                 await _context.SaveChangesAsync();
             }
 

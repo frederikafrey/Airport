@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.Flight;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
         }
 
         [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
+        public FlightData FlightData { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -30,9 +30,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return NotFound();
             }
 
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
+            FlightData = await _context.Flights.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (AirlinesCompanyData == null)
+            if (FlightData == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return Page();
             }
 
-            _context.Attach(AirlinesCompanyData).State = EntityState.Modified;
+            _context.Attach(FlightData).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AirlinesCompanyDataExists(AirlinesCompanyData.Id))
+                if (!FlightDataExists(FlightData.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
             return RedirectToPage("./Index");
         }
 
-        private bool AirlinesCompanyDataExists(string id)
+        private bool FlightDataExists(string id)
         {
-            return _context.AirlinesCompanies.Any(e => e.Id == id);
+            return _context.Flights.Any(e => e.Id == id);
         }
     }
 }

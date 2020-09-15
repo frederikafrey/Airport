@@ -1,0 +1,49 @@
+﻿@page
+@model Airport.Soft.Areas.Luggage.Pages.Luggages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LuggageData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LuggageData.PassengerId" class="control-label"></label>
+                <input asp-for="LuggageData.PassengerId" class="form-control" />
+                <span asp-validation-for="LuggageData.PassengerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LuggageData.Dimensions" class="control-label"></label>
+                <input asp-for="LuggageData.Dimensions" class="form-control" />
+                <span asp-validation-for="LuggageData.Dimensions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LuggageData.Weight" class="control-label"></label>
+                <input asp-for="LuggageData.Weight" class="form-control" />
+                <span asp-validation-for="LuggageData.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LuggageData.Id" class="control-label"></label>
+                <input asp-for="LuggageData.Id" class="form-control" />
+                <span asp-validation-for="LuggageData.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

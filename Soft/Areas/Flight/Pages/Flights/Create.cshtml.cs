@@ -5,15 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.Flight;
 using Airport.Infra;
 
-namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
+namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class CreateModel : PageModel
     {
         private readonly AirportDbContext _context;
-
 
         public CreateModel(AirportDbContext context)
         {
@@ -26,7 +25,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
         }
 
         [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
+        public FlightData FlightData { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -37,7 +36,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
                 return Page();
             }
 
-            _context.AirlinesCompanies.Add(AirlinesCompanyData);
+            _context.Flights.Add(FlightData);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
