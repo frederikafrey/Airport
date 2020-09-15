@@ -14,6 +14,7 @@ namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
     {
         private readonly Airport.Infra.AirportDbContext _context;
 
+
         public CreateModel(Airport.Infra.AirportDbContext context)
         {
             _context = context;
