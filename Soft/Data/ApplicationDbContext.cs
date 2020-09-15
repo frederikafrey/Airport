@@ -1,5 +1,6 @@
 ﻿using Airport.Infra;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+//using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Airport.Soft.Data
@@ -11,8 +12,8 @@ namespace Airport.Soft.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            InitializeTables(builder);
+            //InitializeTables(builder);
         }
-        internal void InitializeTables(ModelBuilder builder) => AirportDbContext.InitializeTables(builder);
+        //internal void InitializeTables(ModelBuilder builder) => AirportDbContext.InitializeTables(builder);
     }
 }

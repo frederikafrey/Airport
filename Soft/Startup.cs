@@ -1,5 +1,13 @@
+using Airport.Domain.AirlinesCompany;
+using Airport.Domain.Airport;
+using Airport.Infra;
+using Airport.Infra.AirlinesCompany;
+using Airport.Infra.Airport;
+using Airport.Soft.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,6 +26,19 @@ namespace Airport.Soft
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AirportDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddScoped<IAirlinesCompaniesRepository, AirlinesCompaniesRepository>();
+            //services.AddScoped<IAirportsRepository, AirportsRepository>();
+            //services.AddScoped<IParticipantsRepository, ParticipantsRepository>();
+            //services.AddScoped<IParticipantOfTrainingsRepository, ParticipantOfTrainingsRepository>();
+            //services.AddScoped<ITrainingsRepository, TrainingsRepository>();
+            //services.AddScoped<ITrainingTypesRepository, TrainingTypesRepository>();
+
             services.AddRazorPages();
         }
 

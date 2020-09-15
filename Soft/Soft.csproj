@@ -17,7 +17,6 @@
     <Folder Include="Areas\Luggage\Pages\Luggages\" />
     <Folder Include="Areas\PassengersFlight\Pages\PassengersFlights\" />
     <Folder Include="Areas\Passenger\Pages\Passengers\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 

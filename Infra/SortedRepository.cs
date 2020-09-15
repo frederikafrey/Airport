@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Airport.Data.Common;
 using Airport.Domain.Common;
-using Infra;
+using Airport.Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace Airport.Infra
