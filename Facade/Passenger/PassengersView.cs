@@ -1,6 +1,8 @@
-﻿namespace Airport.Facade.Passenger
+﻿using Airport.Facade.Common;
+
+namespace Airport.Facade.Passenger
 {
-    public class PassengersView
+    public class PassengersView : UniqueEntityView
     {
     }
 }
