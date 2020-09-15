@@ -1,6 +1,10 @@
-﻿namespace Airport.Facade.Common
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Airport.Facade.Common
 {
-    public class UniqueEntityView
+    public abstract class UniqueEntityView
     {
+        [Required]
+        public string Id { get; set; }
     }
 }
