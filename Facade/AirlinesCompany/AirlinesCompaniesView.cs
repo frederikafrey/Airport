@@ -1,6 +1,9 @@
-﻿namespace Airport.Facade.AirlinesCompany
+﻿using Airport.Facade.Common;
+
+namespace Airport.Facade.AirlinesCompany
 {
-    public class AirlinesCompaniesView
+    public class AirlinesCompaniesView:UniqueEntityView
     {
+
     }
 }
