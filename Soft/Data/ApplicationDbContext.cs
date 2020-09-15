@@ -11,8 +11,8 @@ namespace Airport.Soft.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            InitializeTables(builder);
+            //InitializeTables(builder);
         }
-        internal void InitializeTables(ModelBuilder builder) => AirportDbContext.InitializeTables(builder);
+        //internal void InitializeTables(ModelBuilder builder) => AirportDbContext.InitializeTables(builder);
     }
 }

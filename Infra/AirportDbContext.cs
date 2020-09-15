@@ -12,6 +12,7 @@ namespace Airport.Infra
 {
     public class AirportDbContext : DbContext
     {
+        public AirportDbContext(){}
         public AirportDbContext(DbContextOptions<AirportDbContext> options) : base(options) { }
 
         public DbSet<AirlinesCompanyData> AirlinesCompanies { get; set; }
