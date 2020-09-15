@@ -1,6 +1,8 @@
-﻿namespace Airport.Facade.Luggage
+﻿using Airport.Facade.Common;
+
+namespace Airport.Facade.Luggage
 {
-    public class LuggagesView
+    public class PassengersView : UniqueEntityView
     {
     }
 }
