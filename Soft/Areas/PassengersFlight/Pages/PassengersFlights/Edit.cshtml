@@ -1,0 +1,46 @@
+﻿@page
+@model Airport.Soft.Areas.PassengersFlight.Pages.PassengersFlights.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PassengersFlightData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PassengersFlightData.PassengerId" />
+            <input type="hidden" asp-for="PassengersFlightData.FlightsPassengerId" />
+            <div class="form-group">
+                <label asp-for="PassengersFlightData.StartDestinationId" class="control-label"></label>
+                <input asp-for="PassengersFlightData.StartDestinationId" class="form-control" />
+                <span asp-validation-for="PassengersFlightData.StartDestinationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengersFlightData.FinalDestinationId" class="control-label"></label>
+                <input asp-for="PassengersFlightData.FinalDestinationId" class="form-control" />
+                <span asp-validation-for="PassengersFlightData.FinalDestinationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengersFlightData.Id" class="control-label"></label>
+                <input asp-for="PassengersFlightData.Id" class="form-control" />
+                <span asp-validation-for="PassengersFlightData.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

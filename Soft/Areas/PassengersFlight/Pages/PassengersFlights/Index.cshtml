@@ -1,0 +1,48 @@
+﻿@page
+@model Airport.Soft.Areas.PassengersFlight.Pages.PassengersFlights.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PassengersFlightData[0].StartDestinationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassengersFlightData[0].FinalDestinationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassengersFlightData[0].Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PassengersFlightData) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDestinationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalDestinationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
