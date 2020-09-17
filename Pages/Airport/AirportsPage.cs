@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Airport.Data.Airport;
-using Airport.Domain.AirlinesCompany;
+﻿using Airport.Data.Airport;
 using Airport.Domain.Airport;
-using Airport.Facade.AirlinesCompany;
 using Airport.Facade.Airport;
 
 namespace Airport.Pages.Airport

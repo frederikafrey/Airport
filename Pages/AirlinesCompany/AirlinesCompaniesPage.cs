@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Airport.Data.AirlinesCompany;
+﻿using Airport.Data.AirlinesCompany;
 using Airport.Domain.AirlinesCompany;
 using Airport.Facade.AirlinesCompany;
 

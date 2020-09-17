@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Airport.Data.Luggage;
-using Airport.Data.Passenger;
-using Airport.Domain.Luggage;
+﻿using Airport.Data.Passenger;
 using Airport.Domain.Passenger;
-using Airport.Facade.Luggage;
 using Airport.Facade.Passenger;
 
 namespace Airport.Pages.Passenger

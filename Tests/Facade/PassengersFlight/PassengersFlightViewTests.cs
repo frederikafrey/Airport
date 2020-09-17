@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Airport.Tests.Facade.PassengersFlight
+﻿namespace Airport.Tests.Facade.PassengersFlight
 {
     class PassengersFlightViewTests
     {

@@ -1,6 +1,5 @@
 ﻿using Airport.Aids;
 using Airport.Data.Luggage;
-using Airport.Domain.Luggage;
 
 namespace Airport.Facade.Luggage
 {
