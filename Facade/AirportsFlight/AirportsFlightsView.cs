@@ -1,8 +1,17 @@
 ﻿using Airport.Facade.Common;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.AirportsFlight
 {
-    public class AirportsFlightsView : UniqueEntityView
+    public sealed class AirportsFlightsView : UniqueEntityView
     {
+        [Required]
+        [DisplayName("Flight")]
+        public string FlightId { get; set; }
+        [Required]
+        [DisplayName("Airport")]
+        public string AirportId { get; set; }
+        public string GetId() => $"{FlightId}.{AirportId}";
     }
 }

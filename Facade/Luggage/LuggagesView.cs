@@ -2,7 +2,10 @@
 
 namespace Airport.Facade.Luggage
 {
-    public class PassengersView : UniqueEntityView
+    public sealed class LuggagesView : UniqueEntityView
     {
+        public string PassengerId { get; set; }
+        public int Dimensions { get; set; }
+        public int Weight { get; set; }
     }
 }

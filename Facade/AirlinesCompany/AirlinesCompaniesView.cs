@@ -2,8 +2,9 @@
 
 namespace Airport.Facade.AirlinesCompany
 {
-    public class AirlinesCompaniesView:UniqueEntityView
+    public sealed class AirlinesCompaniesView : UniqueEntityView 
     {
-
+        public string Name { get; set; }
+        public string Address { get; set; }
     }
 }
