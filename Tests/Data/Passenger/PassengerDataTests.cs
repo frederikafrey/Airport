@@ -1,6 +1,19 @@
-﻿namespace Airport.Tests.Data.Passenger
+﻿using Airport.Data.Common;
+using Airport.Data.Passenger;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Airport.Tests.Data.Passenger
 {
-    class PassengerDataTests
+    [TestClass]
+    public class PassengerDataTests : SealedClassTests<PassengerData, UniqueEntityData>
     {
+        [TestMethod]
+        public void NameTest() => IsNullableProperty(() => obj.Name, x => obj.Name = x);
+
+        [TestMethod]
+        public void AgeTest() => IsNullableProperty(() => obj.Age, x => obj.Age = x);
+
+        [TestMethod]
+        public void AddressTest() => IsNullableProperty(() => obj.Address, x => obj.Address = x);
     }
 }
