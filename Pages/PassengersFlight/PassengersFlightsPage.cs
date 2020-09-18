@@ -12,9 +12,9 @@ namespace Airport.Pages.PassengersFlight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string GetPageUrl() => "/Airport/PassengersFlight";
+        public override string GetPageUrl() => "/Airport/PassengersFlight";
 
-        protected internal override Domain.PassengersFlight.PassengersFlight ToObject(PassengersFlightView view) => PassengersFlightViewFactory.Create(view);
+        public override Domain.PassengersFlight.PassengersFlight ToObject(PassengersFlightView view) => PassengersFlightViewFactory.Create(view);
         protected internal override PassengersFlightView ToView(Domain.PassengersFlight.PassengersFlight obj) => PassengersFlightViewFactory.Create(obj);
     }
 }

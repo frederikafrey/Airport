@@ -28,7 +28,7 @@ namespace Airport.Tests.Aids
         public void MembersTest()
         {
             var x = GetRandom.Object<PassengersFlightData>();
-            var y = GetRandom.Object<PassengerFlightView>();
+            var y = GetRandom.Object<PassengersFlightView>();
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
