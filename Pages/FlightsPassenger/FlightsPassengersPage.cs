@@ -4,7 +4,7 @@ using Airport.Facade.FlightsPassenger;
 
 namespace Airport.Pages.FlightsPassenger
 {
-    public abstract class FlightsPassengerPage : CommonPage<IFlightsPassengersRepository, Domain.FlightsPassenger.FlightsPassenger, FlightPassengerView, FlightsPassengerData>
+    public abstract class FlightsPassengerPage : CommonPage<IFlightsPassengersRepository, Domain.FlightsPassenger.FlightsPassenger, FlightsPassengerView, FlightsPassengerData>
     {
         protected internal FlightsPassengerPage(IFlightsPassengersRepository r) : base(r)
         {
@@ -12,9 +12,9 @@ namespace Airport.Pages.FlightsPassenger
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/Airport/FlightsPassenger";
+        protected internal override string GetPageUrl() => "/Airport/FlightsPassenger";
 
-        public override Domain.FlightsPassenger.FlightsPassenger ToObject(FlightPassengerView view) => FlightPassengerViewFactory.Create(view);
-        protected internal override FlightPassengerView ToView(Domain.FlightsPassenger.FlightsPassenger obj) => FlightPassengerViewFactory.Create(obj);
+        protected internal override Domain.FlightsPassenger.FlightsPassenger ToObject(FlightsPassengerView view) => FlightsPassengerViewFactory.Create(view);
+        protected internal override FlightsPassengerView ToView(Domain.FlightsPassenger.FlightsPassenger obj) => FlightsPassengerViewFactory.Create(obj);
     }
 }
