@@ -12,9 +12,9 @@ namespace Airport.Pages.Luggage
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string GetPageUrl() => "/Airport/Luggage";
+        public override string GetPageUrl() => "/Airport/Luggage";
 
-        protected internal override Domain.Luggage.Luggage ToObject(LuggageView view) => LuggageViewFactory.Create(view);
+        public override Domain.Luggage.Luggage ToObject(LuggageView view) => LuggageViewFactory.Create(view);
         protected internal override LuggageView ToView(Domain.Luggage.Luggage obj) => LuggageViewFactory.Create(obj);
     }
 }

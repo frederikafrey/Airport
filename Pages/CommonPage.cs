@@ -15,7 +15,7 @@ namespace Airport.Pages
 
         public string PageUrl => GetPageUrl();
 
-        protected internal abstract string GetPageUrl();
+        public abstract string GetPageUrl();
 
         public string IndexUrl => GetIndexUrl();
 

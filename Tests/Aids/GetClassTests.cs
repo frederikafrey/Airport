@@ -4,13 +4,17 @@
 //using Airport.Aids;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//namespace Tests.Aids {
+//namespace Airport.Tests.Aids
+//{
 
-//    [TestClass] public class GetClassTests : BaseTests {
+//    [TestClass]
+//    public class GetClassTests : BaseTests
+//    {
 
 //        [TestInitialize] public void TestInitialize() => type = typeof(GetClass);
 
-//        [TestMethod] public void NamespaceTest() 
+//        [TestMethod]
+//        public void NamespaceTest()
 //        {
 //            var t = typeof(object);
 //            Assert.AreEqual(t.Namespace, GetClass.Namespace(t));
@@ -34,7 +38,8 @@
 //            Assert.AreEqual(0, a.Count);
 //        }
 
-//        [TestMethod] public void PropertiesTest() 
+//        [TestMethod]
+//        public void PropertiesTest()
 //        {
 //            var a = GetClass.Properties(typeof(TestClass));
 //            Assert.IsNotNull(a);
@@ -43,7 +48,8 @@
 //            Assert.AreEqual("F", a[0].Name);
 //        }
 
-//        [TestMethod] public void ReadWritePropertyValuesTest() 
+//        [TestMethod]
+//        public void ReadWritePropertyValuesTest()
 //        {
 //            var o = GetRandom.Object<TestClass>();
 //            var l = GetClass.ReadWritePropertyValues(o);
@@ -51,18 +57,19 @@
 //            Assert.AreEqual(l[0], o.F);
 //        }
 
-//        [TestMethod] public void PropertyTest() 
+//        [TestMethod]
+//        public void PropertyTest()
 //        {
-//            static void Test(string name) 
-//                =>Assert.AreEqual(name, GetClass.Property<CoachView>(name).Name);
+//            static void Test(string name)
+//                => Assert.AreEqual(name, GetClass.Property<CoachView>(name).Name);
 
-//            Assert.IsNull(GetClass.Property<CoachView>((string) null));
+//            Assert.IsNull(GetClass.Property<CoachView>((string)null));
 //            Assert.IsNull(GetClass.Property<CoachView>(string.Empty));
 //            Assert.IsNull(GetClass.Property<CoachView>("bla bla"));
 //            Test(GetMember.Name<CoachView>(m => m.Name));
 //        }
 
-//        internal class TestBaseClass 
+//        internal class TestBaseClass
 //        {
 //            public void Aaa() => bbb();
 //            private void bbb() { }
@@ -70,7 +77,7 @@
 //            private static void ddd() { }
 //        }
 
-//        internal class TestClass : TestBaseClass 
+//        internal class TestClass : TestBaseClass
 //        {
 //            public int E = 0;
 //            public string F { get; set; }

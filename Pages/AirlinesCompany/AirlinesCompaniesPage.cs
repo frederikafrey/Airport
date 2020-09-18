@@ -12,9 +12,9 @@ namespace Airport.Pages.AirlinesCompany
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        protected internal override string GetPageUrl() => "/Airport/AirlinesCompany";
+        public override string GetPageUrl() => "/Airport/AirlinesCompany";
 
-        protected internal override Domain.AirlinesCompany.AirlinesCompany ToObject(AirlineCompanyView view) => AirlineCompanyViewFactory.Create(view);
+        public override Domain.AirlinesCompany.AirlinesCompany ToObject(AirlineCompanyView view) => AirlineCompanyViewFactory.Create(view);
         protected internal override AirlineCompanyView ToView(Domain.AirlinesCompany.AirlinesCompany obj) => AirlineCompanyViewFactory.Create(obj);
     }
 }

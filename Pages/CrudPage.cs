@@ -78,7 +78,7 @@ namespace Airport.Pages
             await db.Delete(id);
         }
 
-        protected internal abstract TDomain ToObject(TView view);
+        public abstract TDomain ToObject(TView view);
         protected internal abstract TView ToView(TDomain obj);
     }
 }
