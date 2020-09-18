@@ -1,20 +1,23 @@
-﻿//using System;
-//using Airport.Aids;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Airport.Aids;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//namespace Tests.Aids {
+namespace Airport.Tests.Aids
+{
 
-//    [TestClass] public class SortTests : BaseTests {
+    [TestClass]
+    public class SortTests : BaseTests
+    {
 
-//        [TestInitialize] public void TestInitialize() => type = typeof(Sort);
+        [TestInitialize] public void TestInitialize() => type = typeof(Sort);
 
-//        [TestMethod]
-//        public void UpwardsTest()
-//        {
-//            var random = new Random();
-//            int min = random.Next(); 
-//            int max = random.Next();
-//            TestArePropertyValuesEqual(min, max);
-//        }
-//    }
-//}
+        [TestMethod]
+        public void UpwardsTest()
+        {
+            var random = new Random();
+            int min = random.Next();
+            int max = random.Next();
+            TestArePropertyValuesEqual(min, max);
+        }
+    }
+}
