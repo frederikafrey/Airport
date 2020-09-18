@@ -1,6 +1,9 @@
-﻿namespace Airport.Tests.Domain.Passenger
+﻿using Airport.Data.Passenger;
+using Airport.Domain.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Airport.Tests.Domain.Passenger
 {
-    class PassengerTests
-    {
-    }
+    [TestClass]
+    public class PassengerTests : SealedClassTests<global::Airport.Domain.Passenger.Passenger, Entity<PassengerData>> { }
 }
