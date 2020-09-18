@@ -4,7 +4,7 @@ using Airport.Facade.Airport;
 
 namespace Airport.Pages.Airport
 {
-    public abstract class AirportsPage : CommonPage<IAirportsRepository, Domain.Airport.Airport, AirportsView, AirportData>
+    public abstract class AirportsPage : CommonPage<IAirportsRepository, Domain.Airport.Airport, AirportView, AirportData>
     {
         protected internal AirportsPage(IAirportsRepository r) : base(r)
         {
@@ -14,7 +14,7 @@ namespace Airport.Pages.Airport
         public override string ItemId => Item?.Id ?? string.Empty;
         protected internal override string GetPageUrl() => "/Airport/Airport";
 
-        protected internal override Domain.Airport.Airport ToObject(AirportsView view) => AirportsViewFactory.Create(view);
-        protected internal override AirportsView ToView(Domain.Airport.Airport obj) => AirportsViewFactory.Create(obj);
+        protected internal override Domain.Airport.Airport ToObject(AirportView view) => AirportViewFactory.Create(view);
+        protected internal override AirportView ToView(Domain.Airport.Airport obj) => AirportViewFactory.Create(obj);
     }
 }

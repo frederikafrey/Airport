@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.Passenger
 {
-    public sealed class PassengersView : UniqueEntityView
+    public sealed class PassengerView : UniqueEntityView
     {
         public string Name { get; set; }
         

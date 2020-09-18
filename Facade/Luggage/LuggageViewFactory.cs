@@ -3,9 +3,9 @@ using Airport.Data.Luggage;
 
 namespace Airport.Facade.Luggage
 {
-    public static class LuggagesViewFactory
+    public static class LuggageViewFactory
     {
-        public static Domain.Luggage.Luggage Create(LuggagesView view)
+        public static Domain.Luggage.Luggage Create(LuggageView view)
         {
             var d = new LuggageData();
             Copy.Members(view, d);
@@ -13,9 +13,9 @@ namespace Airport.Facade.Luggage
             return new Domain.Luggage.Luggage(d);
         }
 
-        public static LuggagesView Create(Domain.Luggage.Luggage o)
+        public static LuggageView Create(Domain.Luggage.Luggage o)
         {
-            var v = new LuggagesView();
+            var v = new LuggageView();
             if (!(o?.Data is null))
                 Copy.Members(o.Data, v);
 

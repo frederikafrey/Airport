@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.Airport
 {
-    public sealed class AirportsView : UniqueEntityView 
+    public sealed class AirportView : UniqueEntityView 
     {
         [Required]
         [DisplayName("Webpage")]

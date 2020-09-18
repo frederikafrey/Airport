@@ -3,9 +3,9 @@ using Airport.Data.Airport;
 
 namespace Airport.Facade.Airport
 {
-    public static class AirportsViewFactory
+    public static class AirportViewFactory
     {
-        public static Domain.Airport.Airport Create(AirportsView view)
+        public static Domain.Airport.Airport Create(AirportView view)
         {
             var d = new AirportData();
             Copy.Members(view, d);
@@ -13,9 +13,9 @@ namespace Airport.Facade.Airport
             return new Domain.Airport.Airport(d);
         }
 
-        public static AirportsView Create(Domain.Airport.Airport o)
+        public static AirportView Create(Domain.Airport.Airport o)
         {
-            var v = new AirportsView();
+            var v = new AirportView();
             if (!(o?.Data is null))
                 Copy.Members(o.Data, v);
 

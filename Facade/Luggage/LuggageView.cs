@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.Luggage
 {
-    public sealed class LuggagesView : UniqueEntityView
+    public sealed class LuggageView : UniqueEntityView
     {
         [Required]
         [DisplayName("Owner")]

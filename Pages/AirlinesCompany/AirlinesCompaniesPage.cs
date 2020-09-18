@@ -4,7 +4,7 @@ using Airport.Facade.AirlinesCompany;
 
 namespace Airport.Pages.AirlinesCompany
 {
-    public abstract class AirlinesCompaniesPage:CommonPage<IAirlinesCompaniesRepository, Domain.AirlinesCompany.AirlinesCompany, AirlinesCompaniesView, AirlinesCompanyData>
+    public abstract class AirlinesCompaniesPage:CommonPage<IAirlinesCompaniesRepository, Domain.AirlinesCompany.AirlinesCompany, AirlineCompanyView, AirlinesCompanyData>
     {
         protected internal AirlinesCompaniesPage(IAirlinesCompaniesRepository r) : base(r)
         {
@@ -14,7 +14,7 @@ namespace Airport.Pages.AirlinesCompany
         public override string ItemId => Item?.Id ?? string.Empty;
         protected internal override string GetPageUrl() => "/Airport/AirlinesCompany";
 
-        protected internal override Domain.AirlinesCompany.AirlinesCompany ToObject(AirlinesCompaniesView view) => AirlinesCompaniesViewFactory.Create(view);
-        protected internal override AirlinesCompaniesView ToView(Domain.AirlinesCompany.AirlinesCompany obj) => AirlinesCompaniesViewFactory.Create(obj);
+        protected internal override Domain.AirlinesCompany.AirlinesCompany ToObject(AirlineCompanyView view) => AirlineCompanyViewFactory.Create(view);
+        protected internal override AirlineCompanyView ToView(Domain.AirlinesCompany.AirlinesCompany obj) => AirlineCompanyViewFactory.Create(obj);
     }
 }

@@ -3,9 +3,9 @@ using Airport.Data.Flight;
 
 namespace Airport.Facade.Flight
 {
-    public static class FlightsViewFactory
+    public static class FlightViewFactory
     {
-        public static Domain.Flight.Flight Create(FlightsView view)
+        public static Domain.Flight.Flight Create(FlightView view)
         {
             var d = new FlightData();
             Copy.Members(view, d);
@@ -13,9 +13,9 @@ namespace Airport.Facade.Flight
             return new Domain.Flight.Flight(d);
         }
 
-        public static FlightsView Create(Domain.Flight.Flight o)
+        public static FlightView Create(Domain.Flight.Flight o)
         {
-            var v = new FlightsView();
+            var v = new FlightView();
             if (!(o?.Data is null))
                 Copy.Members(o.Data, v);
 
