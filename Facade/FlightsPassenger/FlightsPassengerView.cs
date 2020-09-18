@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.FlightsPassenger
 {
-    public sealed class FlightPassengerView : UniqueEntityView
+    public sealed class FlightsPassengerView : UniqueEntityView
     {
         [Required]
         [DisplayName("Flight")]

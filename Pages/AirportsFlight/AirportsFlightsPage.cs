@@ -4,7 +4,7 @@ using Airport.Facade.AirportsFlight;
 
 namespace Airport.Pages.AirportsFlight
 {
-    public abstract class AirportsFlightPage : CommonPage<IAirportsFlightsRepository, Domain.AirportsFlight.AirportsFlight, AirportFlightView, AirportsFlightData>
+    public abstract class AirportsFlightPage : CommonPage<IAirportsFlightsRepository, Domain.AirportsFlight.AirportsFlight, AirportsFlightView, AirportsFlightData>
     {
         protected internal AirportsFlightPage(IAirportsFlightsRepository r) : base(r)
         {
@@ -12,9 +12,9 @@ namespace Airport.Pages.AirportsFlight
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/Airport/AirportsFlight";
+        protected internal override string GetPageUrl() => "/Airport/AirportsFlight";
 
-        public override Domain.AirportsFlight.AirportsFlight ToObject(AirportFlightView view) => AirportFlightViewFactory.Create(view);
-        protected internal override AirportFlightView ToView(Domain.AirportsFlight.AirportsFlight obj) => AirportFlightViewFactory.Create(obj);
+        protected internal override Domain.AirportsFlight.AirportsFlight ToObject(AirportsFlightView view) => AirportsFlightViewFactory.Create(view);
+        protected internal override AirportsFlightView ToView(Domain.AirportsFlight.AirportsFlight obj) => AirportsFlightViewFactory.Create(obj);
     }
 }

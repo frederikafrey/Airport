@@ -3,9 +3,9 @@ using Airport.Data.AirlinesCompany;
 
 namespace Airport.Facade.AirlinesCompany
 {
-    public static class AirlineCompanyViewFactory
+    public static class AirlinesCompanyViewFactory
     {
-        public static Domain.AirlinesCompany.AirlinesCompany Create(AirlineCompanyView view)
+        public static Domain.AirlinesCompany.AirlinesCompany Create(AirlinesCompanyView view)
         {
             var d = new AirlinesCompanyData();
             Copy.Members(view, d);
@@ -13,9 +13,9 @@ namespace Airport.Facade.AirlinesCompany
             return new Domain.AirlinesCompany.AirlinesCompany(d);
         }
 
-        public static AirlineCompanyView Create(Domain.AirlinesCompany.AirlinesCompany o)
+        public static AirlinesCompanyView Create(Domain.AirlinesCompany.AirlinesCompany o)
         {
-            var v = new AirlineCompanyView();
+            var v = new AirlinesCompanyView();
             if (!(o?.Data is null))
                 Copy.Members(o.Data, v);
 
