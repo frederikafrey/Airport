@@ -15,6 +15,6 @@ namespace Airport.Pages.Passenger
         public override string GetPageUrl() => "/Airport/Passenger";
 
         public override Domain.Passenger.Passenger ToObject(PassengerView view) => PassengerViewFactory.Create(view);
-        protected internal override PassengerView ToView(Domain.Passenger.Passenger obj) => PassengerViewFactory.Create(obj);
+        public override PassengerView ToView(Domain.Passenger.Passenger obj) => PassengerViewFactory.Create(obj);
     }
 }

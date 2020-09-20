@@ -19,7 +19,7 @@ namespace Airport.Pages
 
         public string IndexUrl => GetIndexUrl();
 
-        protected internal string GetIndexUrl() => $"{PageUrl}/Index?fixedFilter={FixedFilter}&fixedValue={FixedValue}";
+        public string GetIndexUrl() => $"{PageUrl}/Index?fixedFilter={FixedFilter}&fixedValue={FixedValue}";
         
         public string PageSubTitle => GetPageSubTitle();
 

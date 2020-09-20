@@ -79,7 +79,7 @@ namespace Airport.Pages
         }
 
         public abstract TDomain ToObject(TView view);
-        protected internal abstract TView ToView(TDomain obj);
+        public abstract TView ToView(TDomain obj);
     }
 }
 
