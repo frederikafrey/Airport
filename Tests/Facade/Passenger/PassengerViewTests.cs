@@ -1,6 +1,9 @@
-﻿namespace Airport.Tests.Facade.Passenger
+﻿using Airport.Facade.Common;
+using Airport.Facade.Passenger;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Airport.Tests.Facade.Passenger
 {
-    class PassengerViewTests
-    {
-    }
+    [TestClass]
+    public class PassengerViewTests : SealedClassTests<PassengerView, UniqueEntityView> { }
 }

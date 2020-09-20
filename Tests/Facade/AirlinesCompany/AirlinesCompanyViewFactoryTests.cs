@@ -26,7 +26,7 @@ namespace Airport.Tests.Facade.AirlinesCompany
         public void CreateViewTest()
         {
             var data = GetRandom.Object<AirlinesCompanyData>();
-            var view = AirlinesCompanyViewFactory.Create(new global::Airport.Domain.AirlinesCompany.AirlinesCompany());
+            var view = AirlinesCompanyViewFactory.Create(new global::Airport.Domain.AirlinesCompany.AirlinesCompany(data));
             TestArePropertyValuesEqual(view, data);
         }
     }
