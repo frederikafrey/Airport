@@ -1,14 +1,11 @@
-﻿using Airport.Data.Passenger;
-using Airport.Domain.Passenger;
+﻿using Airport.Data.PassengersFlight;
+using Airport.Domain.PassengersFlight;
 
 namespace Airport.Infra.PassengersFlight
 {
-    public class PassengersFlightsRepository
+    public sealed class PassengersFlightsRepository : UniqueEntityRepository<Domain.PassengersFlight.PassengersFlight, PassengersFlightData>, IPassengersFlightsRepository
     {
-    }
-    public sealed class PassengersRepository : UniqueEntityRepository<Domain.Passenger.Passenger, PassengerData>, IPassengersRepository
-    {
-        public PassengersRepository(AirportDbContext c) : base(c, c.Passengers) { }
-        protected internal override Domain.Passenger.Passenger ToDomainObject(PassengerData d) => new Domain.Passenger.Passenger(d);
+        public PassengersFlightsRepository(AirportDbContext c) : base(c, c.PassengersFlights) { }
+        protected internal override Domain.PassengersFlight.PassengersFlight ToDomainObject(PassengersFlightData d) => new Domain.PassengersFlight.PassengersFlight(d);
     }
 }

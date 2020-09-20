@@ -19,15 +19,15 @@ namespace Airport.Infra
         protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
 
-        internal int GetTotalPages(int pageSize) => CountTotalPages(GetItemsCount(), pageSize);
+        public int GetTotalPages(int pageSize) => CountTotalPages(GetItemsCount(), pageSize);
 
-        internal int CountTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
+        public int CountTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
 
-        internal int GetItemsCount() => base.CreateSqlQuery().CountAsync().Result;
+        public int GetItemsCount() => base.CreateSqlQuery().CountAsync().Result;
 
-        protected internal override IQueryable<TData> CreateSqlQuery() => AddSkipAndTake(base.CreateSqlQuery());
+        public override IQueryable<TData> CreateSqlQuery() => AddSkipAndTake(base.CreateSqlQuery());
 
-        internal IQueryable<TData> AddSkipAndTake(IQueryable<TData> query)
+        public IQueryable<TData> AddSkipAndTake(IQueryable<TData> query)
         {
             if (PageIndex < 1) return query;
             return query

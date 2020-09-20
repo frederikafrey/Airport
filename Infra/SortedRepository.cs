@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Airport.Data.Common;
 using Airport.Domain.Common;
-using Airport.Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace Airport.Infra
@@ -20,15 +19,15 @@ namespace Airport.Infra
         protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
 
-        protected internal override IQueryable<TData> CreateSqlQuery() => AddSorting(base.CreateSqlQuery());
+        public override IQueryable<TData> CreateSqlQuery() => AddSorting(base.CreateSqlQuery());
 
-        protected internal IQueryable<TData> AddSorting(IQueryable<TData> query)
+        public IQueryable<TData> AddSorting(IQueryable<TData> query)
         {
             var expression = CreateExpression();
             return expression is null ? query : AddOrderBy(query, expression);
         }
 
-        internal Expression<Func<TData, object>> CreateExpression()
+        public Expression<Func<TData, object>> CreateExpression()
         {
             var property = FindProperty();
 
@@ -44,9 +43,9 @@ namespace Airport.Infra
             return Expression.Lambda<Func<TData, object>>(body, param);
         }
 
-        internal PropertyInfo FindProperty() => typeof(TData).GetProperty(GetName());
+        public PropertyInfo FindProperty() => typeof(TData).GetProperty(GetName());
 
-        internal string GetName()
+        public string GetName()
         {
             if (string.IsNullOrEmpty(SortOrder)) return string.Empty;
             var idx = SortOrder.IndexOf(DescendingString, StringComparison.Ordinal);
@@ -54,7 +53,7 @@ namespace Airport.Infra
             return idx > 0 ? SortOrder.Remove(idx) : SortOrder;
         }
 
-        internal IQueryable<TData> AddOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e)
+        public IQueryable<TData> AddOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e)
         {
             if (query is null) return null;
             if (e is null) return query;
@@ -62,6 +61,6 @@ namespace Airport.Infra
             catch { return query; }
         }
 
-        internal bool IsDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
+        public bool IsDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
     }
 }

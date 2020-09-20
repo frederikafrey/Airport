@@ -12,7 +12,7 @@ namespace Airport.Infra
         where TDomain : Entity<TData>, new()
     {
         protected internal DbContext db;
-        protected internal DbSet<TData> dbSet;
+        public DbSet<TData> dbSet;
 
         protected BaseRepository(DbContext c, DbSet<TData> s)
         {
@@ -28,7 +28,7 @@ namespace Airport.Infra
             return ToDomainObjectsList(set);
         }
 
-        protected internal virtual IQueryable<TData> CreateSqlQuery() => from s in dbSet select s;
+        public virtual IQueryable<TData> CreateSqlQuery() => from s in dbSet select s;
 
         internal async Task<List<TData>> RunSqlQueryAsync(IQueryable<TData> query) =>
             await query.AsNoTracking().ToListAsync();

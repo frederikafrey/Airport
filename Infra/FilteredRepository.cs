@@ -20,7 +20,7 @@ namespace Airport.Infra
         }
 
 
-        protected internal override IQueryable<TData> CreateSqlQuery()
+        public override IQueryable<TData> CreateSqlQuery()
         {
             var query = base.CreateSqlQuery();
             query = AddFixedFiltering(query);
@@ -58,14 +58,14 @@ namespace Airport.Infra
 
         }
 
-        protected internal IQueryable<TData> AddFiltering(IQueryable<TData> query)
+        public IQueryable<TData> AddFiltering(IQueryable<TData> query)
         {
             if (string.IsNullOrEmpty(SearchString)) return query;
             var expression = CreateWhereExpression();
             return expression is null ? query : query.Where(expression);
         }
 
-        internal Expression<Func<TData, bool>> CreateWhereExpression()
+        public Expression<Func<TData, bool>> CreateWhereExpression()
         {
             if (string.IsNullOrWhiteSpace(SearchString)) return null;
             var param = Expression.Parameter(typeof(TData), "s");

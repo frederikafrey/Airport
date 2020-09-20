@@ -1,6 +1,7 @@
-﻿namespace Airport.Tests.Infra
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Airport.Tests.Infra
 {
-    class UniqueEntityRepositoryTests
-    {
-    }
+    [TestClass]
+    public class UniqueEntityRepositoryTests { }
 }
