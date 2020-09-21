@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Airport.Facade.Flight;
 using Airport.Facade.Passenger;
 using Airport.Pages.Extensions;
 using Microsoft.AspNetCore.Html;
@@ -24,7 +23,7 @@ namespace Airport.Tests.Pages.Extensions
         public void HtmlStringTest()
         {
             var expected = new List<string> { "<div", "LabelFor", "EditorFor", "ValidationMessageFor", "</div>"};
-            var actual = EditControlsForHtmlExtension.htmlString(new HtmlHelperMock<FlightView>(), x=>x.Company);
+            var actual = EditControlsForHtmlExtension.htmlString(new HtmlHelperMock<PassengerView>(), x=>x.Name);
             TestHtml.Strings(actual, expected);
         }
     }

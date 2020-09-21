@@ -60,7 +60,7 @@ namespace Airport.Tests.Infra
                 Assert.AreNotEqual(d, set);
                 var str = set.Expression.ToString();
                 Assert.IsTrue(str
-                    .Contains($"AirportClub.Data.Airport.AirportData]).OrderByDescending(x => Convert(x.{sortOrder}, Object))"));
+                    .Contains($"Airport.Data.Airport.AirportData]).OrderByDescending(x => Convert(x.{sortOrder}, Object))"));
                 obj.SortOrder = sortOrder;
                 set = obj.AddSorting(d);
                 Assert.IsNotNull(set);
@@ -198,5 +198,8 @@ namespace Airport.Tests.Infra
             var sqlNew = obj.AddSorting(sql);
             Assert.IsNotNull(sqlNew);
         }
+
+        [TestMethod]
+        public void AddOrderByTest() => Assert.Inconclusive();
     }
 }
