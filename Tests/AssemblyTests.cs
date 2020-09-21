@@ -11,8 +11,8 @@ namespace Airport.Tests
         private static string isNotTested => "<{0}> is not tested";
         private static string noClassesInAssembly => "No classes found in assembly {0}";
         private static string noClassesInNamespace => "No classes found in namespace {0}";
-        private static string testAssembly => "SportClub.Tests";
-        protected virtual string assembly => "SportClub";
+        private static string testAssembly => "Airport.Tests";
+        protected virtual string assembly => "Airport";
         private static char genericsChar => '`';
         private static char internalClass => '+';
         private static string displayClass => "<>";

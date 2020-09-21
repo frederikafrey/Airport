@@ -19,7 +19,7 @@ namespace Airport.Tests.Pages
         public void IsAirportsFlightTested() => IsAllTested(assembly, Namespace("AirportsFlight"));
 
         [TestMethod]
-        public void IsCommonTested() => IsAllTested(assembly, Namespace("Common"));
+        public void IsExtensionsTested() => IsAllTested(assembly, Namespace("Extensions"));
 
         [TestMethod]
         public void IsFlightTested() => IsAllTested(assembly, Namespace("Flight"));
