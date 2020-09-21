@@ -17,7 +17,7 @@ namespace Airport.Pages.Extensions
             return new HtmlContentBuilder(s);
         }
 
-        internal static List<object> htmlString<TClassType, TPropertyType>(
+        public static List<object> htmlString<TClassType, TPropertyType>(
             IHtmlHelper<TClassType> htmlHelper,
             Expression<Func<TClassType, TPropertyType>> expression) {
             return new List<object> {
