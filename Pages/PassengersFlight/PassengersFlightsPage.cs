@@ -8,11 +8,11 @@ namespace Airport.Pages.PassengersFlight
     {
         protected internal PassengersFlightsPage(IPassengersFlightsRepository r) : base(r)
         {
-            PageTitle = "Passengers Flight";
+            PageTitle = "Passengers Flights";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/Airport/PassengersFlight";
+        public override string GetPageUrl() => "/PassengersFlight/PassengersFlights";
 
         public override Domain.PassengersFlight.PassengersFlight ToObject(PassengersFlightView view) => PassengersFlightViewFactory.Create(view);
         public override PassengersFlightView ToView(Domain.PassengersFlight.PassengersFlight obj) => PassengersFlightViewFactory.Create(obj);
