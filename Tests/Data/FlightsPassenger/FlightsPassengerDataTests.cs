@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.FlightsPassenger
 {
     [TestClass]
-    public class FlightsPassengertDataTests : SealedClassTests<FlightsPassengerData, UniqueEntityData>
+    public class FlightsPassengerDataTests : SealedClassTests<FlightsPassengerData, UniqueEntityData>
     {
         [TestMethod]
         public void FlightIdTest() => IsNullableProperty(() => obj.FlightId, x => obj.FlightId = x);
