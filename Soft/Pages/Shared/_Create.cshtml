@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+<p>
+    <h1 class ="text-light">Create New</h1>
+</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @RenderBody() 
+            <div class="form-group">
+                <input type="submit" value="Create New" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

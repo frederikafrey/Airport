@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_Layout";
+    var itemId = Model.ItemId;
+}
+<p>
+    <h1 class ="text-light">Details</h1>
+</p>
+
+<div>
+    <hr />
+    <dl class="row">
+        @RenderBody()
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ItemId">Edit</a> |
+    <a asp-page="Index"
+    >Back</a>
+    @RenderSection("Details")
+</div>

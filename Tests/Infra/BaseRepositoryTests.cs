@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Airport.Aids;
 using Airport.Data.Airport;
 using Airport.Infra;

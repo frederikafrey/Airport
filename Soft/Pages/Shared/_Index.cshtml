@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<h1>ViewData["Title"]</h1>
+
+<p>
+    @RenderSection("Create")
+</p>
+
+<form asp-page="./Index" method="get">
+    <input type="hidden" name="FixedFilter" value="@Model.FixedFilter" />
+    <input type="hidden" name="FixedValue" value="@Model.FixedValue" />
+    <div class="form-inline col-md-6">
+        <p>
+            <input class="form-control" type="text" name="SearchString" value="@Model.SearchString" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <a asp-page="./Index"
+               asp-route-fixedFilter="@Model.FixedFilter"
+               asp-route-fixedValue="@Model.FixedValue">Back</a>
+        </p>
+    </div>
+</form>
+
+<p />
+
+@RenderBody()
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="form-inline">
+
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.SortOrder"
+       asp-route-pageIndex="1"
+       asp-route-currentFilter="@Model.SearchString"
+       asp-route-fixedFilter="@Model.FixedFilter"
+       asp-route-fixedValue="@Model.FixedValue"
+       class="btn btn-primary @prevDisabled">
+        First
+    </a>
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.SortOrder"
+       asp-route-pageIndex="@(Model.PageIndex - 1)"
+       asp-route-currentFilter="@Model.SearchString"
+       asp-route-fixedFilter="@Model.FixedFilter"
+       asp-route-fixedValue="@Model.FixedValue"
+       class="btn btn-primary @prevDisabled">
+        Previous
+    </a>
+    Page @Model.PageIndex Total @Model.TotalPages
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.SortOrder"
+       asp-route-pageIndex="@(Model.PageIndex + 1)"
+       asp-route-currentFilter="@Model.SearchString"
+       asp-route-fixedFilter="@Model.FixedFilter"
+       asp-route-fixedValue="@Model.FixedValue"
+       class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.SortOrder"
+       asp-route-pageIndex="@(Model.TotalPages)"
+       asp-route-currentFilter="@Model.SearchString"
+       asp-route-fixedFilter="@Model.FixedFilter"
+       asp-route-fixedValue="@Model.FixedValue"
+       class="btn btn-primary @nextDisabled">
+        Last
+    </a>
+</div>

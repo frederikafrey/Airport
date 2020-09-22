@@ -1,26 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Airport;
-using Airport.Infra;
+﻿using System.Threading.Tasks;
+using Airport.Domain.Airport;
+using Airport.Pages.Airport;
 
 namespace Airport.Soft.Areas.Airport.Pages.Airports
 {
-    public class IndexModel : PageModel
+    public class IndexModel : AirportsPage
     {
-        private readonly AirportDbContext _context;
+        public IndexModel(IAirportsRepository r) : base(r) { }
 
-        public IndexModel(AirportDbContext context)
+        public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IList<AirportData> AirportData { get;set; }
-
-        public async Task OnGetAsync()
-        {
-            AirportData = await _context.Airports.ToListAsync();
+            await GetList(sortOrder, currentFilter, searchString, pageIndex, fixedFilter, fixedValue);
         }
     }
 }
