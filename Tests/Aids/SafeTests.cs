@@ -117,10 +117,8 @@ namespace Airport.Tests.Aids
 
         private static void Method(ICollection<string> list, string message, Action exception)
         {
-            Safe.Run(() =>
-            {
-                Safe.Run(() =>
-                {
+            Safe.Run(() => {
+                Safe.Run(() => {
                     for (var i = 0; i < 10; i++)
                     {
                         list.Add(message + DateTime.Now);

@@ -11,10 +11,10 @@ namespace Airport.Aids {
         }
         public static void Run(Action action, bool useLock = false) {
             if (useLock) LockedRun(action);
-            else run(action);
+            else Run(action);
         }
 
-        private static T Run<T>(Func<T> function, T valueOnExeption) {
+        private static T Run<T>(Func<T> function, T valueOnException) {
             try 
             {
                return function(); 
@@ -22,18 +22,18 @@ namespace Airport.Aids {
             catch (Exception e) 
             {
                 Log.Exception(e);
-                return valueOnExeption;
+                return valueOnException;
             }
         }
 
-        private static T LockedRun<T>(Func<T> function, T valueOnExeption) {
-            lock (key) { return Run(function, valueOnExeption); }
+        private static T LockedRun<T>(Func<T> function, T valueOnException) {
+            lock (key) { return Run(function, valueOnException); }
         }
-        private static void run(Action action) {
+        private static void Run(Action action) {
             try { action(); } catch (Exception e) { Log.Exception(e); }
         }
         private static void LockedRun(Action action) {
-            lock (key) { run(action); }
+            lock (key) { Run(action); }
         }
     }
 }
