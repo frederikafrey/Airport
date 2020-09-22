@@ -14,6 +14,6 @@ namespace Airport.Tests.Facade.Passenger
         public void AddressTest() => IsNullableProperty(() => obj.Address, x => obj.Address = x);
 
         [TestMethod]
-        public void AgeTest() => IsNullableProperty(() => obj.Age, x => obj.Age = x);
+        public void AgeTest() => IsProperty<int>();
     }
 }

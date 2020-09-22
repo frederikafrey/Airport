@@ -11,9 +11,9 @@ namespace Airport.Tests.Facade.Luggage
         public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
 
         [TestMethod]
-        public void DimensionsTest() => IsNullableProperty(() => obj.Dimensions, x => obj.Dimensions = x);
+        public void DimensionsTest() => IsProperty<int>();
 
         [TestMethod]
-        public void WeightTest() => IsNullableProperty(() => obj.Weight, x => obj.Weight = x);
+        public void WeightTest() => IsProperty<int>();
     }
 }
