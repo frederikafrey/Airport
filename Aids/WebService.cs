@@ -7,10 +7,9 @@ namespace Airport.Aids{
             var num = 0;
             while (num <= 3) {
                 num++;
-                using (var client = new WebClient()) {
-                    try { return client.DownloadString(url); }
-                    catch (Exception e) { Log.Exception(e); }
-                }
+                using var client = new WebClient();
+                try { return client.DownloadString(url); }
+                catch (Exception e) { Log.Exception(e); }
             }
             return string.Empty;
         }

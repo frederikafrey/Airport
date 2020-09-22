@@ -11,7 +11,7 @@ namespace Airport.Tests.Data.Passenger
         public void NameTest() => IsNullableProperty(() => obj.Name, x => obj.Name = x);
 
         [TestMethod]
-        public void AgeTest() => IsNullableProperty(() => obj.Age, x => obj.Age = x);
+        public void AgeTest() => IsProperty<int>();
 
         [TestMethod]
         public void AddressTest() => IsNullableProperty(() => obj.Address, x => obj.Address = x);

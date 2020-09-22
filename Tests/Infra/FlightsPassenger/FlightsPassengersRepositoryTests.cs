@@ -17,7 +17,7 @@ namespace Airport.Tests.Infra.FlightsPassenger
                 .UseInMemoryDatabase("TestDb")
                 .Options;
             db = new AirportDbContext(options);
-            dbSet = ((AirportDbContext)db).FlightsPassengers;
+            DbSet = ((AirportDbContext)db).FlightsPassengers;
             obj = new FlightsPassengersRepository((AirportDbContext)db);
             base.TestInitialize();
         }

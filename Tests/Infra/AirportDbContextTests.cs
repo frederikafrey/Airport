@@ -73,11 +73,11 @@ namespace Airport.Tests.Infra
             TestEntity<AirlinesCompanyData>(builder);
             TestEntity<AirportData>(builder);
             TestEntity<AirportsFlightData>(builder, x => x.FlightId, x => x.AirportId);
-            TestEntity<FlightData>(builder, x => x.StartingPointId, x => x.FinalPointId, x=> x.PlaneId);
+            TestEntity<FlightData>(builder);
             TestEntity<FlightsPassengerData>(builder, x => x.FlightId, x => x.PassengersFlightId);
-            TestEntity<LuggageData>(builder, x => x.PassengerId);
+            TestEntity<LuggageData>(builder);
             TestEntity<PassengerData>(builder);
-            TestEntity<PassengersFlightData>(builder, x => x.PassengerId, x => x.FlightsPassengerId, x => x.StartDestinationId, x => x.FinalDestinationId);
+            TestEntity<PassengersFlightData>(builder, x => x.PassengerId, x => x.FlightsPassengerId);
         }
 
         [TestMethod]
