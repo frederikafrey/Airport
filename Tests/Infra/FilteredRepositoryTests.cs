@@ -19,7 +19,7 @@ namespace Airport.Tests.Infra
                 => new global::Airport.Domain.Airport.Airport(d);
 
             protected override async Task<AirportData> GetData(string id)
-                => await dbSet.FirstOrDefaultAsync(m => m.Id == id);
+                => await DbSet.FirstOrDefaultAsync(m => m.Id == id);
 
             protected override string GetId(global::Airport.Domain.Airport.Airport entity) => entity?.Data?.Id;
 

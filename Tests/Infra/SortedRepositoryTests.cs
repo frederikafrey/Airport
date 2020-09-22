@@ -69,7 +69,7 @@ namespace Airport.Tests.Infra
                 Assert.IsTrue(str.Contains($"Airport.Data.Airport.AirportData]).OrderBy(x => Convert(x.{sortOrder}, Object))"));
             }
             Assert.IsNull(obj.AddSorting(null));
-            IQueryable<AirportData> data = obj.dbSet;
+            IQueryable<AirportData> data = obj.DbSet;
             obj.SortOrder = null;
             Assert.AreEqual(data, obj.AddSorting(data));
             Test(data, GetMember.Name<AirportData>(x => x.Id));
@@ -162,7 +162,7 @@ namespace Airport.Tests.Infra
                 Assert.IsTrue(set.Expression.ToString().Contains($"Airport.Data.Airport.AirportData]).OrderBy({expected})"));
             }
             Assert.IsNull(obj.AddOrderBy(null, null));
-            IQueryable<AirportData> data = obj.dbSet;
+            IQueryable<AirportData> data = obj.DbSet;
             Assert.AreEqual(data, obj.AddOrderBy(data, null));
             Test(data, x => x.Id, "x => x.Id");
             Test(data, x => x.Address, "x => x.Address");

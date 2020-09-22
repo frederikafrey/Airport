@@ -12,12 +12,12 @@ namespace Airport.Infra
         where TDomain : Entity<TData>, new()
     {
         protected internal DbContext db;
-        public DbSet<TData> dbSet;
+        public DbSet<TData> DbSet;
 
         protected BaseRepository(DbContext c, DbSet<TData> s)
         {
             db = c;
-            dbSet = s;
+            DbSet = s;
         }
 
         public virtual async Task<List<TDomain>> Get()
@@ -28,7 +28,7 @@ namespace Airport.Infra
             return ToDomainObjectsList(set);
         }
 
-        public virtual IQueryable<TData> CreateSqlQuery() => from s in dbSet select s;
+        public virtual IQueryable<TData> CreateSqlQuery() => from s in DbSet select s;
 
         internal async Task<List<TData>> RunSqlQueryAsync(IQueryable<TData> query) =>
             await query.AsNoTracking().ToListAsync();
@@ -53,14 +53,14 @@ namespace Airport.Infra
             var data = await GetData(id);
 
             if (data is null) return;
-            dbSet.Remove(data);
+            DbSet.Remove(data);
             await db.SaveChangesAsync();
         }
 
         public async Task Add(TDomain obj)
         {
             if (obj?.Data is null) return;
-            dbSet.Add(obj.Data);
+            DbSet.Add(obj.Data);
             await db.SaveChangesAsync();
         }
 
@@ -71,8 +71,8 @@ namespace Airport.Infra
             var data = await GetData(GetId(obj));
             if (data is null) return;
 
-            dbSet.Remove(data);
-            dbSet.Add(obj.Data);
+            DbSet.Remove(data);
+            DbSet.Add(obj.Data);
             await db.SaveChangesAsync();
         }
 
