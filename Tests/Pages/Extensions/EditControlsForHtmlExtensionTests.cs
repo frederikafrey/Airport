@@ -23,7 +23,7 @@ namespace Airport.Tests.Pages.Extensions
         public void HtmlStringTest()
         {
             var expected = new List<string> { "<div", "LabelFor", "EditorFor", "ValidationMessageFor", "</div>"};
-            var actual = EditControlsForHtmlExtension.htmlString(new HtmlHelperMock<PassengerView>(), x=>x.Name);
+            var actual = EditControlsForHtmlExtension.HtmlString(new HtmlHelperMock<PassengerView>(), x=>x.Name);
             TestHtml.Strings(actual, expected);
         }
     }
