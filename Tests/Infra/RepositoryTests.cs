@@ -17,7 +17,7 @@ namespace Airport.Tests.Infra
         protected TRepository obj;
         protected DbContext db;
         protected int count;
-        protected DbSet<TData> dbSet;
+        protected DbSet<TData> DbSet;
 
         public virtual void TestInitialize()
         {
@@ -39,7 +39,7 @@ namespace Airport.Tests.Infra
 
         protected void CleanDbSet()
         {
-            foreach (var p in dbSet)
+            foreach (var p in DbSet)
                 db.Entry(p).State = EntityState.Deleted;
             db.SaveChanges();
         }
