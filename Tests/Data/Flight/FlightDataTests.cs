@@ -1,6 +1,7 @@
 ﻿using Airport.Data.Common;
 using Airport.Data.Flight;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Airport.Tests.Data.Flight
 {
@@ -14,13 +15,13 @@ namespace Airport.Tests.Data.Flight
         public void FinalPointIdTest() => IsNullableProperty(() => obj.FinalPointId, x => obj.FinalPointId = x);
 
         [TestMethod]
-        public void StartTimeTest() => IsNullableProperty(() => obj.StartTime, x => obj.StartTime = x);
+        public void StartTimeTest() => IsProperty<int>();
 
         [TestMethod]
-        public void ArrivingTimeTest() => IsNullableProperty(() => obj.ArrivingTime, x => obj.ArrivingTime = x);
+        public void ArrivingTimeTest() => IsProperty<int>();
 
         [TestMethod]
-        public void OccupancyTest() => IsNullableProperty(() => obj.Occupancy, x => obj.Occupancy = x);
+        public void OccupancyTest() => IsProperty<int>();
 
         [TestMethod]
         public void CompanyTest() => IsNullableProperty(() => obj.Company, x => obj.Company = x);
