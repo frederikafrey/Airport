@@ -12,12 +12,12 @@ namespace Airport.Pages.Extensions
         (this IHtmlHelper<TClassType> htmlHelper,
             Expression<Func<TClassType, TPropertyType>> expression) {
 
-            var s = htmlString(htmlHelper, expression);
+            var s = HtmlString(htmlHelper, expression);
 
             return new HtmlContentBuilder(s);
         }
 
-        public static List<object> htmlString<TClassType, TPropertyType>(
+        public static List<object> HtmlString<TClassType, TPropertyType>(
             IHtmlHelper<TClassType> htmlHelper,
             Expression<Func<TClassType, TPropertyType>> expression) {
             return new List<object> {
