@@ -12,7 +12,7 @@ namespace Airport.Pages.AirlinesCompany
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/AirlineCompany/AirlinesCompanies";
+        public override string GetPageUrl() => "/AirlinesCompany/AirlinesCompanies";
 
         public override Domain.AirlinesCompany.AirlinesCompany ToObject(AirlinesCompanyView view) => AirlinesCompanyViewFactory.Create(view);
         public override AirlinesCompanyView ToView(Domain.AirlinesCompany.AirlinesCompany obj) => AirlinesCompanyViewFactory.Create(obj);

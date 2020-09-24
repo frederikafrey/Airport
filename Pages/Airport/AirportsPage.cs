@@ -8,7 +8,7 @@ namespace Airport.Pages.Airport
     {
         protected internal AirportsPage(IAirportsRepository r) : base(r)
         {
-            PageTitle = "Airport";
+            PageTitle = "Airports";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
