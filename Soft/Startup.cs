@@ -1,4 +1,18 @@
+using Airport.Domain.AirlinesCompany;
+using Airport.Domain.Airport;
+using Airport.Domain.AirportsFlight;
+using Airport.Domain.Flight;
+using Airport.Domain.Luggage;
+using Airport.Domain.Passenger;
+using Airport.Domain.PassengersFlight;
 using Airport.Infra;
+using Airport.Infra.AirlinesCompany;
+using Airport.Infra.Airport;
+using Airport.Infra.AirportsFlight;
+using Airport.Infra.Flight;
+using Airport.Infra.Luggage;
+using Airport.Infra.Passenger;
+using Airport.Infra.PassengersFlight;
 using Airport.Soft.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +41,16 @@ namespace Airport.Soft
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<AirportDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"))); 
+            services.AddScoped<IAirlinesCompaniesRepository, AirlinesCompaniesRepository>();
+            services.AddScoped<IAirportsRepository, AirportsRepository>();
+            services.AddScoped<IAirportsFlightsRepository, AirportsFlightsRepository>();
+            services.AddScoped<IFlightsRepository, FlightsRepository>();
+            services.AddScoped<ILuggagesRepository, LuggagesRepository>();
+            services.AddScoped<IPassengersRepository, PassengersRepository>();
+            services.AddScoped<IPassengersFlightsRepository, PassengersFlightsRepository>();
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
