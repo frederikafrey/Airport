@@ -3,54 +3,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.Flight;
+using Airport.Domain.AirlinesCompany;
+using Airport.Domain.Flight;
 using Airport.Infra;
+using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : FlightsPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(IFlightsRepository r, IAirlinesCompaniesRepository t) : base(r, t) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public FlightData FlightData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            FlightData = await _context.Flights.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (FlightData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            FlightData = await _context.Flights.FindAsync(id);
-
-            if (FlightData != null)
-            {
-                _context.Flights.Remove(FlightData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }
