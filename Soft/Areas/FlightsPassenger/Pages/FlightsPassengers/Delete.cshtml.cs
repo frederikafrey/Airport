@@ -3,54 +3,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.FlightsPassenger;
+using Airport.Domain.Flight;
+using Airport.Domain.FlightsPassenger;
+using Airport.Domain.Passenger;
+using Airport.Domain.PassengersFlight;
 using Airport.Infra;
+using Airport.Pages.FlightsPassenger;
 
 namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : FlightsPassengerPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r, p, t) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public FlightsPassengerData FlightsPassengerData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            FlightsPassengerData = await _context.FlightsPassengers.FirstOrDefaultAsync(m => m.PassengersFlightId == id);
-
-            if (FlightsPassengerData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            FlightsPassengerData = await _context.FlightsPassengers.FindAsync(id);
-
-            if (FlightsPassengerData != null)
-            {
-                _context.FlightsPassengers.Remove(FlightsPassengerData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
+
 }

@@ -2,40 +2,29 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Airport.Data.FlightsPassenger;
+using Airport.Domain.Flight;
+using Airport.Domain.FlightsPassenger;
+using Airport.Domain.Passenger;
+using Airport.Domain.PassengersFlight;
 using Airport.Infra;
+using Airport.Pages.FlightsPassenger;
 
 namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
 {
-    public class CreateModel : PageModel
+    public class CreateModel : FlightsPassengerPage
     {
-        private readonly AirportDbContext _context;
-
-        public CreateModel(AirportDbContext context)
+        public CreateModel(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r, p, t) { }
+        public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IActionResult OnGet()
-        {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             return Page();
         }
 
-        [BindProperty]
-        public FlightsPassengerData FlightsPassengerData { get; set; }
-
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.FlightsPassengers.Add(FlightsPassengerData);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            if (!await AddObject(fixedFilter, fixedValue)) return Page();
+            return Redirect(IndexUrl);
         }
     }
 }

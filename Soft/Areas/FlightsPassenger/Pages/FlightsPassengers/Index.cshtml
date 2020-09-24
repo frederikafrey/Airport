@@ -1,36 +1,43 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_Index";
+    var page = Model.PageUrl;
+
 }
 
-<h1>Index</h1>
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
+}
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+
+<body>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightsPassengerData[0].Id)
-            </th>
-            <th></th>
-        </tr>
+    @Html.TableHeaderFor(
+        new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.FlightId), Model.GetSortString(m => m.FlightId, page)),
+        new Link(Html.DisplayNameFor(m => m.Item.PassengersFlightId), Model.GetSortString(m => m.PassengersFlightId, page))
+        )
     </thead>
     <tbody>
-@foreach (var item in Model.FlightsPassengerData) {
+    @foreach (var item in Model.Items)
+    {
+
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            @Html.TableRowFor(
+                page,
+                item.Id,
+                Model.FixedFilter,
+                Model.FixedValue,
+                Html.DisplayFor(modelItem => item.Id),
+                Html.DisplayFor(modelItem => item.FlightId),
+                Html.DisplayFor(modelItem => item.PassengersFlightId)
+                )
         </tr>
-}
+    }
     </tbody>
 </table>
+</body>

@@ -1,44 +1,13 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "_Create";
 }
 
-<h1>Create</h1>
-
-<h4>FlightsPassengerData</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FlightsPassengerData.FlightId" class="control-label"></label>
-                <input asp-for="FlightsPassengerData.FlightId" class="form-control" />
-                <span asp-validation-for="FlightsPassengerData.FlightId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FlightsPassengerData.PassengersFlightId" class="control-label"></label>
-                <input asp-for="FlightsPassengerData.PassengersFlightId" class="form-control" />
-                <span asp-validation-for="FlightsPassengerData.PassengersFlightId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FlightsPassengerData.Id" class="control-label"></label>
-                <input asp-for="FlightsPassengerData.Id" class="form-control" />
-                <span asp-validation-for="FlightsPassengerData.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<body>
+@Html.EditControlsFor(m => m.Item.Id)
+@Html.EditControlsFor(m => m.Item.FlightId)
+@Html.EditControlsFor(m => m.Item.PassengersFlightId)
+</body>
