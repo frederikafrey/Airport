@@ -1,56 +1,23 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
-using Airport.Infra;
+using Airport.Domain.AirlinesCompany;
+using Airport.Pages.AirlinesCompany;
 
 namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : AirlinesCompaniesPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(IAirlinesCompaniesRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (AirlinesCompanyData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            AirlinesCompanyData = await _context.AirlinesCompanies.FindAsync(id);
-
-            if (AirlinesCompanyData != null)
-            {
-                _context.AirlinesCompanies.Remove(AirlinesCompanyData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }

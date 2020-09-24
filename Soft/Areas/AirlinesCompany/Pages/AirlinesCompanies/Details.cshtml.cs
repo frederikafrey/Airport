@@ -1,36 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.AirlinesCompany;
-using Airport.Infra;
+using Airport.Domain.AirlinesCompany;
+using Airport.Pages.AirlinesCompany;
 
 namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
 {
-    public class DetailsModel : PageModel
+    public class DetailsModel : AirlinesCompaniesPage
     {
-        private readonly AirportDbContext _context;
-
-        public DetailsModel(AirportDbContext context)
+        public DetailsModel(IAirlinesCompaniesRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            AirlinesCompanyData = await _context.AirlinesCompanies.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (AirlinesCompanyData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
     }

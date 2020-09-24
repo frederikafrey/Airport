@@ -1,42 +1,24 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Airport.Data.AirlinesCompany;
-using Airport.Infra;
+using Airport.Domain.AirlinesCompany;
+using Airport.Pages.AirlinesCompany;
 
 namespace Airport.Soft.Areas.AirlinesCompany.Pages.AirlinesCompanies
 {
-    public class CreateModel : PageModel
+    public class CreateModel : AirlinesCompaniesPage
     {
-        private readonly AirportDbContext _context;
+        public CreateModel(IAirlinesCompaniesRepository r) : base(r) { }
 
-
-        public CreateModel(AirportDbContext context)
+        public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IActionResult OnGet()
-        {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             return Page();
         }
-
-        [BindProperty]
-        public AirlinesCompanyData AirlinesCompanyData { get; set; }
-
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.AirlinesCompanies.Add(AirlinesCompanyData);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            if (!await AddObject(fixedFilter, fixedValue)) return Page();
+            return Redirect(IndexUrl);
         }
     }
 }
