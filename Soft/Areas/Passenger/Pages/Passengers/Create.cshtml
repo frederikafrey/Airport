@@ -1,49 +1,15 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Passenger.Pages.Passengers.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "_Create";
 }
 
-<h1>Create</h1>
+<body>
+    @Html.EditControlsFor(m => m.Item.Id)
+    @Html.EditControlsFor(m => m.Item.Name)
+    @Html.EditControlsFor(m => m.Item.Age)
+    @Html.EditControlsFor(m => m.Item.Address)
+</body>
 
-<h4>PassengerData</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PassengerData.Name" class="control-label"></label>
-                <input asp-for="PassengerData.Name" class="form-control" />
-                <span asp-validation-for="PassengerData.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PassengerData.Age" class="control-label"></label>
-                <input asp-for="PassengerData.Age" class="form-control" />
-                <span asp-validation-for="PassengerData.Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PassengerData.Address" class="control-label"></label>
-                <input asp-for="PassengerData.Address" class="form-control" />
-                <span asp-validation-for="PassengerData.Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PassengerData.Id" class="control-label"></label>
-                <input asp-for="PassengerData.Id" class="form-control" />
-                <span asp-validation-for="PassengerData.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -1,36 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Passenger;
-using Airport.Infra;
+using Airport.Pages.Passenger;
+using Airport.Domain.Passenger;
 
 namespace Airport.Soft.Areas.Passenger.Pages.Passengers
 {
-    public class DetailsModel : PageModel
+    public class DetailsModel : PassengersPage
     {
-        private readonly AirportDbContext _context;
-
-        public DetailsModel(AirportDbContext context)
+        public DetailsModel(IPassengersRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public PassengerData PassengerData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengerData = await _context.Passengers.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (PassengerData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
     }

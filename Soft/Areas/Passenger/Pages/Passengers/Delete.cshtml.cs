@@ -1,56 +1,23 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Passenger;
-using Airport.Infra;
+using Airport.Pages.Passenger;
+using Airport.Domain.Passenger;
 
 namespace Airport.Soft.Areas.Passenger.Pages.Passengers
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : PassengersPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(IPassengersRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public PassengerData PassengerData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengerData = await _context.Passengers.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (PassengerData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengerData = await _context.Passengers.FindAsync(id);
-
-            if (PassengerData != null)
-            {
-                _context.Passengers.Remove(PassengerData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }

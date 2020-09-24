@@ -4,23 +4,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.Passenger;
 using Airport.Infra;
+using Airport.Pages.Passenger;
+using Airport.Domain.Passenger;
 
 namespace Airport.Soft.Areas.Passenger.Pages.Passengers
 {
-    public class IndexModel : PageModel
+    public class IndexModel : PassengersPage
     {
-        private readonly AirportDbContext _context;
+        public IndexModel(IPassengersRepository r) : base(r) { }
 
-        public IndexModel(AirportDbContext context)
+        public async Task OnGetAsync(string sortOrder, string id, string currentFilter, string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IList<PassengerData> PassengerData { get;set; }
-
-        public async Task OnGetAsync()
-        {
-            PassengerData = await _context.Passengers.ToListAsync();
+            SelectedId = id;
+            await GetList(sortOrder, currentFilter, searchString, pageIndex, fixedFilter, fixedValue);
         }
     }
 }
