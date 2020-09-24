@@ -1,36 +1,42 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.AirportsFlight.Pages.AirportsFlights.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_Index";
+    var page = Model.PageUrl;
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AirportsFlightData[0].Id)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.AirportsFlightData) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
 }
-    </tbody>
-</table>
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.FlightId), Model.GetSortString(m => m.FlightId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.AirportId), Model.GetSortString(m => m.AirportId, page))
+                )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+
+                <tr>
+                    @Html.TableRowFor(
+                        page,
+                        item.Id,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.DisplayFor(modelItem => item.Id),
+                        Html.DisplayFor(modelItem => item.FlightId),
+                        Html.DisplayFor(modelItem => item.AirportId))
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -3,24 +3,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.AirportsFlight;
+using Airport.Domain.Airport;
+using Airport.Domain.AirportsFlight;
 using Airport.Infra;
+using Airport.Pages.Airport;
+using Airport.Pages.AirportsFlight;
 
 namespace Airport.Soft.Areas.AirportsFlight.Pages.AirportsFlights
 {
-    public class IndexModel : PageModel
+    public class IndexModel : AirportsFlightPage
     {
-        private readonly AirportDbContext _context;
+        public IndexModel(IAirportsFlightsRepository r) : base(r) { }
 
-        public IndexModel(AirportDbContext context)
+        public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString,
+            int? pageIndex, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IList<AirportsFlightData> AirportsFlightData { get;set; }
-
-        public async Task OnGetAsync()
-        {
-            AirportsFlightData = await _context.AirportsFlights.ToListAsync();
+            await GetList(sortOrder, currentFilter, searchString, pageIndex,
+                fixedFilter, fixedValue);
         }
     }
 }

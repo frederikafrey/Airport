@@ -4,71 +4,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.AirportsFlight;
+using Airport.Domain.Airport;
+using Airport.Domain.AirportsFlight;
 using Airport.Infra;
+using Airport.Pages.Airport;
+using Airport.Pages.AirportsFlight;
 
 namespace Airport.Soft.Areas.AirportsFlight.Pages.AirportsFlights
 {
-    public class EditModel : PageModel
+    public class EditModel : AirportsFlightPage
     {
-        private readonly AirportDbContext _context;
+        public EditModel(IAirportsFlightsRepository r) : base(r) { }
 
-        public EditModel(AirportDbContext context)
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public AirportsFlightData AirportsFlightData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            AirportsFlightData = await _context.AirportsFlights.FirstOrDefaultAsync(m => m.FlightId == id);
-
-            if (AirportsFlightData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(AirportsFlightData).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AirportsFlightDataExists(AirportsFlightData.FlightId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
-        }
-
-        private bool AirportsFlightDataExists(string id)
-        {
-            return _context.AirportsFlights.Any(e => e.FlightId == id);
+            await UpdateObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }
