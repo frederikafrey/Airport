@@ -1,61 +1,20 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Flight.Pages.Flights.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    Layout = "_Details";
 }
 
-<h1>Details</h1>
+<body>
+@Html.DisplayControlsFor(m => m.Item.Id)
+@Html.DisplayControlsFor(m => m.Item.StartingPointId)
+@Html.DisplayControlsFor(m => m.Item.FinalPointId)
+@Html.DisplayControlsFor(m => m.Item.StartTime)
+@Html.DisplayControlsFor(m => m.Item.ArrivingTime)
+@Html.DisplayControlsFor(m => m.Item.Occupancy)
+@Html.DisplayControlsFor(m => m.Item.Company)
+@Html.DisplayControlsFor(m => m.Item.PlaneId)
+</body>
 
-<div>
-    <h4>FlightData</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.StartingPointId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.StartingPointId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.FinalPointId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.FinalPointId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.StartTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.StartTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.ArrivingTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.ArrivingTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.Occupancy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.Occupancy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.Company)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.Company)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FlightData.PlaneId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FlightData.PlaneId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.FlightData.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+@section Details{ }

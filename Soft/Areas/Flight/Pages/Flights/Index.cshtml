@@ -1,72 +1,54 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Flight.Pages.Flights.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_Index";
+    var page = Model.PageUrl;
+
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].StartingPointId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].FinalPointId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].StartTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].ArrivingTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].Occupancy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].Company)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightData[0].PlaneId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.FlightData) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartingPointId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FinalPointId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivingTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Occupancy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlaneId)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
 }
-    </tbody>
-</table>
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.StartingPointId), Model.GetSortString(m => m.StartingPointId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.FinalPointId), Model.GetSortString(m => m.FinalPointId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.StartTime), Model.GetSortString(m => m.StartTime, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ArrivingTime), Model.GetSortString(m => m.ArrivingTime, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Occupancy), Model.GetSortString(m => m.Occupancy, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Company), Model.GetSortString(m => m.Company, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PlaneId), Model.GetSortString(m => m.PlaneId, page))
+                )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+
+                <tr>
+                    @Html.TableRowFor(
+                        page,
+                        item.Id,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.DisplayFor(modelItem => item.Id),
+                        Html.DisplayFor(modelItem => item.StartingPointId),
+                        Html.DisplayFor(modelItem => item.FinalPointId),
+                        Html.DisplayFor(modelItem => item.StartTime),
+                        Html.DisplayFor(modelItem => item.ArrivingTime),
+                        Html.DisplayFor(modelItem => item.Occupancy),
+                        Html.DisplayFor(modelItem => item.Company),
+                        Html.DisplayFor(modelItem => item.PlaneId)
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

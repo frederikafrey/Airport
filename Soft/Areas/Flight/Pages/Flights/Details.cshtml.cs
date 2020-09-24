@@ -3,34 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.Flight;
+using Airport.Domain.AirlinesCompany;
+using Airport.Domain.Flight;
 using Airport.Infra;
+using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
-    public class DetailsModel : PageModel
+    public class DetailsModel : FlightsPage
     {
-        private readonly AirportDbContext _context;
-
-        public DetailsModel(AirportDbContext context)
+        public DetailsModel(IFlightsRepository r, IAirlinesCompaniesRepository t) : base(r, t) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public FlightData FlightData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            FlightData = await _context.Flights.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (FlightData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
     }
