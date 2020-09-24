@@ -1,12 +1,14 @@
 ﻿using Airport.Data.FlightsPassenger;
+using Airport.Domain.Flight;
 using Airport.Domain.FlightsPassenger;
+using Airport.Domain.Passenger;
 using Airport.Facade.FlightsPassenger;
 
 namespace Airport.Pages.FlightsPassenger
 {
     public abstract class FlightsPassengerPage : CommonPage<IFlightsPassengersRepository, Domain.FlightsPassenger.FlightsPassenger, FlightsPassengerView, FlightsPassengerData>
     {
-        protected internal FlightsPassengerPage(IFlightsPassengersRepository r) : base(r)
+        protected internal FlightsPassengerPage(IFlightsPassengersRepository r, IFlightsRepository c, IPassengersRepository t) : base(r)
         {
             PageTitle = "Flights Passengers";
         }
