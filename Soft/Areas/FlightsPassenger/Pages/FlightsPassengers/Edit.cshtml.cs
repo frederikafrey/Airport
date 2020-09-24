@@ -8,6 +8,7 @@ using Airport.Data.FlightsPassenger;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightsPassenger;
 using Airport.Domain.Passenger;
+using Airport.Domain.PassengersFlight;
 using Airport.Infra;
 using Airport.Pages.FlightsPassenger;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,7 +17,7 @@ namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
 {
     public class EditModel : FlightsPassengerPage
     {
-        public EditModel(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersRepository t) : base(r, p, t) { }
+        public EditModel(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r, p, t) { }
 
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
