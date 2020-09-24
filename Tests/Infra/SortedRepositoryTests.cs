@@ -73,7 +73,7 @@ namespace Airport.Tests.Infra
             obj.SortOrder = null;
             Assert.AreEqual(data, obj.AddSorting(data));
             Test(data, GetMember.Name<AirportData>(x => x.Id));
-            Test(data, GetMember.Name<AirportData>(x => x.Address));
+            Test(data, GetMember.Name<AirportData>(x => x.Country));
             Test(data, GetMember.Name<AirportData>(x => x.Phone));
         }
 
@@ -81,10 +81,10 @@ namespace Airport.Tests.Infra
         public void CreateExpressionTest()
         {
             string s;
-            TestCreateExpression(GetMember.Name<AirportData>(x => x.Address));
+            TestCreateExpression(GetMember.Name<AirportData>(x => x.Country));
             TestCreateExpression(GetMember.Name<AirportData>(x => x.Phone));
             TestCreateExpression(GetMember.Name<AirportData>(x => x.Id));
-            TestCreateExpression(s = GetMember.Name<AirportData>(x => x.Address), s + obj.DescendingString);
+            TestCreateExpression(s = GetMember.Name<AirportData>(x => x.Country), s + obj.DescendingString);
             TestCreateExpression(s = GetMember.Name<AirportData>(x => x.Phone), s + obj.DescendingString);
             TestCreateExpression(s = GetMember.Name<AirportData>(x => x.Id), s + obj.DescendingString);
             TestNullExpression(GetRandom.String());
@@ -121,10 +121,10 @@ namespace Airport.Tests.Infra
             Test(null, GetRandom.String());
             Test(null, null);
             Test(null, string.Empty);
-            Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Address)), s);
+            Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Country)), s);
             Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Phone)), s);
             Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Id)), s);
-            Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Address)), s + obj.DescendingString);
+            Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Country)), s + obj.DescendingString);
             Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Phone)), s + obj.DescendingString);
             Test(typeof(AirportData).GetProperty(s = GetMember.Name<AirportData>(x => x.Id)), s + obj.DescendingString);
         }
@@ -165,7 +165,7 @@ namespace Airport.Tests.Infra
             IQueryable<AirportData> data = obj.DbSet;
             Assert.AreEqual(data, obj.AddOrderBy(data, null));
             Test(data, x => x.Id, "x => x.Id");
-            Test(data, x => x.Address, "x => x.Address");
+            Test(data, x => x.Country, "x => x.Country");
             Test(data, x => x.Phone, "x => x.Phone");
         }
 

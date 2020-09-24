@@ -59,7 +59,7 @@ namespace Airport.Tests.Infra
         public void AddFixedFilteringTest()
         {
             var sql = obj.CreateSqlQuery();
-            var fixedFilter = GetMember.Name<AirportData>(x => x.Address);
+            var fixedFilter = GetMember.Name<AirportData>(x => x.Country);
             obj.FixedFilter = fixedFilter;
             var fixedValue = GetRandom.String();
             obj.FixedValue = fixedValue;

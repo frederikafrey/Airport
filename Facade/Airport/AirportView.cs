@@ -10,7 +10,7 @@ namespace Airport.Facade.Airport
         [DisplayName("Webpage")]
         [DataType(DataType.Url)]
         [Url]
-        public string Address { get; set; }
+        public string Country { get; set; }
         public string Phone { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Airport.Pages.Airport
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/Airport/Airport";
+        public override string GetPageUrl() => "/Airport/Airports";
 
         public override Domain.Airport.Airport ToObject(AirportView view) => AirportViewFactory.Create(view);
         public override AirportView ToView(Domain.Airport.Airport obj) => AirportViewFactory.Create(obj);

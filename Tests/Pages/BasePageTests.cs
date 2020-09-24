@@ -92,8 +92,8 @@ namespace Airport.Tests.Pages
             obj.SearchString = "AAA";
             obj.FixedFilter = "BBB";
             obj.FixedValue = "CCC";
-            var sortString = obj.GetSortString(x => x.Address, page);
-            var s = "xxx/yyy?sortOrder=Address&currentFilter=AAA&fixedFilter=BBB&fixedValue=CCC";
+            var sortString = obj.GetSortString(x => x.Country, page);
+            var s = "xxx/yyy?sortOrder=Country&currentFilter=AAA&fixedFilter=BBB&fixedValue=CCC";
             Assert.AreEqual(s, sortString);
         }
 

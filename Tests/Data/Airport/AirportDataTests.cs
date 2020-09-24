@@ -8,7 +8,7 @@ namespace Airport.Tests.Data.Airport
     public class AirportDataTests : SealedClassTests<AirportData, UniqueEntityData>
     {
         [TestMethod]
-        public void AddressTest() => IsNullableProperty(() => obj.Address, x => obj.Address = x);
+        public void CountryTest() => IsNullableProperty(() => obj.Country, x => obj.Country = x);
 
         [TestMethod]
         public void PhoneTest() => IsNullableProperty(() => obj.Phone, x => obj.Phone = x);
