@@ -1,36 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Luggage;
-using Airport.Infra;
+using Airport.Domain.Luggage;
+using Airport.Pages.Luggage;
 
 namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
-    public class DetailsModel : PageModel
+    public class DetailsModel : LuggagesPage
     {
-        private readonly AirportDbContext _context;
-
-        public DetailsModel(AirportDbContext context)
+        public DetailsModel(ILuggagesRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public LuggageData LuggageData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            LuggageData = await _context.Luggages.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (LuggageData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
     }

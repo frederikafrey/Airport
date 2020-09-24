@@ -1,41 +1,24 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Airport.Data.Luggage;
-using Airport.Infra;
+using Airport.Domain.Luggage;
+using Airport.Pages.Luggage;
 
 namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
-    public class CreateModel : PageModel
+    public class CreateModel : LuggagesPage
     {
-        private readonly AirportDbContext _context;
+        public CreateModel(ILuggagesRepository r) : base(r) { }
 
-        public CreateModel(AirportDbContext context)
+        public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        public IActionResult OnGet()
-        {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             return Page();
         }
-
-        [BindProperty]
-        public LuggageData LuggageData { get; set; }
-
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Luggages.Add(LuggageData);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            if (!await AddObject(fixedFilter, fixedValue)) return Page();
+            return Redirect(IndexUrl);
         }
     }
 }

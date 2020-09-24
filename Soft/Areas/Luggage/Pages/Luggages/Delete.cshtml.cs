@@ -1,56 +1,23 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Luggage;
-using Airport.Infra;
+using Airport.Domain.Luggage;
+using Airport.Pages.Luggage;
 
 namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : LuggagesPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(ILuggagesRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public LuggageData LuggageData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            LuggageData = await _context.Luggages.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (LuggageData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            LuggageData = await _context.Luggages.FindAsync(id);
-
-            if (LuggageData != null)
-            {
-                _context.Luggages.Remove(LuggageData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }
