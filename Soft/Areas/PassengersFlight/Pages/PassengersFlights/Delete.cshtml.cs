@@ -4,53 +4,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.PassengersFlight;
 using Airport.Infra;
+using Airport.Pages.PassengersFlight;
+using Airport.Domain.PassengersFlight;
 
 namespace Airport.Soft.Areas.PassengersFlight.Pages.PassengersFlights
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : PassengersFlightsPage
     {
-        private readonly AirportDbContext _context;
-
-        public DeleteModel(AirportDbContext context)
+        public DeleteModel(IPassengersFlightsRepository r) : base(r) { }
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public PassengersFlightData PassengersFlightData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengersFlightData = await _context.PassengersFlights.FirstOrDefaultAsync(m => m.FlightsPassengerId == id);
-
-            if (PassengersFlightData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengersFlightData = await _context.PassengersFlights.FindAsync(id);
-
-            if (PassengersFlightData != null)
-            {
-                _context.PassengersFlights.Remove(PassengersFlightData);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await DeleteObject(id, fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }

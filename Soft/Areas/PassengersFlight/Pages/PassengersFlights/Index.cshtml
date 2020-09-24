@@ -1,48 +1,48 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.PassengersFlight.Pages.PassengersFlights.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_Index";
+    var page = Model.PageUrl;
+
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PassengersFlightData[0].StartDestinationId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PassengersFlightData[0].FinalDestinationId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PassengersFlightData[0].Id)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.PassengersFlightData) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDestinationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FinalDestinationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
 }
-    </tbody>
-</table>
+
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.FlightsPassengerId), Model.GetSortString(m => m.FlightsPassengerId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.StartDestinationId), Model.GetSortString(m => m.StartDestinationId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.FinalDestinationId), Model.GetSortString(m => m.FinalDestinationId, page))
+                )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+
+                <tr>
+                    @Html.TableRowFor(
+                   page,
+                   item.Id,
+                   Model.FixedFilter,
+                   Model.FixedValue,
+                   Html.DisplayFor(modelItem => item.Id),
+                   Html.DisplayFor(modelItem => item.PassengerId),
+                   Html.DisplayFor(modelItem => item.FlightsPassengerId),
+                   Html.DisplayFor(modelItem => item.StartDestinationId),                   
+                   Html.DisplayFor(modelItem => item.FinalDestinationId)
+                   )
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

@@ -5,70 +5,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Airport.Data.PassengersFlight;
 using Airport.Infra;
+using Airport.Pages.PassengersFlight;
+using Airport.Domain.PassengersFlight;
 
 namespace Airport.Soft.Areas.PassengersFlight.Pages.PassengersFlights
 {
-    public class EditModel : PageModel
+    public class EditModel : PassengersFlightsPage
     {
-        private readonly AirportDbContext _context;
+        public EditModel(IPassengersFlightsRepository r) : base(r) { }
 
-        public EditModel(AirportDbContext context)
+        public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public PassengersFlightData PassengersFlightData { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            PassengersFlightData = await _context.PassengersFlights.FirstOrDefaultAsync(m => m.FlightsPassengerId == id);
-
-            if (PassengersFlightData == null)
-            {
-                return NotFound();
-            }
+            await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
 
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(PassengersFlightData).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PassengersFlightDataExists(PassengersFlightData.FlightsPassengerId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
-        }
-
-        private bool PassengersFlightDataExists(string id)
-        {
-            return _context.PassengersFlights.Any(e => e.FlightsPassengerId == id);
+            await UpdateObject(fixedFilter, fixedValue);
+            return Redirect(IndexUrl);
         }
     }
 }
