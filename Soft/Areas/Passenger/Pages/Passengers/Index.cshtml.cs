@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Passenger;
-using Airport.Infra;
+﻿using System.Threading.Tasks;
 using Airport.Pages.Passenger;
 using Airport.Domain.Passenger;
 
