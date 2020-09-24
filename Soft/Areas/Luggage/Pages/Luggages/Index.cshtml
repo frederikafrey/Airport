@@ -1,51 +1,45 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Luggage.Pages.Luggages.IndexModel
 
 @{
     Layout = "_Index";
+    var page = Model.PageUrl;
 }
 
-@section Create
-{
-    <a asp-page="Create">Create New</a>
+
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
 }
+
 
 <body>
     <table class="table">
         <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item.PassengerId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item.Dimensions)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item.Weight)
-                </th>
-                <th></th>
-            </tr>
+            @Html.TableHeaderFor(
+                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Dimensions), Model.GetSortString(m => m.Dimensions, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Weight), Model.GetSortString(m => m.Weight, page))
+                )
         </thead>
         <tbody>
             @foreach (var item in Model.Items)
             {
+
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PassengerId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dimensions)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                @Html.TableRowFor(
+                    page,
+                    item.Id,
+                    Model.FixedFilter,
+                    Model.FixedValue,
+                    Html.DisplayFor(modelItem => item.Id),
+                    Html.DisplayFor(modelItem => item.PassengerId),
+                    Html.DisplayFor(modelItem => item.Dimensions),
+                    Html.DisplayFor(modelItem => item.Weight))
             </tr>
             }
         </tbody>
     </table>
+
 </body>
