@@ -1,45 +1,40 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Airport.Pages.Airports.IndexModel
 
 @{
     Layout = "_Index";
+    var page = Model.PageUrl;
 }
 
 @section Create
 {
-    <a asp-page="Create">Create New</a>
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create"))
 }
 
 <body>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item.Country)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item.Phone)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Items)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Country)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
-                    </td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<table class="table">
+    <thead>
+        @Html.TableHeaderFor(
+            new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m=>m.Id,page)),
+            new Link(Html.DisplayNameFor(m => m.Item.Country), Model.GetSortString(x => x.Country, page)),
+            new Link(Html.DisplayNameFor(m => m.Item.Phone), Model.GetSortString(x => x.Phone, page)))
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.TableRowFor(
+                page,
+                item.Id,
+                Model.FixedFilter,
+                Model.FixedValue,
+                Html.DisplayFor(modelItem => item.Id),
+                Html.DisplayFor(modelItem => item.Country),
+                Html.DisplayFor(modelItem => item.Phone)
+                )
+        </tr>
+    }
+    </tbody>
+</table>
 </body>
