@@ -1,27 +1,16 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Airport.Pages.Airports.DetailsModel
 
 @{
     Layout = "_Details";
 }
 
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.Country)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.Country)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.Phone)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Item.Id">Edit</a> |
-    <a asp-page="./Index">Back</a>
-</div>
+<body>
+@Html.DisplayControlsFor(m => m.Item.Id)
+@Html.DisplayControlsFor(m => m.Item.Country)
+@Html.DisplayControlsFor(m => m.Item.Phone)
+</body>
+
+@section Details{}
+

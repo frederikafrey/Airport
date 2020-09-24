@@ -1,32 +1,15 @@
 ﻿@page
+@using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Airport.Pages.Airports.EditModel
 
 @{
     Layout = "_Edit";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AirportData.Country" class="control-label"></label>
-                <input asp-for="AirportData.Country" class="form-control" />
-                <span asp-validation-for="AirportData.Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AirportData.Phone" class="control-label"></label>
-                <input asp-for="AirportData.Phone" class="form-control" />
-                <span asp-validation-for="AirportData.Phone" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="AirportData.Id" />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DisabledControlsFor(m => m.Item.Id)
+@Html.EditControlsFor(m => m.Item.Country)
+@Html.EditControlsFor(m => m.Item.Phone)
+</body>
 
-<div>
-    <a asp-page="./Index">Back</a>
-</div>
