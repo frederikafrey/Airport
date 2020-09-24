@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,12 +9,14 @@ using Airport.Domain.AirlinesCompany;
 using Airport.Domain.Flight;
 using Airport.Infra;
 using Airport.Pages.Flight;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class EditModel : FlightsPage
     {
         public EditModel(IFlightsRepository r, IAirlinesCompaniesRepository t) : base(r, t) { }
+
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

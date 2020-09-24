@@ -13,6 +13,6 @@
     @Html.EditControlsFor(m => m.Item.StartTime)
     @Html.EditControlsFor(m => m.Item.ArrivingTime)
     @Html.EditControlsFor(m => m.Item.Occupancy)
-    @Html.EditControlsFor(m => m.Item.Company)
+    @Html.EditControlsForDropDown(m => m.Item.Company, Model.Types)
     @Html.EditControlsFor(m => m.Item.PlaneId)
 </body>
