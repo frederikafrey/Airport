@@ -11,14 +11,16 @@ namespace Airport.Tests.Pages.Extensions
         [TestMethod] public void CreateNewLinkTitleTest() => Assert.AreEqual("Create New", Constants.CreateNewLinkTitle);
         [TestMethod] public void EditLinkTitleTest() => Assert.AreEqual( "Edit", Constants.EditLinkTitle);
         [TestMethod] public void DetailsLinkTitleTest() => Assert.AreEqual( "Details", Constants.DetailsLinkTitle);
+        [TestMethod] public void DeleteLinkTitleTest() => Assert.AreEqual("Delete", Constants.DeleteLinkTitle);
+        [TestMethod] public void SelectLinkTitleTest() => Assert.AreEqual("Select", Constants.SelectLinkTitle);
 
-        [TestMethod] public void CoachesPageTitleTest() => Assert.AreEqual( "Coaches", Constants.CoachesPageTitle);
-        [TestMethod] public void  CoachOfTrainingsPageTitleTest() => Assert.AreEqual( "Coach of Trainings", Constants.CoachOfTrainingsPageTitle);
-        [TestMethod] public void  ParticipantsPageTitleTest() => Assert.AreEqual( "Participants", Constants.ParticipantsPageTitle);
-        [TestMethod] public void  ParticipantOfTrainingsPageTitleTest() => Assert.AreEqual( "Participant of Trainings", Constants.ParticipantOfTrainingsPageTitle);
-        [TestMethod] public void  TrainingPageTitleTest() => Assert.AreEqual( "Trainings", Constants.TrainingPageTitle);
-        [TestMethod] public void  TrainingTypesPageTitleTest() => Assert.AreEqual( "Training Types", Constants.TrainingTypesPageTitle);
-        [TestMethod] public void DeleteLinkTitleTest() => Assert.AreEqual( "Delete", Constants.DeleteLinkTitle);
-        [TestMethod] public void SelectLinkTitleTest() => Assert.AreEqual( "Select", Constants.SelectLinkTitle);
+        [TestMethod] public void AirlinesCompaniesPageTitleTest() => Assert.AreEqual("Airline Companies", Constants.AirlinesCompaniesPageTitle);
+        [TestMethod] public void AirportsPageTitleTest() => Assert.AreEqual("Airports", Constants.AirportsPageTitle);
+        [TestMethod] public void AirportsFlightsPageTitleTest() => Assert.AreEqual("Airport Flights", Constants.AirportsFlightsPageTitle);
+        [TestMethod] public void FlightsPageTitleTest() => Assert.AreEqual("Flights", Constants.FlightsPageTitle);
+        [TestMethod] public void FlightsPassengersPageTitleTest() => Assert.AreEqual("Flight Passengers", Constants.FlightsPassengersPageTitle);
+        [TestMethod] public void LuggagesPageTitleTest() => Assert.AreEqual("Luggage", Constants.LuggagesPageTitle);
+        [TestMethod] public void PassengersPageTitleTest() => Assert.AreEqual("Passengers", Constants.PassengersPageTitle);
+        [TestMethod] public void PassengersFlightsPageTitleTest() => Assert.AreEqual("Passenger Flights", Constants.PassengersFlightsPageTitle);
     }
 }

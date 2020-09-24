@@ -9,11 +9,13 @@
         public const string DeleteLinkTitle = "Delete";
         public const string SelectLinkTitle = "Select";
 
-        public const string CoachesPageTitle = "Coaches";
-        public const string CoachOfTrainingsPageTitle = "Coach of Trainings";
-        public const string ParticipantsPageTitle = "Participants";
-        public const string ParticipantOfTrainingsPageTitle = "Participant of Trainings";
-        public const string TrainingPageTitle = "Trainings";
-        public const string TrainingTypesPageTitle = "Training Types";
+        public const string AirlinesCompaniesPageTitle = "Airline Companies";
+        public const string AirportsPageTitle = "Airports";
+        public const string AirportsFlightsPageTitle = "Airport Flights";
+        public const string FlightsPageTitle = "Flights";
+        public const string FlightsPassengersPageTitle = "Flight Passengers";
+        public const string LuggagesPageTitle = "Luggage";
+        public const string PassengersPageTitle = "Passengers";
+        public const string PassengersFlightsPageTitle = "Passenger Flights";
     }
 }

@@ -16,7 +16,7 @@ namespace Airport.Pages.FlightsPassenger
     {
         protected internal FlightsPassengerPage(IFlightsPassengersRepository r, IFlightsRepository c, IPassengersFlightsRepository t) : base(r)
         {
-            PageTitle = "Flights Passengers";
+            PageTitle = "Flight Passengers";
             FlightId = CreateSelectList2<Domain.Flight.Flight, FlightData>(c);
             PassengersFlightId = CreateSelectList<Domain.PassengersFlight.PassengersFlight, PassengersFlightData>(t);
         }

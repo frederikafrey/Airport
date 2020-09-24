@@ -8,7 +8,7 @@ namespace Airport.Pages.PassengersFlight
     {
         protected internal PassengersFlightsPage(IPassengersFlightsRepository r) : base(r)
         {
-            PageTitle = "Passengers Flights";
+            PageTitle = "Passenger Flights";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
