@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Airport.Data.Flight;
 using Airport.Domain.AirlinesCompany;
 using Airport.Domain.Flight;
-using Airport.Infra;
 using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
