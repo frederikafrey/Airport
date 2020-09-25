@@ -153,9 +153,9 @@ namespace Airport.Infra.Migrations
                     b.ToTable("Passengers");
                 });
 
-            modelBuilder.Entity("Airport.Data.PassengersFlight.PassengersFlightData", b =>
+            modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("FlightsPassengerId")
+                    b.Property<string>("PassengerOfFlightId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PassengerId")
@@ -170,9 +170,9 @@ namespace Airport.Infra.Migrations
                     b.Property<string>("StartDestinationId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightsPassengerId", "PassengerId");
+                    b.HasKey("PassengerOfFlightId", "PassengerId");
 
-                    b.ToTable("PassengersFlights");
+                    b.ToTable("FlightOfPassengers");
                 });
 #pragma warning restore 612, 618
         }

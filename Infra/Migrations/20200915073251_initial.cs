@@ -105,7 +105,7 @@ namespace Airport.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PassengersFlights",
+                name: "FlightOfPassengers",
                 columns: table => new
                 {
                     PassengerId = table.Column<string>(nullable: false),
@@ -144,7 +144,7 @@ namespace Airport.Infra.Migrations
                 name: "Passengers");
 
             migrationBuilder.DropTable(
-                name: "PassengersFlights");
+                name: "FlightOfPassengers");
         }
     }
 }

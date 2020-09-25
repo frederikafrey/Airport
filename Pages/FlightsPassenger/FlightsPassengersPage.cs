@@ -2,13 +2,13 @@
 using System.Linq;
 using Airport.Data.Common;
 using Airport.Data.Flight;
+using Airport.Data.FlightOfPassenger;
 using Airport.Data.FlightsPassenger;
 using Airport.Data.Passenger;
-using Airport.Data.PassengersFlight;
 using Airport.Domain.Common;
 using Airport.Domain.Flight;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.FlightsPassenger;
-using Airport.Domain.PassengersFlight;
 using Airport.Facade.FlightsPassenger;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -16,11 +16,11 @@ namespace Airport.Pages.FlightsPassenger
 {
     public abstract class FlightsPassengerPage : CommonPage<IFlightsPassengersRepository, Domain.FlightsPassenger.FlightsPassenger, FlightsPassengerView, FlightsPassengerData>
     {
-        protected internal FlightsPassengerPage(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r)
+        protected internal FlightsPassengerPage(IFlightsPassengersRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r)
         {
             PageTitle = "Flight Passengers";
             Flights = CreateSelectList2<Domain.Flight.Flight, FlightData>(p);
-            PassengersFlights = CreateSelectList<Domain.PassengersFlight.PassengersFlight, PassengersFlightData>(t);
+            PassengersFlights = CreateSelectList<Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>(t);
         }
         public IEnumerable<SelectListItem> Flights { get; }
         public IEnumerable<SelectListItem> PassengersFlights { get; }

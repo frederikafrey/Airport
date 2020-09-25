@@ -1,0 +1,15 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers.DetailsModel
+
+@{
+    Layout = "_Details";
+}
+
+<body>
+    @Html.DisplayControlsFor(m => m.Item.Id)
+    @Html.DisplayControlsFor(m => m.Item.PassengerId)
+    @Html.DisplayControlsFor(m => m.Item.FlightsPassengerId)
+    @Html.DisplayControlsFor(m => m.Item.StartDestinationId)
+    @Html.DisplayControlsFor(m => m.Item.FinalDestinationId)
+</body>

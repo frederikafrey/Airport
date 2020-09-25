@@ -1,20 +1,16 @@
 ﻿using System.Threading.Tasks;
+using Airport.Domain.FlightOfPassenger;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Airport.Data.FlightsPassenger;
-using Airport.Domain.Flight;
-using Airport.Domain.FlightOfPassenger;
-using Airport.Domain.FlightsPassenger;
-using Airport.Domain.Passenger;
 using Airport.Infra;
-using Airport.Pages.FlightsPassenger;
+using Airport.Pages.FlightOfPassenger;
 
-namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
+namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
 {
-    public class DeleteModel : FlightsPassengerPage
+    public class DeleteModel : FlightOfPassengersPage
     {
-        public DeleteModel(IFlightsPassengersRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
+        public DeleteModel(IFlightOfPassengersRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);
@@ -27,5 +23,4 @@ namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
             return Redirect(IndexUrl);
         }
     }
-
 }

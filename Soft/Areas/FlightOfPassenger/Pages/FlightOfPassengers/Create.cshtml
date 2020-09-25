@@ -1,0 +1,16 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers.CreateModel
+
+@{
+    Layout = "_Create";
+}
+
+<body>
+    @Html.EditControlsFor(m => m.Item.Id)
+    @Html.EditControlsFor(m => m.Item.PassengerId)
+    @Html.EditControlsFor(m => m.Item.FlightsPassengerId)
+    @Html.EditControlsFor(m => m.Item.StartDestinationId)    
+    @Html.EditControlsFor(m => m.Item.FinalDestinationId)
+
+</body>

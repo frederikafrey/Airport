@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Airport.Data.FlightsPassenger;
 using Airport.Domain.Flight;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.FlightsPassenger;
 using Airport.Domain.Passenger;
-using Airport.Domain.PassengersFlight;
 using Airport.Infra;
 using Airport.Pages.FlightsPassenger;
 
@@ -13,7 +13,7 @@ namespace Airport.Soft.Areas.FlightsPassenger.Pages.FlightsPassengers
 {
     public class CreateModel : FlightsPassengerPage
     {
-        public CreateModel(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r, p, t) { }
+        public CreateModel(IFlightsPassengersRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;

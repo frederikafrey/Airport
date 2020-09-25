@@ -2,19 +2,19 @@ using Airport.Domain.AirlineCompany;
 using Airport.Domain.Airport;
 using Airport.Domain.AirportOfFlight;
 using Airport.Domain.Flight;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.FlightsPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
-using Airport.Domain.PassengersFlight;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
 using Airport.Infra.AirportOfFlight;
 using Airport.Infra.Flight;
+using Airport.Infra.FlightOfPassenger;
 using Airport.Infra.FlightsPassenger;
 using Airport.Infra.Luggage;
 using Airport.Infra.Passenger;
-using Airport.Infra.PassengersFlight;
 using Airport.Soft.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,7 +51,7 @@ namespace Airport.Soft
             services.AddScoped<IFlightsPassengersRepository, FlightsPassengersRepository>();
             services.AddScoped<ILuggagesRepository, LuggagesRepository>();
             services.AddScoped<IPassengersRepository, PassengersRepository>();
-            services.AddScoped<IPassengersFlightsRepository, PassengersFlightsRepository>();
+            services.AddScoped<IFlightOfPassengersRepository, FlightOfPassengersRepository>();
 
             services.AddRazorPages();
         }

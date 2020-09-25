@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Airport</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" ofPassengerData-toggle="collapse" ofPassengerData-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,7 +28,7 @@
                             new Link("Flights Passengers", "/FlightsPassenger/FlightsPassengers"))
                         @Html.DropDownNavigationMenuFor("Passenger",
                             new Link("Passenger Info", "/Passenger/Passengers"),
-                            new Link("Passengers Flights", "/PassengersFlight/PassengersFlights"),
+                            new Link("Flight Of Passengers", "/FlightOfPassenger/FlightOfPassengers"),
                             new Link("Luggage", "/Luggage/Luggages"))
                         @Html.DropDownNavigationMenuFor("Help",
                             new Link("About", "/Index"),

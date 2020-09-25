@@ -31,7 +31,7 @@ namespace Airport.Tests.Infra
         public void IsPassengerTested() => IsAllTested(assembly, Namespace("Passenger"));
 
         [TestMethod]
-        public void IsPassengersFlightTested() => IsAllTested(assembly, Namespace("PassengersFlight"));
+        public void IsFlightOfPassengerTested() => IsAllTested(assembly, Namespace("FlightOfPassenger"));
 
         [TestMethod]
         public void IsTested() => IsAllTested(base.Namespace("Infra"));

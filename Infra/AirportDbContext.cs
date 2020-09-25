@@ -2,10 +2,10 @@
 using Airport.Data.Airport;
 using Airport.Data.AirportOfFlight;
 using Airport.Data.Flight;
+using Airport.Data.FlightOfPassenger;
 using Airport.Data.FlightsPassenger;
 using Airport.Data.Luggage;
 using Airport.Data.Passenger;
-using Airport.Data.PassengersFlight;
 using Microsoft.EntityFrameworkCore;
 
 namespace Airport.Infra
@@ -22,7 +22,7 @@ namespace Airport.Infra
         public DbSet<FlightsPassengerData> FlightsPassengers { get; set; }
         public DbSet<LuggageData> Luggages { get; set; }
         public DbSet<PassengerData> Passengers { get; set; }
-        public DbSet<PassengersFlightData> PassengersFlights { get; set; }
+        public DbSet<FlightOfPassengerData> FlightOfPassengers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -40,7 +40,7 @@ namespace Airport.Infra
             builder.Entity<FlightsPassengerData>().ToTable(nameof(FlightsPassengers)).HasKey(x => new { x.PassengersFlightId, x.FlightId });
             builder.Entity<LuggageData>().ToTable(nameof(Luggages));
             builder.Entity<PassengerData>().ToTable(nameof(Passengers));
-            builder.Entity<PassengersFlightData>().ToTable(nameof(PassengersFlights)).HasKey(x => new { x.FlightsPassengerId, x.PassengerId });
+            builder.Entity<FlightOfPassengerData>().ToTable(nameof(FlightOfPassengers)).HasKey(x => new { FlightsPassengerId = x.PassengerOfFlightId, x.PassengerId });
 
         }
     }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Airport.Aids;
-using Airport.Data.PassengersFlight;
+using Airport.Data.FlightOfPassenger;
 using Airport.Facade.Flight;
-using Airport.Facade.PassengersFlight;
+using Airport.Facade.FlightOfPassenger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Aids
@@ -27,8 +27,8 @@ namespace Airport.Tests.Aids
         [TestMethod]
         public void MembersTest()
         {
-            var x = GetRandom.Object<PassengersFlightData>();
-            var y = GetRandom.Object<PassengersFlightView>();
+            var x = GetRandom.Object<FlightOfPassengerData>();
+            var y = GetRandom.Object<FlightOfPassengerView>();
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);

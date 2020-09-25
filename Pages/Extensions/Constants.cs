@@ -16,6 +16,6 @@
         public const string FlightsPassengersPageTitle = "Flight Passengers";
         public const string LuggagesPageTitle = "Luggage";
         public const string PassengersPageTitle = "Passengers";
-        public const string PassengersFlightsPageTitle = "Passenger Flights";
+        public const string FlightOfPassengersPageTitle = "Flight Of Passengers";
     }
 }

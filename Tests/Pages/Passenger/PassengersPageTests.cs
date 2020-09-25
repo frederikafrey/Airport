@@ -1,8 +1,6 @@
 ﻿using Airport.Aids;
 using Airport.Data.Passenger;
-using Airport.Data.PassengersFlight;
 using Airport.Domain.Passenger;
-using Airport.Domain.PassengersFlight;
 using Airport.Facade.Passenger;
 using Airport.Pages;
 using Airport.Pages.Passenger;

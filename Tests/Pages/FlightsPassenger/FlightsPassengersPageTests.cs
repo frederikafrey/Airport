@@ -1,10 +1,10 @@
 ﻿using Airport.Aids;
 using Airport.Data.Flight;
+using Airport.Data.FlightOfPassenger;
 using Airport.Data.FlightsPassenger;
-using Airport.Data.PassengersFlight;
 using Airport.Domain.Flight;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.FlightsPassenger;
-using Airport.Domain.PassengersFlight;
 using Airport.Facade.FlightsPassenger;
 using Airport.Pages;
 using Airport.Pages.FlightsPassenger;
@@ -18,10 +18,10 @@ namespace Airport.Tests.Pages.FlightsPassenger
     {
         private class TestClass : FlightsPassengerPage
         {
-            internal TestClass(IFlightsPassengersRepository r, IFlightsRepository p, IPassengersFlightsRepository t) : base(r, p, t) { }
+            internal TestClass(IFlightsPassengersRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
         }
-        private class TrainRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.PassengersFlight.PassengersFlight, PassengersFlightData>,
-            IPassengersFlightsRepository
+        private class TrainRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
+            IFlightOfPassengersRepository
         { }
 
         private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightsPassenger.FlightsPassenger, FlightsPassengerData>,
