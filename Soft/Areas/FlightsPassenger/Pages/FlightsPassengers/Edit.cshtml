@@ -9,5 +9,5 @@
 <body>
 <input type="hidden" asp-for="Item.Id" />
 @Html.DisabledControlsFor(m => m.Item.FlightId)
-@Html.EditControlsForDropDown(m => m.Item.PassengersFlightId, Model.PassengersFlightId)
+@Html.DisabledControlsFor(m => m.Item.PassengersFlightId)
 </body>
