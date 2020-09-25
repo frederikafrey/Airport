@@ -1,4 +1,4 @@
-using Airport.Domain.AirlinesCompany;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Airport;
 using Airport.Domain.AirportsFlight;
 using Airport.Domain.Flight;
@@ -7,7 +7,7 @@ using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Domain.PassengersFlight;
 using Airport.Infra;
-using Airport.Infra.AirlinesCompany;
+using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
 using Airport.Infra.AirportsFlight;
 using Airport.Infra.Flight;
@@ -44,7 +44,7 @@ namespace Airport.Soft
             services.AddDbContext<AirportDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"))); 
-            services.AddScoped<IAirlinesCompaniesRepository, AirlinesCompaniesRepository>();
+            services.AddScoped<IAirlineCompaniesRepository, AirlineCompaniesRepository>();
             services.AddScoped<IAirportsRepository, AirportsRepository>();
             services.AddScoped<IAirportsFlightsRepository, AirportsFlightsRepository>();
             services.AddScoped<IFlightsRepository, FlightsRepository>();

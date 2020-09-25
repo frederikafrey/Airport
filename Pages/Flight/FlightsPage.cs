@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.AirlineCompany;
 using Airport.Data.Common;
 using Airport.Data.Flight;
-using Airport.Domain.AirlinesCompany;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Common;
 using Airport.Domain.Flight;
 using Airport.Facade.Flight;
@@ -13,10 +13,10 @@ namespace Airport.Pages.Flight
 {
     public abstract class FlightsPage : CommonPage<IFlightsRepository, Domain.Flight.Flight, FlightView, FlightData>
     {
-        protected internal FlightsPage(IFlightsRepository r, IAirlinesCompaniesRepository t) : base(r)
+        protected internal FlightsPage(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r)
         {
             PageTitle = "Flights";
-            Types = CreateSelectList<Domain.AirlinesCompany.AirlinesCompany, AirlinesCompanyData>(t);
+            Types = CreateSelectList<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>(t);
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;

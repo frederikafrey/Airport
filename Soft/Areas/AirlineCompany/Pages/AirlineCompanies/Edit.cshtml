@@ -1,0 +1,14 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+    <input type="hidden" asp-for="Item.Id" />
+    @Html.DisabledControlsFor(m => m.Item.Id)
+    @Html.EditControlsFor(m => m.Item.Name)
+    @Html.EditControlsFor(m => m.Item.Address)
+</body>

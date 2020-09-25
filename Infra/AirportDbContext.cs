@@ -1,4 +1,4 @@
-﻿using Airport.Data.AirlinesCompany;
+﻿using Airport.Data.AirlineCompany;
 using Airport.Data.Airport;
 using Airport.Data.AirportsFlight;
 using Airport.Data.Flight;
@@ -15,7 +15,7 @@ namespace Airport.Infra
         public AirportDbContext(){}
         public AirportDbContext(DbContextOptions<AirportDbContext> options) : base(options) { }
 
-        public DbSet<AirlinesCompanyData> AirlinesCompanies { get; set; }
+        public DbSet<AirlineCompanyData> AirlinesCompanies { get; set; }
         public DbSet<AirportData> Airports { get; set; }
         public DbSet<AirportsFlightData> AirportsFlights { get; set; }
         public DbSet<FlightData> Flights { get; set; }
@@ -33,7 +33,7 @@ namespace Airport.Infra
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
-            builder.Entity<AirlinesCompanyData>().ToTable(nameof(AirlinesCompanies));
+            builder.Entity<AirlineCompanyData>().ToTable(nameof(AirlinesCompanies));
             builder.Entity<AirportData>().ToTable(nameof(Airports));
             builder.Entity<AirportsFlightData>().ToTable(nameof(AirportsFlights)).HasKey(x => new { x.FlightId, x.AirportId });
             builder.Entity<FlightData>().ToTable(nameof(Flights));

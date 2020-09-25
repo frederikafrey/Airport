@@ -1,7 +1,7 @@
 ﻿using Airport.Aids;
-using Airport.Data.AirlinesCompany;
+using Airport.Data.AirlineCompany;
 using Airport.Data.Flight;
-using Airport.Domain.AirlinesCompany;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Flight;
 using Airport.Facade.Flight;
 using Airport.Pages;
@@ -17,13 +17,13 @@ namespace Airport.Tests.Pages.Flight
     {
         private class TestClass : FlightsPage
         {
-            internal TestClass(IFlightsRepository r, IAirlinesCompaniesRepository t) : base(r, t) { }
+            internal TestClass(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
         }
         private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
             IFlightsRepository
         { }
-        private class TermRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlinesCompany.AirlinesCompany, AirlinesCompanyData>,
-            IAirlinesCompaniesRepository
+        private class TermRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
+            IAirlineCompaniesRepository
         { }
 
         [TestInitialize]

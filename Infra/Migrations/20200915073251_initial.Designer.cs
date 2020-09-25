@@ -20,7 +20,7 @@ namespace Airport.Infra.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Airport.Data.AirlinesCompany.AirlinesCompanyData", b =>
+            modelBuilder.Entity("Airport.Data.AirlineCompany.AirlineCompanyData", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");

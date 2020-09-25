@@ -1,17 +1,13 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Airport.Data.Flight;
 using Airport.Domain.AirlineCompany;
-using Airport.Domain.Flight;
-using Airport.Infra;
-using Airport.Pages.Flight;
+using Airport.Pages.AirlineCompany;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Airport.Soft.Areas.Flight.Pages.Flights
+namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
-    public class CreateModel : FlightsPage
+    public class CreateModel : AirlineCompaniesPage
     {
-        public CreateModel(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
+        public CreateModel(IAirlineCompaniesRepository r) : base(r) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {

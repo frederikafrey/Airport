@@ -1,20 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Flight;
+using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
-using Airport.Domain.Flight;
-using Airport.Infra;
-using Airport.Pages.Flight;
+using Airport.Pages.AirlineCompany;
 
-namespace Airport.Soft.Areas.Flight.Pages.Flights
+namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
-    public class IndexModel : FlightsPage
+    public class IndexModel : AirlineCompaniesPage
     {
-        public IndexModel(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
+        public IndexModel(IAirlineCompaniesRepository r) : base(r) { }
 
-        public IList<FlightData> FlightData { get; set; }
+        public IList<AirlineCompanyData> AirlinesCompanyData { get; set; }
 
         public async Task OnGetAsync(string sortOrder,
             string id, string currentFilter, string searchString, int? pageIndex,

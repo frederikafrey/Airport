@@ -1,17 +1,13 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Airport.Data.Flight;
 using Airport.Domain.AirlineCompany;
-using Airport.Domain.Flight;
-using Airport.Pages.Flight;
+using Airport.Pages.AirlineCompany;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Airport.Soft.Areas.Flight.Pages.Flights
+namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
-    public class DeleteModel : FlightsPage
+    public class DeleteModel : AirlineCompaniesPage
     {
-        public DeleteModel(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
+        public DeleteModel(IAirlineCompaniesRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);
