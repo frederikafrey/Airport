@@ -22,16 +22,11 @@ namespace Airport.Tests.Pages.Passenger
         private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Passenger.Passenger, PassengerData>,
             IPassengersRepository { }
 
-        private class TermRepository : BaseTestRepositoryForUniqueEntity<
-                global::Airport.Domain.PassengersFlight.PassengersFlight , PassengersFlightData>,
-            IPassengersFlightsRepository { }
-
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
             var r = new TestRepository();
-            var t = new TermRepository();
             obj = new TestClass(r);
         }
 
@@ -67,5 +62,4 @@ namespace Airport.Tests.Pages.Passenger
             TestArePropertyValuesEqual(view, data);
         }
     }
-
 }
