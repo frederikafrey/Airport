@@ -2,6 +2,7 @@ using Airport.Domain.AirlinesCompany;
 using Airport.Domain.Airport;
 using Airport.Domain.AirportsFlight;
 using Airport.Domain.Flight;
+using Airport.Domain.FlightsPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Domain.PassengersFlight;
@@ -46,6 +47,7 @@ namespace Airport.Soft
             services.AddScoped<IAirportsRepository, AirportsRepository>();
             services.AddScoped<IAirportsFlightsRepository, AirportsFlightsRepository>();
             services.AddScoped<IFlightsRepository, FlightsRepository>();
+            services.AddScoped<IFlightsPassengersRepository, IFlightsPassengersRepository>();
             services.AddScoped<ILuggagesRepository, LuggagesRepository>();
             services.AddScoped<IPassengersRepository, PassengersRepository>();
             services.AddScoped<IPassengersFlightsRepository, PassengersFlightsRepository>();
