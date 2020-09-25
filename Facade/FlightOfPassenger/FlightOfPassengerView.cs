@@ -9,9 +9,9 @@ namespace Airport.Facade.FlightOfPassenger
         [Required]
         [DisplayName("Passenger")]
         public string PassengerId { get; set; }
-        public string FlightsPassengerId { get; set; }
+        public string PassengerOfFlightId { get; set; }
         public string StartDestinationId { get; set; }
         public string FinalDestinationId { get; set; }
-        public string GetId() => $"{PassengerId}.{FlightsPassengerId}";
+        public string GetId() => $"{PassengerId}.{PassengerOfFlightId}";
     }
 }

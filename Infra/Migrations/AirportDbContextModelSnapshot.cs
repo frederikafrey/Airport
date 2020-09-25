@@ -96,9 +96,9 @@ namespace Airport.Infra.Migrations
                     b.ToTable("Flights");
                 });
 
-            modelBuilder.Entity("Airport.Data.FlightsPassenger.FlightsPassengerData", b =>
+            modelBuilder.Entity("Airport.Data.PassengerOfFlight.PassengerOfFlightData", b =>
                 {
-                    b.Property<string>("PassengersFlightId")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FlightId")
@@ -107,9 +107,9 @@ namespace Airport.Infra.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PassengersFlightId", "FlightId");
+                    b.HasKey("FlightOfPassengerId", "FlightId");
 
-                    b.ToTable("FlightsPassengers");
+                    b.ToTable("PassengerOfFlights");
                 });
 
             modelBuilder.Entity("Airport.Data.Luggage.LuggageData", b =>

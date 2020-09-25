@@ -7,9 +7,9 @@ using Airport.Data.Airport;
 using Airport.Data.AirportOfFlight;
 using Airport.Data.Flight;
 using Airport.Data.FlightOfPassenger;
-using Airport.Data.FlightsPassenger;
 using Airport.Data.Luggage;
 using Airport.Data.Passenger;
+using Airport.Data.PassengerOfFlight;
 using Airport.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -74,7 +74,7 @@ namespace Airport.Tests.Infra
             TestEntity<AirportData>(builder);
             TestEntity<AirportOfFlightData>(builder, x => x.FlightId, x => x.AirportId);
             TestEntity<FlightData>(builder);
-            TestEntity<FlightsPassengerData>(builder, x => x.FlightId, x => x.PassengersFlightId);
+            TestEntity<PassengerOfFlightData>(builder, x => x.FlightId, x => x.FlightOfPassengerId);
             TestEntity<LuggageData>(builder);
             TestEntity<PassengerData>(builder);
             TestEntity<FlightOfPassengerData>(builder, x => x.PassengerId, x => x.PassengerOfFlightId);
@@ -93,7 +93,7 @@ namespace Airport.Tests.Infra
         public void FlightsTest() => IsNullableProperty(obj, nameof(obj.Flights), typeof(DbSet<FlightData>));
 
         [TestMethod]
-        public void FlightsPassengersTest() => IsNullableProperty(obj, nameof(obj.FlightsPassengers), typeof(DbSet<FlightsPassengerData>));
+        public void PassengerOfFlightTest() => IsNullableProperty(obj, nameof(obj.PassengerOfFlights), typeof(DbSet<PassengerOfFlightData>));
 
         [TestMethod]
         public void LuggagesTest() => IsNullableProperty(obj, nameof(obj.Luggages), typeof(DbSet<LuggageData>));

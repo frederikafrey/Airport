@@ -13,7 +13,7 @@
         public const string AirportsPageTitle = "Airports";
         public const string AirportOfFlightsPageTitle = "Airport Of Flights";
         public const string FlightsPageTitle = "Flights";
-        public const string FlightsPassengersPageTitle = "Flight Passengers";
+        public const string PassengerOfFlightsPageTitle = "Passenger Of Flights";
         public const string LuggagesPageTitle = "Luggage";
         public const string PassengersPageTitle = "Passengers";
         public const string FlightOfPassengersPageTitle = "Flight Of Passengers";
