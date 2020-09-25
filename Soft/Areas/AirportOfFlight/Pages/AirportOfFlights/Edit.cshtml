@@ -1,0 +1,15 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.AirportOfFlight.Pages.AirportOfFlights.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DisabledControlsFor(m => m.Item.Id)
+@Html.EditControlsFor(m => m.Item.FlightId)
+@Html.EditControlsFor(m => m.Item.AirportId)
+</body>tial");}
+}

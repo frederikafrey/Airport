@@ -16,7 +16,7 @@ namespace Airport.Pages.Flight
         protected internal FlightsPage(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r)
         {
             PageTitle = "Flights";
-            Types = CreateSelectList<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>(t);
+            Companies = CreateSelectList<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>(t);
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
@@ -24,7 +24,7 @@ namespace Airport.Pages.Flight
 
         public override Domain.Flight.Flight ToObject(FlightView view) => FlightViewFactory.Create(view);
         public override FlightView ToView(Domain.Flight.Flight obj) => FlightViewFactory.Create(obj);
-        public IEnumerable<SelectListItem> Types { get; }
+        public IEnumerable<SelectListItem> Companies { get; }
 
         protected new static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
             where TTDomain : Entity<TTData>

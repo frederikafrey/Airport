@@ -1,6 +1,6 @@
 using Airport.Domain.AirlineCompany;
 using Airport.Domain.Airport;
-using Airport.Domain.AirportsFlight;
+using Airport.Domain.AirportOfFlight;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightsPassenger;
 using Airport.Domain.Luggage;
@@ -9,7 +9,7 @@ using Airport.Domain.PassengersFlight;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
-using Airport.Infra.AirportsFlight;
+using Airport.Infra.AirportOfFlight;
 using Airport.Infra.Flight;
 using Airport.Infra.FlightsPassenger;
 using Airport.Infra.Luggage;
@@ -46,7 +46,7 @@ namespace Airport.Soft
                     Configuration.GetConnectionString("DefaultConnection"))); 
             services.AddScoped<IAirlineCompaniesRepository, AirlineCompaniesRepository>();
             services.AddScoped<IAirportsRepository, AirportsRepository>();
-            services.AddScoped<IAirportsFlightsRepository, AirportsFlightsRepository>();
+            services.AddScoped<IAirportOfFlightsRepository, AirportOfFlightsRepository>();
             services.AddScoped<IFlightsRepository, FlightsRepository>();
             services.AddScoped<IFlightsPassengersRepository, FlightsPassengersRepository>();
             services.AddScoped<ILuggagesRepository, LuggagesRepository>();

@@ -16,7 +16,7 @@ namespace Airport.Tests.Facade
         public void IsAirportTested() => IsAllTested(assembly, Namespace("Airport"));
 
         [TestMethod]
-        public void IsAirportsFlightTested() => IsAllTested(assembly, Namespace("AirportsFlight"));
+        public void IsAirportOfFlightTested() => IsAllTested(assembly, Namespace("AirportOfFlight"));
 
         [TestMethod]
         public void IsCommonTested() => IsAllTested(assembly, Namespace("Common"));

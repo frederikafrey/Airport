@@ -34,7 +34,7 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AirportsFlights",
+                name: "AirportOfFlights",
                 columns: table => new
                 {
                     FlightId = table.Column<string>(nullable: false),
@@ -314,7 +314,7 @@ namespace Airport.Soft.Migrations
                 name: "Airports");
 
             migrationBuilder.DropTable(
-                name: "AirportsFlights");
+                name: "AirportOfFlights");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");

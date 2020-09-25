@@ -11,7 +11,7 @@
 
         public const string AirlineCompaniesPageTitle = "Airline Companies";
         public const string AirportsPageTitle = "Airports";
-        public const string AirportsFlightsPageTitle = "Airport Flights";
+        public const string AirportOfFlightsPageTitle = "Airport Of Flights";
         public const string FlightsPageTitle = "Flights";
         public const string FlightsPassengersPageTitle = "Flight Passengers";
         public const string LuggagesPageTitle = "Luggage";

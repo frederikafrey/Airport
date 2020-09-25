@@ -52,7 +52,7 @@ namespace Airport.Infra.Migrations
                     b.ToTable("Airports");
                 });
 
-            modelBuilder.Entity("Airport.Data.AirportsFlight.AirportsFlightData", b =>
+            modelBuilder.Entity("Airport.Data.AirportOfFlight.AirportOfFlightData", b =>
                 {
                     b.Property<string>("FlightId")
                         .HasColumnType("nvarchar(450)");
@@ -65,7 +65,7 @@ namespace Airport.Infra.Migrations
 
                     b.HasKey("FlightId", "AirportId");
 
-                    b.ToTable("AirportsFlights");
+                    b.ToTable("AirportOfFlights");
                 });
 
             modelBuilder.Entity("Airport.Data.Flight.FlightData", b =>
