@@ -11,6 +11,7 @@ using Airport.Infra.AirlinesCompany;
 using Airport.Infra.Airport;
 using Airport.Infra.AirportsFlight;
 using Airport.Infra.Flight;
+using Airport.Infra.FlightsPassenger;
 using Airport.Infra.Luggage;
 using Airport.Infra.Passenger;
 using Airport.Infra.PassengersFlight;
@@ -47,7 +48,7 @@ namespace Airport.Soft
             services.AddScoped<IAirportsRepository, AirportsRepository>();
             services.AddScoped<IAirportsFlightsRepository, AirportsFlightsRepository>();
             services.AddScoped<IFlightsRepository, FlightsRepository>();
-            services.AddScoped<IFlightsPassengersRepository, IFlightsPassengersRepository>();
+            services.AddScoped<IFlightsPassengersRepository, FlightsPassengersRepository>();
             services.AddScoped<ILuggagesRepository, LuggagesRepository>();
             services.AddScoped<IPassengersRepository, PassengersRepository>();
             services.AddScoped<IPassengersFlightsRepository, PassengersFlightsRepository>();
