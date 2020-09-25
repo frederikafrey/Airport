@@ -2,7 +2,6 @@
 using Airport.Data.AirlinesCompany;
 using Airport.Data.Flight;
 using Airport.Domain.AirlinesCompany;
-using Airport.Domain.Flight;
 using Airport.Facade.AirlinesCompany;
 using Airport.Pages;
 using Airport.Pages.AirlinesCompany;
@@ -22,15 +21,11 @@ namespace Airport.Tests.Pages.AirlinesCompany
         private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlinesCompany.AirlinesCompany, AirlinesCompanyData>,
             IAirlinesCompaniesRepository { }
 
-        private class TermRepository : BaseTestRepositoryForUniqueEntity<
-            global::Airport.Domain.Flight.Flight, FlightData>, IFlightsRepository { }
-
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
             var r = new TestRepository();
-            var t = new TermRepository();
             obj = new TestClass(r);
         }
 
