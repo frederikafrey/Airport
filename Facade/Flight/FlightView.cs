@@ -16,10 +16,12 @@ namespace Airport.Facade.Flight
         
         [DataType(DataType.Time)]
         [Timestamp]
+        [DisplayName("Start Time")]
         public int StartTime { get; set; }
         
         [DataType(DataType.Time)]
-        [Timestamp] 
+        [Timestamp]
+        [DisplayName("Arriving Time")]
         public int ArrivingTime { get; set; }
         
         [Required]
