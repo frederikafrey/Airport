@@ -1,11 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
-using Airport.Domain.Passenger;
 using Airport.Domain.PassengerOfFlight;
-using Airport.Infra;
 using Airport.Pages.PassengerOfFlight;
 
 namespace Airport.Soft.Areas.PassengerOfFlight.Pages.PassengerOfFlights
