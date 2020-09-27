@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Airport.Soft.Migrations
 {
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,6 +21,19 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AirportOfFlights",
+                columns: table => new
+                {
+                    FlightId = table.Column<string>(nullable: false),
+                    AirportId = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AirportOfFlights", x => new { x.FlightId, x.AirportId });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Airports",
                 columns: table => new
                 {
@@ -31,19 +44,6 @@ namespace Airport.Soft.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Airports", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AirportOfFlights",
-                columns: table => new
-                {
-                    FlightId = table.Column<string>(nullable: false),
-                    AirportId = table.Column<string>(nullable: false),
-                    Id = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AirportsFlights", x => new { x.FlightId, x.AirportId });
                 });
 
             migrationBuilder.CreateTable(
@@ -86,6 +86,21 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FlightOfPassengers",
+                columns: table => new
+                {
+                    PassengerId = table.Column<string>(nullable: false),
+                    PassengerOfFlightId = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(nullable: true),
+                    StartDestinationId = table.Column<string>(nullable: true),
+                    FinalDestinationId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FlightOfPassengers", x => new { x.PassengerOfFlightId, x.PassengerId });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Flights",
                 columns: table => new
                 {
@@ -104,19 +119,6 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PassengerOfFlights",
-                columns: table => new
-                {
-                    FlightId = table.Column<string>(nullable: false),
-                    PassengersFlightId = table.Column<string>(nullable: false),
-                    Id = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FlightsPassengers", x => new { x.PassengersFlightId, x.FlightId });
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Luggages",
                 columns: table => new
                 {
@@ -131,6 +133,19 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PassengerOfFlights",
+                columns: table => new
+                {
+                    FlightId = table.Column<string>(nullable: false),
+                    FlightOfPassengerId = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PassengerOfFlights", x => new { x.FlightOfPassengerId, x.FlightId });
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Passengers",
                 columns: table => new
                 {
@@ -142,21 +157,6 @@ namespace Airport.Soft.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Passengers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FlightOfPassengers",
-                columns: table => new
-                {
-                    PassengerId = table.Column<string>(nullable: false),
-                    FlightsPassengerId = table.Column<string>(nullable: false),
-                    Id = table.Column<string>(nullable: true),
-                    StartDestinationId = table.Column<string>(nullable: true),
-                    FinalDestinationId = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PassengersFlights", x => new { x.FlightsPassengerId, x.PassengerId });
                 });
 
             migrationBuilder.CreateTable(
@@ -311,10 +311,10 @@ namespace Airport.Soft.Migrations
                 name: "AirlinesCompanies");
 
             migrationBuilder.DropTable(
-                name: "Airports");
+                name: "AirportOfFlights");
 
             migrationBuilder.DropTable(
-                name: "AirportOfFlights");
+                name: "Airports");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -332,19 +332,19 @@ namespace Airport.Soft.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Flights");
+                name: "FlightOfPassengers");
 
             migrationBuilder.DropTable(
-                name: "PassengerOfFlights");
+                name: "Flights");
 
             migrationBuilder.DropTable(
                 name: "Luggages");
 
             migrationBuilder.DropTable(
-                name: "Passengers");
+                name: "PassengerOfFlights");
 
             migrationBuilder.DropTable(
-                name: "FlightOfPassengers");
+                name: "Passengers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

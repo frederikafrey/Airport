@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200924122350_inital")]
-    partial class inital
+    [Migration("20200927064439_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,20 +100,26 @@ namespace Airport.Soft.Migrations
                     b.ToTable("Flights");
                 });
 
-            modelBuilder.Entity("Airport.Data.PassengerOfFlight.PassengerOfFlightData", b =>
+            modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("FlightOfPassengerId")
+                    b.Property<string>("PassengerOfFlightId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FlightId")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FinalDestinationId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightOfPassengerId", "FlightId");
+                    b.Property<string>("StartDestinationId")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("PassengerOfFlights");
+                    b.HasKey("PassengerOfFlightId", "PassengerId");
+
+                    b.ToTable("FlightOfPassengers");
                 });
 
             modelBuilder.Entity("Airport.Data.Luggage.LuggageData", b =>
@@ -154,26 +160,20 @@ namespace Airport.Soft.Migrations
                     b.ToTable("Passengers");
                 });
 
-            modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
+            modelBuilder.Entity("Airport.Data.PassengerOfFlight.PassengerOfFlightData", b =>
                 {
-                    b.Property<string>("PassengerOfFlightId")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PassengerId")
+                    b.Property<string>("FlightId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("FinalDestinationId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartDestinationId")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("FlightOfPassengerId", "FlightId");
 
-                    b.HasKey("PassengerOfFlightId", "PassengerId");
-
-                    b.ToTable("FlightOfPassengers");
+                    b.ToTable("PassengerOfFlights");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
