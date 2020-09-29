@@ -7,7 +7,7 @@ namespace Airport.Infra.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "AirlinesCompanies",
+                name: "AirlineCompanies",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -123,7 +123,7 @@ namespace Airport.Infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AirlinesCompanies");
+                name: "AirlineCompanies");
 
             migrationBuilder.DropTable(
                 name: "Airports");

@@ -5,7 +5,7 @@ namespace Airport.Infra.AirlineCompany
 {
     public sealed class AirlineCompaniesRepository : UniqueEntityRepository<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>, IAirlineCompaniesRepository
     {
-        public AirlineCompaniesRepository(AirportDbContext c) : base(c, c.AirlinesCompanies) { }
+        public AirlineCompaniesRepository(AirportDbContext c) : base(c, c.AirlineCompanies) { }
         protected internal override Domain.AirlineCompany.AirlineCompany ToDomainObject(AirlineCompanyData d) => new Domain.AirlineCompany.AirlineCompany(d);
     }
 }

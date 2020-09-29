@@ -79,7 +79,7 @@ namespace Airport.Tests.Infra
         }
 
         [TestMethod]
-        public void AirlineCompaniesTest() => IsNullableProperty(obj, nameof(obj.AirlinesCompanies), typeof(DbSet<AirlineCompanyData>));
+        public void AirlineCompaniesTest() => IsNullableProperty(obj, nameof(obj.AirlineCompanies), typeof(DbSet<AirlineCompanyData>));
 
         [TestMethod]
         public void AirportsTest() => IsNullableProperty(obj, nameof(obj.Airports), typeof(DbSet<AirportData>));

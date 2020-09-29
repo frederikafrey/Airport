@@ -14,7 +14,7 @@ namespace Airport.Infra
         public AirportDbContext(){}
         public AirportDbContext(DbContextOptions<AirportDbContext> options) : base(options) { }
 
-        public DbSet<AirlineCompanyData> AirlinesCompanies { get; set; }
+        public DbSet<AirlineCompanyData> AirlineCompanies { get; set; }
         public DbSet<AirportData> Airports { get; set; }
         public DbSet<FlightData> Flights { get; set; }
         public DbSet<StopOverData> StopOvers { get; set; }
@@ -31,7 +31,7 @@ namespace Airport.Infra
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
-            builder.Entity<AirlineCompanyData>().ToTable(nameof(AirlinesCompanies));
+            builder.Entity<AirlineCompanyData>().ToTable(nameof(AirlineCompanies));
             builder.Entity<AirportData>().ToTable(nameof(Airports));
             builder.Entity<FlightData>().ToTable(nameof(Flights));
             builder.Entity<StopOverData>().ToTable(nameof(StopOvers)).HasKey(x => new { Id = x.FlightOfPassengerId, x.FlightId });

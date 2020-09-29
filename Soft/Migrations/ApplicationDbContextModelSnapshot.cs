@@ -32,7 +32,7 @@ namespace Airport.Soft.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AirlinesCompanies");
+                    b.ToTable("AirlineCompanies");
                 });
 
             modelBuilder.Entity("Airport.Data.Airport.AirportData", b =>

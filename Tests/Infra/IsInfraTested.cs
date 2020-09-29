@@ -10,13 +10,10 @@ namespace Airport.Tests.Infra
         protected override string Namespace(string name) => $"{assembly}.{name}";
 
         [TestMethod]
-        public void IsAirlinesCompanyTested() => IsAllTested(assembly, Namespace("AirlineCompany"));
+        public void IsAirlineCompanyTested() => IsAllTested(assembly, Namespace("AirlineCompany"));
 
         [TestMethod]
         public void IsAirportTested() => IsAllTested(assembly, Namespace("Airport"));
-
-        [TestMethod]
-        public void IsAirportOfFlightTested() => IsAllTested(assembly, Namespace("AirportOfFlight"));
 
         [TestMethod]
         public void IsFlightTested() => IsAllTested(assembly, Namespace("Flight"));

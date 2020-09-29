@@ -56,7 +56,7 @@ namespace Airport.Tests.Pages.StopOver
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Flight Passengers", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Stop Overs", obj.PageTitle);
 
         [TestMethod]
         public void GetPageUrlTest() => Assert.AreEqual("/StopOver/StopOvers", obj.PageUrl);
