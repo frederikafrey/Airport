@@ -37,7 +37,7 @@ namespace Airport.Infra
             builder.Entity<StopOverData>().ToTable(nameof(StopOvers)).HasKey(x => new { Id = x.FlightOfPassengerId, x.FlightId });
             builder.Entity<LuggageData>().ToTable(nameof(Luggages));
             builder.Entity<PassengerData>().ToTable(nameof(Passengers));
-            builder.Entity<FlightOfPassengerData>().ToTable(nameof(FlightOfPassengers)).HasKey(x => new { Id = x.PassengerId, x.PassengerId });
+            builder.Entity<FlightOfPassengerData>().ToTable(nameof(FlightOfPassengers)).HasKey(x => new { Id = x.PassengerId, x.FinalDestinationId });
 
         }
     }

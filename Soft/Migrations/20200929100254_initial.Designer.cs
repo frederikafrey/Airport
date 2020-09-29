@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200927064439_initial")]
+    [Migration("20200929100254_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,22 +53,6 @@ namespace Airport.Soft.Migrations
                     b.ToTable("Airports");
                 });
 
-            modelBuilder.Entity("Airport.Data.AirportOfFlight.AirportOfFlightData", b =>
-                {
-                    b.Property<string>("FlightId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AirportId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("FlightId", "AirportId");
-
-                    b.ToTable("AirportOfFlights");
-                });
-
             modelBuilder.Entity("Airport.Data.Flight.FlightData", b =>
                 {
                     b.Property<string>("Id")
@@ -102,14 +86,11 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("FlightOfPassengerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("FlightOfPassengerId")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FinalDestinationId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
@@ -117,7 +98,7 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartDestinationId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightOfPassengerId", "FlightOfPassengerId");
+                    b.HasKey("PassengerId", "FinalDestinationId");
 
                     b.ToTable("FlightOfPassengers");
                 });
