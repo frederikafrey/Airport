@@ -160,7 +160,7 @@ namespace Airport.Soft.Migrations
                     b.ToTable("Passengers");
                 });
 
-            modelBuilder.Entity("Airport.Data.PassengerOfFlight.PassengerOfFlightData", b =>
+            modelBuilder.Entity("Airport.Data.StopOver.StopOverData", b =>
                 {
                     b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
@@ -173,7 +173,7 @@ namespace Airport.Soft.Migrations
 
                     b.HasKey("FlightOfPassengerId", "FlightId");
 
-                    b.ToTable("PassengerOfFlights");
+                    b.ToTable("StopOvers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

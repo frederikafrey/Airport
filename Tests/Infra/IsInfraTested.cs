@@ -22,7 +22,7 @@ namespace Airport.Tests.Infra
         public void IsFlightTested() => IsAllTested(assembly, Namespace("Flight"));
 
         [TestMethod]
-        public void IsPassengerOfFlightTested() => IsAllTested(assembly, Namespace("PassengerOfFlight"));
+        public void IsStopOverTested() => IsAllTested(assembly, Namespace("StopOver"));
 
         [TestMethod]
         public void IsLuggageTested() => IsAllTested(assembly, Namespace("Luggage"));

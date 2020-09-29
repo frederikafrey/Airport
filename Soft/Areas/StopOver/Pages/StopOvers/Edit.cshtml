@@ -1,0 +1,13 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.StopOver.Pages.StopOvers.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+<input type="hidden" asp-for="Item.Id" />
+@Html.DisabledControlsFor(m => m.Item.FlightId)
+@Html.DisabledControlsFor(m => m.Item.FlightOfPassengerId)
+</body>

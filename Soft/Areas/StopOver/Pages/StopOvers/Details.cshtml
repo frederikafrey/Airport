@@ -1,0 +1,15 @@
+﻿@page
+@using Airport.Pages.Extensions
+@model Airport.Soft.Areas.StopOver.Pages.StopOvers.DetailsModel
+
+@{
+    Layout = "_Details";
+}
+
+<body>
+@Html.DisplayControlsFor(m => m.Item.Id)
+@Html.DisplayControlsFor(m => m.Item.FlightId))
+@Html.DisplayControlsFor(m => m.Item.FlightOfPassengerId)
+</body>
+
+@section Details {}
