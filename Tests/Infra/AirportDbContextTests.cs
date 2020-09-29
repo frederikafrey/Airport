@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 using Airport.Aids;
 using Airport.Data.AirlineCompany;
 using Airport.Data.Airport;
-using Airport.Data.AirportOfFlight;
 using Airport.Data.Flight;
 using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
@@ -72,7 +71,6 @@ namespace Airport.Tests.Infra
             AirportDbContext.InitializeTables(builder);
             TestEntity<AirlineCompanyData>(builder);
             TestEntity<AirportData>(builder);
-            TestEntity<AirportOfFlightData>(builder, x => x.FlightId, x => x.AirportId);
             TestEntity<FlightData>(builder);
             TestEntity<StopOverData>(builder, x => x.FlightId, x => x.FlightOfPassengerId);
             TestEntity<LuggageData>(builder);
@@ -85,9 +83,6 @@ namespace Airport.Tests.Infra
 
         [TestMethod]
         public void AirportsTest() => IsNullableProperty(obj, nameof(obj.Airports), typeof(DbSet<AirportData>));
-
-        [TestMethod]
-        public void AirportOfFlightsTest() => IsNullableProperty(obj, nameof(obj.AirportOfFlights), typeof(DbSet<AirportOfFlightData>));
 
         [TestMethod]
         public void FlightsTest() => IsNullableProperty(obj, nameof(obj.Flights), typeof(DbSet<FlightData>));

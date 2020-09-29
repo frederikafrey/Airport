@@ -1,6 +1,5 @@
 ﻿using Airport.Data.AirlineCompany;
 using Airport.Data.Airport;
-using Airport.Data.AirportOfFlight;
 using Airport.Data.Flight;
 using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
@@ -17,7 +16,6 @@ namespace Airport.Infra
 
         public DbSet<AirlineCompanyData> AirlinesCompanies { get; set; }
         public DbSet<AirportData> Airports { get; set; }
-        public DbSet<AirportOfFlightData> AirportOfFlights { get; set; }
         public DbSet<FlightData> Flights { get; set; }
         public DbSet<StopOverData> StopOvers { get; set; }
         public DbSet<LuggageData> Luggages { get; set; }
@@ -35,7 +33,6 @@ namespace Airport.Infra
             if (builder is null) return;
             builder.Entity<AirlineCompanyData>().ToTable(nameof(AirlinesCompanies));
             builder.Entity<AirportData>().ToTable(nameof(Airports));
-            builder.Entity<AirportOfFlightData>().ToTable(nameof(AirportOfFlights)).HasKey(x => new { x.FlightId, x.AirportId });
             builder.Entity<FlightData>().ToTable(nameof(Flights));
             builder.Entity<StopOverData>().ToTable(nameof(StopOvers)).HasKey(x => new { PassengersFlightId = x.FlightOfPassengerId, x.FlightId });
             builder.Entity<LuggageData>().ToTable(nameof(Luggages));

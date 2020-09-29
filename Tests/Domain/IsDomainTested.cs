@@ -16,9 +16,6 @@ namespace Airport.Tests.Domain
         public void IsAirportTested() => IsAllTested(assembly, Namespace("Airport"));
 
         [TestMethod]
-        public void IsAirportOfFlightTested() => IsAllTested(assembly, Namespace("AirportOfFlight"));
-
-        [TestMethod]
         public void IsCommonTested() => IsAllTested(assembly, Namespace("Common"));
 
         [TestMethod]
