@@ -19,7 +19,6 @@
             @Html.TableHeaderFor(
                 new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.PassengerOfFlightId), Model.GetSortString(m => m.PassengerOfFlightId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartDestinationId), Model.GetSortString(m => m.StartDestinationId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.FinalDestinationId), Model.GetSortString(m => m.FinalDestinationId, page))
                 )
@@ -36,7 +35,6 @@
                    Model.FixedValue,
                    Html.DisplayFor(modelItem => item.Id),
                    Html.DisplayFor(modelItem => item.PassengerId),
-                   Html.DisplayFor(modelItem => item.PassengerOfFlightId),
                    Html.DisplayFor(modelItem => item.StartDestinationId),                   
                    Html.DisplayFor(modelItem => item.FinalDestinationId)
                    )

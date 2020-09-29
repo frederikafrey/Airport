@@ -102,10 +102,10 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("PassengerOfFlightId")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PassengerId")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FinalDestinationId")
@@ -117,7 +117,7 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartDestinationId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PassengerOfFlightId", "PassengerId");
+                    b.HasKey("FlightOfPassengerId", "FlightOfPassengerId");
 
                     b.ToTable("FlightOfPassengers");
                 });
@@ -130,7 +130,7 @@ namespace Airport.Soft.Migrations
                     b.Property<int>("Dimensions")
                         .HasColumnType("int");
 
-                    b.Property<string>("PassengerId")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Weight")

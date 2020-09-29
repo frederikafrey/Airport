@@ -9,7 +9,7 @@
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.DisabledControlsFor(m => m.Item.Id)
-    @Html.EditControlsFor(m => m.Item.PassengerId)
+    @Html.EditControlsFor(m => m.Item.FlightOfPassengerId)
     @Html.EditControlsFor(m => m.Item.Dimensions)
     @Html.EditControlsFor(m => m.Item.Weight)
 </body>

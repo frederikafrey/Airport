@@ -11,9 +11,6 @@ namespace Airport.Tests.Facade.FlightOfPassenger
         public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
 
         [TestMethod]
-        public void PassengerOfFlightIdTest() => IsNullableProperty(() => obj.PassengerOfFlightId, x => obj.PassengerOfFlightId = x);
-
-        [TestMethod]
         public void StartDestinationIdTest() => IsNullableProperty(() => obj.StartDestinationId, x => obj.StartDestinationId = x);
 
         [TestMethod]
@@ -23,7 +20,7 @@ namespace Airport.Tests.Facade.FlightOfPassenger
         public void GetIdTest()
         {
             var actual = obj.GetId();
-            var expected = $"{obj.PassengerOfFlightId}.{obj.PassengerId}";
+            var expected = $"{obj.PassengerId}";
             Assert.AreEqual(expected, actual);
         }
     }

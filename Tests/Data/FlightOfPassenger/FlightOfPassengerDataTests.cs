@@ -11,9 +11,6 @@ namespace Airport.Tests.Data.FlightOfPassenger
         public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
 
         [TestMethod]
-        public void PassengerOfFlightIdTest() => IsNullableProperty(() => obj.PassengerOfFlightId, x => obj.PassengerOfFlightId = x);
-
-        [TestMethod]
         public void StartDestinationIdTest() => IsNullableProperty(() => obj.StartDestinationId, x => obj.StartDestinationId = x);
 
         [TestMethod]
