@@ -7,7 +7,6 @@
 }
 
 <body>
-@Html.EditControlsFor(m => m.Item.Id)
 @Html.EditControlsForDropDown(m => m.Item.FlightId, Model.Flights)
 @Html.EditControlsForDropDown(m => m.Item.FlightOfPassengerId, Model.PassengersFlights)
 </body>
