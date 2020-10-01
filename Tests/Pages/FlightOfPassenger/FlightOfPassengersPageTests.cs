@@ -62,6 +62,9 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         public void GetPageUrlTest() => Assert.AreEqual("/FlightOfPassenger/FlightOfPassengers", obj.PageUrl);
 
         [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<FlightOfPassengerView>();
@@ -142,8 +145,5 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
         }
-
-        [TestMethod]
-        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
     }
 }

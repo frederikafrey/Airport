@@ -63,6 +63,9 @@ namespace Airport.Tests.Pages.StopOver
         public void GetPageUrlTest() => Assert.AreEqual("/StopOver/StopOvers", obj.PageUrl);
 
         [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<StopOverView>();
@@ -131,8 +134,5 @@ namespace Airport.Tests.Pages.StopOver
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
         }
-
-        [TestMethod]
-        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
     }
 }

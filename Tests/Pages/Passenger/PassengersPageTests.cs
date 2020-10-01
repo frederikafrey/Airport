@@ -45,6 +45,9 @@ namespace Airport.Tests.Pages.Passenger
         public void GetPageUrlTest() => Assert.AreEqual("/Passenger/Passengers", obj.PageUrl);
 
         [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<PassengerView>();
@@ -58,6 +61,16 @@ namespace Airport.Tests.Pages.Passenger
             var data = GetRandom.Object<PassengerData>();
             var view = obj.ToView(new global::Airport.Domain.Passenger.Passenger(data));
             TestArePropertyValuesEqual(view, data);
+        }
+
+        [TestMethod]
+        public void NamesTest()
+        {
+            var x = GetRandom.Object<PassengerData>();
+            var y = GetRandom.Object<PassengerView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
         }
     }
 }

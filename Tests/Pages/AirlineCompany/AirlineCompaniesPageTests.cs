@@ -39,7 +39,7 @@ namespace Airport.Tests.Pages.AirlineCompany
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Airline AirlineCompanies", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Airline Companies", obj.PageTitle);
 
         [TestMethod]
         public void GetPageUrlTest() => Assert.AreEqual("/AirlineCompany/AirlineCompanies", obj.PageUrl);
