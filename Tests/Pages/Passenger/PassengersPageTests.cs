@@ -45,6 +45,9 @@ namespace Airport.Tests.Pages.Passenger
         public void GetPageUrlTest() => Assert.AreEqual("/Passenger/Passengers", obj.PageUrl);
 
         [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<PassengerView>();

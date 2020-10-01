@@ -59,5 +59,8 @@ namespace Airport.Tests.Pages.AirlineCompany
             var view = obj.ToView(new global::Airport.Domain.AirlineCompany.AirlineCompany(data));
             TestArePropertyValuesEqual(view, data);
         }
+
+        [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
     }
 }

@@ -7,8 +7,9 @@
 }
 
 <body>
-    @Html.EditControlsFor(m => m.Item.PassengerId)
+    @Html.DisabledControlsFor(m => m.Item.Id)
+    @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
     @Html.EditControlsFor(m => m.Item.StartDestination)
     @Html.EditControlsFor(m => m.Item.FinalDestination)
-    @Html.EditControlsFor(m => m.Item.StopOverId)
+    @Html.EditControlsForDropDown(m => m.Item.StopOverId, Model.StopOvers)
 </body>

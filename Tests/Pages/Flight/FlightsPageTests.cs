@@ -1,7 +1,9 @@
 ﻿using Airport.Aids;
 using Airport.Data.AirlineCompany;
+using Airport.Data.Airport;
 using Airport.Data.Flight;
 using Airport.Domain.AirlineCompany;
+using Airport.Domain.Airport;
 using Airport.Domain.Flight;
 using Airport.Facade.Flight;
 using Airport.Pages;
@@ -17,22 +19,26 @@ namespace Airport.Tests.Pages.Flight
     {
         private class TestClass : FlightsPage
         {
-            internal TestClass(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
+            internal TestClass(IFlightsRepository r, IAirlineCompaniesRepository p, IAirportsRepository t) : base(r, p, t) { }
         }
-        private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
+        private class FlightsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
             IFlightsRepository
         { }
-        private class TermRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
+        private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
             IAirlineCompaniesRepository
+        { }
+        private class AirportsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Airport.Airport, AirportData>,
+            IAirportsRepository
         { }
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new TestRepository();
-            var t = new TermRepository();
-            obj = new TestClass(r, t);
+            var r = new FlightsRepository();
+            var p = new AirlineCompaniesRepository();
+            var t = new AirportsRepository();
+            obj = new TestClass(r, p, t);
         }
 
         [TestMethod]
@@ -52,6 +58,9 @@ namespace Airport.Tests.Pages.Flight
         public void GetPageUrlTest() => Assert.AreEqual("/Flight/Flights", obj.PageUrl);
 
         [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
         public void ToObjectTest()
         {
             var view = GetRandom.Object<FlightView>();
@@ -68,7 +77,17 @@ namespace Airport.Tests.Pages.Flight
         }
 
         [TestMethod]
-        public void TypesTest()
+        public void AirlineCompaniesTest()
+        {
+            var x = GetRandom.Object<FlightData>();
+            var y = GetRandom.Object<FlightView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void AirportsTest()
         {
             var x = GetRandom.Object<FlightData>();
             var y = GetRandom.Object<FlightView>();

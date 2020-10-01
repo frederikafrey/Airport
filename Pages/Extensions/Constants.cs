@@ -9,7 +9,7 @@
         public const string DeleteLinkTitle = "Delete";
         public const string SelectLinkTitle = "Select";
 
-        public const string AirlineCompaniesPageTitle = "Airline Companies";
+        public const string AirlineCompaniesPageTitle = "Airline AirlineCompanies";
         public const string AirportsPageTitle = "Airports";
         public const string FlightsPageTitle = "Flights";
         public const string StopOversPageTitle = "Stop Overs";

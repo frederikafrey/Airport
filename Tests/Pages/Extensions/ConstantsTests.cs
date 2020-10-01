@@ -14,7 +14,7 @@ namespace Airport.Tests.Pages.Extensions
         [TestMethod] public void DeleteLinkTitleTest() => Assert.AreEqual("Delete", Constants.DeleteLinkTitle);
         [TestMethod] public void SelectLinkTitleTest() => Assert.AreEqual("Select", Constants.SelectLinkTitle);
 
-        [TestMethod] public void AirlineCompaniesPageTitleTest() => Assert.AreEqual("Airline Companies", Constants.AirlineCompaniesPageTitle);
+        [TestMethod] public void AirlineCompaniesPageTitleTest() => Assert.AreEqual("Airline AirlineCompanies", Constants.AirlineCompaniesPageTitle);
         [TestMethod] public void AirportsPageTitleTest() => Assert.AreEqual("Airports", Constants.AirportsPageTitle);
         [TestMethod] public void FlightsPageTitleTest() => Assert.AreEqual("Flights", Constants.FlightsPageTitle);
         [TestMethod] public void StopOversPageTitleTest() => Assert.AreEqual("Stop Overs", Constants.StopOversPageTitle);
