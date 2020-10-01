@@ -60,5 +60,18 @@ namespace Airport.Tests.Pages.Airport
             var view = obj.ToView(new global::Airport.Domain.Airport.Airport(data));
             TestArePropertyValuesEqual(view, data);
         }
+
+        [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
+
+        [TestMethod]
+        public void NamesTest()
+        {
+            var x = GetRandom.Object<AirportData>();
+            var y = GetRandom.Object<AirportView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
     }
 }
