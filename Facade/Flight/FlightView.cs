@@ -14,15 +14,13 @@ namespace Airport.Facade.Flight
         [DisplayName("Final Point")]
         public string FinalPointId { get; set; }
         
-        [DataType(DataType.Time)]
-        [Timestamp]
+        [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
-        public int StartTime { get; set; }
+        public string StartTime { get; set; }
         
-        [DataType(DataType.Time)]
-        [Timestamp]
+        [DataType(DataType.DateTime)]
         [DisplayName("Arriving Time")]
-        public int ArrivingTime { get; set; }
+        public string ArrivingTime { get; set; }
         
         [Required]
         [DisplayName("Occupancy")] 
