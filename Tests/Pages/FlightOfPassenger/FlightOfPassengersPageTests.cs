@@ -1,6 +1,10 @@
 ﻿using Airport.Aids;
 using Airport.Data.FlightOfPassenger;
+using Airport.Data.Passenger;
+using Airport.Data.StopOver;
 using Airport.Domain.FlightOfPassenger;
+using Airport.Domain.Passenger;
+using Airport.Domain.StopOver;
 using Airport.Facade.FlightOfPassenger;
 using Airport.Pages;
 using Airport.Pages.FlightOfPassenger;
@@ -14,26 +18,39 @@ namespace Airport.Tests.Pages.FlightOfPassenger
     {
         public class TestClass : FlightOfPassengersPage
         {
-            internal TestClass(IFlightOfPassengersRepository r) : base(r) { }
+            internal TestClass(IFlightOfPassengersRepository r, IStopOversRepository p, IPassengersRepository t) : base(r, p, t) { }
         }
-        private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
+        private class FlightOfPassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
             IFlightOfPassengersRepository
+        { }
+
+        private class StopOversRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
+            IStopOversRepository
+        { }
+
+        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Passenger.Passenger, PassengerData>,
+            IPassengersRepository
         { }
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new TestRepository();
-            obj = new TestClass(r);
+            var r = new FlightOfPassengersRepository();
+            var p = new StopOversRepository();
+            var t = new PassengersRepository();
+            obj = new TestClass(r, p, t);
         }
+
+        public static string Id(string head, string tail) => $"{head}.{tail}";
 
         [TestMethod]
         public void ItemIdTest()
         {
             var item = GetRandom.Object<FlightOfPassengerView>();
             obj.Item = item;
-            Assert.AreEqual(item.Id, obj.ItemId);
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
         }
@@ -42,7 +59,7 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         public void PageTitleTest() => Assert.AreEqual("Flight Of Passengers", obj.PageTitle);
 
         [TestMethod]
-        public void GetPageUrlTest() => Assert.AreEqual("/FlightOfPassenger/FlightOfPassengerId", obj.PageUrl);
+        public void GetPageUrlTest() => Assert.AreEqual("/FlightOfPassenger/FlightOfPassengers", obj.PageUrl);
 
         [TestMethod]
         public void ToObjectTest()
@@ -61,17 +78,72 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
-
+        public void PassengerIdTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
+        }
 
         [TestMethod]
-        public void NamesTest()
+        public void StopOverIdTest()
         {
-            var x = GetRandom.Object<FlightOfPassengerData>();
-            var y = GetRandom.Object<FlightOfPassengerView>();
-            TestArePropertyValuesNotEqual(x, y);
-            Copy.Members(x, y);
-            TestArePropertyValuesEqual(x, y);
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
         }
+
+        [TestMethod]
+        public void IdTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
+        }
+
+        [TestMethod]
+        public void GetFlightOfPassengerNameTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
+        }
+
+        [TestMethod]
+        public void GetStopOverNameTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
+        }
+
+        [TestMethod]
+        public void GetPassengerNameTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.StopOverId, item.PassengerId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
+        }
+
+        [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
     }
 }
