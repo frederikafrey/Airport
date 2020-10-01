@@ -8,7 +8,7 @@ namespace Airport.Pages.AirlineCompany
 {
     public abstract class AirlineCompaniesPage:CommonPage<IAirlineCompaniesRepository, Domain.AirlineCompany.AirlineCompany, AirlineCompanyView, AirlineCompanyData>
     {
-        protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r) : base(r) => PageTitle = "Airline Companies";
+        protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r) : base(r) => PageTitle = "Airline AirlineCompanies";
 
         public IEnumerable<SelectListItem> Names { get; }
 

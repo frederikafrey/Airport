@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Airport.Data.Flight;
 using Airport.Domain.AirlineCompany;
+using Airport.Domain.Airport;
 using Airport.Domain.Flight;
-using Airport.Infra;
 using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class IndexModel : FlightsPage
     {
-        public IndexModel(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r, t) { }
+        public IndexModel(IFlightsRepository r, IAirlineCompaniesRepository p, IAirportsRepository t) : base(r, p, t) { }
 
         public IList<FlightData> FlightData { get; set; }
 
