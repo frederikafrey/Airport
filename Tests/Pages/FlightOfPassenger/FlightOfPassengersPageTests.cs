@@ -81,7 +81,7 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void PassengerIdTest()
+        public void PassengersTest()
         {
             var item = GetRandom.Object<FlightOfPassengerView>();
             obj.Item = item;
@@ -92,7 +92,7 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void StopOverIdTest()
+        public void StopOversTest()
         {
             var item = GetRandom.Object<FlightOfPassengerView>();
             obj.Item = item;

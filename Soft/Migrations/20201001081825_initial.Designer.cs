@@ -81,15 +81,15 @@ namespace Airport.Soft.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FlightId");
+                    b.ToTable("Flights");
                 });
 
             modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("PassengerId")
+                    b.Property<string>("Passengers")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("StopOverId")
+                    b.Property<string>("StopOvers")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FinalDestination")
@@ -101,9 +101,9 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartDestination")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PassengerId", "StopOverId");
+                    b.HasKey("Passengers", "StopOvers");
 
-                    b.ToTable("FlightOfPassengerId");
+                    b.ToTable("FlightOfPassengers");
                 });
 
             modelBuilder.Entity("Airport.Data.Luggage.LuggageData", b =>
@@ -114,7 +114,7 @@ namespace Airport.Soft.Migrations
                     b.Property<int>("Dimensions")
                         .HasColumnType("int");
 
-                    b.Property<string>("FlightOfPassengerId")
+                    b.Property<string>("FlightOfPassengers")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Weight")
@@ -146,16 +146,16 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.StopOver.StopOverData", b =>
                 {
-                    b.Property<string>("FlightOfPassengerId")
+                    b.Property<string>("FlightOfPassengers")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FlightId")
+                    b.Property<string>("Flights")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightOfPassengerId", "FlightId");
+                    b.HasKey("FlightOfPassengers", "Flights");
 
                     b.ToTable("StopOvers");
                 });

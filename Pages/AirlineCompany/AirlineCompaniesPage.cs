@@ -10,8 +10,6 @@ namespace Airport.Pages.AirlineCompany
     {
         protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r) : base(r) => PageTitle = "Airline Companies";
 
-        public IEnumerable<SelectListItem> Names { get; }
-
         public override string ItemId => Item?.Id ?? string.Empty;
 
         public override string GetPageUrl() => "/AirlineCompany/AirlineCompanies";

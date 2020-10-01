@@ -15,11 +15,11 @@ namespace Airport.Pages.FlightOfPassenger
         protected internal FlightOfPassengersPage(IFlightOfPassengersRepository r, IStopOversRepository p, IPassengersRepository t) : base(r)
         {
             PageTitle = "Flight Of Passengers";
-            StopOverId = CreateSelectList2<Domain.StopOver.StopOver, StopOverData>(p);
-            PassengerId = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(t);
+            StopOvers = CreateSelectList2<Domain.StopOver.StopOver, StopOverData>(p);
+            Passengers = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(t);
         }
-        public IEnumerable<SelectListItem> StopOverId { get; }
-        public IEnumerable<SelectListItem> PassengerId { get; }
+        public IEnumerable<SelectListItem> StopOvers { get; }
+        public IEnumerable<SelectListItem> Passengers { get; }
 
         public override string ItemId => Item is null ? string.Empty : Item.GetId();
         public override string GetPageUrl() => "/FlightOfPassenger/FlightOfPassengers";
@@ -32,7 +32,7 @@ namespace Airport.Pages.FlightOfPassenger
 
         public string GetStopOverName(string stopOverId)
         {
-            foreach (var m in StopOverId)
+            foreach (var m in StopOvers)
                 if (m.Value == stopOverId)
                     return m.Text;
 
@@ -40,7 +40,7 @@ namespace Airport.Pages.FlightOfPassenger
         }
         public string GetFlightOfPassengerName(string passengerId)
         {
-            foreach (var m in PassengerId)
+            foreach (var m in Passengers)
                 if (m.Value == passengerId)
                     return m.Text;
 

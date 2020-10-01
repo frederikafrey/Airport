@@ -9,7 +9,6 @@ namespace Airport.Pages.Passenger
     public abstract class PassengersPage : CommonPage<IPassengersRepository, Domain.Passenger.Passenger, PassengerView, PassengerData>
     {
         protected internal PassengersPage(IPassengersRepository r) : base(r) => PageTitle = "Passengers";
-        public IEnumerable<SelectListItem> Names { get; }
 
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Passenger/Passengers";

@@ -62,15 +62,5 @@ namespace Airport.Tests.Pages.AirlineCompany
 
         [TestMethod]
         public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
-
-        [TestMethod]
-        public void NamesTest()
-        {
-            var x = GetRandom.Object<AirlineCompanyData>();
-            var y = GetRandom.Object<AirlineCompanyView>();
-            TestArePropertyValuesNotEqual(x, y);
-            Copy.Members(x, y);
-            TestArePropertyValuesEqual(x, y);
-        }
     }
 }

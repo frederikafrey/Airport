@@ -8,6 +8,6 @@
 
 <body>
 @Html.EditControlsFor(m => m.Item.Id)
-@Html.EditControlsForDropDown(m => m.Item.FlightId, Model.FlightId)
-@Html.EditControlsForDropDown(m => m.Item.FlightOfPassengerId, Model.FlightOfPassengerId)
+@Html.EditControlsForDropDown(m => m.Item.FlightId, Model.Flights)
+@Html.EditControlsForDropDown(m => m.Item.FlightOfPassengerId, Model.FlightOfPassengers)
 </body>

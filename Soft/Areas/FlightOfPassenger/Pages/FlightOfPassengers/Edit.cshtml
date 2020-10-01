@@ -8,8 +8,8 @@
 
 <body>
     @Html.DisabledControlsFor(m => m.Item.Id)
-    @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.PassengerId)
+    @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
     @Html.EditControlsFor(m => m.Item.StartDestination)
     @Html.EditControlsFor(m => m.Item.FinalDestination)
-    @Html.EditControlsForDropDown(m => m.Item.StopOverId, Model.StopOverId)
+    @Html.EditControlsForDropDown(m => m.Item.StopOverId, Model.StopOvers)
 </body>
