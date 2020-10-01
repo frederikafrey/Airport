@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Airport.Data.Luggage;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Pages.Luggage;
 
@@ -8,7 +9,7 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class IndexModel : LuggagesPage
     {
-        public IndexModel(ILuggagesRepository r) : base(r) { }
+        public IndexModel(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
 
         public IList<LuggageData> LuggageData { get; set; }
 

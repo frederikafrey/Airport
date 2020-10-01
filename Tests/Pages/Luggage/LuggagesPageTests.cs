@@ -1,5 +1,7 @@
 ﻿using Airport.Aids;
+using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
+using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Facade.Luggage;
 using Airport.Pages;
@@ -15,18 +17,22 @@ namespace Airport.Tests.Pages.Luggage
     {
         public class TestClass : LuggagesPage
         {
-            internal TestClass(ILuggagesRepository r) : base(r) { }
+            internal TestClass(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
         }
-        private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Luggage.Luggage, LuggageData>,
+        private class LuggagesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Luggage.Luggage, LuggageData>,
             ILuggagesRepository
+        { }
+        private class FlightOfPassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
+            IFlightOfPassengersRepository
         { }
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new TestRepository();
-            obj = new TestClass(r);
+            var r = new LuggagesRepository();
+            var p = new FlightOfPassengersRepository();
+            obj = new TestClass(r, p);
         }
 
         [TestMethod]
@@ -62,11 +68,7 @@ namespace Airport.Tests.Pages.Luggage
         }
 
         [TestMethod]
-        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
-
-
-        [TestMethod]
-        public void NamesTest()
+        public void FlightOfPassengersTest()
         {
             var x = GetRandom.Object<LuggageData>();
             var y = GetRandom.Object<LuggageView>();
