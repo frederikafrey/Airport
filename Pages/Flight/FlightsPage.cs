@@ -15,12 +15,12 @@ namespace Airport.Pages.Flight
     {
         protected internal FlightsPage(IFlightsRepository r, IAirlineCompaniesRepository t) : base(r)
         {
-            PageTitle = "Flights";
+            PageTitle = "FlightId";
             Companies = CreateSelectList<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>(t);
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/Flight/Flights";
+        public override string GetPageUrl() => "/Flight/FlightId";
 
         public override Domain.Flight.Flight ToObject(FlightView view) => FlightViewFactory.Create(view);
         public override FlightView ToView(Domain.Flight.Flight obj) => FlightViewFactory.Create(obj);

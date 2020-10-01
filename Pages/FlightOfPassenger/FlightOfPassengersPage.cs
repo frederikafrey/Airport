@@ -12,7 +12,7 @@ namespace Airport.Pages.FlightOfPassenger
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
-        public override string GetPageUrl() => "/FlightOfPassenger/FlightOfPassengers";
+        public override string GetPageUrl() => "/FlightOfPassenger/FlightOfPassengerId";
 
         public override Domain.FlightOfPassenger.FlightOfPassenger ToObject(FlightOfPassengerView ofPassengerView) => FlightOfPassengerViewFactory.Create(ofPassengerView);
         public override FlightOfPassengerView ToView(Domain.FlightOfPassenger.FlightOfPassenger obj) => FlightOfPassengerViewFactory.Create(obj);

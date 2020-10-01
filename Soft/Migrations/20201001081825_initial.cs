@@ -73,7 +73,7 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FlightOfPassengers",
+                name: "FlightOfPassengerId",
                 columns: table => new
                 {
                     PassengerId = table.Column<string>(nullable: false),
@@ -88,7 +88,7 @@ namespace Airport.Soft.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Flights",
+                name: "FlightId",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -316,10 +316,10 @@ namespace Airport.Soft.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "FlightOfPassengers");
+                name: "FlightOfPassengerId");
 
             migrationBuilder.DropTable(
-                name: "Flights");
+                name: "FlightId");
 
             migrationBuilder.DropTable(
                 name: "Luggages");

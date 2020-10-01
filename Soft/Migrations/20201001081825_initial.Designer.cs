@@ -81,7 +81,7 @@ namespace Airport.Soft.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Flights");
+                    b.ToTable("FlightId");
                 });
 
             modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
@@ -103,7 +103,7 @@ namespace Airport.Soft.Migrations
 
                     b.HasKey("PassengerId", "StopOverId");
 
-                    b.ToTable("FlightOfPassengers");
+                    b.ToTable("FlightOfPassengerId");
                 });
 
             modelBuilder.Entity("Airport.Data.Luggage.LuggageData", b =>

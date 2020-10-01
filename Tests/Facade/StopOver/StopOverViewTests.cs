@@ -17,7 +17,7 @@ namespace Airport.Tests.Facade.StopOver
         public void GetIdTest()
         {
             var actual = obj.GetId();
-            var expected = $"{obj.FlightOfPassengerId}.{obj.FlightId}";
+            var expected = $"{obj.FlightId}.{obj.FlightOfPassengerId}";
             Assert.AreEqual(expected, actual);
         }
     }

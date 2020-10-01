@@ -88,7 +88,7 @@ namespace Airport.Tests.Infra
         public void FlightsTest() => IsNullableProperty(obj, nameof(obj.Flights), typeof(DbSet<FlightData>));
 
         [TestMethod]
-        public void StopOverTest() => IsNullableProperty(obj, nameof(obj.StopOvers), typeof(DbSet<StopOverData>));
+        public void StopOversTest() => IsNullableProperty(obj, nameof(obj.StopOvers), typeof(DbSet<StopOverData>));
 
         [TestMethod]
         public void LuggagesTest() => IsNullableProperty(obj, nameof(obj.Luggages), typeof(DbSet<LuggageData>));

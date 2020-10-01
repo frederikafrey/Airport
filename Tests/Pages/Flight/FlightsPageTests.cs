@@ -46,10 +46,10 @@ namespace Airport.Tests.Pages.Flight
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Flights", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("FlightId", obj.PageTitle);
 
         [TestMethod]
-        public void GetPageUrlTest() => Assert.AreEqual("/Flight/Flights", obj.PageUrl);
+        public void GetPageUrlTest() => Assert.AreEqual("/Flight/FlightId", obj.PageUrl);
 
         [TestMethod]
         public void ToObjectTest()

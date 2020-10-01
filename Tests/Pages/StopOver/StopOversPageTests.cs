@@ -20,25 +20,26 @@ namespace Airport.Tests.Pages.StopOver
         {
             internal TestClass(IStopOversRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
         }
-        private class TrainRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
-            IFlightOfPassengersRepository
-        { }
 
-        private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
+        private class StopOversRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
             IStopOversRepository
         { }
 
-        private class TermRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
+        private class FlightsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
             IFlightsRepository
+        { }
+
+        private class FlightOfPassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
+            IFlightOfPassengersRepository
         { }
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new TestRepository();
-            var p = new TermRepository();
-            var t = new TrainRepository();
+            var r = new StopOversRepository();
+            var p = new FlightsRepository();
+            var t = new FlightOfPassengersRepository();
             obj = new TestClass(r, p, t);
         }
 
@@ -89,7 +90,7 @@ namespace Airport.Tests.Pages.StopOver
         }
 
         [TestMethod]
-        public void PassengersFlightIdTest()
+        public void FlightOfPassengerIdTest()
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
@@ -121,7 +122,7 @@ namespace Airport.Tests.Pages.StopOver
             Assert.AreEqual(string.Empty, obj.ItemId);
         }
         [TestMethod]
-        public void GetPassengersFlightNameTest()
+        public void GetFlightOfPassengerNameTest()
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;

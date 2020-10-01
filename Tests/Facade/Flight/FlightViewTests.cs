@@ -8,16 +8,16 @@ namespace Airport.Tests.Facade.Flight
     public class FlightViewTests : SealedClassTests<FlightView, UniqueEntityView>
     {
         [TestMethod]
-        public void StartingPointIdTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
+        public void StartingPointTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
 
         [TestMethod]
-        public void FinalPointIdTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
+        public void FinalPointTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
 
         [TestMethod]
-        public void StartTimeTest() => IsProperty<int>();
+        public void StartTimeTest() => IsNullableProperty(() => obj.StartTime, x => obj.StartTime = x);
 
         [TestMethod]
-        public void ArrivingTimeTest() => IsProperty<int>();
+        public void ArrivingTimeTest() => IsNullableProperty(() => obj.ArrivingTime, x => obj.ArrivingTime = x);
 
         [TestMethod]
         public void OccupancyTest() => IsProperty<int>();
@@ -26,6 +26,6 @@ namespace Airport.Tests.Facade.Flight
         public void CompanyTest() => IsNullableProperty(() => obj.Company, x => obj.Company = x);
 
         [TestMethod]
-        public void PlaneIdTest() => IsNullableProperty(() => obj.Plane, x => obj.Plane = x);
+        public void PlaneTest() => IsNullableProperty(() => obj.Plane, x => obj.Plane = x);
     }
 }

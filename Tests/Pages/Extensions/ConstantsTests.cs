@@ -16,7 +16,7 @@ namespace Airport.Tests.Pages.Extensions
 
         [TestMethod] public void AirlineCompaniesPageTitleTest() => Assert.AreEqual("Airline Companies", Constants.AirlineCompaniesPageTitle);
         [TestMethod] public void AirportsPageTitleTest() => Assert.AreEqual("Airports", Constants.AirportsPageTitle);
-        [TestMethod] public void FlightsPageTitleTest() => Assert.AreEqual("Flights", Constants.FlightsPageTitle);
+        [TestMethod] public void FlightsPageTitleTest() => Assert.AreEqual("FlightId", Constants.FlightsPageTitle);
         [TestMethod] public void StopOversPageTitleTest() => Assert.AreEqual("Stop Overs", Constants.StopOversPageTitle);
         [TestMethod] public void LuggagesPageTitleTest() => Assert.AreEqual("Luggage", Constants.LuggagesPageTitle);
         [TestMethod] public void PassengersPageTitleTest() => Assert.AreEqual("Passengers", Constants.PassengersPageTitle);
