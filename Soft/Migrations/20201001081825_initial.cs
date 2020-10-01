@@ -77,13 +77,14 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     PassengerId = table.Column<string>(nullable: false),
-                    FinalDestinationId = table.Column<string>(nullable: false),
+                    StopOverId = table.Column<string>(nullable: false),
                     Id = table.Column<string>(nullable: true),
-                    StartDestinationId = table.Column<string>(nullable: true)
+                    StartDestination = table.Column<string>(nullable: true),
+                    FinalDestination = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FlightOfPassengers", x => new { x.PassengerId, x.FinalDestinationId });
+                    table.PrimaryKey("PK_FlightOfPassengers", x => new { x.PassengerId, x.StopOverId });
                 });
 
             migrationBuilder.CreateTable(
@@ -91,13 +92,13 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    StartingPointId = table.Column<string>(nullable: true),
-                    FinalPointId = table.Column<string>(nullable: true),
+                    StartingPoint = table.Column<string>(nullable: true),
+                    FinalPoint = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
                     ArrivingTime = table.Column<string>(nullable: true),
                     Occupancy = table.Column<int>(nullable: false),
                     Company = table.Column<string>(nullable: true),
-                    PlaneId = table.Column<string>(nullable: true)
+                    Plane = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

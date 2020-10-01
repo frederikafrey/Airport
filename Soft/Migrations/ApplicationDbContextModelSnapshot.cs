@@ -87,8 +87,11 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FinalDestination")
+                    b.Property<string>("StopOverId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FinalDestination")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
@@ -96,7 +99,7 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartDestination")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PassengerId", "FinalDestination");
+                    b.HasKey("PassengerId", "StopOverId");
 
                     b.ToTable("FlightOfPassengers");
                 });
