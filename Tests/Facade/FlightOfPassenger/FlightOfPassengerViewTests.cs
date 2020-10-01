@@ -11,10 +11,10 @@ namespace Airport.Tests.Facade.FlightOfPassenger
         public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
 
         [TestMethod]
-        public void StartDestinationIdTest() => IsNullableProperty(() => obj.StartDestinationId, x => obj.StartDestinationId = x);
+        public void StartDestinationIdTest() => IsNullableProperty(() => obj.StartDestination, x => obj.StartDestination = x);
 
         [TestMethod]
-        public void FinalDestinationIdTest() => IsNullableProperty(() => obj.FinalDestinationId, x => obj.FinalDestinationId = x);
+        public void FinalDestinationIdTest() => IsNullableProperty(() => obj.FinalDestination, x => obj.FinalDestination = x);
 
         [TestMethod]
         public void GetIdTest()

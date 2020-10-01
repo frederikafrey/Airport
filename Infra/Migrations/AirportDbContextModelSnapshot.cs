@@ -76,19 +76,19 @@ namespace Airport.Infra.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FinalPointId")
+                    b.Property<string>("FinalPoint")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Occupancy")
                         .HasColumnType("int");
 
-                    b.Property<string>("PlaneId")
+                    b.Property<string>("Plane")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StartTime")
                         .HasColumnType("int");
 
-                    b.Property<string>("StartingPointId")
+                    b.Property<string>("StartingPoint")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -158,13 +158,13 @@ namespace Airport.Infra.Migrations
                     b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FinalDestinationId")
+                    b.Property<string>("FinalDestination")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartDestinationId")
+                    b.Property<string>("StartDestination")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FlightOfPassengerId", "FlightOfPassengerId");

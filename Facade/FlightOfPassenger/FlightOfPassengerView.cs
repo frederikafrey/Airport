@@ -11,11 +11,15 @@ namespace Airport.Facade.FlightOfPassenger
         public string PassengerId { get; set; }
 
         [DisplayName("Start Destination")]
-        public string StartDestinationId { get; set; }
+        public string StartDestination { get; set; }
 
         [DisplayName("Final Destination")]
-        public string FinalDestinationId { get; set; }
+        public string FinalDestination { get; set; }
 
-        public string GetId() => $"{PassengerId}";
+        [Required]
+        [DisplayName("Stop Over")]
+        public string StopOverId { get; set; }
+
+        public string GetId() => $"{StopOverId}.{PassengerId}";
     }
 }

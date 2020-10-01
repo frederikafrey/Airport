@@ -9,10 +9,10 @@ namespace Airport.Tests.Data.Flight
     public class FlightDataTests : SealedClassTests<FlightData, UniqueEntityData>
     {
         [TestMethod]
-        public void StartingPointIdTest() => IsNullableProperty(() => obj.StartingPointId, x => obj.StartingPointId = x);
+        public void StartingPointIdTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
 
         [TestMethod]
-        public void FinalPointIdTest() => IsNullableProperty(() => obj.FinalPointId, x => obj.FinalPointId = x);
+        public void FinalPointIdTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
 
         [TestMethod]
         public void StartTimeTest() => IsProperty<int>();
@@ -27,6 +27,6 @@ namespace Airport.Tests.Data.Flight
         public void CompanyTest() => IsNullableProperty(() => obj.Company, x => obj.Company = x);
 
         [TestMethod]
-        public void PlaneIdTest() => IsNullableProperty(() => obj.PlaneId, x => obj.PlaneId = x);
+        public void PlaneIdTest() => IsNullableProperty(() => obj.Plane, x => obj.Plane = x);
     }
 }

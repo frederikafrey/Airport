@@ -12,6 +12,7 @@ namespace Airport.Facade.StopOver
        
         [DisplayName("Flight of Passenger")]
         public string FlightOfPassengerId { get; set; }
+
         public string GetId() => $"{FlightId}.{FlightOfPassengerId}";
     }
 }

@@ -8,11 +8,11 @@ namespace Airport.Facade.Flight
     {
         [Required]
         [DisplayName("Starting Point")]
-        public string StartingPointId { get; set; }
+        public string StartingPoint { get; set; }
         
         [Required]
         [DisplayName("Final Point")]
-        public string FinalPointId { get; set; }
+        public string FinalPoint { get; set; }
         
         [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
@@ -25,10 +25,13 @@ namespace Airport.Facade.Flight
         [Required]
         [DisplayName("Occupancy")] 
         public int Occupancy { get; set; }
+
+        [Required]
+        [DisplayName("Company")]
         public string Company { get; set; }
         
         [Required]
         [DisplayName("Plane nr.")]
-        public string PlaneId { get; set; }
+        public string Plane { get; set; }
     }
 }
