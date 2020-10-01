@@ -56,8 +56,8 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("ArrivingTime")
-                        .HasColumnType("int");
+                    b.Property<string>("ArrivingTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
@@ -71,8 +71,8 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("PlaneId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StartTime")
-                        .HasColumnType("int");
+                    b.Property<string>("StartTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StartingPointId")
                         .HasColumnType("nvarchar(max)");
