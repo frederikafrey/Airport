@@ -8,7 +8,7 @@
 
 <body>
     @Html.EditControlsFor(m => m.Item.Id)
-    @Html.EditControlsFor(m => m.Item.FlightOfPassengerId)
+    @Html.EditControlsForDropDown(m => m.Item.FlightOfPassengerId, Model.FlightOfPassengers)
     @Html.EditControlsFor(m => m.Item.Dimensions)
     @Html.EditControlsFor(m => m.Item.Weight)
 </body>
