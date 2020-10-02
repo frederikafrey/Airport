@@ -14,9 +14,9 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
             await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
-        public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
+        public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-            await UpdateObject(fixedFilter, fixedValue);
+            await UpdateObject(id, fixedFilter, fixedValue);
             return Redirect(IndexUrl);
         }
     }
