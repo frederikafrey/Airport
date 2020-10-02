@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Airport.Data.Passenger;
+﻿using Airport.Data.Passenger;
 using Airport.Domain.Passenger;
 using Airport.Facade.Passenger;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.Passenger
 {
