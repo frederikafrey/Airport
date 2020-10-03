@@ -29,10 +29,14 @@
                             new Link("Passenger Info", "/Passenger/Passengers"),
                             new Link("Flight Of Passengers", "/FlightOfPassenger/FlightOfPassengers"),
                             new Link("Luggage", "/Luggage/Luggages"))
+                        @Html.DropDownNavigationMenuFor("Services",
+                            new Link("Library", "/library"),
+                            new Link("Restaurants", "/restaurants"),
+                            new Link("Currency Exchange", "/CurrencyExchange"),
+                            new Link("Baggage Wrapping", "/BaggageWrapping"))
                         @Html.DropDownNavigationMenuFor("Help",
                             new Link("About", "/Index"),
                             new Link("COVID-19", "/COVID19"),
-                            new Link("Restaurants", "/restaurants"),
                             new Link("Privacy", "/Privacy"))
                     </ul>
                 </div>

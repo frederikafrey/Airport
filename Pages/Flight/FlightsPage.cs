@@ -33,19 +33,19 @@ namespace Airport.Pages.Flight
 
         protected new static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
             where TTDomain : Entity<TTData>
-            where TTData : AirlineCompanyData, new()
+            where TTData : UniqueEntityData, new()
         {
             var items = r.Get().GetAwaiter().GetResult();
 
-            return items.Select(t => new SelectListItem(t.Data.Name, t.Data.Name)).ToList();
+            return items.Select(t => new SelectListItem(t.Data.Id, t.Data.Id)).ToList();
         }
         protected new static IEnumerable<SelectListItem> CreateSelectList2<TTDomain, TTData>(IRepository<TTDomain> r)
             where TTDomain : Entity<TTData>
-            where TTData : AirportData, new()
+            where TTData : UniqueEntityData, new()
         {
             var items = r.Get().GetAwaiter().GetResult();
 
-            return items.Select(t => new SelectListItem(t.Data.Country, t.Data.Country)).ToList();
+            return items.Select(t => new SelectListItem(t.Data.Id, t.Data.Id)).ToList();
         }
     }
 }
