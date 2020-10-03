@@ -3,8 +3,23 @@
 @{
     ViewData["Title"] = "RESTAURANTS";
 }
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
 
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
 <h1>@ViewData["Title"]</h1>
+
 <br />
 <p>
     The airport has a variety of places where to spend time
@@ -15,24 +30,39 @@
     for a quick nibble or a proper meal!
 </p>
 <br />
-<div class="text-left">
-    
+<div style="width: 400px; float:left; height:200px; margin:50px">
+    <h2>1.VAPIANO</h2>
+    <img src="https://nmgprod.s3.amazonaws.com/media/files/46/cd/46cd957b6eb6e23378f3ae561f5128e4/cover_image.jpg.760x400_q85_crop_upscale.jpg" @*alt="Vapiano"*@ width="400" height="200" />
+    <p>
+        Eat pasta or pizza, drink wine and feel the atmosphere!
+        Our Vapianisti are preparing your favorite dishes fresh, 
+        right in front of your eyes, and according to your wishes.
+    </p>
+    <p>See their menu <a href="https://ee.vapiano.com/en/menu/">here</a>.</p>
 </div>
-<body>
-    <div style="width: 400px; float:left; height:200px; margin:10px">
-        <h2>1.VAPIANO</h2>
-        <img src="https://nmgprod.s3.amazonaws.com/media/files/46/cd/46cd957b6eb6e23378f3ae561f5128e4/cover_image.jpg.760x400_q85_crop_upscale.jpg" @*alt="Vapiano"*@ width="400" height="200" />
-        <p>Eat pasta or pizza, drink wine and feel the atmosphere!</p>
-        <p>See their menu <a href="https://ee.vapiano.com/en/menu/">here</a>.</p>
-    </div>
-    <div style="width: 400px; float:left; height:200px; margin:10px">
-        <h2>2.KOHVIK KOMEET</h2>
-        <img src="https://blogistaja.files.wordpress.com/2013/05/kohvikkomeet750.jpg" @*alt="Vapiano"*@ width="400" height="200" />
-        <p>Our staff makes every effort to ensure you feel at home here. 
-            Our goal at Komeet is simple – 
-            to be the best cafe in Tallinn – 
-            because we care passionately about 
-            mother nature, birds, bees, animals, and your health.</p>
-        <p>See their menu <a href="https://kohvikkomeet.ee/en/menu/">here</a>.</p>
-    </div>
-</body> 
+<div style="width: 400px; float:left; height:200px; margin-bottom:70px; margin-top:50px; margin-left:100px">
+    <h2>2.KOHVIK KOMEET</h2>
+    <img src="https://blogistaja.files.wordpress.com/2013/05/kohvikkomeet750.jpg" @*alt="Komeet"*@ width="400" height="200" />
+    <p>
+        Our staff makes every effort to ensure you feel at home here.
+        Our goal at Komeet is simple –
+        to be the best cafe in Tallinn –
+        because we care passionately about
+        mother nature, birds, bees, animals, and your health.
+    </p>
+    <p>See their menu <a href="https://kohvikkomeet.ee/en/menu/">here</a>.</p>
+</div>
+<div style="width: 400px; float:left; height:200px; margin-top:150px; margin-bottom:250px; margin-left:50px">
+    <h2>3.REVAL CAFE</h2>
+    <img src="https://revalcafe.ee/wp-content/gallery/deli-1/thumbs/thumbs_marekmetslaid__MMP3633.jpg" @*alt="Reval"*@ width="400" height="200" />
+    <p>
+        Reval Café Bakery is a lovely café. The scent of freshly baked bread invites
+        You to enjoy soft bakery like poppy seed rolls,
+        cinnamon braid bread and juicy focaccia.
+    </p>
+    <p>See their menu <a href="https://revalcafe.ee/kohvikud/telliskivi/">here</a>.</p>
+</div>
+
+
+
+

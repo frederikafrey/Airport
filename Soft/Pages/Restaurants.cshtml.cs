@@ -1,14 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace Airport.Soft.Pages
 {
     public class RestaurantsModel : PageModel
     {
+        private readonly ILogger<RestaurantsModel> _logger;
+
+        public RestaurantsModel(ILogger<RestaurantsModel> logger)
+        {
+            _logger = logger;
+        }
+
         public void OnGet()
         {
         }
