@@ -17,14 +17,17 @@ namespace Airport.Tests.Facade.FlightOfPassenger
         public void FinalDestinationTest() => IsNullableProperty(() => obj.FinalDestination, x => obj.FinalDestination = x);
 
         [TestMethod]
-        public void StopOverIdTest() => IsNullableProperty(() => obj.StopOverId, x => obj.StopOverId = x);
+        public void IsStopOverTest() { Assert.Inconclusive(); }
 
-        [TestMethod]
-        public void GetIdTest()
-        {
-            var actual = obj.GetId();
-            var expected = $"{obj.StopOverId}.{obj.PassengerId}";
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestMethod]
+        //public void StopOverIdTest() => IsNullableProperty(() => obj.StopOverId, x => x);
+
+        //[TestMethod]
+        //public void GetIdTest()
+        //{
+        //    var actual = obj.GetId();
+        //    var expected = $"{obj.StopOverId}.{obj.PassengerId}";
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }

@@ -23,5 +23,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
             if (!await AddObject(fixedFilter, fixedValue)) return Page();
             return Redirect(IndexUrl);
         }
+
+        public override string ItemId { get; }
     }
 }

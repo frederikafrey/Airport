@@ -15,5 +15,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
             await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
+
+        public override string ItemId { get; }
     }
 }

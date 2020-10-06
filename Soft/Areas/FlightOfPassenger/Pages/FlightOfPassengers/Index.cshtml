@@ -20,8 +20,7 @@
                 new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartDestination), Model.GetSortString(m => m.StartDestination, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.FinalDestination), Model.GetSortString(m => m.FinalDestination, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.StopOverId), Model.GetSortString(m => m.StopOverId, page))
+                new Link(Html.DisplayNameFor(m => m.Item.FinalDestination), Model.GetSortString(m => m.FinalDestination, page)))
                 )
         </thead>
         <tbody>
@@ -37,8 +36,7 @@
                    Html.DisplayFor(modelItem => item.Id),
                    Html.DisplayFor(modelItem => item.PassengerId),
                    Html.DisplayFor(modelItem => item.StartDestination),                   
-                   Html.DisplayFor(modelItem => item.FinalDestination), 
-                        Html.DisplayFor(modelItem => item.StopOverId))
+                   Html.DisplayFor(modelItem => item.FinalDestination))
                    )
                 </tr>
             }

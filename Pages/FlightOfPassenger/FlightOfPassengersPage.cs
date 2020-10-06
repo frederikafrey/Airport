@@ -21,7 +21,7 @@ namespace Airport.Pages.FlightOfPassenger
         public IEnumerable<SelectListItem> StopOvers { get; }
         public IEnumerable<SelectListItem> Passengers { get; }
 
-        public override string ItemId => Item is null ? string.Empty : Item.GetId();
+        //public override string ItemId => Item is null ? string.Empty : Item.GetId();
         public override string GetPageUrl() => "/FlightOfPassenger/FlightOfPassengers";
 
         public override Domain.FlightOfPassenger.FlightOfPassenger ToObject(FlightOfPassengerView view)

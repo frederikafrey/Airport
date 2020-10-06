@@ -21,5 +21,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
             await DeleteObject(id, fixedFilter, fixedValue);
             return Redirect(IndexUrl);
         }
+
+        public override string ItemId { get; }
     }
 }

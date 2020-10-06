@@ -16,10 +16,6 @@ namespace Airport.Facade.FlightOfPassenger
         [DisplayName("Final Destination")]
         public string FinalDestination { get; set; }
 
-        [Required]
-        [DisplayName("Stop Over")]
-        public string StopOverId { get; set; }
-
-        public string GetId() => $"{StopOverId}.{PassengerId}";
+        //public string GetId() => $"{FinalDestination}{PassengerId}";
     }
 }

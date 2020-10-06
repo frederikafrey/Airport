@@ -15,5 +15,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
             SelectedId = id;
             await GetList(sortOrder, currentFilter, searchString, pageIndex, fixedFilter, fixedValue);
         }
+
+        public override string ItemId { get; }
     }
 }
