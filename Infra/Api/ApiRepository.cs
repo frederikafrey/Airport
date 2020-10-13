@@ -3,7 +3,7 @@ using System.Net.Http;
 using Airport.Data.Api;
 using Newtonsoft.Json;
 
-namespace Airport.Infra
+namespace Airport.Infra.Api
 {
     public class ApiRepository
     {

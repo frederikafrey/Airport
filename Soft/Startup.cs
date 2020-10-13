@@ -8,6 +8,7 @@ using Airport.Domain.StopOver;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
+using Airport.Infra.Api;
 using Airport.Infra.Flight;
 using Airport.Infra.FlightOfPassenger;
 using Airport.Infra.Luggage;
