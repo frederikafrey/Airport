@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
-using Airport.Data;
 using Airport.Data.Api;
 using Newtonsoft.Json;
 
