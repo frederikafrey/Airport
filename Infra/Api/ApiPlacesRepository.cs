@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Airport.Infra.Api
 {
-    public class ApiRepository
+    public class ApiPlacesRepository
     {
         public static async void aa()
         {
