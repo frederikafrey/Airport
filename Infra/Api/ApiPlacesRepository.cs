@@ -7,7 +7,7 @@ namespace Airport.Infra.Api
 {
     public class ApiPlacesRepository
     {
-        public static async void aa()
+        public static async void ApiPlaces()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
