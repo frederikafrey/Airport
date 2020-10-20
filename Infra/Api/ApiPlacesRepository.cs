@@ -11,10 +11,9 @@ namespace Airport.Infra.Api
 {
     public class ApiPlacesRepository : IApiPlacesRepository
     {
-        //private IEnumerable<ApiPlaceData> places => new List<ApiPlaceData>();
-        private Test places = new Test();
+        private PlaceData places = new PlaceData();
 
-        private async Task<Test> apiConnection(string name = "")
+        private async Task<PlaceData> apiConnection(string name = "")
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -33,23 +32,23 @@ namespace Airport.Infra.Api
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<Test>(body);
+                return JsonConvert.DeserializeObject<PlaceData>(body);
             }
         }
 
-        public ApiPlaceData Get(string id)
+        public PlaceProperties Get(string id)
         {
             return places.Places.FirstOrDefault(x => x.PlaceId == id);
         }
 
-        public async Task<Test> GetAll()
+        public async Task<PlaceData> GetAll()
         {
             places.Places.Clear();
             var data = await apiConnection();
             data.Places.ForEach(x => places.Places.Add(x));
             return places;
         }
-        public async Task<Test> GetAll(string name)
+        public async Task<PlaceData> GetAll(string name)
         {
             places.Places.Clear();
             var data = await apiConnection(name);

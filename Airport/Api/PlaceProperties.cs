@@ -2,15 +2,15 @@
 
 namespace Airport.Data.Api
 {
-    public class ApiPlaceData
+    public class PlaceProperties
     {
         public string PlaceId { get; set; }
         public string PlaceName { get; set; }
         public string CountryName { get; set; }
     }
 
-    public class Test
+    public class PlaceData
     {
-        public List<ApiPlaceData> Places = new List<ApiPlaceData>();
+        public List<PlaceProperties> Places = new List<PlaceProperties>();
     }
 }

@@ -8,8 +8,8 @@ namespace Airport.Domain.Api
 {
     public interface IApiPlacesRepository
     {
-        ApiPlaceData Get(string id);
-        Task<Test> GetAll();
-        Task<Test> GetAll(string name);
+        PlaceProperties Get(string id);
+        Task<PlaceData> GetAll();
+        Task<PlaceData> GetAll(string name);
     }
 }

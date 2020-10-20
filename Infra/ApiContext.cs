@@ -8,7 +8,7 @@
 //namespace Airport.Infra
 //{
 //    public abstract class ApiContext<TData, TDomain>
-//        where TData : ApiPlaceData, new()
+//        where TData : PlaceProperties, new()
 //        where TDomain : IApiPlacesRepository, new()
 //    {
 //        protected abstract Task<TData> GetData(string id);
