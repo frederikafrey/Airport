@@ -6,10 +6,11 @@ namespace Airport.Data.Api
     {
         public string PlaceId { get; set; }
         public string PlaceName { get; set; }
+        public string CountryName { get; set; }
     }
 
     public class Test
     {
-        public List<ApiPlaceData> Places { get; set; }
+        public List<ApiPlaceData> Places = new List<ApiPlaceData>();
     }
 }

@@ -1,5 +1,6 @@
 using Airport.Domain.AirlineCompany;
 using Airport.Domain.Airport;
+using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
@@ -50,7 +51,9 @@ namespace Airport.Soft
             services.AddScoped<ILuggagesRepository, LuggagesRepository>();
             services.AddScoped<IPassengersRepository, PassengersRepository>();
             services.AddScoped<IFlightOfPassengersRepository, FlightOfPassengersRepository>();
-            ApiPlacesRepository.ApiPlaces();
+            services.AddScoped<IApiPlacesRepository, ApiPlacesRepository>();
+            services.AddScoped<IApiCountriesRepository, ApiCountriesRepository>();
+            //ApiPlacesRepository.ApiPlaces();
             services.AddRazorPages();
         }
 
