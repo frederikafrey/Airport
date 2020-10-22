@@ -40,11 +40,13 @@ namespace Airport.Pages
 
             return items.Select(m => new SelectListItem(m.Data.Id, m.Data.Id)).ToList();
         }
-        protected static IEnumerable<SelectListItem> CreateSelectList1<TTDomain, TTData>(IRepository<TTDomain> c)
+       
+        protected static IEnumerable<SelectListItem> CreateSelectList1<TTDomain, TTData>(IApiCountriesRepository c)
             where TTDomain : ApiCountryData
             where TTData : ApiCountryData, new()
         {
-            var items = c.Get().GetAwaiter().GetResult();
+           
+            var items = c.GetAll().GetAwaiter().GetResult();
 
             return items.Select(t => new SelectListItem()).ToList();
         }
