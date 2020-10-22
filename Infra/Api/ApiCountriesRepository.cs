@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Airport.Data.Api;
+using Airport.Data.Api.ApiCountry;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 
@@ -13,9 +14,9 @@ namespace Airport.Infra.Api
     public class ApiCountriesRepository: IApiCountriesRepository
 
     {
-    private CountryData countryData = new CountryData();
+    private ApiCountryData _apiCountryData = new ApiCountryData();
 
-    private async Task<CountryData> apiConnection()
+    private async Task<ApiCountryData> apiConnection()
     {
         var client = new HttpClient();
         var request = new HttpRequestMessage
@@ -32,21 +33,21 @@ namespace Airport.Infra.Api
         {
             response.EnsureSuccessStatusCode();
             var body = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<CountryData>(body);
+            return JsonConvert.DeserializeObject<ApiCountryData>(body);
         }
     }
 
-    public CountryProperties Get(string id)
+    public ApiCountryProperties Get(string id)
     {
-        return countryData.Countries.FirstOrDefault(x => x.Code == id);
+        return _apiCountryData.countries.FirstOrDefault(x => x.Code == id);
     }
 
-    public async Task<CountryData> GetAll()
+    public async Task<ApiCountryData> GetAll()
     {
-        countryData.Countries.Clear();
+        _apiCountryData.countries.Clear();
         var data = await apiConnection();
-        data.Countries.ForEach(x => countryData.Countries.Add(x));
-        return countryData;
+        data.countries.ForEach(x => _apiCountryData.countries.Add(x));
+        return _apiCountryData;
     }
     }
 }

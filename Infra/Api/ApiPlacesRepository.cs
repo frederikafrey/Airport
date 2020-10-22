@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api;
+using Airport.Data.Api.ApiPlace;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 
@@ -11,9 +12,9 @@ namespace Airport.Infra.Api
 {
     public class ApiPlacesRepository : IApiPlacesRepository
     {
-        private PlaceData places = new PlaceData();
+        private ApiPlaceData _apiPlaces = new ApiPlaceData();
 
-        private async Task<PlaceData> apiConnection(string name = "")
+        private async Task<ApiPlaceData> apiConnection(string name = "")
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -32,28 +33,28 @@ namespace Airport.Infra.Api
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<PlaceData>(body);
+                return JsonConvert.DeserializeObject<ApiPlaceData>(body);
             }
         }
 
-        public PlaceProperties Get(string id)
+        public ApiPlaceProperties Get(string id)
         {
-            return places.Places.FirstOrDefault(x => x.PlaceId == id);
+            return _apiPlaces.places.FirstOrDefault(x => x.PlaceId == id);
         }
 
-        public async Task<PlaceData> GetAll()
+        public async Task<ApiPlaceData> GetAll()
         {
-            places.Places.Clear();
+            _apiPlaces.places.Clear();
             var data = await apiConnection();
-            data.Places.ForEach(x => places.Places.Add(x));
-            return places;
+            data.places.ForEach(x => _apiPlaces.places.Add(x));
+            return _apiPlaces;
         }
-        public async Task<PlaceData> GetAll(string name)
+        public async Task<ApiPlaceData> GetAll(string name)
         {
-            places.Places.Clear();
+            _apiPlaces.places.Clear();
             var data = await apiConnection(name);
-            data.Places.ForEach(x => places.Places.Add(x));
-            return places;
+            data.places.ForEach(x => _apiPlaces.places.Add(x));
+            return _apiPlaces;
         }
     }
 }

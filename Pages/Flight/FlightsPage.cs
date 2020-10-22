@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Airport.Data.AirlineCompany;
-using Airport.Data.Airport;
+using Airport.Data.Api;
+using Airport.Data.Api.ApiPlace;
 using Airport.Data.Common;
 using Airport.Data.Flight;
-using Airport.Domain.AirlineCompany;
-using Airport.Domain.Airport;
+using Airport.Domain.Api;
 using Airport.Domain.Common;
 using Airport.Domain.Flight;
 using Airport.Facade.Flight;
@@ -15,15 +14,16 @@ namespace Airport.Pages.Flight
 {
     public abstract class FlightsPage : CommonPage<IFlightsRepository, Domain.Flight.Flight, FlightView, FlightData>
     {
-        protected internal FlightsPage(IFlightsRepository r, IAirlineCompaniesRepository p, IAirportsRepository t) : base(r)
+        protected internal FlightsPage(IFlightsRepository r, IApiPlacesRepository p) : base(r)
+            //IAirlineCompaniesRepository p, IAirportsRepository t
         {
             PageTitle = "Flights";
-            AirlineCompanies = CreateSelectList<Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>(p);
-            Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
+            Names = CreateSelectList<Domain.Api.IApiPlacesRepository, ApiPlaceData>(p);
+            //Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
         }
 
-        public IEnumerable<SelectListItem> AirlineCompanies { get; }
-        public IEnumerable<SelectListItem> Airports { get; }
+        public IEnumerable<SelectListItem> Names { get; }
+        //public IEnumerable<SelectListItem> Airports { get; }
 
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Flight/Flights";

@@ -53,7 +53,6 @@ namespace Airport.Soft
             services.AddScoped<IFlightOfPassengersRepository, FlightOfPassengersRepository>();
             services.AddScoped<IApiPlacesRepository, ApiPlacesRepository>();
             services.AddScoped<IApiCountriesRepository, ApiCountriesRepository>();
-            //ApiPlacesRepository.ApiPlaces();
             services.AddRazorPages();
         }
 

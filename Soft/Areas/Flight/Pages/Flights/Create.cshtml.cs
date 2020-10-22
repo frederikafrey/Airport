@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Airport.Domain.AirlineCompany;
 using Airport.Domain.Airport;
+using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Pages.Flight;
 
@@ -9,7 +10,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class CreateModel : FlightsPage
     {
-        public CreateModel(IFlightsRepository r, IAirlineCompaniesRepository p, IAirportsRepository t) : base(r, p, t) { }
+        public CreateModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
