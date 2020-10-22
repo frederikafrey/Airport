@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Airport.Data.Api.ApiCountry;
+using Airport.Data.Api.ApiPlace;
 using Airport.Data.Common;
+using Airport.Domain.Api;
 using Airport.Domain.Common;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -36,6 +39,14 @@ namespace Airport.Pages
             var items = r.Get().GetAwaiter().GetResult();
 
             return items.Select(m => new SelectListItem(m.Data.Id, m.Data.Id)).ToList();
+        }
+        protected static IEnumerable<SelectListItem> CreateSelectList1<TTDomain, TTData>(IRepository<TTDomain> c)
+            where TTDomain : ApiCountryData
+            where TTData : ApiCountryData, new()
+        {
+            var items = c.Get().GetAwaiter().GetResult();
+
+            return items.Select(t => new SelectListItem()).ToList();
         }
         protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
             where TTDomain : Entity<TTData>
