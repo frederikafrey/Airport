@@ -8,7 +8,7 @@
 
 <body>
     @Html.EditControlsFor(m => m.Item.Id)
-    @Html.EditControlsFor(m => m.Item.StartingPoint)
+    @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Names)
     @Html.EditControlsFor(m => m.Item.FinalPoint)
     @Html.EditControlsFor(m => m.Item.StartTime)
     @Html.EditControlsFor(m => m.Item.ArrivingTime)

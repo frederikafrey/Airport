@@ -10,7 +10,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class EditModel : FlightsPage
     {
-        public EditModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r) { }
+        public EditModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r, c) { }
 
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {

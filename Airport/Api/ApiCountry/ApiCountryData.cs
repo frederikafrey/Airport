@@ -5,6 +5,6 @@ namespace Airport.Data.Api.ApiCountry
 {
     public class ApiCountryData
     {
-        public List<ApiCountryProperties> countries = new List<ApiCountryProperties>();
+        public List<ApiCountryProperties> countries = new List<ApiCountryProperties>(); //domeeni
     }
 }

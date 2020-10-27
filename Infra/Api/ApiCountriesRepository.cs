@@ -42,12 +42,12 @@ namespace Airport.Infra.Api
         return _apiCountryData.countries.FirstOrDefault(x => x.Code == id);
     }
 
-    public async Task<ApiCountryData> GetAll()
+    public async Task<IEnumerable<ApiCountryProperties>> GetAll()
     {
         _apiCountryData.countries.Clear();
         var data = await apiConnection();
         data.countries.ForEach(x => _apiCountryData.countries.Add(x));
-        return _apiCountryData;
+        return _apiCountryData.countries;
     }
     }
 }

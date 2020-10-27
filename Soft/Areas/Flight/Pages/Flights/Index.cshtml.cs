@@ -15,7 +15,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         private IApiPlacesRepository placesRepository;
         private IApiCountriesRepository countriesRepository;
 
-        public IndexModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r)
+        public IndexModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r, c)
         {
             placesRepository = p;
             countriesRepository = c;
@@ -36,9 +36,9 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
             int? pageIndex, string fixedFilter, string fixedValue)
         {
             var bb = await countriesRepository.GetAll();
-            var ee = bb.countries.ElementAt(105);
-            var qq = await placesRepository.GetAll(ee.Name);
-            var aa = await placesRepository.GetAll();
+            var ee = bb.ElementAt(105);
+            //var qq = await placesRepository.GetAll(ee.Name);
+            //var aa = await placesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue);
         }

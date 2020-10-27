@@ -21,7 +21,7 @@ namespace Airport.Soft.Areas.Airport.Pages.Airports
             int? pageIndex, string fixedFilter, string fixedValue)
         {
             var bb = await countriesRepository.GetAll();
-            var ee = bb.countries.ElementAt(105);
+            var ee = bb.ElementAt(105);
             var qq = await placesRepository.GetAll(ee.Name);
             var aa = await placesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex, 

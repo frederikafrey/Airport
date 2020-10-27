@@ -10,7 +10,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class DeleteModel : FlightsPage
     {
-        public DeleteModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r) { }
+        public DeleteModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r, c) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

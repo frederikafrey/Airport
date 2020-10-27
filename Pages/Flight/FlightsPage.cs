@@ -14,7 +14,7 @@ namespace Airport.Pages.Flight
             //IAirlineCompaniesRepository p, IAirportsRepository t
         {
             PageTitle = "Flights";
-            Names = CreateSelectList1<ApiCountry, ApiCountryData>(c);
+            Names = CreateSelectList(c);
             //Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
         }
 
