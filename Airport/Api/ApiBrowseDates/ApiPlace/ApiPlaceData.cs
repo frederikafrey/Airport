@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Airport.Data.Api.ApiPlace
+namespace Airport.Data.Api.ApiBrowseDates.ApiPlace
 {
     public class ApiPlaceData
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Airport.Data.Api;
-using Airport.Data.Api.ApiPlace;
+using Airport.Data.Api.ApiCity;
 
 namespace Airport.Domain.Api
 {

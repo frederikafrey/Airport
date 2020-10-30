@@ -1,4 +1,4 @@
-﻿namespace Airport.Data.Api.ApiPlace
+﻿namespace Airport.Data.Api.ApiCity
 {
     public class ApiPlaceProperties
     {
