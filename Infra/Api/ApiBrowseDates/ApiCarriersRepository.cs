@@ -7,7 +7,7 @@ using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 
-namespace Airport.Infra.Api
+namespace Airport.Infra.Api.ApiBrowseDates
 {
     public class ApiCarriersRepository:IApiCarriersRepository
     {
