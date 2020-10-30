@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Airport.Data.Api;
 using Airport.Data.Api.ApiCountry;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
@@ -16,7 +14,7 @@ namespace Airport.Infra.Api
     {
     private ApiCountryData _apiCountryData = new ApiCountryData();
 
-    private async Task<ApiCountryData> apiConnection()
+    private async Task<ApiCountryData> ApiConnection()
     {
         var client = new HttpClient();
         var request = new HttpRequestMessage
@@ -45,7 +43,7 @@ namespace Airport.Infra.Api
     public async Task<IEnumerable<ApiCountryProperties>> GetAll()
     {
         _apiCountryData.countries.Clear();
-        var data = await apiConnection();
+        var data = await ApiConnection();
         data.countries.ForEach(x => _apiCountryData.countries.Add(x));
         return _apiCountryData.countries;
     }

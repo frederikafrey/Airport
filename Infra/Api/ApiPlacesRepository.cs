@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Airport.Data.Api;
 using Airport.Data.Api.ApiPlace;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
@@ -14,7 +12,7 @@ namespace Airport.Infra.Api
     {
         private ApiPlaceData _apiPlaces = new ApiPlaceData();
 
-        private async Task<ApiPlaceData> apiConnection(string name = "")
+        private async Task<ApiPlaceData> ApiConnection(string name = "")
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -45,14 +43,14 @@ namespace Airport.Infra.Api
         public async Task<ApiPlaceData> GetAll()
         {
             _apiPlaces.places.Clear();
-            var data = await apiConnection();
+            var data = await ApiConnection();
             data.places.ForEach(x => _apiPlaces.places.Add(x));
             return _apiPlaces;
         }
         public async Task<ApiPlaceData> GetAll(string name)
         {
             _apiPlaces.places.Clear();
-            var data = await apiConnection(name);
+            var data = await ApiConnection(name);
             data.places.ForEach(x => _apiPlaces.places.Add(x));
             return _apiPlaces;
         }
