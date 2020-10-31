@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
+using Airport.Data.Api.ApiCurrency;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 

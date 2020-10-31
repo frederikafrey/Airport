@@ -26,15 +26,5 @@ namespace Airport.Pages.Flight
 
         public override Domain.Flight.Flight ToObject(FlightView view) => FlightViewFactory.Create(view);
         public override FlightView ToView(Domain.Flight.Flight obj) => FlightViewFactory.Create(obj);
-
-        
-        //protected new static IEnumerable<SelectListItem> CreateSelectList2<TTDomain, TTData>(IRepository<TTDomain> r)
-        //    where TTDomain : Entity<TTData>
-        //    where TTData : UniqueEntityData, new()
-        //{
-        //    var items = r.Get().GetAwaiter().GetResult();
-
-        //    return items.Select(t => new SelectListItem(t.Data.Id, t.Data.Id)).ToList();
-        //}
     }
 }
