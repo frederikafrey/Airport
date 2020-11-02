@@ -8,8 +8,8 @@
 
 <body>
 @Html.EditControlsFor(m => m.Item.Id)
-@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Names)
-@Html.EditControlsForDropDown(m => m.Item.FinalPoint, Model.Names)
+@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
+@Html.EditControlsForDropDown(m => m.Item.FinalPoint, Model.Countries)
 @Html.EditControlsFor(m => m.Item.StartTime)
 @Html.EditControlsFor(m => m.Item.ArrivingTime)
 @Html.EditControlsFor(m => m.Item.Occupancy)

@@ -12,12 +12,13 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class IndexModel : FlightsPage
     {
-        private IApiCitiesRepository placesRepository;
+        private IApiCitiesRepository citiesRepository;
         private IApiCountriesRepository countriesRepository;
+        
 
-        public IndexModel(IFlightsRepository r, IApiCitiesRepository p, IApiCountriesRepository c) : base(r, c)
+        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p)
         {
-            placesRepository = p;
+            citiesRepository = p;
             countriesRepository = c;
         }
 
@@ -37,8 +38,8 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         {
             var bb = await countriesRepository.GetAll();
             var ee = bb.ElementAt(105);
-            //var qq = await placesRepository.GetAll(ee.Name);
-            //var aa = await placesRepository.GetAll();
+            //var qq = await citiesRepository.GetAll(ee.Name);
+            //var aa = await citiesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue);
         }

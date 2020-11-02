@@ -10,7 +10,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class CreateModel : FlightsPage
     {
-        public CreateModel(IFlightsRepository r, IApiCitiesRepository p, IApiCountriesRepository c) : base(r, c, p) { }
+        public CreateModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {

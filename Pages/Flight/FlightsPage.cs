@@ -15,12 +15,12 @@ namespace Airport.Pages.Flight
             //IAirlineCompaniesRepository p, IAirportsRepository t
         {
             PageTitle = "Flights";
-            Names = CreateSelectList(c);
+            Countries = CreateSelectList(c);
             Cities = CreateSelectList(p);
             //Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
         }
 
-        public IEnumerable<SelectListItem> Names { get; }
+        public IEnumerable<SelectListItem> Countries { get; }
         public IEnumerable<SelectListItem> Cities { get; }
         //public IEnumerable<SelectListItem> Airports { get; }
 

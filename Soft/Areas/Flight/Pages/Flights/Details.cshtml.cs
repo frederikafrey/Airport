@@ -10,7 +10,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class DetailsModel : FlightsPage
     {
-        public DetailsModel(IFlightsRepository r, IApiCitiesRepository p, IApiCountriesRepository c) : base(r,c) { }
+        public DetailsModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);
