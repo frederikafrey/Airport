@@ -8,22 +8,22 @@ namespace Airport.Soft.Areas.Airport.Pages.Airports
 {
     public class IndexModel : AirportsPage
     {
-        private IApiPlacesRepository placesRepository;
+        private IApiCitiesRepository citiesRepository;
         private IApiCountriesRepository countriesRepository;
 
-        public IndexModel(IAirportsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r)
+        public IndexModel(IAirportsRepository r, IApiCitiesRepository p, IApiCountriesRepository c) : base(r)
         {
-            placesRepository = p;
+            citiesRepository = p;
             countriesRepository = c;
         }
 
         public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString, 
             int? pageIndex, string fixedFilter, string fixedValue)
         {
-            var bb = await countriesRepository.GetAll();
-            var ee = bb.ElementAt(105);
-            var qq = await placesRepository.GetAll(ee.Name);
-            var aa = await placesRepository.GetAll();
+            var countries = await countriesRepository.GetAll();
+            var chosenCountry = countries.ElementAt(105);
+            var qq = await citiesRepository.GetAll(chosenCountry.Name);
+            var aa = await citiesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex, 
                 fixedFilter, fixedValue);
         }

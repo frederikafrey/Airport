@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCity;
+using Airport.Data.Api.ApiCountry;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 
 namespace Airport.Infra.Api
 {
-    public class ApiPlacesRepository : IApiPlacesRepository
+    public class ApiCitiesRepository : IApiCitiesRepository
     {
-        private ApiPlaceData _apiPlaces = new ApiPlaceData();
+        private ApiCityData _apiCityData = new ApiCityData();
 
-        private async Task<ApiPlaceData> ApiConnection(string name = "")
+        private async Task<ApiCityData> ApiConnection(string name = "")
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -31,28 +33,29 @@ namespace Airport.Infra.Api
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<ApiPlaceData>(body);
+                return JsonConvert.DeserializeObject<ApiCityData>(body);
             }
         }
 
-        public ApiPlaceProperties Get(string id)
+        public ApiCityProperties Get(string id)
         {
-            return _apiPlaces.places.FirstOrDefault(x => x.PlaceId == id);
+            return _apiCityData.cities.FirstOrDefault(x => x.CityId == id);
         }
 
-        public async Task<ApiPlaceData> GetAll()
+        public async Task<IEnumerable<ApiCityProperties>> GetAll(string name)
         {
-            _apiPlaces.places.Clear();
-            var data = await ApiConnection();
-            data.places.ForEach(x => _apiPlaces.places.Add(x));
-            return _apiPlaces;
-        }
-        public async Task<ApiPlaceData> GetAll(string name)
-        {
-            _apiPlaces.places.Clear();
+            _apiCityData.cities.Clear();
             var data = await ApiConnection(name);
-            data.places.ForEach(x => _apiPlaces.places.Add(x));
-            return _apiPlaces;
+            data.cities.ForEach(x => _apiCityData.cities.Add(x));
+            return _apiCityData.cities;
         }
+        public async Task<IEnumerable<ApiCityProperties>> GetAll()
+        {
+            _apiCityData.cities.Clear();
+            var data = await ApiConnection();
+            data.cities.ForEach(x => _apiCityData.cities.Add(x));
+            return _apiCityData.cities;
+        }
+        
     }
 }

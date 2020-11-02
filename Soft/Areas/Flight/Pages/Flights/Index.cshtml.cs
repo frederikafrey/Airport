@@ -12,10 +12,10 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
     public class IndexModel : FlightsPage
     {
-        private IApiPlacesRepository placesRepository;
+        private IApiCitiesRepository placesRepository;
         private IApiCountriesRepository countriesRepository;
 
-        public IndexModel(IFlightsRepository r, IApiPlacesRepository p, IApiCountriesRepository c) : base(r, c)
+        public IndexModel(IFlightsRepository r, IApiCitiesRepository p, IApiCountriesRepository c) : base(r, c)
         {
             placesRepository = p;
             countriesRepository = c;
