@@ -5,6 +5,7 @@ using Airport.Domain.Flight;
 using Airport.Facade.Flight;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using System.Linq;
 using Airport.Data.Api.ApiCity;
 
 namespace Airport.Pages.Flight
@@ -16,7 +17,11 @@ namespace Airport.Pages.Flight
         {
             PageTitle = "Flights";
             Countries = CreateSelectList(c);
-            Cities = CreateSelectList(p);
+           
+            // TODO If country selected
+            Cities = CreateSelectList(p, Countries.ElementAt(105).Text);
+           
+           
             //Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
         }
 

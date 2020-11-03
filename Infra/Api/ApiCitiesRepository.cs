@@ -16,6 +16,8 @@ namespace Airport.Infra.Api
 
         private async Task<ApiCityData> ApiConnection(string name = "")
         {
+            if (name == string.Empty) return new ApiCityData();
+
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
@@ -39,23 +41,23 @@ namespace Airport.Infra.Api
 
         public ApiCityProperties Get(string id)
         {
-            return _apiCityData.cities.FirstOrDefault(x => x.CityId == id);
+            return _apiCityData.Places.FirstOrDefault(x => x.CityId == id);
         }
 
         public async Task<IEnumerable<ApiCityProperties>> GetAll(string name)
         {
-            _apiCityData.cities.Clear();
+            _apiCityData.Places.Clear();
             var data = await ApiConnection(name);
-            data.cities.ForEach(x => _apiCityData.cities.Add(x));
-            return _apiCityData.cities;
+            data.Places.ForEach(x => _apiCityData.Places.Add(x));
+            return _apiCityData.Places;
         }
-        public async Task<IEnumerable<ApiCityProperties>> GetAll()
-        {
-            _apiCityData.cities.Clear();
-            var data = await ApiConnection();
-            data.cities.ForEach(x => _apiCityData.cities.Add(x));
-            return _apiCityData.cities;
-        }
-        
+        //public async Task<IEnumerable<ApiCityProperties>> GetAll()
+        //{
+        //    _apiCityData.Places.Clear();
+        //    var data = await ApiConnection();
+        //    data.Places.ForEach(x => _apiCityData.Places.Add(x));
+        //    return _apiCityData.Places;
+        //}
+
     }
 }

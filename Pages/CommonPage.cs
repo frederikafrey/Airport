@@ -49,10 +49,10 @@ namespace Airport.Pages
             return items.Select(t => new SelectListItem(t.Name, t.Code)).ToList();
         }
 
-        protected static IEnumerable<SelectListItem> CreateSelectList(IApiCitiesRepository p)
+        protected static IEnumerable<SelectListItem> CreateSelectList(IApiCitiesRepository p, string name)
         {
 
-            var items = p.GetAll().GetAwaiter().GetResult(); ;
+            var items = p.GetAll(name).GetAwaiter().GetResult(); ;
 
             return items.Select(t => new SelectListItem(t.CityId, t.CityName)).ToList();
         }

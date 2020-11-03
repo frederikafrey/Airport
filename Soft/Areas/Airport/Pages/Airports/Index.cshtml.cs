@@ -23,7 +23,7 @@ namespace Airport.Soft.Areas.Airport.Pages.Airports
             var countries = await countriesRepository.GetAll();
             var chosenCountry = countries.ElementAt(105);
             var qq = await citiesRepository.GetAll(chosenCountry.Name);
-            var aa = await citiesRepository.GetAll();
+            //var aa = await citiesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex, 
                 fixedFilter, fixedValue);
         }

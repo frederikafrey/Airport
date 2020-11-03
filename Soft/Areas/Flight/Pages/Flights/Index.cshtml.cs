@@ -38,7 +38,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         {
             var bb = await countriesRepository.GetAll();
             var ee = bb.ElementAt(105);
-            //var qq = await citiesRepository.GetAll(ee.Name);
+            var qq = await citiesRepository.GetAll(ee.Name);
             //var aa = await citiesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue);
