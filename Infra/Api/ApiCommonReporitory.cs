@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
-using Airport.Domain.Api;
 using Newtonsoft.Json;
 
-namespace Airport.Infra.Api.ApiBrowseDates
+namespace Airport.Infra.Api
 {
     public abstract class ApiCommonReporitory<TData> where TData : new()
     {
