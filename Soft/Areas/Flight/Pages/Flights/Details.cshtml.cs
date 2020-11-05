@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Airport.Domain.AirlineCompany;
-using Airport.Domain.Airport;
 using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Pages.Flight;

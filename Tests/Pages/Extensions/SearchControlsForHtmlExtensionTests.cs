@@ -9,7 +9,7 @@ namespace Airport.Tests.Pages.Extensions
     public class SearchControlsForHtmlExtensionTests: BaseTests
     {
         private const string filter = "filter";
-        private const string linkToFullList = "url";
+        private const string linkToFullList = "Url";
         private const string text = "text";
 
         [TestInitialize] 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Airport.Data.Api.ApiCity;
+﻿using Airport.Data.Api.ApiCity;
 
 namespace Airport.Domain.Api
 {

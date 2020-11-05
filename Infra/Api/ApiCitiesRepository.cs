@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCity;
-using Airport.Data.Api.ApiCountry;
 using Airport.Domain.Api;
 using Newtonsoft.Json;
 
@@ -27,8 +26,8 @@ namespace Airport.Infra.Api
                         "https://rapidapi.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + name),
                 Headers =
                 {
-                    {"x-rapidapi-host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"},
-                    {"x-rapidapi-key", "97661b7ec3mshd2fbff1d04efa8ap1b7b5cjsnc539884fce8a"},
+                    {"x-rapidapi-Host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"},
+                    {"x-rapidapi-Key", "97661b7ec3mshd2fbff1d04efa8ap1b7b5cjsnc539884fce8a"},
                 },
             };
             using (var response = await client.SendAsync(request))

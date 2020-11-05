@@ -1,6 +1,4 @@
 ﻿using Airport.Facade.Common;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace Airport.Facade.Airport
 {

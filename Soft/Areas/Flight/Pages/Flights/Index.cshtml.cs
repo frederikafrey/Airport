@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Airport.Data.Flight;
-using Airport.Domain.AirlineCompany;
-using Airport.Domain.Airport;
 using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Pages.Flight;

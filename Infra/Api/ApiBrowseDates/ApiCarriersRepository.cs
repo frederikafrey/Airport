@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
-using Airport.Data.Api.ApiCurrency;
 using Airport.Domain.Api;
-using Newtonsoft.Json;
 
 namespace Airport.Infra.Api.ApiBrowseDates
 {
-    public class ApiCarriersRepository: ApiCommonReporitory<ApiCarrierData>, IApiCommonRepository<ApiCarrierData, ApiCarrierProperties>
+    public class ApiCarriersRepository: ApiCommonRepository<ApiCarrierData>, IApiCommonRepository<ApiCarrierData, ApiCarrierProperties>
     {
         public ApiCarriersRepository()
         {
             var ee = jsonRepoData as ApiCarrierData;
         }
-        protected override string url => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/SFO-sky/LAX-sky/2019-09-01?inboundpartialdate=2019-12-01";
-        protected override string host => "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
-        protected override string key => "90d24628bdmsh2d12c093a69ca11p1bec1djsn596101fa32da";
+        protected override string Url => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/SFO-sky/LAX-sky/2019-09-01?inboundpartialdate=2019-12-01";
 
         #region stuff
         //public ApiCarrierProperties Get(string id)
@@ -45,7 +39,7 @@ namespace Airport.Infra.Api.ApiBrowseDates
         {
             var ee = jsonRepoData as ApiCarrierData;
             ee.carriers.Clear();
-            var data = await createApiConnection();
+            var data = await CreateApiConnection();
             data.carriers.ForEach(x => ee.carriers.Add(x));
             return ee.carriers;
         }

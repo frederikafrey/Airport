@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Airport.Data.Api.ApiCurrency
+﻿namespace Airport.Data.Api.ApiCurrency
 {
     public class ApiCurrencyProperties
     {

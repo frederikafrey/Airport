@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Airport.Data.AirlineCompany;
+﻿using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
 using Airport.Facade.AirlineCompany;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.AirlineCompany
 {
