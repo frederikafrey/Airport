@@ -6,8 +6,7 @@ using Airport.Domain.Api;
 
 namespace Airport.Infra.Api
 {
-    public class ApiCountriesRepository : ApiCommonRepository<ApiCountryData>, IApiCommonRepository<ApiCountryData,
-        ApiCountryProperties>
+    public class ApiCountriesRepository : ApiCommonRepository<ApiCountryData>, IApiCountriesRepository
     {
         public ApiCountriesRepository()
         {
