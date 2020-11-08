@@ -50,7 +50,7 @@ namespace Airport.Pages
         protected static IEnumerable<SelectListItem> CreateSelectList(IApiCitiesRepository p, string name)
         {
             var items = p.GetAll(name).GetAwaiter().GetResult(); ;
-            return items.Select(t => new SelectListItem(t.CityId, t.CityName)).ToList();
+            return items.Select(t => new SelectListItem(t.CityName, t.CityId)).ToList();
         }
         protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
             where TTDomain : Entity<TTData>
