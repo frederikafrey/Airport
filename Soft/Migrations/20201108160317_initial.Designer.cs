@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201001082703_initial")]
+    [Migration("20201108160317_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,7 @@ namespace Airport.Soft.Migrations
             modelBuilder.Entity("Airport.Data.AirlineCompany.AirlineCompanyData", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
@@ -40,6 +41,7 @@ namespace Airport.Soft.Migrations
             modelBuilder.Entity("Airport.Data.Airport.AirportData", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Country")
@@ -56,6 +58,7 @@ namespace Airport.Soft.Migrations
             modelBuilder.Entity("Airport.Data.Flight.FlightData", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ArrivingTime")
@@ -86,22 +89,20 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.FlightOfPassenger.FlightOfPassengerData", b =>
                 {
-                    b.Property<string>("Passengers")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("StopOvers")
+                    b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FinalDestination")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StartDestination")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Passengers", "StopOvers");
+                    b.HasKey("PassengerId", "FinalDestination");
 
                     b.ToTable("FlightOfPassengers");
                 });
@@ -109,12 +110,13 @@ namespace Airport.Soft.Migrations
             modelBuilder.Entity("Airport.Data.Luggage.LuggageData", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Dimensions")
                         .HasColumnType("int");
 
-                    b.Property<string>("FlightOfPassengers")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Weight")
@@ -128,6 +130,7 @@ namespace Airport.Soft.Migrations
             modelBuilder.Entity("Airport.Data.Passenger.PassengerData", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
@@ -146,16 +149,17 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.StopOver.StopOverData", b =>
                 {
-                    b.Property<string>("FlightOfPassengers")
+                    b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Flights")
+                    b.Property<string>("FlightId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightOfPassengers", "Flights");
+                    b.HasKey("FlightOfPassengerId", "FlightId");
 
                     b.ToTable("StopOvers");
                 });

@@ -77,14 +77,13 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     PassengerId = table.Column<string>(nullable: false),
-                    StopOverId = table.Column<string>(nullable: false),
+                    FinalDestination = table.Column<string>(nullable: false),
                     Id = table.Column<string>(nullable: true),
-                    StartDestination = table.Column<string>(nullable: true),
-                    FinalDestination = table.Column<string>(nullable: true)
+                    StartDestination = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FlightOfPassengers", x => new { x.PassengerId, x.StopOverId });
+                    table.PrimaryKey("PK_FlightOfPassengers", x => new { x.PassengerId, x.FinalDestination });
                 });
 
             migrationBuilder.CreateTable(
