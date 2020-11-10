@@ -5,12 +5,52 @@
 @{
     Layout = "_Create";
 }
+<script language="javascript" type="text/javascript">
+    function aa(ii) {
+        message(ii);
+    }
+    //function GetCity(_stateId) {
+    //    var procemessage = "<option value='0'> Please wait...</option>";
+    //    $("#ddlcity").html(procemessage).show();
+    //    var url = "/Create/GetCityByStateId/";
+
+    //    $.ajax({
+    //        url: url,
+    //        data: { stateid: _stateId },
+    //        cache: false,
+    //        type: "POST",
+    //        success: function (data) {
+    //            var markup = "<option value='0'>Select City</option>";
+    //            for (var x = 0; x < data.length; x++) {
+    //                markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+    //            }
+    //            $("#ddlcity").html(markup).show();
+    //        },
+    //        error: function (reponse) {
+    //            alert("error : " + reponse);
+    //        }
+    //    });
+
+    //}
+</script>
 
 <body>
+@*@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(m => m.StateModel, new SelectList(Model.StateModel, "Id", "StateName"), new { @id = "ddlstate", @style = "width:200px;", @onchange = "javascript:GetCity(this.value);" })
+    <br />
+    <br />
+    <select id="ddlcity" name="ddlcity" style="width: 200px">
+
+    </select>
+
+    <br /><br />
+}*@
 @Html.EditControlsFor(m => m.Item.Id)
 @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
-@Html.EditControlsForDropDown(m => m.Item.FinalPoint, Model.Countries)
-@Html.EditControlsForDropDown(m=>m.Item.CountryCity, Model.Cities)
+@Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {onclick="aa('guhgfuyg')"} )
+@Html.EditControlsForDropDown(m => m.Item.CountryCity, Model.Cities)
+@*@Html.EditControlsForDropDown(m=>m.Item.CountryCity, Model.Cities)*@
 @Html.EditControlsFor(m => m.Item.StartTime)
 @Html.EditControlsFor(m => m.Item.ArrivingTime)
 @Html.EditControlsFor(m => m.Item.Occupancy)
