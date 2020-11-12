@@ -5,6 +5,7 @@ using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Pages.Flight;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
@@ -25,7 +26,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 
             if (selectedName != string.Empty)
             {
-               // var uu = CreateSelectList(cR, selectedName);
+                // var uu = CreateSelectList(cR, selectedName);
             }
 
             return Page();
@@ -36,13 +37,30 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
             return Redirect(IndexUrl);
         }
 
-        //[HttpPost]
-        //public ActionResult GetCityByStateId(int stateid)
-        //{
-        //   var uu =  Cities.Where(m => m. == stateid).ToList();
-        //    SelectList obgcity = new SelectList(objcity, "Id", "CityName", 0);
-        //    return new JsonResult(obgcity);
-        //}
-    }
+        //[AcceptVerbs(HttpVerbs.Get)]
+        public JsonResult GETSubType(string Typeid)
+        {
 
+
+            return new JsonResult(Typeid);
+
+        }
+
+        public List<SelectListItem> ProjectType_SubTypeList(string id)
+        {
+            return new List<SelectListItem>();
+            //var subtypes = from u in db.SubType where u.ProjectTypeID == id.ToString() select u;
+            //List<SelectListItem> ProjectsubTypes = new List<SelectListItem>();
+            //ProjectsubTypes.Clear();
+            ////   ProjectsubTypes.Add(new SelectListItem { Text = "--Select Project sub-Type--", Value = "0" });
+            //if (subtypes != null)
+            //{
+            //    foreach (var subtype in subtypes)
+            //    {
+            //        ProjectsubTypes.Add(new SelectListItem { Text = subtype.name, Value = subtype.id.ToString() });
+            //    }
+            //}
+            //return ProjectsubTypes;
+        }
+    }
 }

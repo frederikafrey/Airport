@@ -6,9 +6,35 @@
     Layout = "_Create";
 }
 <script language="javascript" type="text/javascript">
-    function aa(ii) {
-        message(ii);
+    $(document).ready(function () {
+        $.ajax({
+    url: '@Url.Action("GETSubType", "Flight")',
+    type: 'GET',
+    data: { id: rowid },
+    success: function(result) {
+
     }
+});
+        $("#Typeid").change(function () {
+            var dID = $('#Typeid option:selected').val();
+            $.getJSON("/Flights/GETSubType", { Typeid: dID },
+                function (data) {
+                    var select = $("#subtypeid");
+                    select.empty();
+                    select.append($('<option/>', {
+                        value: 0,
+                        text: "Select project sub-types"
+                    }));
+                    $.each(data, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                });
+        });
+    });
+
     //function GetCity(_stateId) {
     //    var procemessage = "<option value='0'> Please wait...</option>";
     //    $("#ddlcity").html(procemessage).show();
@@ -35,21 +61,11 @@
 </script>
 
 <body>
-@*@using (Html.BeginForm())
-{
-    @Html.DropDownListFor(m => m.StateModel, new SelectList(Model.StateModel, "Id", "StateName"), new { @id = "ddlstate", @style = "width:200px;", @onchange = "javascript:GetCity(this.value);" })
-    <br />
-    <br />
-    <select id="ddlcity" name="ddlcity" style="width: 200px">
 
-    </select>
-
-    <br /><br />
-}*@
 @Html.EditControlsFor(m => m.Item.Id)
 @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
-@Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {onclick="aa('guhgfuyg')"} )
-@Html.EditControlsForDropDown(m => m.Item.CountryCity, Model.Cities)
+@Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {id = "Typeid", onchange = "location.href='@Url.Action='GETSubType', 'Flights')'" } )
+@Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, new { id = "subtypeid" })
 @*@Html.EditControlsForDropDown(m=>m.Item.CountryCity, Model.Cities)*@
 @Html.EditControlsFor(m => m.Item.StartTime)
 @Html.EditControlsFor(m => m.Item.ArrivingTime)
