@@ -5,72 +5,134 @@
 @{
     Layout = "_Create";
 }
-<script language="javascript" type="text/javascript"> //tööle saada
-    $(document).ready(function () {
-        $.ajax({
-    url: '@Url.Action("GETSubType", "Flight")',
-    type: 'GET',
-    data: { id: rowid },
-    success: function(result) {
+@*<script language="javascript" type="text/javascript"> //tööle saada (Viljamiga tehtud)
+        $(document).ready(function () {
+            $.ajax({
+        url: '@Url.Action("GETSubType", "Flight")',
+        type: 'GET',
+        data: { id: rowid },
+        success: function(result) {
 
-    }
-});
-        $("#Typeid").change(function () {
-            var dID = $('#Typeid option:selected').val();
-            $.getJSON("/Flights/GETSubType", { Typeid: dID },
-                function (data) {
-                    var select = $("#subtypeid");
-                    select.empty();
-                    select.append($('<option/>', {
-                        value: 0,
-                        text: "Select project sub-types"
-                    }));
-                    $.each(data, function (index, itemData) {
-                        select.append($('<option/>', {
-                            value: itemData.Value,
-                            text: itemData.Text
-                        }));
-                    });
-                });
-        });
+        }
     });
+            $("#Typeid").change(function () {
+                var dID = $('#Typeid option:selected').val();
+                $.getJSON("/Flights/GETSubType", { Typeid: dID },
+                    function (data) {
+                        var select = $("#subtypeid");
+                        select.empty();
+                        select.append($('<option/>', {
+                            value: 0,
+                            text: "Select project sub-types"
+                        }));
+                        $.each(data, function (index, itemData) {
+                            select.append($('<option/>', {
+                                value: itemData.Value,
+                                text: itemData.Text
+                            }));
+                        });
+                    });
+            });
+        });
 
-    //function GetCity(_stateId) {
-    //    var procemessage = "<option value='0'> Please wait...</option>";
-    //    $("#ddlcity").html(procemessage).show();
-    //    var url = "/Create/GetCityByStateId/";
+        //function GetCity(_stateId) {
+        //    var procemessage = "<option value='0'> Please wait...</option>";
+        //    $("#ddlcity").html(procemessage).show();
+        //    var url = "/Create/GetCityByStateId/";
 
-    //    $.ajax({
-    //        url: url,
-    //        data: { stateid: _stateId },
-    //        cache: false,
-    //        type: "POST",
-    //        success: function (data) {
-    //            var markup = "<option value='0'>Select City</option>";
-    //            for (var x = 0; x < data.length; x++) {
-    //                markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
-    //            }
-    //            $("#ddlcity").html(markup).show();
-    //        },
-    //        error: function (reponse) {
-    //            alert("error : " + reponse);
-    //        }
-    //    });
+        //    $.ajax({
+        //        url: url,
+        //        data: { stateid: _stateId },
+        //        cache: false,
+        //        type: "POST",
+        //        success: function (data) {
+        //            var markup = "<option value='0'>Select City</option>";
+        //            for (var x = 0; x < data.length; x++) {
+        //                markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+        //            }
+        //            $("#ddlcity").html(markup).show();
+        //        },
+        //        error: function (reponse) {
+        //            alert("error : " + reponse);
+        //        }
+        //    });
 
-    //}
+        //}
+    </script>
+
+    <body>*@
+
+
+<script>
+    var subjectObject = JSON.parse('@Html.Raw(Model.Countries)') //Mariliis
+    window.onload = function () {
+        var CountrySel = document.getElementById("Code");
+        var CitySel = document.getElementById("CityId");
+        for (var x in subjectObject) {
+            CountrySel.options[CountrySel.options.length] = new Option(x, x);
+        }
+        CountrySel.onchange = function () {
+            //display correct values
+            for (var y in subjectObject[this.value]) {
+                CitySel.options[CitySel.options.length] = new Option(y, y);
+            }
+        }
+        
+    }
 </script>
 
 <body>
 
-@Html.EditControlsFor(m => m.Item.Id)
-@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
-@Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {id = "Typeid", onchange = "location.href='@Url.Action='GETSubType', 'Flights')'" } )
-@Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, new { id = "subtypeid" })
-@*@Html.EditControlsForDropDown(m=>m.Item.CountryCity, Model.Cities)*@
-@Html.EditControlsFor(m => m.Item.StartTime)
-@Html.EditControlsFor(m => m.Item.ArrivingTime)
-@Html.EditControlsFor(m => m.Item.Occupancy)
-@Html.EditControlsFor(m => m.Item.Company)
-@Html.EditControlsFor(m => m.Item.Plane)
+
+    <form name="form1" id="form1" action="/action_page.php">
+        Countries: <select name="Code" id="Code">
+            <option value="subjectObject" selected="selected">Select subject</option>
+        </select>
+        <br><br>
+        Cities: <select name="CityId" id="CityId">
+            <option value="" selected="selected">Please select subject first</option>
+        </select>
+        <br><br>
+
+    </form>
+
+
+    @*<body>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            @Html.DropDownListFor(m => m.Item.StartingPoint, Model.Countries, "Please select", new { onchange = "document.forms[0]" })
+            <br />
+            <br />
+
+            @Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, "Please select", new { onchange = "document.forms[0]" })
+            <br />
+            <br />
+        }
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                if ($("#StartingPoint option").length > 1) {
+                    $("#StartingPoint").removeAttr("disabled");
+                }
+
+                if ($("#StartingPoint").val() != "" &&  $("#CountryCity").val() != "") {
+                    var message = "Country: " + $("#StartingPoint option:selected").text();
+                    message += "\nCity: " + $("#CountryCity option:selected").text();
+                    alert(message);
+                }
+            });
+        </script>*@
+
+
+    @Html.EditControlsFor(m => m.Item.Id)
+    @*@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
+        @Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {id = "Typeid", onchange = "location.href='@Url.Action='GETSubType', 'Flights')'" } )
+        @Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, new { id = "subtypeid" })*@
+    @*@Html.EditControlsForDropDown(m=>m.Item.CountryCity, Model.Cities)*@
+    @Html.EditControlsFor(m => m.Item.StartTime)
+    @Html.EditControlsFor(m => m.Item.ArrivingTime)
+    @Html.EditControlsFor(m => m.Item.Occupancy)
+    @Html.EditControlsFor(m => m.Item.Company)
+    @Html.EditControlsFor(m => m.Item.Plane)
 </body>
 

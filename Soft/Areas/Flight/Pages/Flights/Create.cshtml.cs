@@ -6,6 +6,8 @@ using Airport.Domain.Flight;
 using Airport.Pages.Flight;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using Airport.Data.Api.ApiCountry;
+using System;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
@@ -19,7 +21,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 
         }
 
-        public IActionResult OnGet(string fixedFilter, string fixedValue, string selectedName)
+            public IActionResult OnGet(string fixedFilter, string fixedValue, string selectedName)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
@@ -45,7 +47,6 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
             return new JsonResult(Typeid);
 
         }
-
         public List<SelectListItem> ProjectType_SubTypeList(string id)
         {
             return new List<SelectListItem>();
