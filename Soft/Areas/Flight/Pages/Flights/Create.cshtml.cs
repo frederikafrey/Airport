@@ -38,15 +38,21 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
             if (!await AddObject(fixedFilter, fixedValue)) return Page();
             return Redirect(IndexUrl);
         }
-
-        //[AcceptVerbs(HttpVerbs.Get)]
-        public JsonResult GETSubType(string Typeid)
+        [HttpPost]
+        public JsonResult ListOfCitiesByCountryId(string countryId)
         {
-
-
-            return new JsonResult(Typeid);
-
+          
+            return new JsonResult(countryId);
         }
+
+        ////[AcceptVerbs(HttpVerbs.Get)]
+        //public JsonResult GETSubType(string Typeid)
+        //{
+
+
+        //    return new JsonResult(Typeid);
+
+        //}
         public List<SelectListItem> ProjectType_SubTypeList(string id)
         {
             return new List<SelectListItem>();

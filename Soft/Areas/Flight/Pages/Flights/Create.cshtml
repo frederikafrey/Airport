@@ -63,10 +63,13 @@
     <body>*@
 
 
-<script>
-    var subjectObject = JSON.parse('@Html.Raw(Model.Countries)') //Mariliis
-    window.onload = function () {
-        var CountrySel = document.getElementById("Code");
+<body>
+
+    <script language="javascript" type="text/javascript">
+
+        var subjectObject = JSON.parse('@Html.Raw(Model.Countries)') //Mariliis
+        window.onload = function () {
+        var CountrySel = document.getElementById("Andorra");
         var CitySel = document.getElementById("CityId");
         for (var x in subjectObject) {
             CountrySel.options[CountrySel.options.length] = new Option(x, x);
@@ -77,52 +80,17 @@
                 CitySel.options[CitySel.options.length] = new Option(y, y);
             }
         }
-        
+    </script>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.DropDownListFor(m => m.Item.StartingPoint, Model.Countries, "Please select")
+        <br />
+        <br />
+
+        @Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, "Please select", new { onchange = "function()" })
+        <br />
+        <br />
     }
-</script>
-
-<body>
-
-
-    <form name="form1" id="form1" action="/action_page.php">
-        Countries: <select name="Code" id="Code">
-            <option value="subjectObject" selected="selected">Select subject</option>
-        </select>
-        <br><br>
-        Cities: <select name="CityId" id="CityId">
-            <option value="" selected="selected">Please select subject first</option>
-        </select>
-        <br><br>
-
-    </form>
-
-
-    @*<body>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-        {
-            @Html.DropDownListFor(m => m.Item.StartingPoint, Model.Countries, "Please select", new { onchange = "document.forms[0]" })
-            <br />
-            <br />
-
-            @Html.DropDownListFor(m => m.Item.CountryCity, Model.Cities, "Please select", new { onchange = "document.forms[0]" })
-            <br />
-            <br />
-        }
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript">
-            $(function () {
-                if ($("#StartingPoint option").length > 1) {
-                    $("#StartingPoint").removeAttr("disabled");
-                }
-
-                if ($("#StartingPoint").val() != "" &&  $("#CountryCity").val() != "") {
-                    var message = "Country: " + $("#StartingPoint option:selected").text();
-                    message += "\nCity: " + $("#CountryCity option:selected").text();
-                    alert(message);
-                }
-            });
-        </script>*@
-
 
     @Html.EditControlsFor(m => m.Item.Id)
     @*@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
