@@ -7,6 +7,41 @@
     <title>@ViewData["Title"] - Airport</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript">
+    @*$.ajax({
+        type: "GET",
+        url: "@Url.Action("LoadPhysiansByDepartment", "Tests")",
+        data: { deptId : "0" },
+        success: function(result){
+        //do something with result here
+            alert(result);
+        }
+    });*@
+    $(document).ready(
+        alert("aaa")
+        ////function () {
+
+
+        //// $("#dd1").change(function () {
+        ////     var dID= $(this).val();
+        ////     $.getJSON("https://localhost:44361/Test/Tests/LoadPhysiansByDepartment", { deptId: dID },
+        ////            function (data) {
+        ////                var select = $("#dd2");
+        ////                select.empty();
+        ////                select.append($('<option/>', {
+        ////                    value: 0,
+        ////                    text: "Select a Physian"
+        ////                }));
+        ////                $.each(data, function (index, itemData) {
+        ////                    select.append($('<option/>', {
+        ////                        value: itemData.Value,
+        ////                        text: itemData.Text
+        ////                    }));
+        ////                });
+        ////            });
+        //// }); }
+    );
+    </script>
 </head>
 <body>
     <header>

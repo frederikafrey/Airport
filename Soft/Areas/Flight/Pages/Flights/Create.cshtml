@@ -4,6 +4,7 @@
 
 @{
     Layout = "_Create";
+    var departments = ViewData["Departments"] as List<SelectListItem> ?? new List<SelectListItem>();
 }
 @*<script language="javascript" type="text/javascript"> //tööle saada (Viljamiga tehtud)
         $(document).ready(function () {
@@ -65,22 +66,22 @@
 
 <body>
 
-    <script language="javascript" type="text/javascript">
+    @*<script language="javascript" type="text/javascript">
 
-        var subjectObject = JSON.parse('@Html.Raw(Model.Countries)') //Mariliis
-        window.onload = function () {
-        var CountrySel = document.getElementById("Andorra");
-        var CitySel = document.getElementById("CityId");
-        for (var x in subjectObject) {
-            CountrySel.options[CountrySel.options.length] = new Option(x, x);
-        }
-        CountrySel.onchange = function () {
-            //display correct values
-            for (var y in subjectObject[this.value]) {
-                CitySel.options[CitySel.options.length] = new Option(y, y);
+            var subjectObject = JSON.parse('@Html.Raw(Model.Countries)') //Mariliis
+            window.onload = function () {
+            var CountrySel = document.getElementById("Andorra");
+            var CitySel = document.getElementById("CityId");
+            for (var x in subjectObject) {
+                CountrySel.options[CountrySel.options.length] = new Option(x, x);
             }
-        }
-    </script>
+            CountrySel.onchange = function () {
+                //display correct values
+                for (var y in subjectObject[this.value]) {
+                    CitySel.options[CitySel.options.length] = new Option(y, y);
+                }
+            }
+        </script>*@
     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
         @Html.DropDownListFor(m => m.Item.StartingPoint, Model.Countries, "Please select")
@@ -91,7 +92,17 @@
         <br />
         <br />
     }
+    <select id="ddlViewBy">
+        <option value="1">test1</option>
+        <option value="2" selected="selected">test2</option>
+        <option value="3">test3</option>
+    </select>
+    @Html.DropDownList("dd1", new SelectList(departments, "Value", "Text"), "Select a Student", new { id = "dd1", onchange="function()" })
 
+    <p>
+        @Html.DropDownList("dd2", new SelectList(Enumerable.Empty<SelectListItem>(), "phyID", "phyName"),
+        "Select a Physican", new { ida = "physiciansList" })
+    </p>
     @Html.EditControlsFor(m => m.Item.Id)
     @*@Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
         @Html.DropDownListFor(m => m.Item.FinalPoint, Model.Countries, new {id = "Typeid", onchange = "location.href='@Url.Action='GETSubType', 'Flights')'" } )

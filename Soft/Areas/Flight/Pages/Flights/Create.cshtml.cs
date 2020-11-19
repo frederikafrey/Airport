@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using Airport.Data.Api.ApiCountry;
 using System;
+using Airport.Facade;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
@@ -21,7 +22,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 
         }
 
-            public IActionResult OnGet(string fixedFilter, string fixedValue, string selectedName)
+        public IActionResult OnGet(string fixedFilter, string fixedValue, string selectedName, string deptId)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
@@ -30,8 +31,24 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
             {
                 // var uu = CreateSelectList(cR, selectedName);
             }
+            List<SelectListItem> dept = new List<SelectListItem>();
+            var aa = new List<Testa>() { new Testa() { Id = "0", Name = "Name1" }, new Testa() { Id = "1", Name = "Name2" } };
 
+
+            aa.ForEach(y => dept.Add(new SelectListItem { Text = y.Name, Value = y.Id }));
+
+            ViewData["Departments"] = dept;
             return Page();
+        }
+        [Route("api/LoadPhysiansByDepartment/{deptId}")]
+        public IActionResult LoadPhysiansByDepartment(string deptId)
+        {
+            var aa = new List<Festa>() { new Festa() { Id = "00", Name = "Fame1", TestaId = "0" }, new Festa() { Id = "01", Name = "Fame2", TestaId = "0" }, new Festa() { Id = "02", Name = "Fame3", TestaId = "1" } };
+
+
+            var ee = aa.Where(x => x.TestaId == deptId).ToList();
+            var ss = ee.Select(x => new SelectListItem { Text = x.Name, Value = x.Id });
+            return new JsonResult(ss);
         }
         public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
