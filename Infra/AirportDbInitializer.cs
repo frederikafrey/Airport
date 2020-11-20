@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Airport.Infra
 {
-    public class AirportDbInitializer
+    public class AirportDbInitializer: DbInitializer
     {
         internal static AirportDbContext db;
 
