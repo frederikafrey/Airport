@@ -16,6 +16,7 @@ namespace Core
             Id = id;
             Country = country;
             Phone = phone;
+            Terms = new List<AirportInfo>();
             Terms.AddRange(terms);
         }
 

@@ -54,6 +54,7 @@ namespace Airport.Soft
             services.AddScoped<IApiCitiesRepository, ApiCitiesRepository>();
             services.AddScoped<IApiCountriesRepository, ApiCountriesRepository>();
             services.AddRazorPages();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

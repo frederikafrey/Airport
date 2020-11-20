@@ -1,8 +1,10 @@
 ﻿using Airport.Data.Airport;
+using Airport.Data.Common;
 using Core;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Airport.Infra
@@ -15,6 +17,22 @@ namespace Airport.Infra
         {
             db = c;
             initialize(Airports.AirportList);
+        }
+        internal static void initialize(IEnumerable<AirportInfo> data)
+        {
+            foreach (var d in from d in data
+                              let o = db.Airports.FirstOrDefaultAsync(m => m.Id == d.Id).GetAwaiter().GetResult()
+                              where o is null
+                              select d)
+            {
+                addItem(
+                    new AirportData
+                    {
+                        Id = d.Id,
+                        Country = d.Country,
+                        Phone = d.Phone,
+                    }, db);
+            }
         }
         internal static void initialize(List<AirportInfo> units)
         {
@@ -42,6 +60,8 @@ namespace Airport.Infra
                     }, db);
             }
         }
+        internal static T getItem<T>(IQueryable<T> set, string id) where T : UniqueEntityData
+           => set.FirstOrDefaultAsync(m => m.Id == id).GetAwaiter().GetResult();
         static internal protected void addItem<T>(T item, DbContext db) where T : AirportData
         {
             db?.Add(item);
