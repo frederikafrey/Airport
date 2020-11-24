@@ -8,10 +8,7 @@ namespace Airport.Tests.Facade.Flight
     public class FlightViewTests : SealedClassTests<FlightView, UniqueEntityView>
     {
         [TestMethod]
-        public void StartingPointTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
-
-        [TestMethod]
-        public void FinalPointTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
+        public void StartingPointTest() => IsNullableProperty(() => obj.CountryCity, x => obj.CountryCity = x);
 
         [TestMethod]
         public void StartTimeTest() => IsNullableProperty(() => obj.StartTime, x => obj.StartTime = x);

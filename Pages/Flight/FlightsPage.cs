@@ -18,10 +18,7 @@ namespace Airport.Pages.Flight
             Countries = CreateSelectList(c);
            
             // TODO If country selected
-            Cities = CreateSelectList(p, Countries.ElementAt(105).Text);
-            //CitiesReal = p.GetAll()
-           
-            //Airports = CreateSelectList2<Domain.Airport.Airport, AirportData>(t);
+            Cities = CreateSelectList(p, Countries.ElementAt(105).Text);           
         }
 
         public IEnumerable<SelectListItem> Countries { get; }
