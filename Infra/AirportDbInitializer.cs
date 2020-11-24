@@ -11,61 +11,25 @@ namespace Airport.Infra
 {
     public class AirportDbInitializer: DbInitializer
     {
-        internal static AirportDbContext db;
-
-        public static void Initialize(AirportDbContext c)
+        public static void Initialize(AirportDbContext db)
         {
-            db = c;
-            initialize(Airports.AirportList);
+            initializeAirports(db);
         }
-        internal static void initialize(IEnumerable<AirportInfo> data)
+        private static void initializeAirports(AirportDbContext db)
         {
-            foreach (var d in from d in data
-                              let o = db.Airports.FirstOrDefaultAsync(m => m.Id == d.Id).GetAwaiter().GetResult()
-                              where o is null
-                              select d)
-            {
-                addItem(
-                    new AirportData
-                    {
-                        Id = d.Id,
-                        Country = d.Country,
-                        Phone = d.Phone,
-                    }, db);
-            }
-        }
-        internal static void initialize(List<AirportInfo> units)
-        {
-            addTerms(units);
-        }
-        internal static void addTerms(List<AirportInfo> units)
-        {
-            foreach (var d in units)
-                addTerms(d, db.Airports);
-        }
-        internal static void addTerms<T>(AirportInfo measure, DbSet<T> set) where T : AirportData, new()
-        {
-            foreach (var d in measure.Terms)
-            {
-                var o = set.FirstOrDefaultAsync(
-                    m => m.Id == measure.Id && m.Country == d.Country).GetAwaiter().GetResult();
-
-                if (!(o is null)) continue;
-                addItem(
-                    new T
-                    {
-                        Id = measure.Id,
-                        Country = d.Country,
-                        Phone = d.Phone
-                    }, db);
-            }
-        }
-        internal static T getItem<T>(IQueryable<T> set, string id) where T : UniqueEntityData
-           => set.FirstOrDefaultAsync(m => m.Id == id).GetAwaiter().GetResult();
-        static internal protected void addItem<T>(T item, DbContext db) where T : AirportData
-        {
-            db?.Add(item);
-            db?.SaveChanges();
+            if (db.Airports.Count() != 0) return;
+            var airports = new[] {
+                new AirportData {
+                    Id = "SWE", Country = "Sweden", Phone = "455 4555"
+                },
+                new AirportData {
+                    Id = "LAT", Country = "Latvia", Phone = "644 6444"
+                },
+                new AirportData{
+                    Id = "DMK", Country = "Denmark", Phone = "677 7666"
+                }
+            };
+            addSet(airports, db);
         }
     }
 }
