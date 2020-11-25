@@ -65,6 +65,9 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FinalCity")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FinalPoint")
                         .HasColumnType("nvarchar(max)");
 

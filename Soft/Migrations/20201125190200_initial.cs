@@ -94,6 +94,7 @@ namespace Airport.Soft.Migrations
                     StartingPoint = table.Column<string>(nullable: true),
                     FinalPoint = table.Column<string>(nullable: true),
                     StartCity = table.Column<string>(nullable: true),
+                    FinalCity = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
                     ArrivingTime = table.Column<string>(nullable: true),
                     Occupancy = table.Column<int>(nullable: false),
