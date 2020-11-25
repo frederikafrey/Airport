@@ -17,7 +17,6 @@
     <table class="table">
         <thead>
             @Html.TableHeaderFor(
-                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartTime), Model.GetSortString(m => m.StartTime, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartingPoint), Model.GetSortString(m => m.StartingPoint, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.ArrivingTime), Model.GetSortString(m => m.ArrivingTime, page)),
@@ -37,7 +36,6 @@
                         item.Id,
                         Model.FixedFilter,
                         Model.FixedValue,
-                        Html.DisplayFor(modelItem => item.Id),
                         Html.DisplayFor(modelItem => item.StartTime),
                         Html.DisplayFor(modelItem => item.StartingPoint),
                         Html.DisplayFor(modelItem => item.ArrivingTime),
