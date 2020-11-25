@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using Airport.Data.Api.ApiCountry;
 using System;
+using System.IO;
 using Airport.Facade;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
@@ -33,6 +34,20 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         {
             if (!await AddObject(fixedFilter, fixedValue)) return Page();
             return Redirect(IndexUrl);
+        }
+
+        public async Task<IActionResult> OnPostCities()
+        {
+            var stream = new MemoryStream();
+            await Request.Body.CopyToAsync(stream);
+            stream.Position = 0;
+
+            using var reader = new StreamReader(stream);
+            var body = reader.ReadToEnd();
+            if (body.Length <= 0) return new JsonResult(new {Success = false});
+            var cities = CreateSelectList(cR, body);
+
+            return new JsonResult(cities);
         }
     }
 }
