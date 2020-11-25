@@ -15,7 +15,7 @@ namespace Airport.Pages.FlightOfPassenger
         protected internal FlightOfPassengersPage(IFlightOfPassengersRepository r, IStopOversRepository p, IPassengersRepository t) : base(r)
         {
             PageTitle = "Flight Of Passengers";
-            StopOvers = CreateSelectList2<Domain.StopOver.StopOver, StopOverData>(p);
+            StopOvers = CreateSelectList<Domain.StopOver.StopOver, StopOverData>(p);
             Passengers = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(t);
         }
         public IEnumerable<SelectListItem> StopOvers { get; }
