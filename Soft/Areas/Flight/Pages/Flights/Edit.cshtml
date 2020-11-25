@@ -9,7 +9,8 @@
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.DisabledControlsFor(m => m.Item.Id)
-    @Html.EditControlsForDropDown(m => m.Item.CountryCity, Model.Cities)
+    @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
+    @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)
     @Html.EditControlsFor(m => m.Item.StartTime)   
     @Html.EditControlsFor(m => m.Item.ArrivingTime)
     @Html.EditControlsFor(m => m.Item.Occupancy)

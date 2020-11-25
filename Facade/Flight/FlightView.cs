@@ -6,19 +6,14 @@ namespace Airport.Facade.Flight
 {
     public sealed class FlightView : UniqueEntityView
     {
-        //[Required]
-        //[DisplayName("Starting Point")]
-        //public string StartingPoint { get; set; }
-        
-        //[Required]
-        //[DisplayName("Final Point")]
-        //public string FinalPoint { get; set; }
         [Required]
         [DisplayName("Starting Point")]
-        public string CountryCity { get; set; }
-        //[Required]
-        //[DisplayName("Final Point")]
-        //public string CountryCity { get; set; }
+        public string StartingPoint { get; set; }
+
+        [Required]
+        [DisplayName("Starting City")]
+        public string StartCity { get; set; }
+        
         [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
         public string StartTime { get; set; }

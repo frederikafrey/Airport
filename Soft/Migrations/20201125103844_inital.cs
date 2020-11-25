@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Airport.Soft.Migrations
 {
-    public partial class initial : Migration
+    public partial class inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -93,7 +93,7 @@ namespace Airport.Soft.Migrations
                     Id = table.Column<string>(nullable: false),
                     StartingPoint = table.Column<string>(nullable: true),
                     FinalPoint = table.Column<string>(nullable: true),
-                    CountryCity = table.Column<string>(nullable: true),
+                    StartCity = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
                     ArrivingTime = table.Column<string>(nullable: true),
                     Occupancy = table.Column<int>(nullable: false),

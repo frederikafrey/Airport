@@ -22,22 +22,11 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
 
         }
 
-        public IActionResult OnGet(string fixedFilter, string fixedValue, string selectedName, string deptId)
+        public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
 
-            //if (selectedName != string.Empty)
-            //{
-            //    // var uu = CreateSelectList(cR, selectedName);
-            //}
-            //List<SelectListItem> dept = new List<SelectListItem>();
-            //var aa = new List<Testa>() { new Testa() { Id = "0", Name = "Name1" }, new Testa() { Id = "1", Name = "Name2" } };
-
-
-            //aa.ForEach(y => dept.Add(new SelectListItem { Text = y.Name, Value = y.Id }));
-
-            //ViewData["Departments"] = dept;
             return Page();
         }
         public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)

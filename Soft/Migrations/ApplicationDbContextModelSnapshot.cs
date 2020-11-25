@@ -65,9 +65,6 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CountryCity")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FinalPoint")
                         .HasColumnType("nvarchar(max)");
 
@@ -75,6 +72,9 @@ namespace Airport.Soft.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Plane")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartCity")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StartTime")
