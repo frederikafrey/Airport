@@ -35,6 +35,11 @@ namespace Airport.Pages
             var items = c.GetAll().GetAwaiter().GetResult(); ;
             return items.Select(t => new SelectListItem(t.Name, t.Name)).ToList();
         }
+        protected static IEnumerable<SelectListItem> CreateSelectList(IApiCarriersRepository c)
+        {
+            var items = c.GetAll().GetAwaiter().GetResult(); ;
+            return items.Select(t => new SelectListItem(t.Name, t.Name)).ToList();
+        }
 
         protected static IEnumerable<SelectListItem> CreateSelectList(IApiCitiesRepository p, string name)
         {
