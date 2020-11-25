@@ -13,7 +13,15 @@ namespace Airport.Facade.Flight
         [Required]
         [DisplayName("Starting City")]
         public string StartCity { get; set; }
-        
+
+        [Required]
+        [DisplayName("Final Point")]
+        public string FinalPoint { get; set; }
+
+        [Required]
+        [DisplayName("Final City")]
+        public string FinalCity { get; set; }
+
         [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
         public string StartTime { get; set; }
