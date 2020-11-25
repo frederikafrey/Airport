@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Airport.Domain.AirlineCompany;
+using Airport.Domain.Api;
 using Airport.Pages.AirlineCompany;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +8,11 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class CreateModel : AirlineCompaniesPage
     {
-        public CreateModel(IAirlineCompaniesRepository r) : base(r) { }
+        private readonly IApiCarriersRepository cR;
+        public CreateModel(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r,c) 
+        {
+            cR = c;
+        }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {

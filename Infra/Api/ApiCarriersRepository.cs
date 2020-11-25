@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
 using Airport.Domain.Api;
 
-namespace Airport.Infra.Api.ApiBrowseDates
+namespace Airport.Infra.Api
 {
-    public class ApiCarriersRepository: ApiCommonRepository<ApiCarrierData>, IApiCommonRepository<ApiCarrierData, ApiCarrierProperties>
+    public class ApiCarriersRepository: ApiCommonRepository<ApiCarrierData>, IApiCarriersRepository
     {
         public ApiCarriersRepository()
         {
