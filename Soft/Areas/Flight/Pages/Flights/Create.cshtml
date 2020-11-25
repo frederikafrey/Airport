@@ -4,17 +4,22 @@
 
 @{
     Layout = "_Create";
+
+    var url = "/Flight/Flights/Create?handler=";
 }
 
 @section Scripts { }
 
 <body>
-    @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
-    @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)
-    @Html.EditControlsFor(m => m.Item.StartTime)
-    @Html.EditControlsFor(m => m.Item.ArrivingTime)
-    @Html.EditControlsFor(m => m.Item.Occupancy)
-    @Html.EditControlsFor(m => m.Item.Company)
-    @Html.EditControlsFor(m => m.Item.Plane)
-</body>
+@*Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
+        @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)*@
+        @Html.EditControlsForDropDownWithOnChange(m => m.Item.StartingPoint, Model.Countries,
+            "StartCountry", "StartCity", url + "Cities")
+        @Html.EditControlsForDropDownWithId(m => m.Item.StartCity, Model.Cities, "StartCity")
+        @Html.EditControlsFor(m => m.Item.StartTime)
+        @Html.EditControlsFor(m => m.Item.ArrivingTime)
+        @Html.EditControlsFor(m => m.Item.Occupancy)
+        @Html.EditControlsFor(m => m.Item.Company)
+        @Html.EditControlsFor(m => m.Item.Plane)
+    </body>
 
