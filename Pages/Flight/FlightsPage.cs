@@ -17,6 +17,8 @@ namespace Airport.Pages.Flight
             Countries = CreateSelectList(c);
 
             Cities = new List<SelectListItem>();
+
+            
         }
 
         public IEnumerable<SelectListItem> Countries { get; }
@@ -27,5 +29,6 @@ namespace Airport.Pages.Flight
 
         public override Domain.Flight.Flight ToObject(FlightView view) => FlightViewFactory.Create(view);
         public override FlightView ToView(Domain.Flight.Flight obj) => FlightViewFactory.Create(obj);
+     
     }
 }
