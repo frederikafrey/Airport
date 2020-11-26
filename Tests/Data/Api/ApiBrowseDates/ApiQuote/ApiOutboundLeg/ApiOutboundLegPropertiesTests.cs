@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Airport.Tests.Data.Api.ApiBrowseDates.ApiQuote.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Data.Api.ApiBrowseDates.ApiQuote.ApiOutboundLeg
 {
-    class ApiOutboundLegPropertiesTests
+    [TestClass]
+    public class ApiOutboundLegPropertiesTests: ApiLegPropertiesTests
     {
     }
 }

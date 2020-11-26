@@ -18,9 +18,7 @@
         <thead>
             @Html.TableHeaderFor(
                 new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.StartDestination), Model.GetSortString(m => m.StartDestination, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.FinalDestination), Model.GetSortString(m => m.FinalDestination, page)))
+                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)))
                 )
         </thead>
         <tbody>

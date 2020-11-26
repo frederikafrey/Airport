@@ -11,7 +11,7 @@ namespace Airport.Tests.Data.Luggage
         public void FlightOfPassengerIdTest() => IsNullableProperty(() => obj.FlightOfPassengerId, x => obj.FlightOfPassengerId = x);
 
         [TestMethod]
-        public void DimensionsTest() => IsProperty<int>();
+        public void DimensionsTest() => IsNullableProperty(() => obj.Dimensions, x => obj.Dimensions = x);
 
         [TestMethod]
         public void WeightTest() => IsProperty<int>();
