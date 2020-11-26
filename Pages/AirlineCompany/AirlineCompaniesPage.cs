@@ -12,7 +12,7 @@ namespace Airport.Pages.AirlineCompany
         protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r)
         {
             PageTitle = "Airline Companies";
-            Carrier = CreateSelectList(c); 
+            Carrier = CreateSelectList(c);
         }
 
         public IEnumerable<SelectListItem> Carrier { get; }

@@ -1,38 +1,47 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
 using Airport.Domain.Api;
+using Newtonsoft.Json;
 
 namespace Airport.Infra.Api
 {
-    public class ApiCarriersRepository: ApiCommonRepository<ApiCarrierData>, IApiCarriersRepository
+    public class ApiCarriersRepository: IApiCarriersRepository
     {
-        public ApiCarriersRepository()
+        private ApiCarrierData _apiCarrierData = new ApiCarrierData();
+        protected ApiCarrierData jsonRepoData = new ApiCarrierData();
+        protected string Host => "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
+        protected string Key => "2616562damsh2050e58368419afp15567bjsn92c0b7a0fcad";
+        protected string Url => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2019-09-01?inboundpartialdate=2019-12-01";
+
+        protected async Task<ApiCarrierData> CreateApiConnection()
         {
-            var ee = jsonRepoData as ApiCarrierData;
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(Url),
+                Headers =
+                {
+                    {"x-rapidapi-Host", Host},
+                    {"x-rapidapi-Key", Key},
+                },
+            };
+
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ApiCarrierData>(body);
+            }
         }
-        protected override string Url => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/SFO-sky/LAX-sky/2019-09-01?inboundpartialdate=2019-12-01";
 
-        #region stuff
-        //public ApiCarrierProperties Get(string id)
-        //{
-        //    return _apiCarrierData.carriers.FirstOrDefault(x => x.Name == id);
-        //}
-
-        //public async Task<IEnumerable<ApiCarrierProperties>> GetAll()
-        //{
-        //    _apiCarrierData.carriers.Clear();
-        //    var data = await ApiConnection();
-        //    data.carriers.ForEach(x => _apiCarrierData.carriers.Add(x));
-        //    return _apiCarrierData.carriers;
-        //}
-        #endregion
-
-        public ApiCarrierProperties Get(string id)
+        public ApiCarrierProperties Get(int id)
         {
-            var ee = jsonRepoData as ApiCarrierData;
-            return ee.carriers.FirstOrDefault(x => x.Name == id);
+            return _apiCarrierData.carriers.FirstOrDefault(x => x.CarrierId == id);
         }
 
         public async Task<IEnumerable<ApiCarrierProperties>> GetAll()
@@ -43,5 +52,7 @@ namespace Airport.Infra.Api
             data.carriers.ForEach(x => ee.carriers.Add(x));
             return ee.carriers;
         }
+
     }
 }
+

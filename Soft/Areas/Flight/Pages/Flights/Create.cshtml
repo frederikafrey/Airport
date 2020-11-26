@@ -11,8 +11,6 @@
 @section Scripts { }
 
 <body>
-@*Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
-        @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)*@
         @Html.EditControlsForDropDownWithOnChange(m => m.Item.StartingPoint, Model.Countries,
             "StartCountry", "StartCity", url + "Cities")
         @Html.EditControlsForDropDownWithId(m => m.Item.StartCity, Model.Cities, "StartCity")

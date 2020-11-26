@@ -6,7 +6,7 @@ namespace Airport.Domain.Api
 {
     public interface IApiCarriersRepository
     {
-        ApiCarrierProperties Get(string id);
+        ApiCarrierProperties Get(int id);
         Task<IEnumerable<ApiCarrierProperties>> GetAll();
     }
 }

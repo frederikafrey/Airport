@@ -50,13 +50,6 @@ namespace Airport.Infra.Api
             data.Places.ForEach(x => _apiCityData.Places.Add(x));
             return _apiCityData.Places;
         }
-        //public async Task<IEnumerable<ApiCityProperties>> GetAll()
-        //{
-        //    _apiCityData.Places.Clear();
-        //    var data = await ApiConnection();
-        //    data.Places.ForEach(x => _apiCityData.Places.Add(x));
-        //    return _apiCityData.Places;
-        //}
-
+       
     }
 }

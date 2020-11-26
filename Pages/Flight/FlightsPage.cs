@@ -16,9 +16,7 @@ namespace Airport.Pages.Flight
             PageTitle = "Flights";
             Countries = CreateSelectList(c);
 
-            Cities = new List<SelectListItem>();
-
-            
+            Cities = new List<SelectListItem>();            
         }
 
         public IEnumerable<SelectListItem> Countries { get; }

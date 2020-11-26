@@ -5,8 +5,9 @@
 @{
     Layout = "_Create";
 }
+@section Scripts { }
 
 <body>
-    @Html.EditControlsForDropDownWithId(m => m.Item.Name, Model.Carrier, "Carrier");
+    @Html.EditControlsForDropDownWithId(m => m.Item.Name, Model.Carrier, "Carrier")
     @Html.EditControlsFor(m => m.Item.Address)
 </body>
