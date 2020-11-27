@@ -1,9 +1,17 @@
 ﻿@page
+@using Airport.Aids
+@using Airport.Data.Flight
+@using Airport.Data.FlightOfPassenger
+@using Airport.Data.Passenger
 @using Airport.Pages.Extensions
 @model Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers.DetailsModel
 
 @{
     Layout = "_Details";
+    const string a = "/Passenger/Passengers";
+    var passengerId = GetMember.Name<PassengerData>(x => x.Name);
+    const string b = "/Flight/Flights";
+    var flightId = GetMember.Name<FlightData>(x => x.Id);
 }
 
 <body>
@@ -12,4 +20,9 @@
     @Html.DisplayControlsFor(m => m.Item.FlightId)
     @Html.DisplayControlsFor(m => m.Item.LuggageId)
 </body>
-@section Details{}
+@section Details{
+    @Html.HypertextLinkFor(string.Empty, new Link("Show passenger info",
+        $"{a}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.PassengerId}"))
+    @Html.HypertextLinkFor(string.Empty, new Link("Show flight info",
+        $"{b}/Index?fixedFilter={flightId}&fixedValue={Model.Item.FlightId}"))
+}
