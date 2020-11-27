@@ -8,16 +8,16 @@ namespace Airport.Tests.Facade.StopOver
     public class StopOverViewTests : SealedClassTests<StopOverView, UniqueEntityView>
     {
         [TestMethod]
-        public void FlightIdTest() => IsNullableProperty(() => obj.FlightId, x => obj.FlightId = x);
+        public void FlightIdTest() => IsNullableProperty(() => obj.Country, x => obj.Country = x);
 
         [TestMethod]
-        public void FlightOfPassengerIdTest() => IsNullableProperty(() => obj.FlightOfPassengerId, x => obj.FlightOfPassengerId = x);
+        public void FlightOfPassengerIdTest() => IsNullableProperty(() => obj.City, x => obj.City = x);
 
         [TestMethod]
         public void GetIdTest()
         {
             var actual = obj.GetId();
-            var expected = $"{obj.FlightId}.{obj.FlightOfPassengerId}";
+            var expected = $"{obj.Country}.{obj.City}";
             Assert.AreEqual(expected, actual);
         }
     }

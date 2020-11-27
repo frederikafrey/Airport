@@ -11,16 +11,17 @@
 @section Scripts { }
 
 <body>
-        @Html.EditControlsForDropDownWithOnChange(m => m.Item.StartingPoint, Model.Countries,
-            "StartCountry", "StartCity", url + "Cities")
-        @Html.EditControlsForDropDownWithId(m => m.Item.StartCity, Model.Cities, "StartCity")
-        @Html.EditControlsForDropDownWithOnChange(m => m.Item.FinalPoint, Model.Countries,
-            "FinalCountry", "FinalCity", url + "Cities")
-        @Html.EditControlsForDropDownWithId(m => m.Item.FinalCity, Model.Cities, "FinalCity")
-        @Html.EditControlsFor(m => m.Item.StartTime)
-        @Html.EditControlsFor(m => m.Item.ArrivingTime)
-        @Html.EditControlsFor(m => m.Item.Occupancy)
-        @Html.EditControlsFor(m => m.Item.Company)
-        @Html.EditControlsFor(m => m.Item.Plane)
+    @Html.EditControlsForDropDownWithOnChange(m => m.Item.StartingPoint, Model.Countries,
+        "StartCountry", "StartCity", url + "Cities")
+    @Html.EditControlsForDropDownWithId(m => m.Item.StartCity, Model.Cities, "StartCity")
+    @Html.EditControlsForDropDownWithOnChange(m => m.Item.FinalPoint, Model.Countries,
+        "FinalCountry", "FinalCity", url + "Cities")
+    @Html.EditControlsForDropDownWithId(m => m.Item.FinalCity, Model.Cities, "FinalCity")
+    @Html.EditControlsForDropDown(m => m.Item.StopOver, Model.StopOvers)
+    @Html.EditControlsFor(m => m.Item.StartTime)
+    @Html.EditControlsFor(m => m.Item.ArrivingTime)
+    @Html.EditControlsFor(m => m.Item.Occupancy)
+    @Html.EditControlsFor(m => m.Item.Company)
+    @Html.EditControlsFor(m => m.Item.Plane)
 </body>
 

@@ -50,7 +50,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
@@ -86,7 +86,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
@@ -97,7 +97,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
@@ -108,7 +108,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
@@ -119,7 +119,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
@@ -129,7 +129,7 @@ namespace Airport.Tests.Pages.StopOver
         {
             var item = GetRandom.Object<StopOverView>();
             obj.Item = item;
-            string a = Id(item.FlightId, item.FlightOfPassengerId);
+            string a = Id(item.Country, item.City);
             Assert.AreEqual(a, obj.ItemId);
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);

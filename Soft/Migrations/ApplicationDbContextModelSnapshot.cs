@@ -86,6 +86,9 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartingPoint")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("StopOver")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Flights");
@@ -120,9 +123,6 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Dimensions")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FlightOfPassengerId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Weight")
                         .HasColumnType("int");
 
@@ -153,17 +153,17 @@ namespace Airport.Soft.Migrations
 
             modelBuilder.Entity("Airport.Data.StopOver.StopOverData", b =>
                 {
-                    b.Property<string>("FlightOfPassengerId")
+                    b.Property<string>("City")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FlightId")
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FlightOfPassengerId", "FlightId");
+                    b.HasKey("City", "Country");
 
                     b.ToTable("StopOvers");
                 });

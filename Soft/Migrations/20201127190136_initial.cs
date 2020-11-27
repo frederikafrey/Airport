@@ -95,6 +95,7 @@ namespace Airport.Soft.Migrations
                     FinalPoint = table.Column<string>(nullable: true),
                     StartCity = table.Column<string>(nullable: true),
                     FinalCity = table.Column<string>(nullable: true),
+                    StopOver = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
                     ArrivingTime = table.Column<string>(nullable: true),
                     Occupancy = table.Column<int>(nullable: false),
@@ -137,13 +138,13 @@ namespace Airport.Soft.Migrations
                 name: "StopOvers",
                 columns: table => new
                 {
-                    FlightId = table.Column<string>(nullable: false),
-                    FlightOfPassengerId = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: false),
+                    City = table.Column<string>(nullable: false),
                     Id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StopOvers", x => new { x.FlightOfPassengerId, x.FlightId });
+                    table.PrimaryKey("PK_StopOvers", x => new { x.City, x.Country });
                 });
 
             migrationBuilder.CreateTable(

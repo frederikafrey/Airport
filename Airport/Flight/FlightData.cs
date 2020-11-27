@@ -8,6 +8,7 @@ namespace Airport.Data.Flight
         public string FinalPoint { get; set; }
         public string StartCity { get; set; }
         public string FinalCity { get; set; }
+        public string StopOver { get; set; }
         public string StartTime { get; set; }
         public string ArrivingTime { get; set; }
         public int Occupancy { get; set; }

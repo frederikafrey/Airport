@@ -5,6 +5,7 @@ using Airport.Domain.Api;
 using Airport.Domain.Common;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
+using Airport.Domain.StopOver;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages
@@ -55,6 +56,12 @@ namespace Airport.Pages
             var items = r.Get().GetAwaiter().GetResult();
 
             return items.Select(m => new SelectListItem(m.Data.Id, m.Data.Id)).ToList();
+        }
+        protected static IEnumerable<SelectListItem> CreateSelectListStopOver(IStopOversRepository s)
+        {
+            var items = s.Get().GetAwaiter().GetResult();
+
+            return items.Select(m => new SelectListItem(m.Data.City, m.Data.Id)).ToList();
         }
     }
 }

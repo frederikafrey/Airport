@@ -7,12 +7,12 @@ namespace Airport.Facade.StopOver
     public sealed class StopOverView : UniqueEntityView
     {
         [Required]
-        [DisplayName("Flight")]
-        public string FlightId { get; set; }
+        [DisplayName("Country")]
+        public string Country { get; set; }
        
-        [DisplayName("Flight of Passenger")]
-        public string FlightOfPassengerId { get; set; }
+        [DisplayName("City")]
+        public string City { get; set; }
 
-        public string GetId() => $"{FlightId}.{FlightOfPassengerId}";
+        public string GetId() => $"{Country}.{City}";
     }
 }

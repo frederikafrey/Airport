@@ -1,5 +1,6 @@
 ﻿using Airport.Data.AirlineCompany;
 using Airport.Data.Airport;
+using Airport.Data.StopOver;
 using System.Linq;
 
 namespace Airport.Infra
@@ -10,6 +11,7 @@ namespace Airport.Infra
         {
             initializeAirports(db);
             initializeAirlineCompanys(db);
+            initializeStopOvers(db);
         }
         private static void initializeAirports(AirportDbContext db)
         {
@@ -39,6 +41,25 @@ namespace Airport.Infra
                 },
                 new AirlineCompanyData{
                     Id = "DMK", Name = "Danish Air Transport", Address = "DanishAirTransport.com"
+                }
+            };
+            addSet(airports, db);
+        }
+        private static void initializeStopOvers(AirportDbContext db)
+        {
+            if (db.StopOvers.Count() != 0) return;
+            var airports = new[] {
+                new StopOverData {
+                    Id = "NL", Country = "Netherlands", City = "Amsterdam"
+                },
+                new StopOverData {
+                    Id = "SP", Country = "Spain", City = "Madrid"
+                },
+                new StopOverData{
+                    Id = "ENG", Country = "England", City = "London"
+                },
+                 new StopOverData{
+                    Id = "AM", Country = "America", City = "Los Angeles"
                 }
             };
             addSet(airports, db);

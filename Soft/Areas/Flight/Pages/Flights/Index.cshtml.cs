@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Airport.Domain.Api;
 using Airport.Domain.Flight;
+using Airport.Domain.StopOver;
 using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
@@ -11,7 +12,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         private IApiCitiesRepository citiesRepository;
         private IApiCountriesRepository countriesRepository;
         
-        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p)
+        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s)
         {
             citiesRepository = p;
             countriesRepository = c;

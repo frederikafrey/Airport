@@ -22,6 +22,9 @@ namespace Airport.Facade.Flight
         [DisplayName("Final City")]
         public string FinalCity { get; set; }
 
+        [DisplayName("Stop Over")]
+        public string StopOver { get; set; }
+
         [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
         public string StartTime { get; set; }

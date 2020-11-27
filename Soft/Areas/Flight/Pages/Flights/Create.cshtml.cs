@@ -10,6 +10,7 @@ using Airport.Data.Api.ApiCountry;
 using System;
 using System.IO;
 using Airport.Facade;
+using Airport.Domain.StopOver;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
 {
@@ -17,7 +18,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
     {
         private readonly IApiCitiesRepository cR;
 
-        public CreateModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p)
+        public CreateModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s)
         {
             cR = p;
 
