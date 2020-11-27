@@ -6,9 +6,11 @@
     Layout = "_Create";
 }
 
+@section Scripts { }
+
 <body>
     @Html.EditControlsFor(m => m.Item.Id)
     @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
-    @Html.EditControlsFor(m => m.Item.StartDestination)    
-    @Html.EditControlsFor(m => m.Item.FinalDestination)
+    @Html.EditControlsForDropDown(m => m.Item.FlightId, Model.Flights)
+    @Html.EditControlsForDropDown(m => m.Item.LuggageId, Model.Luggage)
 </body>

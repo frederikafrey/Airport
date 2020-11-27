@@ -18,7 +18,8 @@
         <thead>
             @Html.TableHeaderFor(
                 new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)))
+                new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.FlightId), Model.GetSortString(m => m.FlightId, page)))
                 )
         </thead>
         <tbody>
@@ -33,8 +34,8 @@
                    Model.FixedValue,
                    Html.DisplayFor(modelItem => item.Id),
                    Html.DisplayFor(modelItem => item.PassengerId),
-                   Html.DisplayFor(modelItem => item.StartDestination),                   
-                   Html.DisplayFor(modelItem => item.FinalDestination))
+                   Html.DisplayFor(modelItem => item.FlightId),                   
+                   Html.DisplayFor(modelItem => item.LuggageId))
                    )
                 </tr>
             }

@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
+using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Domain.StopOver;
 using Airport.Pages.FlightOfPassenger;
@@ -9,8 +11,8 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
 {
     public class CreateModel : FlightOfPassengersPage
     {
-        public CreateModel(IFlightOfPassengersRepository r, IStopOversRepository p, IPassengersRepository t) : base(r, p, t) { }
-
+        public CreateModel(IFlightOfPassengersRepository r, IPassengersRepository t, IFlightsRepository p, ILuggagesRepository l) : base(r, t, p, l) { }
+        //IStopOversRepository p
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;

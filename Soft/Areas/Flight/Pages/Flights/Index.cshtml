@@ -17,7 +17,6 @@
     <table class="table">
         <thead>
             @Html.TableHeaderFor(
-                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartingPoint), Model.GetSortString(m => m.StartingPoint, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.StartCity), Model.GetSortString(m => m.StartCity, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.FinalPoint), Model.GetSortString(m => m.FinalPoint, page)),
