@@ -3,6 +3,8 @@ using System.Linq;
 using Airport.Data.Common;
 using Airport.Domain.Api;
 using Airport.Domain.Common;
+using Airport.Domain.Luggage;
+using Airport.Domain.Passenger;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages
@@ -43,7 +45,7 @@ namespace Airport.Pages
 
         protected static IEnumerable<SelectListItem> CreateSelectList(IApiCitiesRepository p, string name)
         {
-            var items = p.GetAll(name).GetAwaiter().GetResult(); ;
+            var items = p.GetAll(name).GetAwaiter().GetResult(); 
             return items.Select(t => new SelectListItem(t.PlaceName, t.CityId)).ToList();
         }
         protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)

@@ -17,10 +17,10 @@
     <table class="table">
         <thead>
             @Html.TableHeaderFor(
-                new Link(Html.DisplayNameFor(m => m.Item.Id), Model.GetSortString(m => m.Id, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PassengerId), Model.GetSortString(m => m.PassengerId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.FlightId), Model.GetSortString(m => m.FlightId, page)))
-                )
+                new Link(Html.DisplayNameFor(m => m.Item.FlightId), Model.GetSortString(m => m.FlightId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.LuggageId), Model.GetSortString(m => m.LuggageId, page))
+            )
         </thead>
         <tbody>
             @foreach (var item in Model.Items)
@@ -32,8 +32,7 @@
                    item.Id,
                    Model.FixedFilter,
                    Model.FixedValue,
-                   Html.DisplayFor(modelItem => item.Id),
-                   Html.DisplayFor(modelItem => item.PassengerId),
+                        Html.DisplayFor(modelItem => item.PassengerId),
                    Html.DisplayFor(modelItem => item.FlightId),                   
                    Html.DisplayFor(modelItem => item.LuggageId))
                    )

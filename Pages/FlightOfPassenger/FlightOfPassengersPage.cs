@@ -48,7 +48,7 @@ namespace Airport.Pages.FlightOfPassenger
 
         //    return "";
         //}
-        public string GetFlightOfPassengerName(string passengerId)
+        public string GetPassengerName(string passengerId)
         {
             foreach (var m in Passengers)
                 if (m.Value == passengerId)

@@ -1,9 +1,13 @@
 ﻿@page
+@using Airport.Aids
+@using Airport.Data.FlightOfPassenger
 @using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Passenger.Pages.Passengers.DetailsModel
 
 @{
     Layout = "_Details";
+    const string units = "/FlightOfPassenger/FlightOfPassengers";
+    var passengerId = GetMember.Name<FlightOfPassengerData>(x => x.PassengerId);
 }
 
 <body>
@@ -12,4 +16,8 @@
     @Html.DisplayControlsFor(m => m.Item.Age)
     @Html.DisplayControlsFor(m => m.Item.Address)
 </body>
-@section Details{}
+
+@section Details{
+    @Html.HypertextLinkFor(string.Empty, new Link("Show flight of passenger",
+        $"{units}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.Name}"))
+}
