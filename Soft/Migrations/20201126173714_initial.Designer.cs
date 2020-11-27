@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201125190200_initial")]
+    [Migration("20201126173714_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,17 +98,17 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("PassengerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FinalDestination")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("QuoteId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartDestination")
+                    b.Property<string>("LuggageId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PassengerId", "FinalDestination");
+                    b.HasKey("PassengerId", "QuoteId");
 
                     b.ToTable("FlightOfPassengers");
                 });
@@ -119,8 +119,8 @@ namespace Airport.Soft.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Dimensions")
-                        .HasColumnType("int");
+                    b.Property<string>("Dimensions")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FlightOfPassengerId")
                         .HasColumnType("nvarchar(max)");
