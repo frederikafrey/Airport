@@ -71,7 +71,7 @@ namespace Airport.Tests.Pages.Luggage
         }
 
         [TestMethod]
-        public void DimensionsTest()
+        public void LuggagesTest()
         {
             var x = GetRandom.Object<LuggageData>();
             var y = GetRandom.Object<LuggageView>();
@@ -79,5 +79,8 @@ namespace Airport.Tests.Pages.Luggage
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
+
+        [TestMethod]
+        public void DimensionsTest() { Assert.Inconclusive();}
     }
 }
