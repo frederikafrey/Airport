@@ -124,6 +124,7 @@ namespace Airport.Tests.Pages.StopOver
             obj.Item = null;
             Assert.AreEqual(string.Empty, obj.ItemId);
         }
+
         [TestMethod]
         public void GetFlightOfPassengerNameTest()
         {

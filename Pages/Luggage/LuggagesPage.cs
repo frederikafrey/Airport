@@ -19,6 +19,7 @@ namespace Airport.Pages.Luggage
 
         public override Domain.Luggage.Luggage ToObject(LuggageView view) => LuggageViewFactory.Create(view);
         public override LuggageView ToView(Domain.Luggage.Luggage obj) => LuggageViewFactory.Create(obj);
+
         //protected new static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
         //    where TTDomain : Entity<TTData>
         //    where TTData : UniqueEntityData, new()
