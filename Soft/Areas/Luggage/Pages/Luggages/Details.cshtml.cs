@@ -8,7 +8,7 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class DetailsModel : LuggagesPage
     {
-        public DetailsModel(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
+        public DetailsModel(ILuggagesRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

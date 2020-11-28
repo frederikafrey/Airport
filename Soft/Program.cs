@@ -16,7 +16,7 @@ namespace Airport.Soft
             {
                 var services = scope.ServiceProvider;
                 var dbQuantity = services.GetRequiredService<AirportDbContext>();
-                AirportDbInitializer.Initialize(dbQuantity);
+                AirportsDbInitializer.Initialize(dbQuantity);
             }
             GetRepository.SetServiceProvider(host.Services);
             host.Run();

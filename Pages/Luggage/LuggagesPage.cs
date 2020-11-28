@@ -9,7 +9,7 @@ namespace Airport.Pages.Luggage
 {
     public abstract class LuggagesPage : CommonPage<ILuggagesRepository, Domain.Luggage.Luggage, LuggageView, LuggageData>
     {
-        protected internal LuggagesPage(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r)
+        protected internal LuggagesPage(ILuggagesRepository r) : base(r)
         {
             PageTitle = "Luggage";
             Dimensions = new List<SelectListItem>();
@@ -37,5 +37,6 @@ namespace Airport.Pages.Luggage
             new SelectListItem() { Text="Arkansas", Value="AR"},
 
         };
+       
     }
 }

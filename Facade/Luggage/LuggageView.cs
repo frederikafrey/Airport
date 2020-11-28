@@ -10,5 +10,6 @@ namespace Airport.Facade.Luggage
 
         [Required]
         public string Weight { get; set; }
+       
     }
 }
