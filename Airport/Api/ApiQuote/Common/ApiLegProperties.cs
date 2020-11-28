@@ -1,6 +1,6 @@
 ﻿namespace Airport.Data.Api.ApiQuote.Common
 {
-    public class ApiLegProperties:ApiQuoteProperties
+    public abstract class ApiLegProperties: ApiQuoteProperties
     {
         public int CarrierIds { get; set; } //saab olla mitu väärtust
         public string DepartureDate { get; set; }

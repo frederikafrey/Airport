@@ -3,27 +3,24 @@ using Airport.Data.Flight;
 using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
 using Airport.Data.Passenger;
-using Airport.Data.StopOver;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
-using Airport.Domain.StopOver;
 using Airport.Facade.FlightOfPassenger;
-using Airport.Pages.Flight;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.FlightOfPassenger
 {
     public abstract class FlightOfPassengersPage : CommonPage<IFlightOfPassengersRepository, Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerView, FlightOfPassengerData>
     {
-        protected internal FlightOfPassengersPage(IFlightOfPassengersRepository r, IPassengersRepository t, IFlightsRepository p, ILuggagesRepository l) : base(r)
+        protected internal FlightOfPassengersPage(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r)
         //IStopOversRepository p
         {
             PageTitle = "Flight Of Passengers";
             //StopOvers = CreateSelectList<Domain.StopOver.StopOver, StopOverData>(p);
-            Passengers = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(t);
-            Flights = CreateSelectList<Domain.Flight.Flight, FlightData>(p);
+            Passengers = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(p);
+            Flights = CreateSelectList<Domain.Flight.Flight, FlightData>(f);
             Luggage = CreateSelectList<Domain.Luggage.Luggage, LuggageData>(l);
         }
         //public IEnumerable<SelectListItem> StopOvers { get; }

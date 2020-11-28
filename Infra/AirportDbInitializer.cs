@@ -9,11 +9,11 @@ namespace Airport.Infra
     {
         public static void Initialize(AirportDbContext db)
         {
-            initializeAirports(db);
-            initializeAirlineCompanys(db);
-            initializeStopOvers(db);
+            InitializeAirports(db);
+            InitializeAirlineCompanys(db);
+            InitializeStopOvers(db);
         }
-        private static void initializeAirports(AirportDbContext db)
+        private static void InitializeAirports(AirportDbContext db)
         {
             if (db.Airports.Count() != 0) return;
             var airports = new[] {
@@ -27,9 +27,9 @@ namespace Airport.Infra
                     Id = "DMK", Country = "Denmark", Phone = "677 7666"
                 }
             };
-            addSet(airports, db);
+            AddSet(airports, db);
         }
-        private static void initializeAirlineCompanys(AirportDbContext db)
+        private static void InitializeAirlineCompanys(AirportDbContext db)
         {
             if (db.AirlineCompanies.Count() != 0) return;
             var airports = new[] {
@@ -43,9 +43,9 @@ namespace Airport.Infra
                     Id = "DMK", Name = "Danish Air Transport", Address = "DanishAirTransport.com"
                 }
             };
-            addSet(airports, db);
+            AddSet(airports, db);
         }
-        private static void initializeStopOvers(AirportDbContext db)
+        private static void InitializeStopOvers(AirportDbContext db)
         {
             if (db.StopOvers.Count() != 0) return;
             var airports = new[] {
@@ -62,7 +62,7 @@ namespace Airport.Infra
                     Id = "AM", Country = "America", City = "Los Angeles"
                 }
             };
-            addSet(airports, db);
+            AddSet(airports, db);
         }
     }
 }

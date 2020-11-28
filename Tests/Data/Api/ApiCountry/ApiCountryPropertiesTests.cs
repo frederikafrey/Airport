@@ -1,5 +1,4 @@
 ﻿using Airport.Data.Api.ApiCountry;
-using Airport.Data.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Data.Api.ApiCountry
@@ -17,5 +16,8 @@ namespace Airport.Tests.Data.Api.ApiCountry
         }
         [TestMethod]
         public void NameTest() => IsNullableProperty(() => obj.Name, x => obj.Name = x);
+
+        [TestMethod]
+        public void CodeTest() => IsNullableProperty(() => obj.Code, x => obj.Code = x);
     }
 }

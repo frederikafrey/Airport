@@ -4,13 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Airport.Infra
 {
     public class DbInitializer
     {
-        static internal protected void addSet<T>(IEnumerable<T> set, DbContext db) where T : UniqueEntityData
+        static internal protected void AddSet<T>(IEnumerable<T> set, DbContext db) where T : UniqueEntityData
         {
             try
             {
@@ -20,18 +19,18 @@ namespace Airport.Infra
             catch (Exception e)
             {
                 Log.Exception(e);
-                rollBack(db);
-                addItems(set, db);
+                RollBack(db);
+                AddItems(set, db);
             }
         }
 
-        static internal protected void addItems<T>(IEnumerable<T> set, DbContext db) where T : UniqueEntityData
+        static internal protected void AddItems<T>(IEnumerable<T> set, DbContext db) where T : UniqueEntityData
         {
             foreach (var e in set)
-                addItem(e, db);
+                AddItem(e, db);
         }
 
-        static internal protected void addItem<T>(T item, DbContext db) where T : UniqueEntityData
+        static internal protected void AddItem<T>(T item, DbContext db) where T : UniqueEntityData
         {
             try
             {
@@ -41,7 +40,7 @@ namespace Airport.Infra
             catch (Exception e)
             {
                 Log.Exception(e);
-                rollBack(db);
+                RollBack(db);
                 try
                 {
                     db?.Update(item);
@@ -50,12 +49,12 @@ namespace Airport.Infra
                 catch (Exception e1)
                 {
                     Log.Exception(e1);
-                    rollBack(db);
+                    RollBack(db);
                 }
             }
         }
 
-        static internal protected void rollBack(DbContext db)
+        static internal protected void RollBack(DbContext db)
         {
             var changedEntries = db.ChangeTracker.Entries()
                 .Where(x => x.State != EntityState.Unchanged).ToList();

@@ -19,7 +19,7 @@ namespace Airport.Tests.Pages.Extensions
       [TestMethod] 
       public void TableRowForTest() => Assert.Inconclusive();
 
-        [TestMethod]
+      [TestMethod]
       public void TableRowWithSelectForTest() => Assert.Inconclusive();
     }
 }

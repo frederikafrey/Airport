@@ -1,6 +1,5 @@
 ﻿using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
-using Airport.Domain.Api;
 using Airport.Facade.AirlineCompany;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;

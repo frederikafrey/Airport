@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.Api.ApiQuote.Common
 {
     [TestClass]
-    public class ApiLegPropertiesTests : AbstractClassTests<ApiLegProperties, object>
+    public class ApiLegPropertiesTests : AbstractClassTests<ApiLegProperties, ApiQuoteProperties>
     {
         private class TestClass : ApiLegProperties { }
 
