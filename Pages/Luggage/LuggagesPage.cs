@@ -13,30 +13,15 @@ namespace Airport.Pages.Luggage
         {
             PageTitle = "Luggage";
             Dimensions = new List<SelectListItem>();
+            Weight = new List<SelectListItem>();
         }
+        public IEnumerable<SelectListItem> Dimensions { get; }
+        public IEnumerable<SelectListItem> Weight { get; }
+
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Luggage/Luggages";
 
         public override Domain.Luggage.Luggage ToObject(LuggageView view) => LuggageViewFactory.Create(view);
         public override LuggageView ToView(Domain.Luggage.Luggage obj) => LuggageViewFactory.Create(obj);
-
-        //protected new static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
-        //    where TTDomain : Entity<TTData>
-        //    where TTData : UniqueEntityData, new()
-        //{
-        //    var items = r.Get().GetAwaiter().GetResult();
-
-        //    return items.Select(t => new SelectListItem(t.Data.Id, t.Data.Id)).ToList();
-        //}
-
-        public static List<SelectListItem> Dimensions = new List<SelectListItem>()
-        {
-            new SelectListItem() {Text="Alabama", Value="AL"},
-            new SelectListItem() { Text="Alaska", Value="AK"},
-            new SelectListItem() { Text="Arizona", Value="AZ"},
-            new SelectListItem() { Text="Arkansas", Value="AR"},
-
-        };
-       
     }
 }

@@ -14,8 +14,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Airport.Pages
 {
     public abstract class CommonPage<TRepository, TDomain, TView, TData> : 
-        PaginatedPage<TRepository, TDomain, TView, TData>
-        where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
+        PaginatedPage<TRepository, TDomain, TView, TData> where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
     {
 
         protected internal CommonPage(TRepository r) : base(r) { }
@@ -66,5 +65,21 @@ namespace Airport.Pages
 
             return items.Select(m => new SelectListItem(m.Data.City, m.Data.Id)).ToList();
         }
+
+        protected static IEnumerable<SelectListItem> CreateSelectList(IStopOversRepository s)
+        {
+            var items = s.Get().GetAwaiter().GetResult();
+
+            return items.Select(m => new SelectListItem(m.Data.City, m.Data.Id)).ToList();
+        }
+
+        //public static List<SelectListItem> Dimensions = new List<SelectListItem>()
+        //{
+        //    new SelectListItem() {Text="Alabama", Value="AL"},
+        //    new SelectListItem() { Text="Alaska", Value="AK"},
+        //    new SelectListItem() { Text="Arizona", Value="AZ"},
+        //    new SelectListItem() { Text="Arkansas", Value="AR"},
+
+        //};
     }
 }
