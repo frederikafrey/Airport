@@ -113,7 +113,7 @@ namespace Airport.Soft.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Dimensions = table.Column<string>(nullable: true),
-                    Weight = table.Column<int>(nullable: false)
+                    Weight = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

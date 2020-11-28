@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201127190136_initial")]
+    [Migration("20201128095920_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -125,8 +125,8 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Dimensions")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Weight")
-                        .HasColumnType("int");
+                    b.Property<string>("Weight")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -18,10 +18,7 @@ namespace Airport.Pages.Luggage
         {
             PageTitle = "Luggage";
             Dimensions = new List<SelectListItem>();
-            //FlightOfPassengers = CreateSelectList<Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>(p);
         }
-
-        //public IEnumerable<SelectListItem> FlightOfPassengers { get; }
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Luggage/Luggages";
 
