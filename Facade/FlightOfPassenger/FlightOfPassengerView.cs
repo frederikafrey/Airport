@@ -17,6 +17,6 @@ namespace Airport.Facade.FlightOfPassenger
         [DisplayName("Luggage")]
         public string LuggageId { get; set; }
 
-        public string GetId() => $"{PassengerId}{FlightId}";
+        public string GetId() => $"{PassengerId}.{FlightId}";
     }
 }

@@ -25,10 +25,12 @@ namespace Airport.Facade.Flight
         [DisplayName("Stop Over")]
         public string StopOver { get; set; }
 
+        [Required]
         [DataType(DataType.DateTime)]
         [DisplayName("Start Time")]
         public string StartTime { get; set; }
-        
+
+        [Required]
         [DataType(DataType.DateTime)]
         [DisplayName("Arriving Time")]
         public string ArrivingTime { get; set; }

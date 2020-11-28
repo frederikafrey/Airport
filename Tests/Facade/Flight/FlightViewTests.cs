@@ -11,7 +11,19 @@ namespace Airport.Tests.Facade.Flight
         public void StartingPointTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
 
         [TestMethod]
+        public void StartCityTest() => IsNullableProperty(() => obj.StartCity, x => obj.StartCity = x);
+
+        [TestMethod]
+        public void FinalPointTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
+
+        [TestMethod]
+        public void FinalCityTest() => IsNullableProperty(() => obj.FinalCity, x => obj.FinalCity = x);
+
+        [TestMethod]
         public void StartTimeTest() => IsNullableProperty(() => obj.StartTime, x => obj.StartTime = x);
+
+        [TestMethod]
+        public void StopOverTest() => IsNullableProperty(() => obj.StopOver, x => obj.StopOver = x);
 
         [TestMethod]
         public void ArrivingTimeTest() => IsNullableProperty(() => obj.ArrivingTime, x => obj.ArrivingTime = x);

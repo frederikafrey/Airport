@@ -9,7 +9,8 @@ namespace Airport.Facade.StopOver
         [Required]
         [DisplayName("Country")]
         public string Country { get; set; }
-       
+
+        [Required]
         [DisplayName("City")]
         public string City { get; set; }
 
