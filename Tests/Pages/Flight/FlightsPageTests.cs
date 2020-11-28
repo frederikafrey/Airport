@@ -1,11 +1,11 @@
 ﻿//using Airport.Aids;
-//using Airport.Data.AirlineCompany;
-//using Airport.Data.Airport;
 //using Airport.Data.Flight;
-//using Airport.Domain.AirlineCompany;
-//using Airport.Domain.Airport;
+//using Airport.Data.StopOver;
+//using Airport.Domain.Api.ApiCountry;
 //using Airport.Domain.Flight;
+//using Airport.Domain.StopOver;
 //using Airport.Facade.Flight;
+//using Airport.Infra.Api;
 //using Airport.Pages;
 //using Airport.Pages.Flight;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,16 +19,16 @@
 //    {
 //        private class TestClass : FlightsPage
 //        {
-//            internal TestClass(IFlightsRepository r, IAirlineCompaniesRepository p, IAirportsRepository t) : base(r, p, t) { }
+//            internal TestClass(IFlightsRepository r, IApiCountriesRepository c, IStopOversRepository s) : base(r) { }
 //        }
 //        private class FlightsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
 //            IFlightsRepository
 //        { }
-//        private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
-//            IAirlineCompaniesRepository
-//        { }
-//        private class AirportsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Airport.Airport, AirportData>,
-//            IAirportsRepository
+//        //private class ApiCountriesRepository : PaginatedPageTests<global::Airport.Domain.Api.ApiCountry.ApiCountry,ApiCountryData>,
+//        //    IApiCountriesRepository
+//        //{ }
+//        private class StopOversRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
+//            IStopOversRepository
 //        { }
 
 //        [TestInitialize]
@@ -36,9 +36,9 @@
 //        {
 //            base.TestInitialize();
 //            var r = new FlightsRepository();
-//            var p = new AirlineCompaniesRepository();
-//            var t = new AirportsRepository();
-//            obj = new TestClass(r, p, t);
+//            var c = new ApiCountriesRepository();
+//            var s = new StopOversRepository();
+//            obj = new TestClass(r, c, s);
 //        }
 
 //        [TestMethod]

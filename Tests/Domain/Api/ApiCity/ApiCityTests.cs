@@ -3,5 +3,5 @@
 namespace Airport.Tests.Domain.Api.ApiCity
 {
     [TestClass]
-    public class ApiCityTests : SealedClassTests<global::Airport.Domain.Api.ApiCity.ApiCity, object> { }
+    public class ApiCityTests : SealedClassTests<global::Airport.Domain.Api.ApiCity.ApiCity, global::Airport.Data.Api.ApiCity.ApiCityData> { }
 }

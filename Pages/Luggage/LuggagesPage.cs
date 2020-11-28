@@ -1,10 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Airport.Aids;
-using Airport.Data.Common;
-using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
-using Airport.Domain.Common;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Facade.Luggage;

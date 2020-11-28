@@ -1,14 +1,10 @@
 ﻿using Airport.Data.Flight;
-using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Facade.Flight;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
-using System.Linq;
-using Airport.Data.Api.ApiCity;
-using Airport.Domain.StopOver;
-using Airport.Data.StopOver;
 using Airport.Domain.Api.ApiCity;
+using Airport.Domain.StopOver;
 using Airport.Domain.Api.ApiCountry;
 
 namespace Airport.Pages.Flight

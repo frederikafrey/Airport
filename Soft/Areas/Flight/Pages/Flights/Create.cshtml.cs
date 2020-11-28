@@ -11,7 +11,6 @@ using System;
 using System.IO;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
-using Airport.Facade;
 using Airport.Domain.StopOver;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
@@ -23,7 +22,6 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         public CreateModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s)
         {
             cR = p;
-
         }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
