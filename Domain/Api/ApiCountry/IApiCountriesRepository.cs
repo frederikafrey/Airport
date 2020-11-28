@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCountry;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCountry
 {
     public interface IApiCountriesRepository
     {

@@ -4,6 +4,7 @@ using Airport.Domain.Api;
 using Airport.Facade.AirlineCompany;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using Airport.Domain.Api.ApiCarrier;
 
 namespace Airport.Pages.AirlineCompany
 {

@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using Airport.Data.Api.ApiCountry;
 using System;
 using System.IO;
+using Airport.Domain.Api.ApiCity;
+using Airport.Domain.Api.ApiCountry;
 using Airport.Facade;
 using Airport.Domain.StopOver;
 

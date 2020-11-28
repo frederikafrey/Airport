@@ -8,6 +8,8 @@ using System.Linq;
 using Airport.Data.Api.ApiCity;
 using Airport.Domain.StopOver;
 using Airport.Data.StopOver;
+using Airport.Domain.Api.ApiCity;
+using Airport.Domain.Api.ApiCountry;
 
 namespace Airport.Pages.Flight
 {

@@ -1,6 +1,6 @@
 ﻿using Airport.Data.Api.ApiCity;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCity
 {
     public sealed class ApiCity: ApiCityData
     {

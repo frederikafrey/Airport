@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Airport.Data.Api.ApiBrowseDates.ApiQuote.ApiInboundLeg
+namespace Airport.Data.Api.ApiQuote.ApiInboundLeg
 {
     public class ApiInboundLegData
     {

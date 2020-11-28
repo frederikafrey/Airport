@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Airport.Data.Api.ApiBrowseDates.ApiCarrier
+namespace Airport.Data.Api.ApiCarrier
 {
     public class ApiCarrierData
     {

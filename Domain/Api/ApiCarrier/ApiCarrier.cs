@@ -1,6 +1,6 @@
-﻿using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
+﻿using Airport.Data.Api.ApiCarrier;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCarrier
 {
     public sealed class ApiCarrier: ApiCarrierData
     {

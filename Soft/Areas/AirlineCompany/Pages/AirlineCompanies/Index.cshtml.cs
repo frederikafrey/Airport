@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
 using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCarrier;
 using Airport.Pages.AirlineCompany;
 
 namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies

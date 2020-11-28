@@ -1,12 +1,19 @@
 ﻿using Airport.Data.Api.ApiCurrency;
-using Airport.Data.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Data.Api.ApiCurrency
 {
     [TestClass]
-    public class ApiCurrencyPropertiesTests: SealedClassTests<ApiCurrencyProperties, UniqueEntityData>
+    public class ApiCurrencyPropertiesTests : AbstractClassTests<ApiCurrencyProperties, object>
     {
+        private class TestClass : ApiCurrencyProperties { }
+
+        [TestInitialize]
+        public override void TestInitialize()
+        {
+            base.TestInitialize();
+            obj = new TestClass();
+        }
         [TestMethod]
         public void CodeTest() => IsNullableProperty(() => obj.Code, x => obj.Code = x);
 

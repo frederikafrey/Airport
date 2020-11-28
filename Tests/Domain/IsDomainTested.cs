@@ -16,6 +16,21 @@ namespace Airport.Tests.Domain
         public void IsAirportTested() => IsAllTested(assembly, Namespace("Airport"));
 
         [TestMethod]
+        public void IsApiTested() => IsAllTested(assembly, Namespace("Api"));
+
+        [TestMethod]
+        public void IsApiCarrierTested() => IsAllTested(assembly, Namespace("Api.ApiCarrier"));
+
+        [TestMethod]
+        public void IsApiCityTested() => IsAllTested(assembly, Namespace("Api.ApiCity"));
+
+        [TestMethod]
+        public void IsApiCountryTested() => IsAllTested(assembly, Namespace("Api.Country"));
+
+        [TestMethod]
+        public void IsApiCurrencyTested() => IsAllTested(assembly, Namespace("Api.Currency"));
+
+        [TestMethod]
         public void IsCommonTested() => IsAllTested(assembly, Namespace("Common"));
 
         [TestMethod]

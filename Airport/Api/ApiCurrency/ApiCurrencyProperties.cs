@@ -1,6 +1,6 @@
 ﻿namespace Airport.Data.Api.ApiCurrency
 {
-    public class ApiCurrencyProperties
+    public abstract class ApiCurrencyProperties
     {
         public string Code { get; set; }
         public string Symbol { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace Airport.Data.Api.ApiBrowseDates.ApiQuote.Common
+﻿namespace Airport.Data.Api.ApiQuote.Common
 {
     public class ApiLegProperties:ApiQuoteProperties
     {

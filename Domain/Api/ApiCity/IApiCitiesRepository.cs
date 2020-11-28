@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCity;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCity
 {
     public interface IApiCitiesRepository
     {

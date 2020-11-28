@@ -1,8 +1,8 @@
-﻿using Airport.Data.Api.ApiBrowseDates.ApiQuote.Common;
+﻿using Airport.Data.Api.ApiQuote.Common;
 
-namespace Airport.Data.Api.ApiBrowseDates.ApiQuote.ApiInboundLeg
+namespace Airport.Data.Api.ApiQuote.ApiInboundLeg
 {
-    public class ApiInboundLegProperties: ApiLegProperties
+    public abstract class ApiInboundLegProperties: ApiLegProperties
     {
     }
 }

@@ -1,13 +1,21 @@
 ﻿using System;
-using Airport.Data.Api.ApiBrowseDates.ApiQuote.Common;
-using Airport.Data.Common;
+using Airport.Data.Api.ApiQuote.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Airport.Tests.Data.Api.ApiBrowseDates.ApiQuote.Common
+namespace Airport.Tests.Data.Api.ApiQuote.Common
 {
     [TestClass]
-    public class ApiQuotePropertiesTests : SealedClassTests<ApiQuoteProperties, UniqueEntityData>
+    public class ApiQuotePropertiesTests : AbstractClassTests<ApiQuoteProperties, object>
     {
+        private class TestClass : ApiQuoteProperties { }
+
+        [TestInitialize]
+        public override void TestInitialize()
+        {
+            base.TestInitialize();
+            obj = new TestClass();
+        }
+
         [TestMethod]
         public void DirectTest() => IsProperty<bool>();
 

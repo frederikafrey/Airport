@@ -1,6 +1,6 @@
-﻿namespace Airport.Data.Api.ApiBrowseDates.ApiCarrier
+﻿namespace Airport.Data.Api.ApiCarrier
 {
-    public class ApiCarrierProperties
+    public abstract class ApiCarrierProperties
     {
         public int CarrierId { get; set; }
         public string Name { get; set; }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
+using Airport.Data.Api.ApiCarrier;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCarrier
 {
     public interface IApiCarriersRepository
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Airport.Data.Api.ApiBrowseDates.ApiQuote.Common
+namespace Airport.Data.Api.ApiQuote.Common
 {
-    public class ApiQuoteProperties
+    public abstract class ApiQuoteProperties
     {
         public bool Direct { get; set; }
         public double MinPrice { get; set; }

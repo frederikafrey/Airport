@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCity;
 using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCity;
 using Newtonsoft.Json;
 
 namespace Airport.Infra.Api

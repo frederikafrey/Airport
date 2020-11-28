@@ -1,12 +1,20 @@
-﻿using Airport.Data.Api.ApiBrowseDates.ApiCarrier;
-using Airport.Data.Common;
+﻿using Airport.Data.Api.ApiCarrier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Airport.Tests.Data.Api.ApiBrowseDates.ApiCarrier
+namespace Airport.Tests.Data.Api.ApiCarrier
 {
     [TestClass]
-    public class ApiCarrierPropertiesTests : SealedClassTests<ApiCarrierProperties, UniqueEntityData>
+    public class ApiCarrierPropertiesTests : AbstractClassTests<ApiCarrierProperties, object>
     {
+        private class TestClass : ApiCarrierProperties { }
+
+        [TestInitialize]
+        public override void TestInitialize()
+        {
+            base.TestInitialize();
+            obj = new TestClass();
+        }
+
         [TestMethod]
         public void CarrierIdTest() => IsProperty<int>();
 

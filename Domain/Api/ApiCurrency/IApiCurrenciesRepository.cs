@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCurrency;
 
-namespace Airport.Domain.Api
+namespace Airport.Domain.Api.ApiCurrency
 {
     public interface IApiCurrenciesRepository
     {
