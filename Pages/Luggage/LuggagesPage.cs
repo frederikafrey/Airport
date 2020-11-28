@@ -12,7 +12,7 @@ namespace Airport.Pages.Luggage
         protected internal LuggagesPage(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r)
         {
             PageTitle = "Luggage";
-            Dimensions = new List<SelectListItem>();
+            dimensions = new List<SelectListItem>();
         }
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Luggage/Luggages";
@@ -29,7 +29,7 @@ namespace Airport.Pages.Luggage
         //    return items.Select(t => new SelectListItem(t.Data.Id, t.Data.Id)).ToList();
         //}
 
-        public static List<SelectListItem> Dimensions = new List<SelectListItem>()
+        public static List<SelectListItem> dimensions = new List<SelectListItem>()
         {
             new SelectListItem() {Text="Alabama", Value="AL"},
             new SelectListItem() { Text="Alaska", Value="AK"},

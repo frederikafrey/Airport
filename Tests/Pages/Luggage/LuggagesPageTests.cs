@@ -71,7 +71,7 @@ namespace Airport.Tests.Pages.Luggage
         }
 
         [TestMethod]
-        public void LuggageTest()
+        public void DimensionsTest()
         {
             var x = GetRandom.Object<LuggageData>();
             var y = GetRandom.Object<LuggageView>();
