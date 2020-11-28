@@ -78,5 +78,8 @@ namespace Airport.Tests.Pages.Luggage
 
         [TestMethod]
         public void DimensionsTest() { Assert.Inconclusive();}
+
+        [TestMethod]
+        public void WeightTest() { Assert.Inconclusive(); }
     }
 }

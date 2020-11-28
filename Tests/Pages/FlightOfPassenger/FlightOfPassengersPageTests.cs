@@ -8,6 +8,10 @@ using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Facade.FlightOfPassenger;
+using Airport.Infra.Flight;
+using Airport.Infra.FlightOfPassenger;
+using Airport.Infra.Luggage;
+using Airport.Infra.Passenger;
 using Airport.Pages;
 using Airport.Pages.FlightOfPassenger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,7 +32,8 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             IFlightOfPassengersRepository
         { }
 
-        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Passenger.Passenger, PassengerData>,
+        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<
+                global::Airport.Domain.Passenger.Passenger, PassengerData>,
             IPassengersRepository
         { }
 
