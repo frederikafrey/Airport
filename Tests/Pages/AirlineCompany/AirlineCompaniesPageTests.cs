@@ -1,7 +1,9 @@
 ﻿using Airport.Aids;
 using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
+using Airport.Domain.Api.ApiCarrier;
 using Airport.Facade.AirlineCompany;
+using Airport.Infra.Api;
 using Airport.Pages;
 using Airport.Pages.AirlineCompany;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,18 +16,20 @@ namespace Airport.Tests.Pages.AirlineCompany
     {
         private class TestClass : AirlineCompaniesPage
         {
-            internal TestClass(IAirlineCompaniesRepository r) : base(r) { }
+            internal TestClass(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r, c) { }
         }
 
-        private class TestRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
-            IAirlineCompaniesRepository { }
+        private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
+            IAirlineCompaniesRepository
+        { }
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new TestRepository();
-            obj = new TestClass(r);
+            var r = new AirlineCompaniesRepository();
+            var c = new ApiCarriersRepository();
+            obj = new TestClass(r, c);
         }
 
         [TestMethod]
@@ -40,6 +44,9 @@ namespace Airport.Tests.Pages.AirlineCompany
 
         [TestMethod]
         public void PageTitleTest() => Assert.AreEqual("Airline Companies", obj.PageTitle);
+
+        [TestMethod]
+        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
 
         [TestMethod]
         public void GetPageUrlTest() => Assert.AreEqual("/AirlineCompany/AirlineCompanies", obj.PageUrl);
@@ -60,7 +67,5 @@ namespace Airport.Tests.Pages.AirlineCompany
             TestArePropertyValuesEqual(view, data);
         }
 
-        [TestMethod]
-        public void GetPageSubTitleTest() => Assert.AreEqual(obj.PageSubTitle, obj.GetPageSubTitle());
     }
 }

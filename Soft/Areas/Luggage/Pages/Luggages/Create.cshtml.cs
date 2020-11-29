@@ -8,7 +8,7 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class CreateModel : LuggagesPage
     {
-        public CreateModel(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
+        public CreateModel(ILuggagesRepository r) : base(r) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {

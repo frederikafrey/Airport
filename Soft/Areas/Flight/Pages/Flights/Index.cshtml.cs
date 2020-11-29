@@ -1,7 +1,10 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCity;
+using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;
+using Airport.Domain.StopOver;
 using Airport.Pages.Flight;
 
 namespace Airport.Soft.Areas.Flight.Pages.Flights
@@ -11,31 +14,15 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         private IApiCitiesRepository citiesRepository;
         private IApiCountriesRepository countriesRepository;
         
-
-        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p) : base(r, c, p)
+        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s)
         {
             citiesRepository = p;
             countriesRepository = c;
         }
 
-        //public IList<FlightData> FlightData { get; set; }
-
-        //public async Task OnGetAsync(string sortOrder,
-        //    string id, string currentFilter, string searchString, int? pageIndex,
-        //    string fixedFilter, string fixedValue)
-        //{
-        //    SelectedId = id;
-        //    await GetList(sortOrder, currentFilter, searchString, pageIndex,
-        //        fixedFilter, fixedValue);
-        //}
-
         public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue)
         {
-            var bb = await countriesRepository.GetAll();
-            var ee = bb.ElementAt(105);
-            var qq = await citiesRepository.GetAll(ee.Name);
-            //var aa = await citiesRepository.GetAll();
             await GetList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue);
         }

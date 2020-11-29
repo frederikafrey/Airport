@@ -8,7 +8,7 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class EditModel : LuggagesPage
     {
-        public EditModel(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
+        public EditModel(ILuggagesRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

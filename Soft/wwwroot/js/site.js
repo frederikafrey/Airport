@@ -24,7 +24,7 @@
 
             $.each(items,
                 function(index, item) {
-                    itemsSelect.append("<option value='" + item.value + "'>" + item.text + "</option>");
+                    itemsSelect.append("<option value='" + item.text + "'>" + item.text + "</option>");
                 }
             );
         },

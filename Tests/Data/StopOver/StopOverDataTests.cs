@@ -8,9 +8,9 @@ namespace Airport.Tests.Data.StopOver
     public class StopOverDataTests : SealedClassTests<StopOverData, UniqueEntityData>
     {
         [TestMethod]
-        public void FlightIdTest() => IsNullableProperty(() => obj.FlightId, x => obj.FlightId = x);
+        public void CountryTest() => IsNullableProperty(() => obj.Country, x => obj.Country = x);
 
         [TestMethod]
-        public void FlightOfPassengerIdTest() => IsNullableProperty(() => obj.FlightOfPassengerId, x => obj.FlightOfPassengerId = x);
+        public void CityTest() => IsNullableProperty(() => obj.City, x => obj.City = x);
     }
 }

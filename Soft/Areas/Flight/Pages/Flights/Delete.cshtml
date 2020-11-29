@@ -8,8 +8,10 @@
 
 <body>
     @Html.DisplayControlsFor(m => m.Item.Id)
-    @Html.EditControlsFor(m => m.Item.StartingPoint)
+    @Html.DisplayControlsFor(m => m.Item.StartingPoint)
     @Html.DisplayControlsFor(m => m.Item.StartCity)
+    @Html.DisplayControlsFor(m => m.Item.FinalPoint)
+    @Html.DisplayControlsFor(m => m.Item.FinalCity)
     @Html.DisplayControlsFor(m => m.Item.StartTime)
     @Html.DisplayControlsFor(m => m.Item.ArrivingTime)
     @Html.DisplayControlsFor(m => m.Item.Occupancy)

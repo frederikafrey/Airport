@@ -11,14 +11,12 @@ namespace Airport.Tests.Data.FlightOfPassenger
         public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
 
         [TestMethod]
-        public void StartDestinationTest() =>
-            IsNullableProperty(() => obj.StartDestination, x => obj.StartDestination = x);
+        public void LuggageIdTest() => IsNullableProperty(() => obj.LuggageId, x => obj.LuggageId = x);
 
         [TestMethod]
-        public void FinalDestinationTest() =>
-            IsNullableProperty(() => obj.FinalDestination, x => obj.FinalDestination = x);
+        public void FlightIdTest() => IsNullableProperty(() => obj.FlightId, x => obj.FlightId = x);
 
-        [TestMethod]
-        public void IsStopOverTest() {Assert.Inconclusive(); }
+        //[TestMethod]
+        //public void QuoteIdTest() => IsNullableProperty(() => obj.QuoteId, x => obj.QuoteId = x);
     }
 }

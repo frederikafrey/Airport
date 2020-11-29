@@ -17,13 +17,10 @@ namespace Airport.Tests.Pages.Luggage
     {
         public class TestClass : LuggagesPage
         {
-            internal TestClass(ILuggagesRepository r, IFlightOfPassengersRepository p) : base(r, p) { }
+            internal TestClass(ILuggagesRepository r) : base(r) { }
         }
         private class LuggagesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Luggage.Luggage, LuggageData>,
             ILuggagesRepository
-        { }
-        private class FlightOfPassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
-            IFlightOfPassengersRepository
         { }
 
         [TestInitialize]
@@ -31,8 +28,7 @@ namespace Airport.Tests.Pages.Luggage
         {
             base.TestInitialize();
             var r = new LuggagesRepository();
-            var p = new FlightOfPassengersRepository();
-            obj = new TestClass(r, p);
+            obj = new TestClass(r);
         }
 
         [TestMethod]
@@ -71,7 +67,7 @@ namespace Airport.Tests.Pages.Luggage
         }
 
         [TestMethod]
-        public void FlightOfPassengersTest()
+        public void LuggagesTest()
         {
             var x = GetRandom.Object<LuggageData>();
             var y = GetRandom.Object<LuggageView>();
@@ -79,5 +75,11 @@ namespace Airport.Tests.Pages.Luggage
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
+
+        [TestMethod]
+        public void DimensionsTest() { Assert.Inconclusive();}
+
+        [TestMethod]
+        public void WeightTest() { Assert.Inconclusive(); }
     }
 }

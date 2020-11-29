@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
+using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Domain.StopOver;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +11,8 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
 {
     public class DeleteModel : FlightOfPassengersPage
     {
-        public DeleteModel(IFlightOfPassengersRepository r, IStopOversRepository p, IPassengersRepository t) : base(r, p, t) { }
+        public DeleteModel(IFlightOfPassengersRepository r, IPassengersRepository t, IFlightsRepository p, ILuggagesRepository l) : base(r, t, p, l) { }
+        //IStopOversRepository p
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCity;
 using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCity;
 using Newtonsoft.Json;
 
 namespace Airport.Infra.Api
@@ -50,13 +51,6 @@ namespace Airport.Infra.Api
             data.Places.ForEach(x => _apiCityData.Places.Add(x));
             return _apiCityData.Places;
         }
-        //public async Task<IEnumerable<ApiCityProperties>> GetAll()
-        //{
-        //    _apiCityData.Places.Clear();
-        //    var data = await ApiConnection();
-        //    data.Places.ForEach(x => _apiCityData.Places.Add(x));
-        //    return _apiCityData.Places;
-        //}
-
+       
     }
 }

@@ -72,7 +72,7 @@ namespace Airport.Tests.Infra
             TestEntity<AirlineCompanyData>(builder);
             TestEntity<AirportData>(builder);
             TestEntity<FlightData>(builder);
-            TestEntity<StopOverData>(builder, x => x.FlightId, x => x.FlightOfPassengerId);
+            TestEntity<StopOverData>(builder, x => x.Country, x => x.City);
             TestEntity<LuggageData>(builder);
             TestEntity<PassengerData>(builder);
             TestEntity<FlightOfPassengerData>(builder, x => x.PassengerId);

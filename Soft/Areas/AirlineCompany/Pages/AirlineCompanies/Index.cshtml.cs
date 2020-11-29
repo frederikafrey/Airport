@@ -2,13 +2,15 @@
 using System.Threading.Tasks;
 using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
+using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCarrier;
 using Airport.Pages.AirlineCompany;
 
 namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class IndexModel : AirlineCompaniesPage
     {
-        public IndexModel(IAirlineCompaniesRepository r) : base(r) { }
+        public IndexModel(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r, c) { }
 
         public IList<AirlineCompanyData> AirlinesCompanyData { get; set; }
 

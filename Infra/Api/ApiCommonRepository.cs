@@ -33,18 +33,5 @@ namespace Airport.Infra.Api
                 return JsonConvert.DeserializeObject<TData>(body);
             }
         }
-
-        //public TData Get(string id)
-        //{
-        //    return _apiCarrierData.carriers.FirstOrDefault(x => x.Name == id);
-        //}
-
-        //public async Task<IEnumerable<ApiCarrierProperties>> GetAll()
-        //{
-        //    _apiCarrierData.carriers.Clear();
-        //    var data = await ApiConnection();
-        //    data.carriers.ForEach(x => _apiCarrierData.carriers.Add(x));
-        //    return _apiCarrierData.carriers;
-        //}
     }
 }

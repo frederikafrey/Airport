@@ -8,12 +8,9 @@ namespace Airport.Tests.Facade.Luggage
     public class LuggageViewTests : SealedClassTests<LuggageView, UniqueEntityView>
     {
         [TestMethod]
-        public void FlightOfPassengerIdTest() => IsNullableProperty(() => obj.FlightOfPassengerId, x => obj.FlightOfPassengerId = x);
+        public void DimensionsTest() => IsNullableProperty(() => obj.Dimensions, x => obj.Dimensions = x);
 
         [TestMethod]
-        public void DimensionsTest() => IsProperty<int>();
-
-        [TestMethod]
-        public void WeightTest() => IsProperty<int>();
+        public void WeightTest() => IsNullableProperty(() => obj.Weight, x => obj.Weight = x);
     }
 }
