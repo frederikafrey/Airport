@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.Api.ApiCurrency
 {
     [TestClass]
-    public class ApiCurrencyPropertiesTests : AbstractClassTests<ApiCurrencyProperties, object>
+    public class ApiCurrencyPropertiesTests : BaseClassTests<ApiCurrencyProperties, object>
     {
         private class TestClass : ApiCurrencyProperties { }
 

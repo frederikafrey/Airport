@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.Api.ApiQuote.ApiOutboundLeg
 {
     [TestClass]
-    public class ApiOutboundLegPropertiesTests : AbstractClassTests<ApiOutboundLegProperties, ApiLegProperties>
+    public class ApiOutboundLegPropertiesTests : BaseClassTests<ApiOutboundLegProperties, ApiLegProperties>
     {
         private class TestClass : ApiOutboundLegProperties { }
 

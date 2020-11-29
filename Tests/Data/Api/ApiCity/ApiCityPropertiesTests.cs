@@ -1,11 +1,10 @@
 ﻿using Airport.Data.Api.ApiCity;
-using Airport.Data.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Data.Api.ApiCity
 {
     [TestClass]
-    class ApiCityPropertiesTests : AbstractClassTests<ApiCityProperties, object>
+    class ApiCityPropertiesTests : BaseClassTests<ApiCityProperties, object>
     {
         private class TestClass : ApiCityProperties { }
 

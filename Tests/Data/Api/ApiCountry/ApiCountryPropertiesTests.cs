@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.Api.ApiCountry
 {
     [TestClass]
-    public class ApiCountryPropertiesTests : AbstractClassTests<ApiCountryProperties, object>
+    public class ApiCountryPropertiesTests : BaseClassTests<ApiCountryProperties, object>
     {
         private class TestClass : ApiCountryProperties { }
 

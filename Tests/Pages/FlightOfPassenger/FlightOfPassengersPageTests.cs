@@ -7,11 +7,10 @@ using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
+using Airport.Facade.Flight;
 using Airport.Facade.FlightOfPassenger;
-using Airport.Infra.Flight;
-using Airport.Infra.FlightOfPassenger;
-using Airport.Infra.Luggage;
-using Airport.Infra.Passenger;
+using Airport.Facade.Luggage;
+using Airport.Facade.Passenger;
 using Airport.Pages;
 using Airport.Pages.FlightOfPassenger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -32,8 +31,7 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             IFlightOfPassengersRepository
         { }
 
-        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<
-                global::Airport.Domain.Passenger.Passenger, PassengerData>,
+        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Passenger.Passenger, PassengerData>,
             IPassengersRepository
         { }
 
@@ -95,17 +93,6 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void PassengersTest()
-        {
-            var item = GetRandom.Object<FlightOfPassengerView>();
-            obj.Item = item;
-            string a = Id(item.PassengerId, item.FlightId);
-            Assert.AreEqual(a, obj.ItemId);
-            obj.Item = null;
-            Assert.AreEqual(string.Empty, obj.ItemId);
-        }
-
-        [TestMethod]
         public void IdTest()
         {
             var item = GetRandom.Object<FlightOfPassengerView>();
@@ -119,24 +106,66 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         [TestMethod]
         public void GetFlightOfPassengerNameTest()
         {
-            var item = GetRandom.Object<FlightOfPassengerView>();
-            obj.Item = item;
-            string a = Id(item.PassengerId, item.FlightId);
-            Assert.AreEqual(a, obj.ItemId);
-            obj.Item = null;
-            Assert.AreEqual(string.Empty, obj.ItemId);
+            Assert.Inconclusive();
+            //var item = GetRandom.Object<FlightOfPassengerView>();
+            //obj.Item = item;
+            //string a = Id(item.PassengerId, item.FlightId);
+            //Assert.AreEqual(a, obj.ItemId);
+            //obj.Item = null;
+            //Assert.AreEqual(string.Empty, obj.ItemId);
         }
 
 
         [TestMethod]
         public void GetPassengerNameTest()
         {
-            var item = GetRandom.Object<FlightOfPassengerView>();
-            obj.Item = item;
-            string a = Id(item.PassengerId, item.FlightId);
-            Assert.AreEqual(a, obj.ItemId);
-            obj.Item = null;
-            Assert.AreEqual(string.Empty, obj.ItemId);
+            Assert.Inconclusive();
+            //var item = GetRandom.Object<FlightOfPassengerView>();
+            //obj.Item = item;
+            //string a = Id(item.PassengerId, item.FlightId);
+            //Assert.AreEqual(a, obj.ItemId);
+            //obj.Item = null;
+            //Assert.AreEqual(string.Empty, obj.ItemId);
+        }
+
+        [TestMethod]
+        public void PassengersTest()
+        {
+            var x = GetRandom.Object<PassengerData>();
+            var y = GetRandom.Object<PassengerView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void FlightsTest()
+        {
+            var x = GetRandom.Object<FlightData>();
+            var y = GetRandom.Object<FlightView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void LuggageTest()
+        {
+            var x = GetRandom.Object<LuggageData>();
+            var y = GetRandom.Object<LuggageView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void FlightOfPassengersTest()
+        {
+            var x = GetRandom.Object<FlightOfPassengerData>();
+            var y = GetRandom.Object<FlightOfPassengerView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
         }
     }
 }

@@ -1,11 +1,16 @@
 ﻿using Airport.Aids;
+using Airport.Data.AirlineCompany;
+using Airport.Data.Airport;
 using Airport.Data.Flight;
 using Airport.Data.StopOver;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;
 using Airport.Domain.StopOver;
+using Airport.Facade.AirlineCompany;
+using Airport.Facade.Airport;
 using Airport.Facade.Flight;
+using Airport.Facade.StopOver;
 using Airport.Infra.Api;
 using Airport.Pages;
 using Airport.Pages.Flight;
@@ -79,8 +84,8 @@ namespace Airport.Tests.Pages.Flight
         [TestMethod]
         public void AirlineCompaniesTest()
         {
-            var x = GetRandom.Object<FlightData>();
-            var y = GetRandom.Object<FlightView>();
+            var x = GetRandom.Object<AirlineCompanyData>();
+            var y = GetRandom.Object<AirlineCompanyView>();
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
@@ -89,11 +94,27 @@ namespace Airport.Tests.Pages.Flight
         [TestMethod]
         public void AirportsTest()
         {
-            var x = GetRandom.Object<FlightData>();
-            var y = GetRandom.Object<FlightView>();
+            var x = GetRandom.Object<AirportData>();
+            var y = GetRandom.Object<AirportView>();
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
+
+        [TestMethod]
+        public void StopOversTest()
+        {
+            var x = GetRandom.Object<StopOverData>();
+            var y = GetRandom.Object<StopOverView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void CountriesTest() => Assert.Inconclusive();
+
+        [TestMethod]
+        public void CitiesTest() => Assert.Inconclusive();
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Airport.Tests.Data.Api.ApiCarrier
 {
     [TestClass]
-    public class ApiCarrierPropertiesTests : AbstractClassTests<ApiCarrierProperties, object>
+    public class ApiCarrierPropertiesTests : BaseClassTests<ApiCarrierProperties, object>
     {
         private class TestClass : ApiCarrierProperties { }
 
