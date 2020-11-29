@@ -4,6 +4,6 @@ namespace Airport.Data.Api.ApiCity
 {
     public class ApiCityData
     {
-        public List<ApiCityProperties> Places = new List<ApiCityProperties>();
+        public List<ApiCityProperties> places = new List<ApiCityProperties>();
     }
 }

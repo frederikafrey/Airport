@@ -41,15 +41,15 @@ namespace Airport.Infra.Api
 
         public ApiCityProperties Get(string id)
         {
-            return _apiCityData.Places.FirstOrDefault(x => x.CityId == id);
+            return _apiCityData.places.FirstOrDefault(x => x.CityId == id);
         }
 
         public async Task<IEnumerable<ApiCityProperties>> GetAll(string name)
         {
-            _apiCityData.Places.Clear();
+            _apiCityData.places.Clear();
             var data = await ApiConnection(name);
-            data.Places.ForEach(x => _apiCityData.Places.Add(x));
-            return _apiCityData.Places;
+            data.places.ForEach(x => _apiCityData.places.Add(x));
+            return _apiCityData.places;
         }
        
     }
