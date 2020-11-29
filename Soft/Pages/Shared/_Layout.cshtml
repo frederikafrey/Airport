@@ -7,42 +7,8 @@
     <title>@ViewData["Title"] - Airport</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <script type="text/javascript">
-    @*$.ajax({
-        type: "GET",
-        url: "@Url.Action("LoadPhysiansByDepartment", "Tests")",
-        data: { deptId : "0" },
-        success: function(result){
-        //do something with result here
-            alert(result);
-        }
-    });*@
-    $(document).ready(
-        alert("aaa")
-        ////function () {
-
-
-        //// $("#dd1").change(function () {
-        ////     var dID= $(this).val();
-        ////     $.getJSON("https://localhost:44361/Test/Tests/LoadPhysiansByDepartment", { deptId: dID },
-        ////            function (data) {
-        ////                var select = $("#dd2");
-        ////                select.empty();
-        ////                select.append($('<option/>', {
-        ////                    value: 0,
-        ////                    text: "Select a Physian"
-        ////                }));
-        ////                $.each(data, function (index, itemData) {
-        ////                    select.append($('<option/>', {
-        ////                        value: itemData.Value,
-        ////                        text: itemData.Text
-        ////                    }));
-        ////                });
-        ////            });
-        //// }); }
-    );
-    </script>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -65,9 +31,7 @@
                             new Link("Flight Of Passengers", "/FlightOfPassenger/FlightOfPassengers"),
                             new Link("Luggage", "/Luggage/Luggages"))
                         @Html.DropDownNavigationMenuFor("Services",
-                            new Link("Library", "/library"),
                             new Link("Restaurants", "/restaurants"),
-                            new Link("Currency Exchange", "/CurrencyExchange"),
                             new Link("Baggage Wrapping", "/BaggageWrapping"))
                         @Html.DropDownNavigationMenuFor("Help",
                             new Link("About", "/Index"),
