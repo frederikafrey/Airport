@@ -19,9 +19,9 @@ namespace Airport.Pages.FlightOfPassenger
         {
             PageTitle = "Flight Of Passengers";
             //StopOvers = CreateSelectList<Domain.StopOver.StopOver, StopOverData>(p);
-            Passengers = CreateSelectList<Domain.Passenger.Passenger, PassengerData>(p);
-            Flights = CreateSelectList<Domain.Flight.Flight, FlightData>(f);
-            Luggage = CreateSelectList<Domain.Luggage.Luggage, LuggageData>(l);
+            Passengers = CreateSelectListPassengers(p);
+            Flights = CreateSelectListFlights(f);
+            Luggage = CreateSelectListLuggage(l);
         }
         //public IEnumerable<SelectListItem> StopOvers { get; }
         public IEnumerable<SelectListItem> Passengers { get; }

@@ -5,6 +5,9 @@ using Airport.Domain.Api.ApiCarrier;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Common;
+using Airport.Domain.Flight;
+using Airport.Domain.Luggage;
+using Airport.Domain.Passenger;
 using Airport.Domain.StopOver;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -48,14 +51,7 @@ namespace Airport.Pages
             var items = p.GetAll(name).GetAwaiter().GetResult(); 
             return items.Select(t => new SelectListItem(t.PlaceName, t.CityId)).ToList();
         }
-        protected static IEnumerable<SelectListItem> CreateSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
-            where TTDomain : Entity<TTData>
-            where TTData : UniqueEntityData, new()
-        {
-            var items = r.Get().GetAwaiter().GetResult();
-
-            return items.Select(m => new SelectListItem(m.Data.Id, m.Data.Id)).ToList();
-        }
+       
         protected static IEnumerable<SelectListItem> CreateSelectListStopOver(IStopOversRepository s)
         {
             var items = s.Get().GetAwaiter().GetResult();
@@ -63,20 +59,23 @@ namespace Airport.Pages
             return items.Select(m => new SelectListItem(m.Data.City, m.Data.Id)).ToList();
         }
 
-        protected static IEnumerable<SelectListItem> CreateSelectList(IStopOversRepository s)
+        protected static IEnumerable<SelectListItem> CreateSelectListLuggage(ILuggagesRepository l)
         {
-            var items = s.Get().GetAwaiter().GetResult();
+            var items = l.Get().GetAwaiter().GetResult();
 
-            return items.Select(m => new SelectListItem(m.Data.City, m.Data.Id)).ToList();
+            return items.Select(m => new SelectListItem(m.Data.Weight, m.Data.Dimensions)).ToList();
         }
+        protected static IEnumerable<SelectListItem> CreateSelectListPassengers(IPassengersRepository p)
+        {
+            var items = p.Get().GetAwaiter().GetResult();
 
-        //public static List<SelectListItem> Dimensions = new List<SelectListItem>()
-        //{
-        //    new SelectListItem() {Text="Alabama", Value="AL"},
-        //    new SelectListItem() { Text="Alaska", Value="AK"},
-        //    new SelectListItem() { Text="Arizona", Value="AZ"},
-        //    new SelectListItem() { Text="Arkansas", Value="AR"},
+            return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Name)).ToList();
+        }
+        protected static IEnumerable<SelectListItem> CreateSelectListFlights(IFlightsRepository f)
+        {
+            var items = f.Get().GetAwaiter().GetResult();
 
-        //};
+            return items.Select(m => new SelectListItem(m.Data.Plane, m.Data.Plane)).ToList();
+        }
     }
 }

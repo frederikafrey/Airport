@@ -11,12 +11,7 @@ namespace Airport.Pages.Luggage
         protected internal LuggagesPage(ILuggagesRepository r) : base(r)
         {
             PageTitle = "Luggage";
-            Dimensions = new List<SelectListItem>();
-            Weight = new List<SelectListItem>();
         }
-        public IEnumerable<SelectListItem> Dimensions { get; }
-        public IEnumerable<SelectListItem> Weight { get; }
-
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Luggage/Luggages";
 
