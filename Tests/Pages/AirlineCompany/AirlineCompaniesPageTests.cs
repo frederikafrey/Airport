@@ -16,7 +16,7 @@ namespace Airport.Tests.Pages.AirlineCompany
     {
         private class TestClass : AirlineCompaniesPage
         {
-            internal TestClass(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r, c) { }
+            internal TestClass(IAirlineCompaniesRepository r) : base(r) { }
         }
 
         private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
@@ -28,8 +28,7 @@ namespace Airport.Tests.Pages.AirlineCompany
         {
             base.TestInitialize();
             var r = new AirlineCompaniesRepository();
-            var c = new ApiCarriersRepository();
-            obj = new TestClass(r, c);
+            obj = new TestClass(r);
         }
 
         [TestMethod]

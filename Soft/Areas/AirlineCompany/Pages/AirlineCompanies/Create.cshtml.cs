@@ -9,10 +9,10 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class CreateModel : AirlineCompaniesPage
     {
-        private readonly IApiCarriersRepository cR;
-        public CreateModel(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r,c) 
+       
+        public CreateModel(IAirlineCompaniesRepository r) : base(r) 
         {
-            cR = c;
+           
         }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)

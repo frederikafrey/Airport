@@ -10,7 +10,7 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class IndexModel : AirlineCompaniesPage
     {
-        public IndexModel(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r, c) { }
+        public IndexModel(IAirlineCompaniesRepository r) : base(r) { }
 
         public IList<AirlineCompanyData> AirlinesCompanyData { get; set; }
 

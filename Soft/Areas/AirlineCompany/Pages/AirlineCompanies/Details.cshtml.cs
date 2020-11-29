@@ -9,7 +9,7 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class DetailsModel : AirlineCompaniesPage
     {
-        public DetailsModel(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r, c) { }
+        public DetailsModel(IAirlineCompaniesRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

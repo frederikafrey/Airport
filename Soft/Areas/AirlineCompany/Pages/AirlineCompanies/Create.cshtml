@@ -8,6 +8,6 @@
 @section Scripts { }
 
 <body>
-    @Html.EditControlsForDropDownWithId(m => m.Item.Name, Model.Carrier, "Carrier")
+    @Html.EditControlsFor(m => m.Item.Name)
     @Html.EditControlsFor(m => m.Item.Address)
 </body>

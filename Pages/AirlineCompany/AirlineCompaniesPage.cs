@@ -9,13 +9,11 @@ namespace Airport.Pages.AirlineCompany
 {
     public abstract class AirlineCompaniesPage:CommonPage<IAirlineCompaniesRepository, Domain.AirlineCompany.AirlineCompany, AirlineCompanyView, AirlineCompanyData>
     {
-        protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r, IApiCarriersRepository c) : base(r)
+        protected internal AirlineCompaniesPage(IAirlineCompaniesRepository r) : base(r)
         {
             PageTitle = "Airline Companies";
-            Carrier = CreateSelectList(c);
         }
 
-        public IEnumerable<SelectListItem> Carrier { get; }
         public override string ItemId => Item?.Id ?? string.Empty;
 
         public override string GetPageUrl() => "/AirlineCompany/AirlineCompanies";
