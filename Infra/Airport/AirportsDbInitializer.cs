@@ -1,9 +1,7 @@
-﻿using Airport.Data.AirlineCompany;
+﻿using System.Linq;
 using Airport.Data.Airport;
-using Airport.Data.StopOver;
-using System.Linq;
 
-namespace Airport.Infra
+namespace Airport.Infra.Airport
 {
     public class AirportsDbInitializer: DbInitializer
     {

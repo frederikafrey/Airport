@@ -1,6 +1,7 @@
 using Airport.Domain.Common;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
+using Airport.Infra.Airport;
 using Airport.Infra.StopOver;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
