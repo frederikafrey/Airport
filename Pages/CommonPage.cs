@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Airport.Data.Common;
-using Airport.Domain.Api;
 using Airport.Domain.Api.ApiCarrier;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Common;
-using Airport.Domain.Luggage;
-using Airport.Domain.Passenger;
 using Airport.Domain.StopOver;
 using Microsoft.AspNetCore.Mvc.Rendering;
 

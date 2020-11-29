@@ -14,7 +14,8 @@ namespace Airport.Infra.Api
             var ee = jsonRepoData as ApiCountryData;
         }
 
-        protected override string Url => "https://rapidapi.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US";
+        protected override string Url => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US";
+        protected override string Key => "52616562damsh2050e58368419afp15567bjsn92c0b7a0fcad";
 
         public ApiCountryProperties Get(string id)
         {

@@ -1,5 +1,7 @@
 using Airport.Domain.Common;
 using Airport.Infra;
+using Airport.Infra.AirlineCompany;
+using Airport.Infra.StopOver;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +19,8 @@ namespace Airport.Soft
                 var services = scope.ServiceProvider;
                 var dbQuantity = services.GetRequiredService<AirportDbContext>();
                 AirportsDbInitializer.Initialize(dbQuantity);
+                StopOversDbInitializer.Initialize(dbQuantity);
+                AirlineCompaniesDbInitializer.Initialize(dbQuantity);
             }
             GetRepository.SetServiceProvider(host.Services);
             host.Run();
