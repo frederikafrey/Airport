@@ -24,7 +24,6 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         public class TestClass : FlightOfPassengersPage
         {
             internal TestClass(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
-            public override string ItemId { get; }
         }
 
         private class FlightOfPassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>,
@@ -104,31 +103,6 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void GetFlightOfPassengerNameTest()
-        {
-            Assert.Inconclusive();
-            //var item = GetRandom.Object<FlightOfPassengerView>();
-            //obj.Item = item;
-            //string a = Id(item.PassengerId, item.FlightId);
-            //Assert.AreEqual(a, obj.ItemId);
-            //obj.Item = null;
-            //Assert.AreEqual(string.Empty, obj.ItemId);
-        }
-
-
-        [TestMethod]
-        public void GetPassengerNameTest()
-        {
-            Assert.Inconclusive();
-            //var item = GetRandom.Object<FlightOfPassengerView>();
-            //obj.Item = item;
-            //string a = Id(item.PassengerId, item.FlightId);
-            //Assert.AreEqual(a, obj.ItemId);
-            //obj.Item = null;
-            //Assert.AreEqual(string.Empty, obj.ItemId);
-        }
-
-        [TestMethod]
         public void PassengersTest()
         {
             var x = GetRandom.Object<PassengerData>();
@@ -166,6 +140,17 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void GetPassengerNameTest()
+        {
+            var item = GetRandom.Object<FlightOfPassengerView>();
+            obj.Item = item;
+            string a = Id(item.PassengerId, item.FlightId);
+            Assert.AreEqual(a, obj.ItemId);
+            obj.Item = null;
+            Assert.AreEqual(string.Empty, obj.ItemId);
         }
     }
 }
