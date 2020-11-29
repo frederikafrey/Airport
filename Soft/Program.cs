@@ -2,6 +2,7 @@ using Airport.Domain.Common;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
+using Airport.Infra.Luggage;
 using Airport.Infra.StopOver;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,8 @@ namespace Airport.Soft
                 AirportsDbInitializer.Initialize(dbQuantity);
                 StopOversDbInitializer.Initialize(dbQuantity);
                 AirlineCompaniesDbInitializer.Initialize(dbQuantity);
+                LuggagesDbInitializer.Initialize(dbQuantity);
+
             }
             GetRepository.SetServiceProvider(host.Services);
             host.Run();
