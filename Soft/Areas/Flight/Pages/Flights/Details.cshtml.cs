@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Airport.Domain.Api;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;

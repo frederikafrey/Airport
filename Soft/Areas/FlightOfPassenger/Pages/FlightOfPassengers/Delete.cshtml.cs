@@ -3,7 +3,6 @@ using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
-using Airport.Domain.StopOver;
 using Microsoft.AspNetCore.Mvc;
 using Airport.Pages.FlightOfPassenger;
 

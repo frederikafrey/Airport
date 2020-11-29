@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Airport.Domain.FlightOfPassenger;
 using Microsoft.AspNetCore.Mvc;
 using Airport.Domain.Luggage;
 using Airport.Pages.Luggage;

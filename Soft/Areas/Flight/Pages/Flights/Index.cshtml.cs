@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Airport.Domain.Api;
+﻿using System.Threading.Tasks;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;

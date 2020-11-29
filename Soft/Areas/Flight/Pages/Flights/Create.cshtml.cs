@@ -1,13 +1,7 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Airport.Domain.Api;
 using Airport.Domain.Flight;
 using Airport.Pages.Flight;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Collections.Generic;
-using Airport.Data.Api.ApiCountry;
-using System;
 using System.IO;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;

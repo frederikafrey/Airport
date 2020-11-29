@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Airport.Data.Luggage;
-using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Facade.Luggage;
 using Microsoft.AspNetCore.Mvc.Rendering;

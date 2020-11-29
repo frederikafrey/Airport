@@ -3,7 +3,6 @@ using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
-using Airport.Domain.StopOver;
 using Airport.Pages.FlightOfPassenger;
 
 namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers

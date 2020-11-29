@@ -1,7 +1,5 @@
 ﻿using Airport.Aids;
-using Airport.Data.FlightOfPassenger;
 using Airport.Data.Luggage;
-using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Facade.Luggage;
 using Airport.Pages;

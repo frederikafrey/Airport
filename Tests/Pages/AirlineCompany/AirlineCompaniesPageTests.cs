@@ -1,9 +1,7 @@
 ﻿using Airport.Aids;
 using Airport.Data.AirlineCompany;
 using Airport.Domain.AirlineCompany;
-using Airport.Domain.Api.ApiCarrier;
 using Airport.Facade.AirlineCompany;
-using Airport.Infra.Api;
 using Airport.Pages;
 using Airport.Pages.AirlineCompany;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

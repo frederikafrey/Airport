@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Airport.Data.Flight;
-using Airport.Data.FlightOfPassenger;
 using Airport.Data.StopOver;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;

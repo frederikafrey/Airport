@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Airport.Data.Api.ApiCarrier;
-using Airport.Domain.Api;
 using Airport.Domain.Api.ApiCarrier;
 using Newtonsoft.Json;
 

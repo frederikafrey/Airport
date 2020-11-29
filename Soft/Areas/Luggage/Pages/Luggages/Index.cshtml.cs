@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Airport.Data.Luggage;
-using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Pages.Luggage;
 
