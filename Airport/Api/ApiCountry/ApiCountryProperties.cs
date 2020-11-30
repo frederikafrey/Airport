@@ -2,7 +2,7 @@
 {
     public class ApiCountryProperties
     {
-        public string Code { get; set; } //kas on vaja?
+        public string Code { get; set; } 
         public string Name { get; set; }
     }
 }
