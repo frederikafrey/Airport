@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Airport.Domain.Common.ICrudMethods&lt;T&gt;" Collapsed="true">
+    <Position X="12.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ICrudMethods.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Common.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Common.ISorting" Collapsed="true">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ISorting.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Common.IFiltering" Collapsed="true">
+    <Position X="16" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAASAAAAA=</HashCode>
+      <FileName>Common\IFiltering.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Common.IPaging" Collapsed="true">
+    <Position X="19.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Common\IPaging.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.AirlineCompany.IAirlineCompaniesRepository" Collapsed="true">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AirlineCompany\IAirlineCompaniesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Airport.IAirportsRepository" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Airport\IAirportsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Flight.IFlightsRepository" Collapsed="true">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Flight\IFlightsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.FlightOfPassenger.IFlightOfPassengersRepository" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlightOfPassenger\IFlightOfPassengersRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Luggage.ILuggagesRepository" Collapsed="true">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Luggage\ILuggagesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.Passenger.IPassengersRepository" Collapsed="true">
+    <Position X="18.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Passenger\IPassengersRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Airport.Domain.StopOver.IStopOversRepository" Collapsed="true">
+    <Position X="20.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StopOver\IStopOversRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

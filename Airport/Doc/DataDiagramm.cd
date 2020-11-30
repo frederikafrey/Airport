@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Airport.Data.Common.UniqueEntityData" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\UniqueEntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.AirlineCompany.AirlineCompanyData" Collapsed="true">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>AirlineCompany\AirlineCompanyData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.Airport.AirportData" Collapsed="true">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Airport\AirportData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.Flight.FlightData" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAACAAAEAgAAAAABIAAAAAAAAAIARAAAAAA=</HashCode>
+      <FileName>Flight\FlightData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.FlightOfPassenger.FlightOfPassengerData" Collapsed="true">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlightOfPassenger\FlightOfPassengerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.Luggage.LuggageData" Collapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Luggage\LuggageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.Passenger.PassengerData" Collapsed="true">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Passenger\PassengerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport.Data.StopOver.StopOverData" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StopOver\StopOverData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
