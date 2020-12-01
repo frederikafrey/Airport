@@ -1,6 +1,4 @@
-﻿using Airport.Data.Api.ApiCountry;
-
-namespace Airport.Domain.Api.ApiCountry
+﻿namespace Airport.Domain.Api.ApiCountry
 {
     public sealed class ApiCountry : ApiCountryData
     {

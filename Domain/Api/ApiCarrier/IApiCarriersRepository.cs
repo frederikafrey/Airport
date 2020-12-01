@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Airport.Data.Api.ApiCarrier;
 
 namespace Airport.Domain.Api.ApiCarrier
 {

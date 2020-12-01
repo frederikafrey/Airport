@@ -31,6 +31,9 @@ namespace Airport.Tests.Domain
         public void IsApiCurrencyTested() => IsAllTested(assembly, Namespace("Api.ApiCurrency"));
 
         [TestMethod]
+        public void IsApiQuoteTested() => IsAllTested(assembly, Namespace("Api.ApiQuote"));
+
+        [TestMethod]
         public void IsCommonTested() => IsAllTested(assembly, Namespace("Common"));
 
         [TestMethod]

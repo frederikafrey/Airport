@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Airport.Data.Api.ApiCurrency;
-using Airport.Domain.Api;
+using Airport.Domain.Api.ApiCommon;
+using Airport.Domain.Api.ApiCurrency;
 
 namespace Airport.Infra.Api
 {

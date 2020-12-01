@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Airport.Data.Common;
 using Airport.Domain.Api.ApiCarrier;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;

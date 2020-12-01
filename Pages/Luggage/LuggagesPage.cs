@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Airport.Data.Luggage;
+﻿using Airport.Data.Luggage;
 using Airport.Domain.Luggage;
 using Airport.Facade.Luggage;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.Luggage
 {

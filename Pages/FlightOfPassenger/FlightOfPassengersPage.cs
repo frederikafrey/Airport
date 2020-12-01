@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
-using Airport.Data.Flight;
 using Airport.Data.FlightOfPassenger;
-using Airport.Data.Luggage;
-using Airport.Data.Passenger;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;

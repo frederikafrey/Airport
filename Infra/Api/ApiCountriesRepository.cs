@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Airport.Data.Api.ApiCountry;
 using Airport.Domain.Api.ApiCountry;
 
 namespace Airport.Infra.Api
