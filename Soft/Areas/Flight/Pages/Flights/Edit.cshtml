@@ -9,12 +9,12 @@
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.DisabledControlsFor(m => m.Item.Id)
-    @Html.EditControlsForDropDown(m => m.Item.StartingPoint, Model.Countries)
+    @Html.EditControlsForDropDown(m => m.Item.StartCountry, Model.Countries)
     @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)
-    @Html.EditControlsForDropDown(m => m.Item.FinalPoint, Model.Countries)
+    @Html.EditControlsForDropDown(m => m.Item.FinalCountry, Model.Countries)
     @Html.EditControlsForDropDown(m => m.Item.FinalCity, Model.Cities)
     @Html.EditControlsFor(m => m.Item.StartTime)   
-    @Html.EditControlsFor(m => m.Item.ArrivingTime)
+    @Html.EditControlsFor(m => m.Item.ArrivalTime)
     @Html.EditControlsFor(m => m.Item.Occupancy)
     @Html.EditControlsFor(m => m.Item.Company)
     @Html.EditControlsFor(m => m.Item.Plane)

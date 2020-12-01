@@ -91,13 +91,13 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    StartingPoint = table.Column<string>(nullable: true),
-                    FinalPoint = table.Column<string>(nullable: true),
+                    StartCountry = table.Column<string>(nullable: true),
+                    FinalCountry = table.Column<string>(nullable: true),
                     StartCity = table.Column<string>(nullable: true),
                     FinalCity = table.Column<string>(nullable: true),
                     StopOver = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
-                    ArrivingTime = table.Column<string>(nullable: true),
+                    ArrivalTime = table.Column<string>(nullable: true),
                     Occupancy = table.Column<int>(nullable: false),
                     Company = table.Column<string>(nullable: true),
                     Plane = table.Column<string>(nullable: true)

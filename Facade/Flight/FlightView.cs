@@ -7,16 +7,16 @@ namespace Airport.Facade.Flight
     public sealed class FlightView : UniqueEntityView
     {
         [Required]
-        [DisplayName("Starting Point")]
-        public string StartingPoint { get; set; }
+        [DisplayName("Start Country")]
+        public string StartCountry { get; set; }
 
         [Required]
         [DisplayName("Starting City")]
         public string StartCity { get; set; }
 
         [Required]
-        [DisplayName("Final Point")]
-        public string FinalPoint { get; set; }
+        [DisplayName("Final Country")]
+        public string FinalCountry { get; set; }
 
         [Required]
         [DisplayName("Final City")]
@@ -32,8 +32,8 @@ namespace Airport.Facade.Flight
 
         [Required]
         [DataType(DataType.DateTime)]
-        [DisplayName("Arriving Time")]
-        public string ArrivingTime { get; set; }
+        [DisplayName("Arrival Time")]
+        public string ArrivalTime { get; set; }
         
         [Required]
         [DisplayName("Occupancy")] 

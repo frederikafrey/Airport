@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201129130912_initial")]
+    [Migration("20201201112450_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace Airport.Soft.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ArrivingTime")
+                    b.Property<string>("ArrivalTime")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Company")
@@ -70,7 +70,7 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("FinalCity")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FinalPoint")
+                    b.Property<string>("FinalCountry")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Occupancy")
@@ -82,10 +82,10 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartCity")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartTime")
+                    b.Property<string>("StartCountry")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartingPoint")
+                    b.Property<string>("StartTime")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StopOver")

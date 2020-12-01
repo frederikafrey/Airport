@@ -8,13 +8,13 @@ namespace Airport.Tests.Facade.Flight
     public class FlightViewTests : SealedClassTests<FlightView, UniqueEntityView>
     {
         [TestMethod]
-        public void StartingPointTest() => IsNullableProperty(() => obj.StartingPoint, x => obj.StartingPoint = x);
+        public void StartCountryTest() => IsNullableProperty(() => obj.StartCountry, x => obj.StartCountry = x);
 
         [TestMethod]
         public void StartCityTest() => IsNullableProperty(() => obj.StartCity, x => obj.StartCity = x);
 
         [TestMethod]
-        public void FinalPointTest() => IsNullableProperty(() => obj.FinalPoint, x => obj.FinalPoint = x);
+        public void FinalCountryTest() => IsNullableProperty(() => obj.FinalCountry, x => obj.FinalCountry = x);
 
         [TestMethod]
         public void FinalCityTest() => IsNullableProperty(() => obj.FinalCity, x => obj.FinalCity = x);
@@ -26,7 +26,7 @@ namespace Airport.Tests.Facade.Flight
         public void StopOverTest() => IsNullableProperty(() => obj.StopOver, x => obj.StopOver = x);
 
         [TestMethod]
-        public void ArrivingTimeTest() => IsNullableProperty(() => obj.ArrivingTime, x => obj.ArrivingTime = x);
+        public void ArrivalTimeTest() => IsNullableProperty(() => obj.ArrivalTime, x => obj.ArrivalTime = x);
 
         [TestMethod]
         public void OccupancyTest() => IsProperty<int>();

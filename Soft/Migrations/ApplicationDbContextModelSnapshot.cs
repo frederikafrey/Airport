@@ -4,6 +4,7 @@ using Airport.Soft.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Airport.Soft.Migrations
 {
@@ -58,7 +59,7 @@ namespace Airport.Soft.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ArrivingTime")
+                    b.Property<string>("ArrivalTime")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Company")
@@ -67,7 +68,7 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("FinalCity")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FinalPoint")
+                    b.Property<string>("FinalCountry")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Occupancy")
@@ -79,10 +80,10 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("StartCity")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartTime")
+                    b.Property<string>("StartCountry")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartingPoint")
+                    b.Property<string>("StartTime")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StopOver")
