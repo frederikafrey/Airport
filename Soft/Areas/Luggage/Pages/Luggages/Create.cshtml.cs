@@ -1,13 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Airport.Domain.Luggage;
+using Airport.Domain.Passenger;
 using Airport.Pages.Luggage;
 
 namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class CreateModel : LuggagesPage
     {
-        public CreateModel(ILuggagesRepository r) : base(r) { }
+        public CreateModel(ILuggagesRepository r, IPassengersRepository p) : base(r, p) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
