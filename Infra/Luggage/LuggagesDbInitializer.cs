@@ -18,10 +18,10 @@ namespace Airport.Infra.Luggage
                     Dimensions = "S: 40 x 30 x 20", Weight = "MAX 10 kg"
                 },
                 new LuggageData {
-                    Dimensions = "M: 150 x 120 x 170", Weight = "MAX 32 kg"
+                    Dimensions = "M: 100 x 50 x 80", Weight = "MAX 20 kg"
                 },
                 new LuggageData {
-                    Dimensions = "L: 100 x 50 x 80", Weight = "MAX 20 kg"
+                    Dimensions = "L: 150 x 120 x 170", Weight = "MAX 32 kg"
                 }
             };
             AddSet(luggages, db);
