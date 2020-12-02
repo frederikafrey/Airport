@@ -112,6 +112,7 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    PassengerId = table.Column<string>(nullable: true),
                     Dimensions = table.Column<string>(nullable: true),
                     Weight = table.Column<string>(nullable: true)
                 },

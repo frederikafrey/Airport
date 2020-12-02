@@ -123,6 +123,9 @@ namespace Airport.Soft.Migrations
                     b.Property<string>("Dimensions")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PassengerId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Weight")
                         .HasColumnType("nvarchar(max)");
 
