@@ -1,4 +1,11 @@
-﻿function DropDownUpdater(dropDownOne, dropDownTwo, location) {
+﻿$(document).ready(function () {
+    $('.selectpicker').selectpicker({
+        liveSearch: true,
+        showSubtext: true
+    });
+});
+
+function DropDownUpdater(dropDownOne, dropDownTwo, location) {
     var selectedValue = $(dropDownOne).val();
     var itemsSelect = $(dropDownTwo);
     itemsSelect.empty();
@@ -33,3 +40,4 @@
         }
     });
 }
+
