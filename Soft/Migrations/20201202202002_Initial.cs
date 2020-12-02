@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Airport.Soft.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -112,6 +112,8 @@ namespace Airport.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    PassengerId = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
                     Dimensions = table.Column<string>(nullable: true),
                     Weight = table.Column<string>(nullable: true)
                 },
