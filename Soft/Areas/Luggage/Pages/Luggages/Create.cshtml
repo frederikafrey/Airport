@@ -10,6 +10,7 @@
 
 <body>
     @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
+    @Html.EditControlsFor(m => m.Item.Name)
     @Html.EditControlsFor(m => m.Item.Dimensions)
     @Html.EditControlsFor(m => m.Item.Weight)
 </body>
