@@ -1,7 +1,10 @@
 ﻿using Airport.Aids;
 using Airport.Data.Luggage;
+using Airport.Data.Passenger;
 using Airport.Domain.Luggage;
+using Airport.Domain.Passenger;
 using Airport.Facade.Luggage;
+using Airport.Infra.Passenger;
 using Airport.Pages;
 using Airport.Pages.Luggage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -15,10 +18,14 @@ namespace Airport.Tests.Pages.Luggage
     {
         public class TestClass : LuggagesPage
         {
-            internal TestClass(ILuggagesRepository r) : base(r) { }
+            internal TestClass(ILuggagesRepository r, IPassengersRepository p) : base(r, p) { }
         }
         private class LuggagesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Luggage.Luggage, LuggageData>,
             ILuggagesRepository
+        { }
+
+        private class PassengersRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Passenger.Passenger, PassengerData>,
+            IPassengersRepository
         { }
 
         [TestInitialize]
@@ -26,7 +33,8 @@ namespace Airport.Tests.Pages.Luggage
         {
             base.TestInitialize();
             var r = new LuggagesRepository();
-            obj = new TestClass(r);
+            var p = new PassengersRepository();
+            obj = new TestClass(r, p);
         }
 
         [TestMethod]
@@ -79,5 +87,8 @@ namespace Airport.Tests.Pages.Luggage
 
         [TestMethod]
         public void WeightTest() { Assert.Inconclusive(); }
+
+        [TestMethod]
+        public void PassengersTest() { Assert.Inconclusive(); }
     }
 }

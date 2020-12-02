@@ -6,6 +6,9 @@ namespace Airport.Facade.Luggage
     public sealed class LuggageView : UniqueEntityView
     {
         [Required]
+        public string PassengerId { get; set; }
+
+        [Required]
         public string Dimensions { get; set; }
 
         [Required]

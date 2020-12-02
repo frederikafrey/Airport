@@ -8,6 +8,9 @@ namespace Airport.Tests.Data.Luggage
     public class LuggageDataTests : SealedClassTests<LuggageData, UniqueEntityData>
     {
         [TestMethod]
+        public void PassengerIdTest() => IsNullableProperty(() => obj.PassengerId, x => obj.PassengerId = x);
+
+        [TestMethod]
         public void DimensionsTest() => IsNullableProperty(() => obj.Dimensions, x => obj.Dimensions = x);
 
         [TestMethod]
