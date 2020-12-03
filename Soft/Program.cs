@@ -23,7 +23,8 @@ namespace Airport.Soft
                 AirportsDbInitializer.Initialize(dbQuantity);
                 StopOversDbInitializer.Initialize(dbQuantity);
                 AirlineCompaniesDbInitializer.Initialize(dbQuantity);
-                LuggagesDbInitializer.Initialize(dbQuantity);
+                DimensionsDbInitializer.Initialize(dbQuantity);
+                WeightsDbInitializer.Initialize(dbQuantity);
 
             }
             GetRepository.SetServiceProvider(host.Services);

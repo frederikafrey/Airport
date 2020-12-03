@@ -9,11 +9,16 @@ namespace Airport.Pages.Luggage
 {
     public abstract class LuggagesPage : CommonPage<ILuggagesRepository, Domain.Luggage.Luggage, LuggageView, LuggageData>
     {
-        protected internal LuggagesPage(ILuggagesRepository r, IPassengersRepository p) : base(r)
+        protected internal LuggagesPage(ILuggagesRepository l, IPassengersRepository p) : base(l)
         {
             PageTitle = "Luggage";
             Passengers = CreateSelectListPassengers(p);
+            Dimensions = CreateSelectListDimensions(l);
+            Weight = CreateSelectListWeights(l);
+
         }
+        public IEnumerable<SelectListItem> Dimensions { get; }
+        public IEnumerable<SelectListItem> Weight { get; }
         public IEnumerable<SelectListItem> Passengers { get; }
         public override string ItemId => Item?.Id ?? string.Empty;
         public override string GetPageUrl() => "/Luggage/Luggages";

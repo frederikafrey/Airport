@@ -64,6 +64,18 @@ namespace Airport.Pages
 
             return items.Select(m => new SelectListItem(m.Data.Weight, m.Data.Dimensions)).ToList();
         }
+        protected static IEnumerable<SelectListItem> CreateSelectListDimensions(ILuggagesRepository l)
+        {
+            var items = l.Get().GetAwaiter().GetResult();
+
+            return items.Select(m => new SelectListItem(m.Data.Dimensions, m.Data.Dimensions)).ToList();
+        }
+        protected static IEnumerable<SelectListItem> CreateSelectListWeights(ILuggagesRepository l)
+        {
+            var items = l.Get().GetAwaiter().GetResult();
+
+            return items.Select(m => new SelectListItem(m.Data.Weight, m.Data.Weight)).ToList();
+        }
         protected static IEnumerable<SelectListItem> CreateSelectListPassengers(IPassengersRepository p)
         {
             var items = p.Get().GetAwaiter().GetResult();
