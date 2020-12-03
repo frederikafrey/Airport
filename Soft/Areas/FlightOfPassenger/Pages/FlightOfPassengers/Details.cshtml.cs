@@ -11,7 +11,6 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
     public class DetailsModel : FlightOfPassengersPage
     {
         public DetailsModel(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
-        //IStopOversRepository p
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

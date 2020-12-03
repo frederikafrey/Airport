@@ -1,6 +1,6 @@
 ﻿@page
 @using Airport.Aids
-@using Airport.Data.FlightOfPassenger
+@using Airport.Data.Flight
 @using Airport.Data.Passenger
 @using Airport.Pages.Extensions
 @model Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers.DetailsModel
@@ -8,9 +8,9 @@
 @{
     Layout = "_Details";
     const string a = "/Passenger/Passengers";
-    var passengerId = GetMember.Name<FlightOfPassengerData>(x => x.PassengerId);
+    var passengerId = GetMember.Name<PassengerData>(x => x.Name);
     const string b = "/Flight/Flights";
-    var flightId = GetMember.Name<FlightOfPassengerData>(x => x.FlightId);
+    var flightId = GetMember.Name<FlightData>(x => x.Id);
 }
 
 <body>
