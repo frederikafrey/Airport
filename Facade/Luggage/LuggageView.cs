@@ -9,6 +9,9 @@ namespace Airport.Facade.Luggage
         public string PassengerId { get; set; }
 
         [Required]
+        public string Name { get; set; }
+
+        [Required]
         public string Dimensions { get; set; }
 
         [Required]

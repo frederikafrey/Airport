@@ -15,12 +15,10 @@ namespace Airport.Pages.FlightOfPassenger
         //IStopOversRepository p
         {
             PageTitle = "Flight Of Passengers";
-            //StopOvers = CreateSelectList<Domain.StopOver.StopOver, StopOverData>(p);
             Passengers = CreateSelectListPassengers(p);
             Flights = CreateSelectListFlights(f);
             Luggage = CreateSelectListLuggage(l);
         }
-        //public IEnumerable<SelectListItem> StopOvers { get; }
         public IEnumerable<SelectListItem> Passengers { get; }
         public IEnumerable<SelectListItem> Flights { get; }
         public IEnumerable<SelectListItem> Luggage { get; }
@@ -34,14 +32,6 @@ namespace Airport.Pages.FlightOfPassenger
         public override FlightOfPassengerView ToView(Domain.FlightOfPassenger.FlightOfPassenger obj)
             => FlightOfPassengerViewFactory.Create(obj);
 
-        //public string GetStopOverName(string stopOverId)
-        //{
-        //    foreach (var m in StopOvers)
-        //        if (m.Value == stopOverId)
-        //            return m.Text;
-
-        //    return "";
-        //}
         public string GetPassengerName(string passengerId)
         {
             foreach (var m in Passengers)
@@ -50,10 +40,5 @@ namespace Airport.Pages.FlightOfPassenger
 
             return "";
         }
-
-        //public override string GetPageSubTitle()
-        //    => FixedValue is null
-        //        ? base.GetPageSubTitle()
-        //        : $"{GetStopOverName(FixedValue)}";
     }
 }

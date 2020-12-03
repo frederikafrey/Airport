@@ -81,14 +81,14 @@ namespace Airport.Tests.Pages.Luggage
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
-
+        
         [TestMethod]
-        public void DimensionsTest() { Assert.Inconclusive();}
+        public void DimensionsTest() { Assert.Inconclusive(); }
 
         [TestMethod]
         public void WeightTest() { Assert.Inconclusive(); }
 
         [TestMethod]
-        public void PassengersTest() { Assert.Inconclusive(); }
+        public void PassengersTest() => IsReadOnlyProperty(obj, nameof(obj.Passengers), obj.Passengers);
     }
 }
