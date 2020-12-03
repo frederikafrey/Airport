@@ -142,12 +142,5 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
-
-        [TestMethod]
-        public void GetPassengerNameTest()
-        {
-            var name = obj.GetPassengerName(_data.Id);
-            Assert.AreEqual(_data.Name, name);
-        }
     }
 }

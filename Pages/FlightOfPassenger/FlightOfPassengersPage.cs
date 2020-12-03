@@ -12,7 +12,6 @@ namespace Airport.Pages.FlightOfPassenger
     public abstract class FlightOfPassengersPage : CommonPage<IFlightOfPassengersRepository, Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerView, FlightOfPassengerData>
     {
         protected internal FlightOfPassengersPage(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r)
-        //IStopOversRepository p
         {
             PageTitle = "Flight Of Passengers";
             Passengers = CreateSelectListPassengers(p);
@@ -31,13 +30,5 @@ namespace Airport.Pages.FlightOfPassenger
 
         public override FlightOfPassengerView ToView(Domain.FlightOfPassenger.FlightOfPassenger obj)
             => FlightOfPassengerViewFactory.Create(obj);
-
-        public string GetPassengerName(string passengerId)
-        {
-            foreach (var m in Passengers)
-                if (m.Value == passengerId)
-                    return m.Text;
-            return "";
-        }
     }
 }
