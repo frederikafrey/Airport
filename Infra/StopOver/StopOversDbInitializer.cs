@@ -13,6 +13,9 @@ namespace Airport.Infra.StopOver
         {
             if (db.StopOvers.Count() != 0) return;
             var airports = new[] {
+                 new StopOverData {
+                    Id = "None", Country = "None", City = "None"
+                },
                 new StopOverData {
                     Id = "NL", Country = "Netherlands", City = "Amsterdam"
                 },

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Airport.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201202190944_initial")]
+    [Migration("20201203111927_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,6 +123,9 @@ namespace Airport.Soft.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Dimensions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PassengerId")
