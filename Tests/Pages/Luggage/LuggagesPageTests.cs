@@ -4,7 +4,6 @@ using Airport.Data.Passenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
 using Airport.Facade.Luggage;
-using Airport.Infra.Passenger;
 using Airport.Pages;
 using Airport.Pages.Luggage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -83,10 +82,10 @@ namespace Airport.Tests.Pages.Luggage
         }
         
         [TestMethod]
-        public void DimensionsTest() { Assert.Inconclusive(); }
+        public void DimensionsTest() => IsReadOnlyProperty(obj, nameof(obj.Dimensions), obj.Dimensions);
 
         [TestMethod]
-        public void WeightTest() { Assert.Inconclusive(); }
+        public void WeightTest() => IsReadOnlyProperty(obj, nameof(obj.Weight), obj.Weight);
 
         [TestMethod]
         public void PassengersTest() => IsReadOnlyProperty(obj, nameof(obj.Passengers), obj.Passengers);

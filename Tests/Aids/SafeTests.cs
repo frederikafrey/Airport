@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 using Airport.Aids;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -90,59 +88,6 @@ namespace Airport.Tests.Aids
             Assert.AreEqual(2, logBook.LoggedExceptions.Count);
             Assert.IsInstanceOfType(logBook.LoggedExceptions[0], typeof(ArgumentException));
             Assert.IsInstanceOfType(logBook.LoggedExceptions[1], typeof(AggregateException));
-        }
-
-        [TestMethod]
-        public void RunInSeparateThreadsTest()
-        {
-            var list = new List<string>();
-            StartThreads(list);
-            ValidateList(list);
-            Assert.AreEqual(2, logBook.LoggedExceptions.Count);
-            Assert.IsInstanceOfType(logBook.LoggedExceptions[0], typeof(ArgumentNullException));
-            Assert.IsInstanceOfType(logBook.LoggedExceptions[1], typeof(ArithmeticException));
-        }
-
-        private static void StartThreads(ICollection<string> l)
-        {
-            var t1 = new Thread(() =>
-                Method(l, "method1: ", () => throw new ArgumentNullException()));
-            var t2 = new Thread(() =>
-                Method(l, "method2: ", () => throw new ArithmeticException()));
-            t1.Start();
-            Thread.Sleep(1);
-            t2.Start();
-            Thread.Sleep(50);
-        }
-
-        private static void Method(ICollection<string> list, string message, Action exception)
-        {
-            Safe.Run(() => {
-                Safe.Run(() => {
-                    for (var i = 0; i < 10; i++)
-                    {
-                        list.Add(message + DateTime.Now);
-                        Thread.Sleep(1);
-                    }
-
-                    exception();
-                }, true);
-                list.Add(message + DateTime.Now);
-            }, true);
-        }
-
-        private static void ValidateList(IReadOnlyList<string> l)
-        {
-            Assert.AreEqual(22, l.Count);
-
-            for (var i = 0; i < 22; i++)
-            {
-                Assert.IsTrue(
-                    i < 11
-                        ? l[i].StartsWith("method1:")
-                        : l[i].StartsWith("method2:"),
-                    $"list[{i}] = {l[i]}");
-            }
         }
     }
 }

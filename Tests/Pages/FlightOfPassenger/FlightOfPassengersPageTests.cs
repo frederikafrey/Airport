@@ -54,7 +54,7 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         public static string Id(string head, string tail) => $"{head}.{tail}";
-        private PassengerData data;
+        private PassengerData _data;
 
         [TestMethod]
         public void ItemIdTest()
@@ -146,8 +146,8 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         [TestMethod]
         public void GetPassengerNameTest()
         {
-            var name = obj.GetPassengerName(data.Id);
-            Assert.AreEqual(data.Name, name);
+            var name = obj.GetPassengerName(_data.Id);
+            Assert.AreEqual(_data.Name, name);
         }
     }
 }

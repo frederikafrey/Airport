@@ -3,7 +3,7 @@
 namespace Airport.Tests.Infra.Luggage
 {
     [TestClass]
-    public class LuggagesDbInitializerTests: BaseTests
+    public class DimensionsDbInitializerTests: BaseTests
     {
     }
 }
