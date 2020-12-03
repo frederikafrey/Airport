@@ -112,9 +112,10 @@ namespace Airport.Tests.Pages.Flight
         }
 
         [TestMethod]
-        public void CountriesTest() => Assert.Inconclusive();
+        public void CountriesTest() => IsReadOnlyProperty(obj, nameof(obj.Countries), obj.Countries);
+        
 
         [TestMethod]
-        public void CitiesTest() => Assert.Inconclusive();
+        public void CitiesTest() => IsReadOnlyProperty(obj, nameof(obj.Cities), obj.Cities);
     }
 }
