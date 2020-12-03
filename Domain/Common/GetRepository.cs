@@ -5,8 +5,7 @@ namespace Airport.Domain.Common
 {
     public static class GetRepository
     {
-
-        internal static IServiceProvider services;
+        public static IServiceProvider services;
         public static void SetServiceProvider(IServiceProvider provider) => services = provider;
 
         public static T Instance<T>() => instance<T>(services);

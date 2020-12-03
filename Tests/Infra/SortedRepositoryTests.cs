@@ -200,6 +200,6 @@ namespace Airport.Tests.Infra
         }
 
         [TestMethod]
-        public void AddOrderByTest() => Assert.Inconclusive();
+        public void AddOrderByTest() => Assert.IsNull(obj.AddOrderBy(null, null));
     }
 }

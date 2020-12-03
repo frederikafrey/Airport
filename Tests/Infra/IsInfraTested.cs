@@ -16,6 +16,9 @@ namespace Airport.Tests.Infra
         public void IsAirportTested() => IsAllTested(assembly, Namespace("Airport"));
 
         [TestMethod]
+        public void IsApiTested() => IsAllTested(assembly, Namespace("Api"));
+
+        [TestMethod]
         public void IsFlightTested() => IsAllTested(assembly, Namespace("Flight"));
 
         [TestMethod]
