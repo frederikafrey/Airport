@@ -9,7 +9,7 @@ namespace Airport.Soft.Areas.Luggage.Pages.Luggages
 {
     public class IndexModel : LuggagesPage
     {
-        public IndexModel(ILuggagesRepository r, IPassengersRepository p) : base(r, p) { }
+        public IndexModel(ILuggagesRepository l, IPassengersRepository p) : base(l, p) { }
 
         public IList<LuggageData> LuggageData { get; set; }
 
