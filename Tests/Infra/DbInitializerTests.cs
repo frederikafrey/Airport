@@ -4,6 +4,5 @@ namespace Airport.Tests.Infra
 {
     [TestClass]
     public class DbInitializerTests : BaseTests
-    {
-    }
+    { }
 }
