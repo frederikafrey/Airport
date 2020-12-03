@@ -3,11 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra
 {
-    [TestClass]
     public class DbInitializerTests<TDbContext> : BaseTests
         where TDbContext : DbContext
     {
-
         protected TDbContext db;
         protected DbContextOptions<TDbContext> options;
 
@@ -16,5 +14,6 @@ namespace Airport.Tests.Infra
         {
             options = new DbContextOptionsBuilder<TDbContext>().UseInMemoryDatabase("TestDb").Options;
         }
+        protected void RemoveAll<TData>(DbSet<TData> db) where TData : class, new() => RemoveAll(db);
     }
 }
