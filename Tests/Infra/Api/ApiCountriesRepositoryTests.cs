@@ -3,7 +3,7 @@
 namespace Airport.Tests.Infra.Api
 {
     [TestClass]
-    public class ApiCountriesRepositoryTests : BaseRepositoryTests
+    public class ApiCountriesRepositoryTests : ApiCommonRepositoryTests
     {
     }
 }
