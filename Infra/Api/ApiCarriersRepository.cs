@@ -38,10 +38,7 @@ namespace Airport.Infra.Api
             }
         }
 
-        public ApiCarrierProperties Get(int id)
-        {
-            return _apiCarrierData.carriers.FirstOrDefault(x => x.CarrierId == id);
-        }
+        public ApiCarrierProperties Get(int id) => _apiCarrierData.carriers.FirstOrDefault(x => x.CarrierId == id);
 
         public async Task<IEnumerable<ApiCarrierProperties>> GetAll()
         {

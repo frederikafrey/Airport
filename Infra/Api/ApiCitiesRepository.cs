@@ -37,10 +37,7 @@ namespace Airport.Infra.Api
             }
         }
 
-        public ApiCityProperties Get(string id)
-        {
-            return _apiCityData.places.FirstOrDefault(x => x.CityId == id);
-        }
+        public ApiCityProperties Get(string id) => _apiCityData.places.FirstOrDefault(x => x.CityId == id);
 
         public async Task<IEnumerable<ApiCityProperties>> GetAll(string name)
         {
