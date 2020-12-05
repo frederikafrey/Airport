@@ -16,13 +16,17 @@ namespace Airport.Infra.Luggage
             if (db.Luggages.Count() != 0) return;
             var dimensions = new[] {
                 new LuggageData() {
-                    Dimensions = "S: 40 x 30 x 20"
+                    Dimensions = "S: 40 x 30 x 20",
+                    Weight= "Max 5 kg"
+
                 },
                 new LuggageData() {
-                    Dimensions = "M: 100 x 50 x 80"
+                    Dimensions = "M: 100 x 50 x 80",
+                    Weight = "Max 10 kg"
                 },
                 new LuggageData() {
-                    Dimensions = "L: 150 x 120 x 170"
+                    Dimensions = "L: 150 x 120 x 170",
+                    Weight = "Max 25 kg"
                 }
             };
             AddSet(dimensions, db);

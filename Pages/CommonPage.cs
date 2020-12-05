@@ -62,7 +62,7 @@ namespace Airport.Pages
         {
             var items = l.Get().GetAwaiter().GetResult();
 
-            return items.Select(m => new SelectListItem(m.Data.Weight, m.Data.Dimensions)).ToList();
+            return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
         }
         protected static IEnumerable<SelectListItem> CreateSelectListDimensions(ILuggagesRepository l)
         {
