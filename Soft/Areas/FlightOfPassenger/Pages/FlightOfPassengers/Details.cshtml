@@ -8,11 +8,11 @@
 
 @{
     Layout = "_Details";
-    const string a = "/Passenger/Passengers";
-    var passengerId = GetMember.Name<PassengerData>(x => x.Name);
-    const string b = "/Flight/Flights";
+    const string passengers = "/Passenger/Passengers";
+    var passengerName = GetMember.Name<PassengerData>(x => x.Name);
+    const string flights = "/Flight/Flights";
     var flightId = GetMember.Name<FlightData>(x => x.Id);
-    const string c = "/Luggage/Luggages";
+    const string luggages = "/Luggage/Luggages";
     var luggageId = GetMember.Name<LuggageData>(x => x.Id);
 }
 
@@ -25,9 +25,9 @@
 
 @section Details{
     @Html.HypertextLinkFor(string.Empty, new Link("Show passenger info",
-        $"{a}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.PassengerId}"))
+        $"{passengers}/Index?fixedFilter={passengerName}&fixedValue={Model.Item.PassengerId}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Show flight info",
-        $"{b}/Index?fixedFilter={flightId}&fixedValue={Model.Item.FlightId}"))
+        $"{flights}/Index?fixedFilter={flightId}&fixedValue={Model.Item.FlightId}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Show luggage info",
-        $"{c}/Index?fixedFilter={luggageId}&fixedValue={Model.Item.LuggageId}"))
+        $"{luggages}/Index?fixedFilter={luggageId}&fixedValue={Model.Item.LuggageId}"))
 }
