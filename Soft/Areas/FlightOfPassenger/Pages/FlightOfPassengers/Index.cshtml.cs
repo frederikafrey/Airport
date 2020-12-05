@@ -10,8 +10,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
     public class IndexModel : FlightOfPassengersPage
     {
         public IndexModel(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
-        //IStopOversRepository p
-
+        
         public async Task OnGetAsync(string sortOrder, string id, string currentFilter, string searchString, int? pageIndex, string fixedFilter, string fixedValue)
         {
             SelectedId = id;

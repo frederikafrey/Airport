@@ -11,7 +11,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
     public class CreateModel : FlightOfPassengersPage
     {
         public CreateModel(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
-        //IStopOversRepository p
+        
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;

@@ -11,7 +11,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
     public class DeleteModel : FlightOfPassengersPage
     {
         public DeleteModel(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
-        //IStopOversRepository p
+        
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);
@@ -23,6 +23,7 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
             await DeleteObject(id, fixedFilter, fixedValue);
             return Redirect(IndexUrl);
         }
+
         public override string ItemId { get; }
     }
 }
