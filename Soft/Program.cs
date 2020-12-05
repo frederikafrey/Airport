@@ -24,8 +24,6 @@ namespace Airport.Soft
                 StopOversDbInitializer.Initialize(dbQuantity);
                 AirlineCompaniesDbInitializer.Initialize(dbQuantity);
                 DimensionsDbInitializer.Initialize(dbQuantity);
-                WeightsDbInitializer.Initialize(dbQuantity);
-
             }
             GetRepository.SetServiceProvider(host.Services);
             host.Run();
