@@ -1,9 +1,14 @@
 ﻿@page
+@using Airport.Aids
+@using Airport.Data.FlightOfPassenger
+@using Airport.Data.Passenger
 @using Airport.Pages.Extensions
 @model Airport.Soft.Areas.Luggage.Pages.Luggages.DetailsModel
 
 @{
     Layout = "_Details";
+    const string units = "/Passenger/Passengers";
+    var passengerId = GetMember.Name<PassengerData>(x => x.Id);
 }
 
 <body>
@@ -14,4 +19,7 @@
     @Html.DisplayControlsFor(m => m.Item.Weight)
 </body>
 
-@section Details{}
+@section Details{
+    @Html.HypertextLinkFor(string.Empty, new Link("Show passenger info",
+        $"{units}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.Id}"))
+}
