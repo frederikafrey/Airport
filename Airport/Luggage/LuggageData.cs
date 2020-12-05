@@ -1,5 +1,4 @@
 ﻿using Airport.Data.Common;
-using System.Collections.Generic;
 
 namespace Airport.Data.Luggage
 {

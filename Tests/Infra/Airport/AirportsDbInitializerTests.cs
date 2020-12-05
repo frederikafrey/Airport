@@ -1,8 +1,4 @@
-﻿using System.Linq;
-using Airport.Data.Passenger;
-using Airport.Infra;
-using Airport.Infra.Airport;
-using Microsoft.EntityFrameworkCore;
+﻿using Airport.Infra;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Airport
