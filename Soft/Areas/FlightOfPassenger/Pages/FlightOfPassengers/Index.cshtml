@@ -25,7 +25,6 @@
         <tbody>
             @foreach (var item in Model.Items)
             {
-
                 <tr>
                     @Html.TableRowFor(
                    page,
@@ -34,8 +33,7 @@
                    Model.FixedValue,
                         Html.DisplayFor(modelItem => item.PassengerId),
                    Html.DisplayFor(modelItem => item.FlightId),                   
-                   Html.DisplayFor(modelItem => item.LuggageId)
-                   )
+                   Html.DisplayFor(modelItem => item.LuggageId))
                 </tr>
             }
         </tbody>

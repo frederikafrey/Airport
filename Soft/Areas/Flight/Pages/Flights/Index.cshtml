@@ -32,7 +32,6 @@
 
             @foreach (var item in Model.Items)
             {
-
                 <tr>
                     @Html.TableRowFor(
                         page,
@@ -47,8 +46,7 @@
                         Html.DisplayFor(modelItem => item.ArrivalTime),
                         Html.DisplayFor(modelItem => item.Occupancy),
                         Html.DisplayFor(modelItem => item.Company),
-                        Html.DisplayFor(modelItem => item.Plane)
-                        )
+                        Html.DisplayFor(modelItem => item.Plane))
                 </tr>
             }
         </tbody>
