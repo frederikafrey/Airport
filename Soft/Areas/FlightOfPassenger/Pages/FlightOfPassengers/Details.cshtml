@@ -1,6 +1,7 @@
 ﻿@page
 @using Airport.Aids
 @using Airport.Data.Flight
+@using Airport.Data.Luggage
 @using Airport.Data.Passenger
 @using Airport.Pages.Extensions
 @model Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers.DetailsModel
@@ -11,6 +12,8 @@
     var passengerId = GetMember.Name<PassengerData>(x => x.Name);
     const string b = "/Flight/Flights";
     var flightId = GetMember.Name<FlightData>(x => x.Id);
+    const string c = "/Luggage/Luggages";
+    var luggageId = GetMember.Name<LuggageData>(x => x.Id);
 }
 
 <body>
@@ -25,4 +28,6 @@
         $"{a}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.PassengerId}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Show flight info",
         $"{b}/Index?fixedFilter={flightId}&fixedValue={Model.Item.FlightId}"))
+    @Html.HypertextLinkFor(string.Empty, new Link("Show luggage info",
+        $"{c}/Index?fixedFilter={luggageId}&fixedValue={Model.Item.LuggageId}"))
 }

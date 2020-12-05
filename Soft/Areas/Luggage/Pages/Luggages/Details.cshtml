@@ -7,8 +7,8 @@
 
 @{
     Layout = "_Details";
-    const string units = "/Passenger/Passengers";
-    var passengerName = GetMember.Name<PassengerData>(x => x.Name);
+    const string a = "/Passenger/Passengers";
+    var passengerId = GetMember.Name<PassengerData>(x => x.Name);
 }
 
 <body>
@@ -21,5 +21,5 @@
 
 @section Details{
     @Html.HypertextLinkFor(string.Empty, new Link("Show passenger info",
-        $"{units}/Index?fixedFilter={passengerName}&fixedValue={Model.Item.PassengerId}"))
+        $"{a}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.PassengerId}"))
 }

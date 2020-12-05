@@ -6,7 +6,7 @@
 
 @{
     Layout = "_Details";
-    const string units = "/FlightOfPassenger/FlightOfPassengers";
+    const string a = "/FlightOfPassenger/FlightOfPassengers";
     var passengerId = GetMember.Name<FlightOfPassengerData>(x => x.PassengerId);
 }
 
@@ -19,5 +19,5 @@
 
 @section Details{
     @Html.HypertextLinkFor(string.Empty, new Link("Show flight of passenger",
-        $"{units}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.Name}"))
+        $"{a}/Index?fixedFilter={passengerId}&fixedValue={Model.Item.Name}"))
 }
