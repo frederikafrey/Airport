@@ -12,10 +12,13 @@ namespace Airport.Infra.Luggage
             InitializeDimensions(db);
         }
         private static void InitializeDimensions(AirportDbContext db)
-        {
+        {//TODO luggage dimensions ja weight index lehelt ära
             if (db.Luggages.Count() != 0) return;
             var dimensions = new[] {
                 new LuggageData() {
+                    Id = "1",
+                    PassengerId = "2",
+                    Name = "Mari",
                     Dimensions = "S: 40 x 30 x 20",
                     Weight= "Max 5 kg"
 
