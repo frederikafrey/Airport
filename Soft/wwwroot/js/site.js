@@ -2,6 +2,7 @@
     $('.selectpicker').selectpicker({
         liveSearch: true,
         showSubtext: true
+        //maxOptions: 5
     });
 });
 

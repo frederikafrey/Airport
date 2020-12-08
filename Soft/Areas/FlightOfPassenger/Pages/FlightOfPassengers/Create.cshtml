@@ -9,7 +9,8 @@
 @section Scripts { }
 
 <body>
-    @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
-    @Html.EditControlsForDropDown(m => m.Item.FlightId, Model.Flights)
-    @Html.EditControlsForDropDown(m => m.Item.LuggageId, Model.Luggage)
+@Html.HiddenFor(m => m.Item.Id);
+@Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)
+@Html.EditControlsForDropDown(m => m.Item.FlightId, Model.Flights)
+@Html.EditControlsForDropDown(m => m.Item.LuggageId, Model.Luggage)
 </body>

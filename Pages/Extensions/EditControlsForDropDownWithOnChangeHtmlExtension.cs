@@ -28,7 +28,7 @@ namespace Airport.Pages.Extensions
                 htmlHelper.DropDownListFor(expression, items, new
                 {
                     id=name,
-                    @class= "form-control",
+                    @class= "form-control selectpicker",
                     onchange= onChange(name, anotherId, location)
                 }),
                 htmlHelper.ValidationMessageFor(expression, "", new {@class="text-danger" }),

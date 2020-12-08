@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
@@ -21,10 +22,12 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
 
         public async Task<IActionResult> OnPostAsync(string fixedFilter, string fixedValue)
         {
+            // TODO Id vs ItemId ???
+            Item.Id = Guid.NewGuid().ToString();
             if (!await AddObject(fixedFilter, fixedValue)) return Page();
             return Redirect(IndexUrl);
         }
 
-        public override string ItemId { get; }
+        //public override string ItemId { get; }
     }
 }
