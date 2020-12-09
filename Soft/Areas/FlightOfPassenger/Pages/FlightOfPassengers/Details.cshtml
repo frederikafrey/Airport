@@ -11,7 +11,7 @@
     const string passengers = "/Passenger/Passengers";
     var passengerName = GetMember.Name<PassengerData>(x => x.Name);
     const string flights = "/Flight/Flights";
-    var flightId = GetMember.Name<FlightData>(x => x.Id);
+    var flightId = GetMember.Name<FlightData>(x => x.Plane);
     const string luggages = "/Luggage/Luggages";
     var luggageId = GetMember.Name<LuggageData>(x => x.Id);
 }

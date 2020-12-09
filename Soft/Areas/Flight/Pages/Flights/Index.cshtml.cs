@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;
@@ -12,7 +13,7 @@ namespace Airport.Soft.Areas.Flight.Pages.Flights
         private IApiCitiesRepository citiesRepository;
         private IApiCountriesRepository countriesRepository;
         
-        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s)
+        public IndexModel(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s, IAirlineCompaniesRepository ac) : base(r, c, p, s, ac)
         {
             citiesRepository = p;
             countriesRepository = c;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Api.ApiCarrier;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
@@ -87,6 +88,12 @@ namespace Airport.Pages
             var items = f.Get().GetAwaiter().GetResult();
 
             return items.Select(m => new SelectListItem(m.Data.Plane, m.Data.Plane)).ToList();
+        }
+        protected static IEnumerable<SelectListItem> CreateSelectListCompanies(IAirlineCompaniesRepository ac)
+        {
+            var items = ac.Get().GetAwaiter().GetResult();
+
+            return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Name)).ToList();
         }
     }
 }
