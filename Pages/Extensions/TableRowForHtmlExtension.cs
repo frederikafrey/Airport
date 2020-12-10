@@ -44,7 +44,7 @@ namespace Airport.Pages.Extensions {
 
             return list;
         }
-        internal static void AddValue(List<object> htmlStrings, IHtmlContent value) {
+        public static void AddValue(List<object> htmlStrings, IHtmlContent value) {
             if (htmlStrings is null) return;
             if (value is null) return;
             htmlStrings.Add(new HtmlString("<td>"));

@@ -6,7 +6,7 @@ namespace Airport.Tests
 {
     internal class HtmlContentMock : IHtmlContent
     {
-        private readonly string content;
+        public readonly string content;
         public HtmlContentMock(string s) => content = s;
         public void WriteTo(TextWriter writer, HtmlEncoder encoder) => writer.WriteLine(content);
         public override string ToString() => content;
