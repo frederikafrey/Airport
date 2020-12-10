@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Airport.Domain.Api.ApiCurrency;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Api
 {

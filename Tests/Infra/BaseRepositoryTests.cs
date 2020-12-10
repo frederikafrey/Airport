@@ -65,7 +65,7 @@ namespace Airport.Tests.Infra
         }
 
         [TestMethod]
-        public void AddTest()
+        public virtual void AddTest()
         {
             var expected = obj.Get(data.Id).GetAwaiter().GetResult();
             Assert.IsNull(expected.Data);

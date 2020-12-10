@@ -26,15 +26,5 @@ namespace Airport.Pages.Extensions
                 new HtmlString("</div>")
             };
         }
-        //internal static List<object> htmlStrings<TModel, TResult>(IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TResult>> expression, IEnumerable<SelectListItem> items, SelectList seconddropDown)
-        //{
-        //    return new List<object> {
-        //        new HtmlString("<div class=\"form-group\">"),
-        //        htmlHelper.LabelFor(expression, new {@class = "text-dark"}),
-        //        htmlHelper.DropDownListFor(expression, items, new {@class = "form-control"}),
-        //        htmlHelper.ValidationMessageFor(expression, "", new {@class = "text-danger"}),
-        //        new HtmlString("</div>")
-        //    };
-        //}
     }
 }

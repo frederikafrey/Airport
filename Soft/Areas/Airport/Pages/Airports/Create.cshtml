@@ -5,9 +5,10 @@
 @{
     Layout = "_Create";
 }
+@section Scripts { }
 
 <body>
-@Html.EditControlsForDropDown(m => m.Item.Country, new List<SelectListItem>())
-@Html.EditControlsFor(m => m.Item.Phone)
+    @Html.EditControlsFor(m => m.Item.Country)
+    @Html.EditControlsFor(m => m.Item.Phone)
 </body>
 
