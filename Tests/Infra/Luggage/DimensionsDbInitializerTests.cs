@@ -1,4 +1,6 @@
-﻿using Airport.Infra;
+﻿using System.Linq;
+using Airport.Infra;
+using Airport.Infra.Luggage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Luggage
@@ -15,7 +17,7 @@ namespace Airport.Tests.Infra.Luggage
         //    RemoveAll(db.Airports);
         //    RemoveAll(db.AirlineCompanies);
         //    RemoveAll(db.Flights);
-        //    RemoveAll(db.FlightOfPassengers); 
+        //    RemoveAll(db.FlightOfPassengers);
         //    RemoveAll(db.Luggages);
         //    RemoveAll(db.Passengers);
         //    RemoveAll(db.StopOvers);

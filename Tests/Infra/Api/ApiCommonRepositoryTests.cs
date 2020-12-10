@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Airport.Tests.Infra.Api
 {
@@ -25,31 +27,32 @@ namespace Airport.Tests.Infra.Api
         //    Method = HttpMethod.Get;
         //    RequestUri = new Uri(Url);
 
-        //    Assert.AreEqual(Url.ToString(), "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US"); 
+        //    Assert.AreEqual(Url.ToString(),
+        //        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US");
 
-        }
-        
-        //    protected async Task<TData> CreateApiConnection()
-        //    {
-        //        var client = new HttpClient();
-        //        var request = new HttpRequestMessage
-        //        {
-        //            Method = HttpMethod.Get,
-        //            RequestUri = new Uri(Url),
-        //            Headers =
-        //            {
-        //                {"x-rapidapi-Host", Host},
-        //                {"x-rapidapi-Key", Key},
-        //            },
-        //        };
-
-        //        using (var response = await client.SendAsync(request))
-        //        {
-        //            response.EnsureSuccessStatusCode();
-        //            var body = await response.Content.ReadAsStringAsync();
-        //            return JsonConvert.DeserializeObject<TData>(body);
-        //        }
-        //    }
         //}
+
+        //protected async Task<TData> CreateApiConnection()
+        //{
+        //    var client = new HttpClient();
+        //    var request = new HttpRequestMessage
+        //    {
+        //        Method = HttpMethod.Get,
+        //        RequestUri = new Uri(Url),
+        //        Headers =
+        //        {
+        //            {"x-rapidapi-Host", Host},
+        //            {"x-rapidapi-Key", Key},
+        //        },
+        //    };
+
+        //    using (var response = await client.SendAsync(request))
+        //    {
+        //        response.EnsureSuccessStatusCode();
+        //        var body = await response.Content.ReadAsStringAsync();
+        //        return JsonConvert.DeserializeObject<TData>(body);
+        // }
+
     }
+}
 
