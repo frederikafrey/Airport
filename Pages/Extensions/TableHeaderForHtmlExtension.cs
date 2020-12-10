@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using Airport.Aids;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -28,19 +31,29 @@ namespace Airport.Pages.Extensions {
             return new HtmlContentBuilder(htmlStrings);
         }
 
-        internal static void AddHeader(List<object> htmlStrings, string name) {
+        public static void AddHeader(List<object> htmlStrings, string name) {
             if (htmlStrings is null) return;
             if (name is null) return;
             htmlStrings.Add(new HtmlString("<th>"));
             htmlStrings.Add(name);
             htmlStrings.Add(new HtmlString("</th>"));
         }
-        internal static void AddLink(List<object> htmlStrings, Link link) {
+        public static void AddLink(List<object> htmlStrings, Link link) {
             if (htmlStrings is null) return;
             if (link is null) return;
             htmlStrings.Add(new HtmlString("<th>"));
             htmlStrings.Add(new HtmlString($"<a href=\"{link.Url}\"><span style=\"font-weight:normal\">{link.DisplayName}</span></a>"));
             htmlStrings.Add(new HtmlString("</th>"));
         }
+        public static string ToLowerCase(this string s)
+           => Safe.Run(
+               () => s?.ToLower(CultureInfo.InvariantCulture) ?? string.Empty
+               , s ?? string.Empty);
+        public static string RemoveSpaces(this string s)
+            => Safe.Run(
+                () =>
+                    s?.Where(char.IsLetterOrDigit)
+                        .Aggregate(string.Empty, (current, c) => current + c) ?? string.Empty,
+                s ?? string.Empty);
     }
 }

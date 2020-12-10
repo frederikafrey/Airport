@@ -31,7 +31,7 @@ namespace Airport.Pages.Extensions {
             var s = htmlStrings(page, index, fixedFilter, fixedValue, values);
             return new HtmlContentBuilder(s);
         }
-        private static List<object> htmlStrings(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values) {
+        public static List<object> htmlStrings(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values) {
             var list = new List<object>();
             foreach (var value in values) AddValue(list, value);
             list.Add(new HtmlString("<td>"));

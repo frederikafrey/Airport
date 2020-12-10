@@ -17,7 +17,7 @@ namespace Airport.Pages.Extensions
             return new HtmlContentBuilder(htmlStrings);
         }
 
-        internal static List<object> htmlStrings<TModel, TResult>(IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TResult>> expression, IEnumerable<SelectListItem> items) {
+        public static List<object> htmlStrings<TModel, TResult>(IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TResult>> expression, IEnumerable<SelectListItem> items) {
             return new List<object> {
                 new HtmlString("<div class=\"form-group\">"),
                 htmlHelper.LabelFor(expression, new {@class = "text-dark"}),
