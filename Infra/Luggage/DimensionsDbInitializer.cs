@@ -24,10 +24,16 @@ namespace Airport.Infra.Luggage
 
                 },
                 new LuggageData() {
+                    Id="2", 
+                    PassengerId = "3",
+                    Name = "Jaan",
                     Dimensions = "M: 100 x 50 x 80",
                     Weight = "Max 10 kg"
                 },
                 new LuggageData() {
+                    Id="3",
+                    PassengerId = "4",
+                    Name = "Jaak",
                     Dimensions = "L: 150 x 120 x 170",
                     Weight = "Max 25 kg"
                 }
