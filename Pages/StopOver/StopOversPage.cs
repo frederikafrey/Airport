@@ -13,8 +13,6 @@ namespace Airport.Pages.StopOver
         protected internal StopOversPage(IStopOversRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r)
         {
             PageTitle = "Stop Overs";
-            //Flights = CreateSelectList<Domain.Flight.Flight, FlightData>(p);
-            //FlightOfPassengers = CreateSelectList<Domain.FlightOfPassenger.FlightOfPassenger, FlightOfPassengerData>(t);
         }
         public IEnumerable<SelectListItem> Flights { get; }
         public IEnumerable<SelectListItem> FlightOfPassengers { get; }
@@ -35,15 +33,6 @@ namespace Airport.Pages.StopOver
 
             return "";
         }
-        public string GetFlightOfPassengerName(string flightOfPassengerId)
-        {
-            foreach (var m in FlightOfPassengers)
-                if (m.Value == flightOfPassengerId)
-                    return m.Text;
-
-            return "";
-        }
-
         public override string GetPageSubTitle()
             => FixedValue is null
                 ? base.GetPageSubTitle()
