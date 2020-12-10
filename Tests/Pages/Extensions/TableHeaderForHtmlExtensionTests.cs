@@ -4,6 +4,7 @@ using Airport.Pages.Extensions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Airport.Tests.Pages.Extensions
 {
@@ -42,6 +43,32 @@ namespace Airport.Tests.Pages.Extensions
             Assert.AreEqual($"<a href=\"{link.Url}\"><span style=\"font-weight:normal\">{link.DisplayName}</span></a>",
                 l[1].ToString());
             Assert.AreEqual("</th>", l[2].ToString());
+        }
+        [TestMethod]
+        public void ToLowerCaseTest()
+        {
+            var s = GetRandom.String();
+            var expected = s.ToLower(CultureInfo.InvariantCulture);
+            var actual = s.ToLowerCase();
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(string.Empty, ((string)null).ToLowerCase());
+        }
+        [TestMethod]
+        public void RemoveSpacesTest()
+        {
+            static string spaces()
+            {
+                var c = GetRandom.UInt8();
+                var s = string.Empty;
+                for (var i = 0; i < c; i++) s += ' ';
+
+                return s;
+            }
+
+            var x = GetRandom.String();
+            var y = GetRandom.String();
+            Assert.AreEqual(x + y, (spaces() + x + spaces() + y + spaces()).RemoveSpaces());
+            Assert.AreEqual(string.Empty, ((string)null).RemoveSpaces());
         }
     }
 }
