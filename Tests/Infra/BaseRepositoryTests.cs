@@ -90,5 +90,10 @@ namespace Airport.Tests.Infra
             var sql = obj.CreateSqlQuery();
             Assert.IsNotNull(sql);
         }
+        [TestMethod]
+        public void DbSetTest()
+        {
+            Assert.Inconclusive();
+        }
     }
 }
