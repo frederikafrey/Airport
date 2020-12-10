@@ -3,6 +3,7 @@ using Airport.Data.AirlineCompany;
 using Airport.Data.Airport;
 using Airport.Data.Flight;
 using Airport.Data.StopOver;
+using Airport.Domain.AirlineCompany;
 using Airport.Domain.Api.ApiCity;
 using Airport.Domain.Api.ApiCountry;
 using Airport.Domain.Flight;
@@ -11,6 +12,7 @@ using Airport.Facade.AirlineCompany;
 using Airport.Facade.Airport;
 using Airport.Facade.Flight;
 using Airport.Facade.StopOver;
+using Airport.Infra.AirlineCompany;
 using Airport.Infra.Api;
 using Airport.Pages;
 using Airport.Pages.Flight;
@@ -25,7 +27,7 @@ namespace Airport.Tests.Pages.Flight
     {
         private class TestClass : FlightsPage
         {
-            internal TestClass(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s) : base(r, c, p, s) { }
+            internal TestClass(IFlightsRepository r, IApiCountriesRepository c, IApiCitiesRepository p, IStopOversRepository s, IAirlineCompaniesRepository ac) : base(r, c, p, s, ac) { }
         }
         private class FlightsRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.Flight.Flight, FlightData>,
             IFlightsRepository
@@ -34,6 +36,10 @@ namespace Airport.Tests.Pages.Flight
         private class StopOversRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
             IStopOversRepository
         { }
+        private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
+            IAirlineCompaniesRepository
+        { }
+
 
         [TestInitialize]
         public override void TestInitialize()
@@ -43,7 +49,8 @@ namespace Airport.Tests.Pages.Flight
             var c = new ApiCountriesRepository();
             var p = new ApiCitiesRepository();
             var s = new StopOversRepository();
-            obj = new TestClass(r, c, p, s);
+            var ac = new AirlineCompaniesRepository();
+            obj = new TestClass(r, c, p, s, ac);
         }
 
         [TestMethod]
@@ -106,6 +113,16 @@ namespace Airport.Tests.Pages.Flight
         {
             var x = GetRandom.Object<StopOverData>();
             var y = GetRandom.Object<StopOverView>();
+            TestArePropertyValuesNotEqual(x, y);
+            Copy.Members(x, y);
+            TestArePropertyValuesEqual(x, y);
+        }
+
+        [TestMethod]
+        public void CompaniesTest()
+        {
+            var x = GetRandom.Object<AirlineCompanyData>();
+            var y = GetRandom.Object<AirlineCompanyView>();
             TestArePropertyValuesNotEqual(x, y);
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
