@@ -7,10 +7,7 @@ using Airport.Domain.Flight;
 using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.Luggage;
 using Airport.Domain.Passenger;
-using Airport.Facade.Flight;
 using Airport.Facade.FlightOfPassenger;
-using Airport.Facade.Luggage;
-using Airport.Facade.Passenger;
 using Airport.Pages;
 using Airport.Pages.FlightOfPassenger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -54,7 +51,6 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         public static string Id(string head, string tail) => $"{head}.{tail}";
-        private PassengerData _data;
 
         [TestMethod]
         public void ItemIdTest()
@@ -104,36 +100,6 @@ namespace Airport.Tests.Pages.FlightOfPassenger
         }
 
         [TestMethod]
-        public void PassengersTest()
-        {
-            var x = GetRandom.Object<PassengerData>();
-            var y = GetRandom.Object<PassengerView>();
-            TestArePropertyValuesNotEqual(x, y);
-            Copy.Members(x, y);
-            TestArePropertyValuesEqual(x, y);
-        }
-
-        [TestMethod]
-        public void FlightsTest()
-        {
-            var x = GetRandom.Object<FlightData>();
-            var y = GetRandom.Object<FlightView>();
-            TestArePropertyValuesNotEqual(x, y);
-            Copy.Members(x, y);
-            TestArePropertyValuesEqual(x, y);
-        }
-
-        [TestMethod]
-        public void LuggageTest()
-        {
-            var x = GetRandom.Object<LuggageData>();
-            var y = GetRandom.Object<LuggageView>();
-            TestArePropertyValuesNotEqual(x, y);
-            Copy.Members(x, y);
-            TestArePropertyValuesEqual(x, y);
-        }
-
-        [TestMethod]
         public void FlightOfPassengersTest()
         {
             var x = GetRandom.Object<FlightOfPassengerData>();
@@ -142,5 +108,14 @@ namespace Airport.Tests.Pages.FlightOfPassenger
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
+
+        [TestMethod]
+        public void PassengersTest() => IsReadOnlyProperty(obj, nameof(obj.Passengers), obj.Passengers);
+
+        [TestMethod]
+        public void FlightsTest() => IsReadOnlyProperty(obj, nameof(obj.Luggage), obj.Luggage);
+
+        [TestMethod]
+        public void LuggageTest() => IsReadOnlyProperty(obj, nameof(obj.Luggage), obj.Luggage);
     }
 }

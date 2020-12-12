@@ -107,27 +107,6 @@ namespace Airport.Tests.Pages.Flight
             Copy.Members(x, y);
             TestArePropertyValuesEqual(x, y);
         }
-
-        //[TestMethod]
-        //public void StopOversTest()
-        //{
-        //    var x = GetRandom.Object<StopOverData>();
-        //    var y = GetRandom.Object<StopOverView>();
-        //    TestArePropertyValuesNotEqual(x, y);
-        //    Copy.Members(x, y);
-        //    TestArePropertyValuesEqual(x, y);
-        //}
-
-        //[TestMethod]
-        //public void CompaniesTest()
-        //{
-        //    var x = GetRandom.Object<AirlineCompanyData>();
-        //    var y = GetRandom.Object<AirlineCompanyView>();
-        //    TestArePropertyValuesNotEqual(x, y);
-        //    Copy.Members(x, y);
-        //    TestArePropertyValuesEqual(x, y);
-        //}
-
         [TestMethod]
         public void CountriesTest() => IsReadOnlyProperty(obj, nameof(obj.Countries), obj.Countries);
         
