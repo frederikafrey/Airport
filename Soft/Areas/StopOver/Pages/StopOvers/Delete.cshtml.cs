@@ -9,7 +9,7 @@ namespace Airport.Soft.Areas.StopOver.Pages.StopOvers
 {
     public class DeleteModel : StopOversPage
     {
-        public DeleteModel(IStopOversRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
+        public DeleteModel(IStopOversRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

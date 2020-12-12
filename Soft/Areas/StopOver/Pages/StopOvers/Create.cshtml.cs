@@ -9,7 +9,7 @@ namespace Airport.Soft.Areas.StopOver.Pages.StopOvers
 {
     public class CreateModel : StopOversPage
     {
-        public CreateModel(IStopOversRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
+        public CreateModel(IStopOversRepository r) : base(r) { }
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;

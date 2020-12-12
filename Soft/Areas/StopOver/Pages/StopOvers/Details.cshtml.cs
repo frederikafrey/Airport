@@ -9,7 +9,7 @@ namespace Airport.Soft.Areas.StopOver.Pages.StopOvers
 {
     public class DetailsModel : StopOversPage
     {
-        public DetailsModel(IStopOversRepository r, IFlightsRepository p, IFlightOfPassengersRepository t) : base(r, p, t) { }
+        public DetailsModel(IStopOversRepository r) : base(r) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);
