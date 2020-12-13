@@ -4,15 +4,20 @@
 
 @{
     Layout = "_Edit";
+    var url = "/Flight/Flights/Create?handler=";
 }
+
 
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.DisabledControlsFor(m => m.Item.Id)
-    @Html.EditControlsForDropDown(m => m.Item.StartCountry, Model.Countries)
-    @Html.EditControlsForDropDown(m => m.Item.StartCity, Model.Cities)
-    @Html.EditControlsForDropDown(m => m.Item.FinalCountry, Model.Countries)
-    @Html.EditControlsForDropDown(m => m.Item.FinalCity, Model.Cities)
+    @Html.EditControlsForDropDownWithOnChange(m => m.Item.StartCountry, Model.Countries,
+    "StartCountry", "StartCity", url + "Cities")
+    @Html.EditControlsForDropDownWithId(m => m.Item.StartCity, Model.Cities, "StartCity")
+    @Html.EditControlsForDropDownWithOnChange(m => m.Item.FinalCountry, Model.Countries,
+    "FinalCountry", "FinalCity", url + "Cities")
+    @Html.EditControlsForDropDownWithId(m => m.Item.FinalCity, Model.Cities, "FinalCity")
+    @Html.EditControlsForDropDown(m => m.Item.StopOver, Model.StopOvers)
     @Html.EditControlsFor(m => m.Item.StartTime)   
     @Html.EditControlsFor(m => m.Item.ArrivalTime)
     @Html.EditControlsFor(m => m.Item.Occupancy)
