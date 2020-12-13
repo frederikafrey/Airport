@@ -36,8 +36,10 @@ namespace Airport.Facade.Flight
         public string ArrivalTime { get; set; }
         
         [Required]
-        [DisplayName("Occupancy")] 
+        [DisplayName("Occupancy")]
+        [Range(12, 500, ErrorMessage = "Plane occupancy should be in {1} to {2} range.")]
         public int Occupancy { get; set; }
+
 
         [Required]
         [DisplayName("Company")]
