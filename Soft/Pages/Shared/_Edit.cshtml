@@ -28,5 +28,6 @@
 </div>
 
 @section Scripts {
+    @RenderSection("Scripts");
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

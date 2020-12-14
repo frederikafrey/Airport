@@ -11,7 +11,6 @@ namespace Airport.Infra
     {
         protected UniqueEntityRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
-
         protected override async Task<TData> GetData(string id)
             => await DbSet.FirstOrDefaultAsync(m => m.Id == id);
 

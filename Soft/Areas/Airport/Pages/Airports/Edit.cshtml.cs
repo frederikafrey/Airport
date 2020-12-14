@@ -14,7 +14,6 @@ namespace Airport.Soft.Areas.Airport.Pages.Airports
             await GetObject(id, fixedFilter, fixedValue);
             return Page();
         }
-
         public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
             await UpdateObject(id, fixedFilter, fixedValue);

@@ -8,7 +8,6 @@ namespace Airport.Pages
      BasePage<TRepository, TDomain, TView, TData>
      where TRepository : ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
     {
-
         protected CrudPage(TRepository r) : base(r) { }
 
         [BindProperty]

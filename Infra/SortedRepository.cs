@@ -15,9 +15,7 @@ namespace Airport.Infra
         public string SortOrder { get; set; }
         public string DescendingString => "_desc";
 
-
         protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
-
 
         public override IQueryable<TData> CreateSqlQuery() => AddSorting(base.CreateSqlQuery());
 
