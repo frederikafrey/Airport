@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Airport.Data.AirlineCompany;
 using Airport.Infra;
 using Airport.Infra.AirlineCompany;
 using Airport.Infra.Airport;
@@ -13,16 +15,22 @@ namespace Airport.Tests.Infra.AirlineCompany
         //public override void TestInitialize()
         //{
         //    base.TestInitialize();
-        //    type = typeof(AirportsDbInitializer);
+        //    type = typeof(AirlineCompaniesDbInitializer);
         //    db = new AirportDbContext(options);
         //    RemoveAll(db.AirlineCompanies);
         //}
 
         //[TestMethod]
-        //public void InitializeTest()
+        //public void InitializeAirlineCompaniesTest()
         //{
-        //    AirlineCompaniesDbInitializer.Initialize(db);
-        //    Assert.AreEqual(3, db.AirlineCompanies.Count());
+        //    List<string> airports = new List<string>() { "SWE", "Air Leap", "AirLeap.com" };
+            
+        //    var air = new[] {
+        //        new AirlineCompanyData {
+        //            Id = "SWE", Name = "Air Leap", Address = "AirLeap.com" }
+        //        }; 
+            
+        //    Assert.AreEqual(airports[0], air);
         //}
     }
 }
