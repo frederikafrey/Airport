@@ -10,8 +10,6 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
     {
         public IndexModel(IAirlineCompaniesRepository r) : base(r) { }
 
-        public IList<AirlineCompanyData> AirlinesCompanyData { get; set; }
-
         public async Task OnGetAsync(string sortOrder,
             string id, string currentFilter, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue)
