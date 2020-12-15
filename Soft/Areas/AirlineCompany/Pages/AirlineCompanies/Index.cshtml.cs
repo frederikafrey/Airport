@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Airport.Data.AirlineCompany;
+﻿using System.Threading.Tasks;
 using Airport.Domain.AirlineCompany;
 using Airport.Pages.AirlineCompany;
 

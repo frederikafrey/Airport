@@ -13,7 +13,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class GetClassTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(GetClass);
 
         [TestMethod]

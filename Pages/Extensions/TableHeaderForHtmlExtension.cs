@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.Extensions {
 
-    public static class TableHeaderForHtmlExtension {
-
+    public static class TableHeaderForHtmlExtension 
+    {
         public static IHtmlContent TableHeaderFor(
             this IHtmlHelper htmlHelper,
             params string[] names) {

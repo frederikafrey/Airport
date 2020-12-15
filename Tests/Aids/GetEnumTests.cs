@@ -7,7 +7,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class GetEnumTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(GetEnum);
 
         [TestMethod]

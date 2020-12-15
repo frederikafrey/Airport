@@ -48,7 +48,6 @@ namespace Airport.Infra.Api
             data.carriers.ForEach(x => ee.carriers.Add(x));
             return ee.carriers;
         }
-
     }
 }
 

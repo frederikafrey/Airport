@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using Airport.Infra;
-using Airport.Infra.Luggage;
+﻿using Airport.Infra;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Luggage

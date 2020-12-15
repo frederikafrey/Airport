@@ -28,7 +28,6 @@ namespace Airport.Tests
             Assert.AreEqual(null, actual);
         }
 
-
         protected static void IsNullableProperty<T>(Func<T> get, Action<T> set)
         {
             IsProperty(get, set);

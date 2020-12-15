@@ -8,7 +8,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Pages
 {
-
     [TestClass]
     public class BasePageTests : AbstractPageTests<BasePage<IAirportsRepository, global::Airport.Domain.Airport.Airport, AirportView, AirportData>,
         PageModel>

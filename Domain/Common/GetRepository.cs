@@ -12,7 +12,6 @@ namespace Airport.Domain.Common
 
         public static object Instance(Type t) => instance(services, t);
 
-
         internal static T instance<T>(IServiceProvider h)
         {
             if (h is null) return default;
@@ -25,7 +24,5 @@ namespace Airport.Domain.Common
             var i = h?.GetRequiredService(t);
             return i;
         }
-
     }
-
 }

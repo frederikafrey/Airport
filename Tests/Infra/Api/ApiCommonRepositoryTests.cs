@@ -1,9 +1,4 @@
-﻿using Airport.Infra.Api;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Api
 {

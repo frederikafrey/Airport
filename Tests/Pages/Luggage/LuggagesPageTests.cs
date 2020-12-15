@@ -10,7 +10,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Pages.Luggage
 {
-
     [TestClass]
     public class LuggagesPageTests : AbstractClassTests
        <LuggagesPage, CommonPage<ILuggagesRepository, global::Airport.Domain.Luggage.Luggage, LuggageView, LuggageData>>

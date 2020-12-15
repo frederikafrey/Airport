@@ -19,7 +19,6 @@ namespace Airport.Infra
         {
         }
 
-
         public override IQueryable<TData> CreateSqlQuery()
         {
             var query = base.CreateSqlQuery();

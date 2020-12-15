@@ -18,7 +18,6 @@ namespace Airport.Infra
 
         protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
-
         public int GetTotalPages(int pageSize) => CountTotalPages(GetItemsCount(), pageSize);
 
         public int CountTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);

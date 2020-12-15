@@ -12,7 +12,6 @@ namespace Airport.Soft.Areas.FlightOfPassenger.Pages.FlightOfPassengers
     {
         public EditModel(IFlightOfPassengersRepository r, IPassengersRepository p, IFlightsRepository f, ILuggagesRepository l) : base(r, p, f, l) { }
         
-
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await GetObject(id, fixedFilter, fixedValue);

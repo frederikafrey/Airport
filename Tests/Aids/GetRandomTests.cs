@@ -7,11 +7,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Aids
 {
-
     [TestClass]
     public class GetRandomTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(GetRandom);
 
         [TestMethod]

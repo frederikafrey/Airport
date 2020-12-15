@@ -9,13 +9,11 @@ namespace Airport.Tests.Pages
     public abstract class AbstractPageTests<TClass, TBaseClass> : AbstractClassTests<TClass, TBaseClass>
         where TClass : BasePage<IAirportsRepository, global::Airport.Domain.Airport.Airport, AirportView, AirportData>
     {
-
         internal TestRepository db;
 
         internal class TestClass : CommonPage<IAirportsRepository, global::Airport.Domain.Airport.Airport, AirportView,
             AirportData>
         {
-
             protected internal TestClass(IAirportsRepository r) : base(r)
             {
                 PageTitle = "Airports";

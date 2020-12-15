@@ -8,7 +8,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class WebServiceTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(WebService);
 
         [TestMethod]

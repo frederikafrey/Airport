@@ -37,7 +37,6 @@ namespace Airport.Infra
 
         protected internal abstract TDomain ToDomainObject(TData timeData);
 
-
         public async Task<TDomain> Get(string id)
         {
             if (id is null) return new TDomain();

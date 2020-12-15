@@ -1,8 +1,4 @@
-﻿using Airport.Domain.Api.ApiCountry;
-using Airport.Infra;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.Api
 {

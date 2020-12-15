@@ -7,7 +7,6 @@ namespace Airport.Soft.Areas.AirlineCompany.Pages.AirlineCompanies
 {
     public class CreateModel : AirlineCompaniesPage
     {
-
         public CreateModel(IAirlineCompaniesRepository r) : base(r) { }
 
         public IActionResult OnGet(string fixedFilter, string fixedValue)

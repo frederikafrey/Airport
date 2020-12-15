@@ -11,10 +11,8 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Airport.Tests
 {
-
     internal class HtmlHelperMock<TModel> : IHtmlHelper<TModel>
     {
-
         public IHtmlContent ActionLink(string linkText, string actionName, string controllerName, string protocol,
             string hostname,
             string fragment, object routeValues, object htmlAttributes) => new HtmlContentMock("ActionLink");
@@ -200,6 +198,5 @@ namespace Airport.Tests
         public dynamic ViewBag { get; } = null;
         public ViewContext ViewContext { get; } = null;
         ViewDataDictionary IHtmlHelper.ViewData => ViewData;
-
     }
 }

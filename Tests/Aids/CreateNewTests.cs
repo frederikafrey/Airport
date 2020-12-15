@@ -7,7 +7,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class CreateNewTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(CreateNew);
 
         [TestMethod]

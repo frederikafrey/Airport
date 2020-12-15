@@ -9,7 +9,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class SetRandomTests : BaseTests
     {
-
         internal class TestClassA
         {
             public int A { get; set; }

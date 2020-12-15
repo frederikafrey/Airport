@@ -1,8 +1,5 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Airport.Domain.Airport;
-using Airport.Domain.Api.ApiCity;
-using Airport.Domain.Api.ApiCountry;
 using Airport.Pages.Airport;
 
 namespace Airport.Soft.Areas.Airport.Pages.Airports

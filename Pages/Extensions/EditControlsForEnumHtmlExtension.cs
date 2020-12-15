@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Airport.Pages.Extensions {
 
-    public static class EditControlsForEnumHtmlExtension {
-
+    public static class EditControlsForEnumHtmlExtension 
+    {
         public static IHtmlContent EditControlsForEnum<TModel, TResult>(
             this IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TResult>> expression) {
             

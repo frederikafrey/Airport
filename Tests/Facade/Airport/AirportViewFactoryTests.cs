@@ -5,7 +5,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Facade.Airport
 {
-
     [TestClass]
     public class AirportViewFactoryTests : BaseTests
     {

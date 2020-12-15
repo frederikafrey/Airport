@@ -1,6 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Airport.Domain.Flight;
-using Airport.Domain.FlightOfPassenger;
 using Airport.Domain.StopOver;
 using Airport.Pages.StopOver;
 

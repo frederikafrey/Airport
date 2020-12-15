@@ -5,7 +5,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Facade.StopOver
 {
-
     [TestClass]
     public class StopOverViewFactoryTests : BaseTests
     {

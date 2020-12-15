@@ -6,7 +6,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class IsoGenderTests : BaseTests
     {
-
         [TestInitialize] public void TestInitialize() => type = typeof(IsoGender);
 
         [TestMethod]

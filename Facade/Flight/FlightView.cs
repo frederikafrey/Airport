@@ -40,7 +40,6 @@ namespace Airport.Facade.Flight
         [Range(12, 500, ErrorMessage = "Plane occupancy should be in {1} to {2} range.")]
         public int Occupancy { get; set; }
 
-
         [Required]
         [DisplayName("Company")]
         public string Company { get; set; }

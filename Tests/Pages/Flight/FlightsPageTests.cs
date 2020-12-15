@@ -20,7 +20,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Pages.Flight
 {
-
     [TestClass]
     public class FlightsPageTests : AbstractClassTests
         <FlightsPage, CommonPage<IFlightsRepository, global::Airport.Domain.Flight.Flight, FlightView, FlightData>>
@@ -39,7 +38,6 @@ namespace Airport.Tests.Pages.Flight
         private class AirlineCompaniesRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.AirlineCompany.AirlineCompany, AirlineCompanyData>,
             IAirlineCompaniesRepository
         { }
-
 
         [TestInitialize]
         public override void TestInitialize()

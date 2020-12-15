@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Airport.Data.AirlineCompany;
-using Airport.Infra;
-using Airport.Infra.AirlineCompany;
-using Airport.Infra.Airport;
+﻿using Airport.Infra;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Infra.AirlineCompany

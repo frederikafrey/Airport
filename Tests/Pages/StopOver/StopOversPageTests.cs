@@ -16,7 +16,6 @@ namespace Airport.Tests.Pages.StopOver
         {
             internal TestClass(IStopOversRepository r) : base(r) { }
         }
-
         private class StopOversRepository : BaseTestRepositoryForUniqueEntity<global::Airport.Domain.StopOver.StopOver, StopOverData>,
             IStopOversRepository
         { }

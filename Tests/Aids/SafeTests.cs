@@ -8,7 +8,6 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class SafeTests : BaseTests
     {
-
         private LogTests.TestLogBook logBook;
 
         [TestInitialize]

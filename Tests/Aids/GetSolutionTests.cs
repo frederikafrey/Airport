@@ -6,7 +6,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Airport.Tests.Aids
 {
-
     [TestClass]
     public class GetSolutionTests : BaseTests
     {

@@ -9,10 +9,8 @@ namespace Airport.Tests.Aids
     [TestClass]
     public class LogTests : BaseTests
     {
-
         internal class TestLogBook : ILogBook
         {
-
             public string LoggedMessage { get; private set; }
             public Exception LoggedException { get; private set; }
             public List<Exception> LoggedExceptions { get; } = new List<Exception>();
