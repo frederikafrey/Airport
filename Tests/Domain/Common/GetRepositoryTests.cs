@@ -15,5 +15,8 @@ namespace Airport.Tests.Domain.Common
 
         [TestMethod] 
         public void InstanceTest() => Assert.IsNull(GetRepository.Instance<IAirportsRepository>());
+       
+        [TestMethod]
+        public void servicesTest() => Assert.IsNull(GetRepository.services);
     }
 }
