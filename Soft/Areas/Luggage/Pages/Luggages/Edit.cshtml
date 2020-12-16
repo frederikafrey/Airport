@@ -6,6 +6,8 @@
     Layout = "_Edit";
 }
 
+@section Scripts { }
+
 <body>
     <input type="hidden" asp-for="Item.Id" />
     @Html.DisabledControlsFor(m => m.Item.Id)

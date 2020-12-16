@@ -17,23 +17,23 @@ namespace Airport.Infra.Luggage
             var dimensions = new[] {
                 new LuggageData() {
                     Id = "1",
-                    PassengerId = "2",
-                    Name = "Mari",
+                    PassengerId = "Mari",
+                    Name = "MariLuggage",
                     Dimensions = "S: 40 x 30 x 20",
                     Weight= "Max 5 kg"
 
                 },
                 new LuggageData() {
                     Id="2", 
-                    PassengerId = "3",
-                    Name = "Jaan",
+                    PassengerId = "Jaan",
+                    Name = "JaanLuggage",
                     Dimensions = "M: 100 x 50 x 80",
                     Weight = "Max 10 kg"
                 },
                 new LuggageData() {
                     Id="3",
-                    PassengerId = "4",
-                    Name = "Jaak",
+                    PassengerId = "Jaak",
+                    Name = "JaakLuggage",
                     Dimensions = "L: 150 x 120 x 170",
                     Weight = "Max 25 kg"
                 }

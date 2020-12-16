@@ -12,7 +12,10 @@ namespace Airport.Infra.AirlineCompany
         private static void InitializeAirlineCompanys(AirportDbContext db)
         {
             if (db.AirlineCompanies.Count() != 0) return;
-            var airports = new[] {
+            var airports = new[] {              
+                new AirlineCompanyData {
+                    Id = "EST", Name = "Estonian Air", Address = "Estair.com"
+                },
                 new AirlineCompanyData {
                     Id = "SWE", Name = "Air Leap", Address = "AirLeap.com"
                 },

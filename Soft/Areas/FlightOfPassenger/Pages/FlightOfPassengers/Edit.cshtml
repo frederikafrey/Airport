@@ -6,6 +6,8 @@
     Layout = "_Edit";
 }
 
+@section Scripts { }
+
 <body>
     @Html.DisabledControlsFor(m => m.Item.Id)
     @Html.EditControlsForDropDown(m => m.Item.PassengerId, Model.Passengers)

@@ -13,6 +13,9 @@ namespace Airport.Infra.Airport
         {
             if (db.Airports.Count() != 0) return;
             var airports = new[] {
+                 new AirportData {
+                    Id = "EST", Country = "Estonia", Phone = "555 8555"
+                },
                 new AirportData {
                     Id = "SWE", Country = "Sweden", Phone = "455 4555"
                 },

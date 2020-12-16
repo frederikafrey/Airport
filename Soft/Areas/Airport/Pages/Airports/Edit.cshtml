@@ -6,9 +6,11 @@
     Layout = "_Edit";
 }
 
+@section Scripts { }
+
 <body>
-<input type="hidden" asp-for="Item.Id" />
-@Html.EditControlsFor(m => m.Item.Country)
-@Html.EditControlsFor(m => m.Item.Phone)
+    <input type="hidden" asp-for="Item.Id" />
+    @Html.EditControlsFor(m => m.Item.Country)
+    @Html.EditControlsFor(m => m.Item.Phone)
 </body>
 
